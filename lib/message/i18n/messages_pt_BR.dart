@@ -53,13 +53,13 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static m16(label) => "${Intl.select(label, {'objectivesMapLabel': 'Mapa de Objetivos', 'other': 'Não Definido', })}";
 
-  static m17(fieldName) => "${Intl.select(fieldName, {'nameField': 'Nome', 'descriptionField': 'Descrição', 'endValueField': 'Valor Final', 'startValueField': 'Valor Inicial', 'currentValueField': 'Valor Corrente', 'decimalsNumberField': 'Número de Decimais', 'measureUnitField': 'Unidade', 'metricField': 'Métrica', 'other': 'Não Definido', })}";
+  static m17(fieldName) => "${Intl.select(fieldName, {'nameField': 'Nome', 'descriptionField': 'Descrição', 'endValueField': 'Valor Final', 'startValueField': 'Valor Inicial', 'currentValueField': 'Valor Corrente', 'decimalsNumberField': 'Decimais', 'measureUnitField': 'Unidade', 'metricField': 'Métrica', 'other': 'Não Definido', })}";
 
   static m18(startDateFormated, endDateFormated) => "Data do progresso da medida deveria estar entre a data inicial do objetivo ${startDateFormated} e data final do objetivo ${endDateFormated}.";
 
   static m19(label) => "${Intl.select(label, {'measuresLabel': 'Medidas', 'editMeasureLabel': 'Editar Medida', 'addMeasureLabel': 'Adicionar Medida', 'progressLabel': 'Progresso', 'startValueLabel': 'Valor Inicial', 'currentValueLabel': 'Valor Corrente', 'endValueLabel': 'Valor Final', 'other': 'Não Definido', })}";
 
-  static m20(label) => "${Intl.select(label, {'percentLabel': 'Percentual', 'moneyLabel': 'Monetário', 'indexLabel': 'Índice', 'unitaryLabel': 'Unitário', })}";
+  static m20(label) => "${Intl.select(label, {'percentLabel': 'Percentual', 'moneyLabel': 'Monetário', 'indexLabel': 'Índice', 'unitaryLabel': 'Unitário', 'other': 'Não Definido',})}";
 
   static m21(fieldName) => "${Intl.select(fieldName, {'dateField': 'Data', 'currentValueField': 'Valor Corrente', 'commentField': 'Comentário', 'other': 'Não Definido', })}";
 
@@ -109,7 +109,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static m44(label) => "${Intl.select(label, {'workKanbanLabel': 'Trabalho Kanban', 'workItemsLabel': 'Itens de Trabalho', 'editWorkItemLabel': 'Editar Itens de Trabalho', 'addWorkItemLabel': 'Adicionar Item de Trabalho', 'selectAValueLabel': 'Selecionar um Valor', 'workItemsOverDueLabel': 'Itens de Trabalho Atrasados', 'checkItemLabel': 'Item de Checagem', 'noMatchLabel': 'Sem Correspondência', 'dropFileHereLabel': 'Soltar Arquivo Aqui', 'other': 'Não Definido', })}";
 
-  static m45(label) => "${Intl.select(label, {'worksLabel': 'Trabalhos', 'sortedByLabel': 'Ordenar Por', 'editWorkLabel': 'Editar Trabalho', 'addWorkLabel': 'Adicionar Trabalho', 'objectiveLabel': 'Objetivo', 'workItemsOverDueLabel': 'Itens de Trabalho Atrasados', 'noMatchLabel': 'Sem Correspondência', 'selectLabel': 'Selecionar', 'filterWorksLabel': 'Filtar Trabalhos', 'other': 'Não Definido', })}";
+  static m45(label) => "${Intl.select(label, {'workLabel': 'Trabalho','worksLabel': 'Trabalhos', 'sortedByLabel': 'Ordenar Por', 'editWorkLabel': 'Editar Trabalho', 'addWorkLabel': 'Adicionar Trabalho', 'objectiveLabel': 'Objetivo', 'workItemsOverDueLabel': 'Itens de Trabalho Atrasados', 'noMatchLabel': 'Sem Correspondência', 'selectLabel': 'Selecionar', 'filterWorksLabel': 'Filtar Trabalhos', 'other': 'Não Definido', })}";
 
   static m46(fieldName) => "${Intl.select(fieldName, {'nameField': 'Nome', 'stateField': 'Estado', 'other': 'Não Definido', })}";
 

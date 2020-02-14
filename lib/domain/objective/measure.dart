@@ -24,7 +24,7 @@ class Measure {
   // Specific
   static const String nameField = 'name';
   String name;
-  static const String descriptionField = 'Description';
+  static const String descriptionField = 'description';
   String description;
   static const String metricField = 'metric';
   String metric;
@@ -34,7 +34,7 @@ class Measure {
   double startValue;
   static const String endValueField = 'endValue';
   double endValue;
-  static const String measureUnitField = 'unit';
+  static const String measureUnitField = 'measureUnit';
   MeasureUnit measureUnit;
 
   // Transient

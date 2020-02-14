@@ -109,7 +109,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static m44(label) => "${Intl.select(label, {'workKanbanLabel': 'Work Kanban', 'workItemsLabel': 'Work Items', 'editWorkItemLabel': 'Edit Work Item', 'addWorkItemLabel': 'Add Work Item', 'selectAValueLabel': 'Select a value', 'workItemsOverDueLabel': 'Work Items Over Due', 'checkItemLabel': 'Check Item', 'noMatchLabel': 'No Match', 'dropFileHereLabel': 'Drop File Here', 'other': 'Not Defined', })}";
 
-  static m45(label) => "${Intl.select(label, {'worksLabel': 'Works', 'sortedByLabel': 'Sorted By', 'editWorkLabel': 'Edit Work', 'addWorkLabel': 'Add Work', 'objectiveLabel': 'Objective', 'workItemsOverDueLabel': 'Work Items Over Due', 'noMatchLabel': 'No Match', 'selectLabel': 'Select', 'filterWorksLabel': 'Filter Works', 'other': 'Not Defined', })}";
+  static m45(label) => "${Intl.select(label, {'workLabel': 'Work', 'worksLabel': 'Works', 'sortedByLabel': 'Sorted By', 'editWorkLabel': 'Edit Work', 'addWorkLabel': 'Add Work', 'objectiveLabel': 'Objective', 'workItemsOverDueLabel': 'Work Items Over Due', 'noMatchLabel': 'No Match', 'selectLabel': 'Select', 'filterWorksLabel': 'Filter Works', 'other': 'Not Defined', })}";
 
   static m46(fieldName) => "${Intl.select(fieldName, {'nameField': 'Name', 'stateField': 'State', 'other': 'Not Defined', })}";
 

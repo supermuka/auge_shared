@@ -375,6 +375,7 @@ class UserAccessMsg {
 /// Specific messages and label for [Work]
 class WorkMsg {
 
+  static const String workLabel = 'workLabel';
   static const String worksLabel = 'worksLabel';
   static const String sortedByLabel = 'sortedByLabel';
   static const String editWorkLabel = 'editWorkLabel';
@@ -387,6 +388,7 @@ class WorkMsg {
 
   /// Label for work
   static label(String label) => Intl.select(label, {
+    workLabel: 'Work',
     worksLabel: 'Works',
     sortedByLabel: 'Sorted By',
     editWorkLabel: 'Edit Work',
