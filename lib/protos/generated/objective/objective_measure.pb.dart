@@ -713,6 +713,7 @@ class MeasureGetRequest extends $pb.GeneratedMessage {
     ..aOS(1, 'objectiveId')
     ..aOS(2, 'id')
     ..aOB(3, 'withObjective')
+    ..aOB(4, 'withUserProfile')
     ..hasRequiredFields = false
   ;
 
@@ -757,6 +758,15 @@ class MeasureGetRequest extends $pb.GeneratedMessage {
   $core.bool hasWithObjective() => $_has(2);
   @$pb.TagNumber(3)
   void clearWithObjective() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.bool get withUserProfile => $_getBF(3);
+  @$pb.TagNumber(4)
+  set withUserProfile($core.bool v) { $_setBool(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasWithUserProfile() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearWithUserProfile() => clearField(4);
 }
 
 class MeasureUnit extends $pb.GeneratedMessage {

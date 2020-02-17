@@ -121,6 +121,7 @@ const MeasureGetRequest$json = const {
     const {'1': 'objective_id', '3': 1, '4': 1, '5': 9, '10': 'objectiveId'},
     const {'1': 'id', '3': 2, '4': 1, '5': 9, '10': 'id'},
     const {'1': 'with_objective', '3': 3, '4': 1, '5': 8, '10': 'withObjective'},
+    const {'1': 'with_user_profile', '3': 4, '4': 1, '5': 8, '10': 'withUserProfile'},
   ],
 };
 
