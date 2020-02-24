@@ -33,6 +33,6 @@ class Authorization {
   Map<SystemFunction, List<dynamic>> authorizationFunctionConstraints;
 
   Authorization() {
-    authorizationFunctionConstraints = Map();
+    authorizationFunctionConstraints = {};
   }
 }

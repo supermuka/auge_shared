@@ -44,50 +44,62 @@ class HistoryItem {
   history_item_pb.HistoryItem writeToProtoBuf() {
     history_item_pb.HistoryItem historyItemPb = history_item_pb.HistoryItem();
 
-    if (this.id != null) historyItemPb.id = this.id;
-    if (this.objectClassName != null) historyItemPb.objectClassName = this.objectClassName;
-    if (this.objectId != null) historyItemPb.objectId = this.objectId;
-    if (this.objectVersion != null) historyItemPb.objectVersion = this.objectVersion;
-    if (this.systemModuleIndex != null) historyItemPb.systemModuleIndex = this.systemModuleIndex;
-    if (this.systemFunctionIndex != null) historyItemPb.systemFunctionIndex = this.systemFunctionIndex;
+    if (id != null) {
+      historyItemPb.id = id;
+    }
+    if (objectClassName != null) {
+      historyItemPb.objectClassName = objectClassName;
+    }
+    if (objectId != null) {
+      historyItemPb.objectId = objectId;
+    }
+    if (objectVersion != null) {
+      historyItemPb.objectVersion = objectVersion;
+    }
+    if (systemModuleIndex != null) {
+      historyItemPb.systemModuleIndex = systemModuleIndex;
+    }
+    if (systemFunctionIndex != null) {
+      historyItemPb.systemFunctionIndex = systemFunctionIndex;
+    }
 
-    if (this.dateTime != null) historyItemPb.dateTime = CommonUtils.timestampFromDateTime(this.dateTime);/*{
+    if (dateTime != null) historyItemPb.dateTime = CommonUtils.timestampFromDateTime(dateTime);/*{
       Timestamp t = Timestamp();
       int microsecondsSinceEpoch = this.dateTime.toUtc().microsecondsSinceEpoch;
       t.seconds = Int64(microsecondsSinceEpoch ~/ 1000000);
       t.nanos = ((microsecondsSinceEpoch % 1000000) * 1000);
       historyItemPb.dateTime = t;
     }*/
-    if (this.organization != null) historyItemPb.organization = this.organization.writeToProtoBuf();
-    if (this.user != null) historyItemPb.user = this.user.writeToProtoBuf();
-    if (this.description != null) historyItemPb.description = this.description;
+    if (organization != null) historyItemPb.organization = organization.writeToProtoBuf();
+    if (user != null) historyItemPb.user = user.writeToProtoBuf();
+    if (description != null) historyItemPb.description = description;
 
-    if (this.changedValues != null) {
+    if (changedValues != null) {
 
       // Convert value from dart json to protobuf string
-      historyItemPb.changedValuesJson = json.encode(this.changedValues);
+      historyItemPb.changedValuesJson = json.encode(changedValues);
     }
     return historyItemPb;
   }
 
-  readFromProtoBuf(history_item_pb.HistoryItem historyItemPb, Map<String, dynamic> cache) {
-    if (historyItemPb.hasId()) this.id = historyItemPb.id;
-    if (historyItemPb.hasObjectClassName()) this.objectClassName = historyItemPb.objectClassName;
-    if (historyItemPb.hasObjectId()) this.objectId = historyItemPb.objectId;
-    if (historyItemPb.hasObjectVersion()) this.objectVersion = historyItemPb.objectVersion;
-    if (historyItemPb.hasSystemModuleIndex()) this.systemModuleIndex = historyItemPb.systemModuleIndex;
-    if (historyItemPb.hasSystemFunctionIndex()) this.systemFunctionIndex = historyItemPb.systemFunctionIndex;
+  void readFromProtoBuf(history_item_pb.HistoryItem historyItemPb, Map<String, dynamic> cache) {
+    if (historyItemPb.hasId()) id = historyItemPb.id;
+    if (historyItemPb.hasObjectClassName()) objectClassName = historyItemPb.objectClassName;
+    if (historyItemPb.hasObjectId()) objectId = historyItemPb.objectId;
+    if (historyItemPb.hasObjectVersion()) objectVersion = historyItemPb.objectVersion;
+    if (historyItemPb.hasSystemModuleIndex()) systemModuleIndex = historyItemPb.systemModuleIndex;
+    if (historyItemPb.hasSystemFunctionIndex()) systemFunctionIndex = historyItemPb.systemFunctionIndex;
 
     if (historyItemPb.hasDateTime()) {
       // this.dateTime = CommonUtils.dateTimeFromTimestamp(historyItemPb.dateTime);
-      this.dateTime = historyItemPb.dateTime.toDateTime();
+      dateTime = historyItemPb.dateTime.toDateTime();
     }
-    if (historyItemPb.hasOrganization()) this.organization = cache.putIfAbsent('${HistoryItem.organizationField}${historyItemPb.organization.id}@${Organization.className}', () => Organization()..readFromProtoBuf(historyItemPb.organization));
-    if (historyItemPb.hasUser()) this.user = cache.putIfAbsent('${HistoryItem.userField}${historyItemPb.user.id}@${User.className}', () => User()..readFromProtoBuf(historyItemPb.user, cache));
-    if (historyItemPb.hasDescription()) this.description = historyItemPb.description;
+    if (historyItemPb.hasOrganization()) organization = cache.putIfAbsent('${HistoryItem.organizationField}${historyItemPb.organization.id}@${Organization.className}', () => Organization()..readFromProtoBuf(historyItemPb.organization));
+    if (historyItemPb.hasUser()) user = cache.putIfAbsent('${HistoryItem.userField}${historyItemPb.user.id}@${User.className}', () => User()..readFromProtoBuf(historyItemPb.user, cache));
+    if (historyItemPb.hasDescription()) description = historyItemPb.description;
     //if (historyItemPb.changedValues.isNotEmpty) this.changedValues = historyItemPb.changedValues;
     // Convert value from protobuf string to dart json
-    if (historyItemPb.hasChangedValuesJson()) this.changedValues = json.decode(historyItemPb.changedValuesJson);
+    if (historyItemPb.hasChangedValuesJson()) changedValues = json.decode(historyItemPb.changedValuesJson);
   }
 
   static const previousKey = 'p', currentKey = 'c';
@@ -145,8 +157,9 @@ class HistoryItem {
           } else if (v.containsKey(previousKey) || v.containsKey(currentKey)) {
             if (v[previousKey] is List && v[currentKey] is List) {
               if (DeepCollectionEquality().equals(
-                  v[previousKey], v[currentKey]))
+                  v[previousKey], v[currentKey])) {
                 diff.remove(k);
+              }
             } else if (v[previousKey] == v[currentKey]) {
               diff.remove(k);
             }
@@ -174,11 +187,12 @@ class HistoryItem {
 
       return processOnlyDiffPreviousCurrent(merge);
     }
-    else
+    else {
       return merge;
+    }
   }
 
-  static changedValuesJson(Map<dynamic, dynamic> previous, Map<dynamic, dynamic> current, [bool onlyDiff = true]) {
+  static String changedValuesJson(Map<dynamic, dynamic> previous, Map<dynamic, dynamic> current, [bool onlyDiff = true]) {
     return json.encode(changedValuesMap(previous, current, onlyDiff), toEncodable: changedValuesEncode);
   }
 

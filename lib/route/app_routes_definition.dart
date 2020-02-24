@@ -18,9 +18,10 @@ class AppRoutesQueryParam {
   static const workItemIdQueryParameter = 'work_item_id';
   static const stageIdQueryParameter = 'stage_id';
   static const objectiveIdQueryParameter = 'objective_id';
-  static const objectiveStartDateQueryParameter = 'start_date';
-  static const objectiveEndDateQueryParameter = 'end_date';
-  static const measureCurrentValueQueryParameter = 'current_value';
+  static const objectiveStartDateQueryParameter = 'objective_start_date';
+  static const objectiveEndDateQueryParameter = 'objective_end_date';
+  static const measureCurrentValueQueryParameter = 'measure_current_value';
+
   static const filter = 'filter';
 }
 

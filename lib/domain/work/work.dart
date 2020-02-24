@@ -1,6 +1,6 @@
 // Copyright (c) 2018, Levius Tecnologia Ltda. All rights reserved.
 // Author: Samuel C. Schwebel
-import "dart:collection";
+import 'dart:collection';
 
 import 'package:auge_shared/domain/general/organization.dart';
 import 'package:auge_shared/domain/general/user.dart';
@@ -46,12 +46,12 @@ class Work  {
   List<WorkItem> workItems;
 
   Work() {
-    workStages = new List<WorkStage>();
-    workItems = new List<WorkItem>();
+    workStages = <WorkStage>[];
+    workItems = <WorkItem>[];
   }
 
   Map<State, int> get stateWorkItemsCount {
-    Map<State, int> m = new Map();
+    Map<State, int> m = {};
    // Map<int, State> mSameState = SplayTreeMap(); // new Map();
     // Two item on list. First is the state object and the last the count number of workitems
     Map<int, List<dynamic>> mSameState = SplayTreeMap();
@@ -75,8 +75,8 @@ class Work  {
   }
 
   Map<WorkStage, int> get stageWorkItemsCount  {
-    Map<WorkStage, int> m = new Map();
-    Map<String, WorkStage> mSameStage =  Map();
+    Map<WorkStage, int> m = {};
+    Map<String, WorkStage> mSameStage =  {};
     WorkStage stage;
     workItems.forEach( (key) {
       // Get a same object for all State objects with identical id
@@ -101,61 +101,75 @@ class Work  {
   work_work_item_pb.Work writeToProtoBuf() {
     work_work_item_pb.Work workPb = work_work_item_pb.Work();
 
-    if (this.id != null) workPb.id = this.id;
-    if (this.version != null) workPb.version = this.version;
-    if (this.name != null) workPb.name = this.name;
-    if (this.description != null) workPb.description = this.description;
+    if (id != null) workPb.id = id;
+    if (version != null) workPb.version = version;
+    if (name != null) workPb.name = name;
+    if (description != null) workPb.description = description;
 
-    if (this.objective != null) workPb.objective = this.objective.writeToProtoBuf();
-    if (this.group != null) workPb.group = this.group.writeToProtoBuf();
-    if (this.organization != null) workPb.organization = this.organization.writeToProtoBuf();
-    if (this.leader != null) workPb.leader = this.leader.writeToProtoBuf();
-    if (this.workItems != null && this.workItems.isNotEmpty) workPb.workItems.addAll(this.workItems.map((m) => m.writeToProtoBuf()));
-    if (this.workStages != null && this.workStages.isNotEmpty) workPb.workStages.addAll(this.workStages.map((m) => m.writeToProtoBuf()));
+    if (objective != null) workPb.objective = objective.writeToProtoBuf();
+    if (group != null) workPb.group = group.writeToProtoBuf();
+    if (organization != null) workPb.organization = organization.writeToProtoBuf();
+    if (leader != null) workPb.leader = leader.writeToProtoBuf();
+    if (workItems != null && workItems.isNotEmpty) workPb.workItems.addAll(workItems.map((m) => m.writeToProtoBuf()));
+    if (workStages != null && workStages.isNotEmpty) workPb.workStages.addAll(workStages.map((m) => m.writeToProtoBuf()));
 
     return workPb;
   }
 
-  readFromProtoBuf(work_work_item_pb.Work workPb, Map<String, dynamic> cache) {
-    if (workPb.hasId()) this.id = workPb.id;
-    if (workPb.hasVersion()) this.version = workPb.version;
-    if (workPb.hasName()) this.name = workPb.name;
-    if (workPb.hasDescription()) this.description = workPb.description;
-    if (workPb.hasObjective()) this.objective = cache.putIfAbsent('${Work.objectiveField}${workPb.objective.id}@${Objective.className}', () =>  Objective()..readFromProtoBuf(workPb.objective, cache));
-    if (workPb.hasGroup()) this.group = cache.putIfAbsent('${Work.groupField}${workPb.group.id}@${Group.className}', () => Group()..readFromProtoBuf(workPb.group, cache));
-    if (workPb.hasOrganization()) this.organization = cache.putIfAbsent('${Work.organizationField}${workPb.organization.id}@${Organization.className}', () => Organization()..readFromProtoBuf(workPb.organization));
-    if (workPb.hasLeader()) this.leader = cache.putIfAbsent('${Work.leaderField}${workPb.leader.id}@${User.className}', () => User()..readFromProtoBuf(workPb.leader, cache));
-    if (workPb.workItems.isNotEmpty) this.workItems = workPb.workItems.map((u) => WorkItem()..readFromProtoBuf(u, cache)).toList(); // Not need the cache, if a composite.
-    if (workPb.workStages.isNotEmpty) this.workStages = workPb.workStages.map((u) => WorkStage()..readFromProtoBuf(u)).toList();  // Not need the cache, if a composite.
+  void readFromProtoBuf(work_work_item_pb.Work workPb, Map<String, dynamic> cache) {
+    if (workPb.hasId()) id = workPb.id;
+    if (workPb.hasVersion()) version = workPb.version;
+    if (workPb.hasName()) name = workPb.name;
+    if (workPb.hasDescription()) description = workPb.description;
+    if (workPb.hasObjective()) objective = cache.putIfAbsent('${Work.objectiveField}${workPb.objective.id}@${Objective.className}', () =>  Objective()..readFromProtoBuf(workPb.objective, cache));
+    if (workPb.hasGroup()) group = cache.putIfAbsent('${Work.groupField}${workPb.group.id}@${Group.className}', () => Group()..readFromProtoBuf(workPb.group, cache));
+    if (workPb.hasOrganization()) organization = cache.putIfAbsent('${Work.organizationField}${workPb.organization.id}@${Organization.className}', () => Organization()..readFromProtoBuf(workPb.organization));
+    if (workPb.hasLeader()) leader = cache.putIfAbsent('${Work.leaderField}${workPb.leader.id}@${User.className}', () => User()..readFromProtoBuf(workPb.leader, cache));
+    if (workPb.workItems.isNotEmpty) workItems = workPb.workItems.map((u) => WorkItem()..readFromProtoBuf(u, cache)).toList(); // Not need the cache, if a composite.
+    if (workPb.workStages.isNotEmpty) workStages = workPb.workStages.map((u) => WorkStage()..readFromProtoBuf(u, cache)).toList();  // Not need the cache, if a composite.
   }
 
   static Map<String, dynamic> fromProtoBufToModelMap(work_work_item_pb.Work workPb, [bool onlyIdAndSpecificationForDepthFields = false, bool isDeep = false]) {
-    Map<String, dynamic> map = Map();
+    Map<String, dynamic> map = {};
 
     if (onlyIdAndSpecificationForDepthFields && isDeep) {
       if (workPb.hasId()) map[Work.idField] = workPb.id;
       if (workPb.hasName()) map[Work.nameField] = workPb.name;
     } else {
       if (workPb.hasId()) map[Work.idField] = workPb.id;
-      if (workPb.hasVersion())
+      if (workPb.hasVersion()) {
         map[Work.versionField] = workPb.version;
+      }
       if (workPb.hasName()) map[Work.nameField] = workPb.name;
-      if (workPb.hasDescription())
+      if (workPb.hasDescription()) {
         map[Work.descriptionField] = workPb.description;
-      if (workPb.hasObjective()) map[Work.objectiveField] =
+      }
+      if (workPb.hasObjective()) {
+        map[Work.objectiveField] =
           Objective.fromProtoBufToModelMap(workPb.objective, onlyIdAndSpecificationForDepthFields, true);
-      if (workPb.hasGroup()) map[Work.groupField] =
+      }
+      if (workPb.hasGroup()) {
+        map[Work.groupField] =
           Group.fromProtoBufToModelMap(workPb.group, onlyIdAndSpecificationForDepthFields, true);
-      if (workPb.hasOrganization()) map[Work.organizationField] =
+      }
+      if (workPb.hasOrganization()) {
+        map[Work.organizationField] =
           Organization.fromProtoBufToModelMap(workPb.organization, onlyIdAndSpecificationForDepthFields, true);
-      if (workPb.hasLeader()) map[Work.leaderField] =
+      }
+      if (workPb.hasLeader()) {
+        map[Work.leaderField] =
           User.fromProtoBufToModelMap(workPb.leader, onlyIdAndSpecificationForDepthFields, true);
-      if (workPb.workItems.isNotEmpty) map[Work.workItemsField] =
+      }
+      if (workPb.workItems.isNotEmpty) {
+        map[Work.workItemsField] =
           workPb.workItems.map((wi) =>
               WorkItem.fromProtoBufToModelMap(wi, onlyIdAndSpecificationForDepthFields, true)).toList();
-      if (workPb.workStages.isNotEmpty) map[Work.workStagesField] =
+      }
+      if (workPb.workStages.isNotEmpty) {
+        map[Work.workStagesField] =
           workPb.workStages.map((s) => WorkStage.fromProtoBufToModelMap(s, onlyIdAndSpecificationForDepthFields, true))
               .toList();
+      }
     }
     return map;
   }

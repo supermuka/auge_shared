@@ -108,159 +108,182 @@ class OrganizationDirectoryService {
     organization_directory_service_pb.OrganizationDirectoryService organizationDirectoryServicePb = organization_directory_service_pb.OrganizationDirectoryService();
 
 
-    if (this.directoryServiceEnabled != null) organizationDirectoryServicePb.directoryServiceEnabled = this.directoryServiceEnabled;
-    if (this.hostAddress != null) organizationDirectoryServicePb.hostAddress = this.hostAddress;
-    if (this.port != null) organizationDirectoryServicePb.port = this.port;
-    if (this.sslTls != null) organizationDirectoryServicePb.sslTls = this.sslTls;
-    if (this.syncBindDn != null) organizationDirectoryServicePb.syncBindDn = this.syncBindDn;
-    if (this.syncBindPassword != null) organizationDirectoryServicePb.syncBindPassword = this.syncBindPassword;
-    if (this.syncInterval != null) organizationDirectoryServicePb.syncInterval = this.syncInterval;
-    if (this.syncLastDateTime != null) organizationDirectoryServicePb.syncLastDateTime = CommonUtils.timestampFromDateTime(this.syncLastDateTime);
-    if (this.syncLastResult != null) organizationDirectoryServicePb.syncLastResult = this.syncLastResult;
-    if (this.groupSearchDN != null) organizationDirectoryServicePb.groupSearchDN = this.groupSearchDN;
-    if (this.groupSearchScope != null) organizationDirectoryServicePb.groupSearchScope = this.groupSearchScope;
-    if (this.groupSearchFilter != null) organizationDirectoryServicePb.groupSearchFilter = this.groupSearchFilter;
-    if (this.groupMemberUserAttribute != null) organizationDirectoryServicePb.groupMemberUserAttribute = this.groupMemberUserAttribute;
-    if (this.userAttributeForGroupRelationship != null) organizationDirectoryServicePb.userAttributeForGroupRelationship = this.userAttributeForGroupRelationship;
-    if (this.userSearchDN != null) organizationDirectoryServicePb.userSearchDN = this.userSearchDN;
-    if (this.userSearchScope != null) organizationDirectoryServicePb.userSearchScope = this.userSearchScope;
-    if (this.userSearchFilter != null) organizationDirectoryServicePb.userSearchFilter = this.userSearchFilter;
-    if (this.userProviderObjectIdAttribute != null) organizationDirectoryServicePb.userProviderObjectIdAttribute = this.userProviderObjectIdAttribute;
-    if (this.userIdentificationAttribute != null) organizationDirectoryServicePb.userIdentificationAttribute = this.userIdentificationAttribute;
-    if (this.userFirstNameAttribute != null) organizationDirectoryServicePb.userFirstNameAttribute = this.userFirstNameAttribute;
-    if (this.userLastNameAttribute != null) organizationDirectoryServicePb.userLastNameAttribute = this.userLastNameAttribute;
-    if (this.userEmailAttribute != null) organizationDirectoryServicePb.userEmailAttribute = this.userEmailAttribute;
-    if (this.organization != null) organizationDirectoryServicePb.organization = this.organization.writeToProtoBuf();
+    if (directoryServiceEnabled != null) organizationDirectoryServicePb.directoryServiceEnabled = directoryServiceEnabled;
+    if (hostAddress != null) organizationDirectoryServicePb.hostAddress = hostAddress;
+    if (port != null) organizationDirectoryServicePb.port = port;
+    if (sslTls != null) organizationDirectoryServicePb.sslTls = sslTls;
+    if (syncBindDn != null) organizationDirectoryServicePb.syncBindDn = syncBindDn;
+    if (syncBindPassword != null) organizationDirectoryServicePb.syncBindPassword = syncBindPassword;
+    if (syncInterval != null) organizationDirectoryServicePb.syncInterval = syncInterval;
+    if (syncLastDateTime != null) organizationDirectoryServicePb.syncLastDateTime = CommonUtils.timestampFromDateTime(syncLastDateTime);
+    if (syncLastResult != null) organizationDirectoryServicePb.syncLastResult = syncLastResult;
+    if (groupSearchDN != null) organizationDirectoryServicePb.groupSearchDN = groupSearchDN;
+    if (groupSearchScope != null) organizationDirectoryServicePb.groupSearchScope = groupSearchScope;
+    if (groupSearchFilter != null) organizationDirectoryServicePb.groupSearchFilter = groupSearchFilter;
+    if (groupMemberUserAttribute != null) organizationDirectoryServicePb.groupMemberUserAttribute = groupMemberUserAttribute;
+    if (userAttributeForGroupRelationship != null) organizationDirectoryServicePb.userAttributeForGroupRelationship = userAttributeForGroupRelationship;
+    if (userSearchDN != null) organizationDirectoryServicePb.userSearchDN = userSearchDN;
+    if (userSearchScope != null) organizationDirectoryServicePb.userSearchScope = userSearchScope;
+    if (userSearchFilter != null) organizationDirectoryServicePb.userSearchFilter = userSearchFilter;
+    if (userProviderObjectIdAttribute != null) organizationDirectoryServicePb.userProviderObjectIdAttribute = userProviderObjectIdAttribute;
+    if (userIdentificationAttribute != null) organizationDirectoryServicePb.userIdentificationAttribute = userIdentificationAttribute;
+    if (userFirstNameAttribute != null) organizationDirectoryServicePb.userFirstNameAttribute = userFirstNameAttribute;
+    if (userLastNameAttribute != null) organizationDirectoryServicePb.userLastNameAttribute = userLastNameAttribute;
+    if (userEmailAttribute != null) organizationDirectoryServicePb.userEmailAttribute = userEmailAttribute;
+    if (organization != null) organizationDirectoryServicePb.organization = organization.writeToProtoBuf();
 
     return organizationDirectoryServicePb;
   }
 
   void readFromProtoBuf(organization_directory_service_pb.OrganizationDirectoryService organizationDirectoryServicePb) {
 
-    if (organizationDirectoryServicePb.hasDirectoryServiceEnabled()) this.directoryServiceEnabled = organizationDirectoryServicePb.directoryServiceEnabled;
-    if (organizationDirectoryServicePb.hasHostAddress()) this.hostAddress = organizationDirectoryServicePb.hostAddress;
-    if (organizationDirectoryServicePb.hasPort()) this.port = organizationDirectoryServicePb.port;
-    if (organizationDirectoryServicePb.hasSslTls()) this.sslTls = organizationDirectoryServicePb.sslTls;
-    if (organizationDirectoryServicePb.hasSyncBindDn()) this.syncBindDn = organizationDirectoryServicePb.syncBindDn;
-    if (organizationDirectoryServicePb.hasSyncBindPassword()) this.syncBindPassword = organizationDirectoryServicePb.syncBindPassword;
-    if (organizationDirectoryServicePb.hasSyncInterval()) this.syncInterval = organizationDirectoryServicePb.syncInterval;
+    if (organizationDirectoryServicePb.hasDirectoryServiceEnabled()) directoryServiceEnabled = organizationDirectoryServicePb.directoryServiceEnabled;
+    if (organizationDirectoryServicePb.hasHostAddress()) hostAddress = organizationDirectoryServicePb.hostAddress;
+    if (organizationDirectoryServicePb.hasPort()) port = organizationDirectoryServicePb.port;
+    if (organizationDirectoryServicePb.hasSslTls()) sslTls = organizationDirectoryServicePb.sslTls;
+    if (organizationDirectoryServicePb.hasSyncBindDn()) syncBindDn = organizationDirectoryServicePb.syncBindDn;
+    if (organizationDirectoryServicePb.hasSyncBindPassword()) syncBindPassword = organizationDirectoryServicePb.syncBindPassword;
+    if (organizationDirectoryServicePb.hasSyncInterval()) syncInterval = organizationDirectoryServicePb.syncInterval;
    // if (organizationDirectoryServicePb.hasSyncLastDateTime()) this.syncLastDateTime = CommonUtils.dateTimeFromTimestamp(organizationDirectoryServicePb.syncLastDateTime);
-    if (organizationDirectoryServicePb.hasSyncLastDateTime()) this.syncLastDateTime = organizationDirectoryServicePb.syncLastDateTime.toDateTime();
-    if (organizationDirectoryServicePb.hasSyncLastResult()) this.syncLastResult = organizationDirectoryServicePb.syncLastResult;
-    if (organizationDirectoryServicePb.hasGroupSearchDN()) this.groupSearchDN = organizationDirectoryServicePb.groupSearchDN;
-    if (organizationDirectoryServicePb.hasGroupSearchScope()) this.groupSearchScope = organizationDirectoryServicePb.groupSearchScope;
-    if (organizationDirectoryServicePb.hasGroupSearchFilter()) this.groupSearchFilter = organizationDirectoryServicePb.groupSearchFilter;
-    if (organizationDirectoryServicePb.hasGroupMemberUserAttribute()) this.groupMemberUserAttribute = organizationDirectoryServicePb.groupMemberUserAttribute;
-    if (organizationDirectoryServicePb.hasUserAttributeForGroupRelationship()) this.userAttributeForGroupRelationship = organizationDirectoryServicePb.userAttributeForGroupRelationship;
-    if (organizationDirectoryServicePb.hasUserSearchDN()) this.userSearchDN = organizationDirectoryServicePb.userSearchDN;
-    if (organizationDirectoryServicePb.hasUserSearchScope()) this.userSearchScope = organizationDirectoryServicePb.userSearchScope;
-    if (organizationDirectoryServicePb.hasUserSearchFilter()) this.userSearchFilter = organizationDirectoryServicePb.userSearchFilter;
-    if (organizationDirectoryServicePb.hasUserProviderObjectIdAttribute()) this.userProviderObjectIdAttribute = organizationDirectoryServicePb.userProviderObjectIdAttribute;
-    if (organizationDirectoryServicePb.hasUserIdentificationAttribute()) this.userIdentificationAttribute = organizationDirectoryServicePb.userIdentificationAttribute;
-    if (organizationDirectoryServicePb.hasUserFirstNameAttribute()) this.userFirstNameAttribute = organizationDirectoryServicePb.userFirstNameAttribute;
-    if (organizationDirectoryServicePb.hasUserLastNameAttribute()) this.userLastNameAttribute = organizationDirectoryServicePb.userLastNameAttribute;
-    if (organizationDirectoryServicePb.hasUserEmailAttribute()) this.userEmailAttribute = organizationDirectoryServicePb.userEmailAttribute;
-    if (organizationDirectoryServicePb.hasOrganization()) this.organization = Organization()..readFromProtoBuf(organizationDirectoryServicePb.organization); // No need cache, normally it has just one instance.
+    if (organizationDirectoryServicePb.hasSyncLastDateTime()) syncLastDateTime = organizationDirectoryServicePb.syncLastDateTime.toDateTime();
+    if (organizationDirectoryServicePb.hasSyncLastResult()) syncLastResult = organizationDirectoryServicePb.syncLastResult;
+    if (organizationDirectoryServicePb.hasGroupSearchDN()) groupSearchDN = organizationDirectoryServicePb.groupSearchDN;
+    if (organizationDirectoryServicePb.hasGroupSearchScope()) groupSearchScope = organizationDirectoryServicePb.groupSearchScope;
+    if (organizationDirectoryServicePb.hasGroupSearchFilter()) groupSearchFilter = organizationDirectoryServicePb.groupSearchFilter;
+    if (organizationDirectoryServicePb.hasGroupMemberUserAttribute()) groupMemberUserAttribute = organizationDirectoryServicePb.groupMemberUserAttribute;
+    if (organizationDirectoryServicePb.hasUserAttributeForGroupRelationship()) userAttributeForGroupRelationship = organizationDirectoryServicePb.userAttributeForGroupRelationship;
+    if (organizationDirectoryServicePb.hasUserSearchDN()) userSearchDN = organizationDirectoryServicePb.userSearchDN;
+    if (organizationDirectoryServicePb.hasUserSearchScope()) userSearchScope = organizationDirectoryServicePb.userSearchScope;
+    if (organizationDirectoryServicePb.hasUserSearchFilter()) userSearchFilter = organizationDirectoryServicePb.userSearchFilter;
+    if (organizationDirectoryServicePb.hasUserProviderObjectIdAttribute()) userProviderObjectIdAttribute = organizationDirectoryServicePb.userProviderObjectIdAttribute;
+    if (organizationDirectoryServicePb.hasUserIdentificationAttribute()) userIdentificationAttribute = organizationDirectoryServicePb.userIdentificationAttribute;
+    if (organizationDirectoryServicePb.hasUserFirstNameAttribute()) userFirstNameAttribute = organizationDirectoryServicePb.userFirstNameAttribute;
+    if (organizationDirectoryServicePb.hasUserLastNameAttribute()) userLastNameAttribute = organizationDirectoryServicePb.userLastNameAttribute;
+    if (organizationDirectoryServicePb.hasUserEmailAttribute()) userEmailAttribute = organizationDirectoryServicePb.userEmailAttribute;
+    if (organizationDirectoryServicePb.hasOrganization()) organization = Organization()..readFromProtoBuf(organizationDirectoryServicePb.organization); // No need cache, normally it has just one instance.
 
   }
 
   static Map<String, dynamic> fromProtoBufToModelMap(organization_directory_service_pb.OrganizationDirectoryService organizationDirectoryServicePb, [bool onlyIdAndSpecificationForDepthFields = false, bool isDeep = false]) {
-  Map<String, dynamic> map = Map();
+  Map<String, dynamic> map = {};
 
   if (onlyIdAndSpecificationForDepthFields && isDeep) {
 
-    if (organizationDirectoryServicePb.hasId())
+    if (organizationDirectoryServicePb.hasId()) {
       map[OrganizationDirectoryService.idField] =
           organizationDirectoryServicePb.id;
+    }
   } else {
-    if (organizationDirectoryServicePb.hasId())
+    if (organizationDirectoryServicePb.hasId()) {
       map[OrganizationDirectoryService.idField] =
           organizationDirectoryServicePb.id;
+    }
 
-    if (organizationDirectoryServicePb.hasHostAddress())
-    map[OrganizationDirectoryService.hostAddressField] =
+    if (organizationDirectoryServicePb.hasHostAddress()) {
+      map[OrganizationDirectoryService.hostAddressField] =
         organizationDirectoryServicePb.hostAddress;
+    }
 
-    if (organizationDirectoryServicePb.hasPort())
-    map[OrganizationDirectoryService.portField] =
+    if (organizationDirectoryServicePb.hasPort()) {
+      map[OrganizationDirectoryService.portField] =
         organizationDirectoryServicePb.port;
+    }
 
-    if (organizationDirectoryServicePb.hasSslTls())
-    map[OrganizationDirectoryService.sslTlsField] =
+    if (organizationDirectoryServicePb.hasSslTls()) {
+      map[OrganizationDirectoryService.sslTlsField] =
         organizationDirectoryServicePb.sslTls;
+    }
 
-    if (organizationDirectoryServicePb.hasSyncBindDn())
-    map[OrganizationDirectoryService.syncBindDnField] =
+    if (organizationDirectoryServicePb.hasSyncBindDn()) {
+      map[OrganizationDirectoryService.syncBindDnField] =
         organizationDirectoryServicePb.syncBindDn;
+    }
 
-    if (organizationDirectoryServicePb.hasSyncBindPassword())
-    map[OrganizationDirectoryService.syncBindPasswordField] =
+    if (organizationDirectoryServicePb.hasSyncBindPassword()) {
+      map[OrganizationDirectoryService.syncBindPasswordField] =
         organizationDirectoryServicePb.syncBindPassword;
+    }
 
-    if (organizationDirectoryServicePb.hasSyncInterval())
-    map[OrganizationDirectoryService.syncIntervalField] =
+    if (organizationDirectoryServicePb.hasSyncInterval()) {
+      map[OrganizationDirectoryService.syncIntervalField] =
         organizationDirectoryServicePb.syncInterval;
+    }
 
-    if (organizationDirectoryServicePb.hasSyncLastDateTime())
-    map[OrganizationDirectoryService.syncLastDateTimeField] =
+    if (organizationDirectoryServicePb.hasSyncLastDateTime()) {
+      map[OrganizationDirectoryService.syncLastDateTimeField] =
         organizationDirectoryServicePb.syncLastDateTime;
+    }
 
-    if (organizationDirectoryServicePb.hasSyncLastResult())
-    map[OrganizationDirectoryService.syncLastResultField] =
+    if (organizationDirectoryServicePb.hasSyncLastResult()) {
+      map[OrganizationDirectoryService.syncLastResultField] =
         organizationDirectoryServicePb.syncLastResult;
+    }
 
-    if (organizationDirectoryServicePb.hasGroupSearchDN())
-    map[OrganizationDirectoryService.groupSearchDNField] =
+    if (organizationDirectoryServicePb.hasGroupSearchDN()) {
+      map[OrganizationDirectoryService.groupSearchDNField] =
         organizationDirectoryServicePb.groupSearchDN;
+    }
 
-    if (organizationDirectoryServicePb.hasGroupSearchScope())
-    map[OrganizationDirectoryService.groupSearchScopeField] =
+    if (organizationDirectoryServicePb.hasGroupSearchScope()) {
+      map[OrganizationDirectoryService.groupSearchScopeField] =
         organizationDirectoryServicePb.groupSearchFilter;
+    }
 
-    if (organizationDirectoryServicePb.hasGroupMemberUserAttribute())
-    map[OrganizationDirectoryService.groupMemberUserAttributeField] =
+    if (organizationDirectoryServicePb.hasGroupMemberUserAttribute()) {
+      map[OrganizationDirectoryService.groupMemberUserAttributeField] =
         organizationDirectoryServicePb.groupMemberUserAttribute;
+    }
 
-    if (organizationDirectoryServicePb.hasUserAttributeForGroupRelationship())
-    map[OrganizationDirectoryService.userAttributeForGroupRelationshipField] =
+    if (organizationDirectoryServicePb.hasUserAttributeForGroupRelationship()) {
+      map[OrganizationDirectoryService.userAttributeForGroupRelationshipField] =
         organizationDirectoryServicePb.userAttributeForGroupRelationship;
+    }
 
-    if (organizationDirectoryServicePb.hasUserSearchDN())
-    map[OrganizationDirectoryService.userSearchDNField] =
+    if (organizationDirectoryServicePb.hasUserSearchDN()) {
+      map[OrganizationDirectoryService.userSearchDNField] =
         organizationDirectoryServicePb.userSearchDN;
+    }
 
-    if (organizationDirectoryServicePb.hasUserSearchScope())
-    map[OrganizationDirectoryService.userSearchScopeField] =
+    if (organizationDirectoryServicePb.hasUserSearchScope()) {
+      map[OrganizationDirectoryService.userSearchScopeField] =
         organizationDirectoryServicePb.userSearchScope;
+    }
 
-    if (organizationDirectoryServicePb.hasUserSearchFilter())
-    map[OrganizationDirectoryService.userSearchFilterField] =
+    if (organizationDirectoryServicePb.hasUserSearchFilter()) {
+      map[OrganizationDirectoryService.userSearchFilterField] =
         organizationDirectoryServicePb.userSearchFilter;
+    }
 
-    if (organizationDirectoryServicePb.hasUserProviderObjectIdAttribute())
-    map[OrganizationDirectoryService.userProviderObjectIdAttributeField] =
+    if (organizationDirectoryServicePb.hasUserProviderObjectIdAttribute()) {
+      map[OrganizationDirectoryService.userProviderObjectIdAttributeField] =
         organizationDirectoryServicePb.userProviderObjectIdAttribute;
+    }
 
-    if (organizationDirectoryServicePb.hasUserIdentificationAttribute())
-    map[OrganizationDirectoryService.userIdentificationAttributeField] =
+    if (organizationDirectoryServicePb.hasUserIdentificationAttribute()) {
+      map[OrganizationDirectoryService.userIdentificationAttributeField] =
         organizationDirectoryServicePb.userIdentificationAttribute;
+    }
 
-    if (organizationDirectoryServicePb.hasUserFirstNameAttribute())
-    map[OrganizationDirectoryService.userFirstNameAttributeField] =
+    if (organizationDirectoryServicePb.hasUserFirstNameAttribute()) {
+      map[OrganizationDirectoryService.userFirstNameAttributeField] =
         organizationDirectoryServicePb.userFirstNameAttribute;
+    }
 
-    if (organizationDirectoryServicePb.hasUserLastNameAttribute())
-    map[OrganizationDirectoryService.userLastNameAttributeField] =
+    if (organizationDirectoryServicePb.hasUserLastNameAttribute()) {
+      map[OrganizationDirectoryService.userLastNameAttributeField] =
         organizationDirectoryServicePb.userLastNameAttribute;
+    }
 
-    if (organizationDirectoryServicePb.hasUserEmailAttribute())
-    map[OrganizationDirectoryService.userEmailAttributeField] =
+    if (organizationDirectoryServicePb.hasUserEmailAttribute()) {
+      map[OrganizationDirectoryService.userEmailAttributeField] =
         organizationDirectoryServicePb.userEmailAttribute;
+    }
 
-    if (organizationDirectoryServicePb.hasOrganization())
+    if (organizationDirectoryServicePb.hasOrganization()) {
       map[OrganizationDirectoryService.organizationField] =
           Organization.fromProtoBufToModelMap(
               organizationDirectoryServicePb.organization, onlyIdAndSpecificationForDepthFields, true);
+    }
 
     }
     return map;

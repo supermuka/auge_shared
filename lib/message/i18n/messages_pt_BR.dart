@@ -49,7 +49,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static m14(label) => "${Intl.select(label, {'insightsLabel': 'Insights', 'groupLabel': 'Grupo', 'leaderLabel': 'Lider', 'objectivesOverallLabel': 'Objetivos no Geral', 'objectivesMeasuresLabel': 'Objetivos e Medidas', 'worksWorkItemsLabel': 'Trabalhos e Itens de Trabalho', 'objectivesLabel': 'Objetivos', 'objectivesDescriptionLabel': 'Número total de objetivos', 'objectivesAchievedLabel': 'Objetivos Alcançados', 'measuresAchievedDescriptionLabel': 'Medidas acima de 70% de progresso', 'objectivesRequiringAttentionLabel': 'Objetivos Requerendo Atenção', 'measuresRequiringAttentionDescriptionLabel': 'Medidas abaixo de 30% de progresso', 'measuresLabel': 'Medidas', 'measuresDescriptionLabel': 'Número total de medidas', 'measuresAchievedLabel': 'Medidas Alcançadas', 'measuresRequiringAttentionLabel': 'Medidas Requerendo Atenção', 'worksLabel': 'Trabalhos', 'worksDescriptionLabel': 'Número total de trabalhos', 'worksCompletedLabel': 'Trabalhos Concluídos', 'worksCompletedDescriptionLabel': 'Trabalhos com 100% dos itens de trabalho concluídos', 'worksRequiringAttentionLabel': 'Trabalhos Requerendo Atenção', 'worksRequiringAttentionDescriptionLabel': 'Trabalhos com itens de trabalho atrasados', 'workItemsLabel': 'Itens de Trabalho', 'workItemsDescriptionLabel': 'Número total de items de trabalho', 'workItemsCompletedLabel': 'Items de Trabalho Concluídos', 'workItemsCompletedDescriptionLabel': 'Itens de Trabalho com 100% de progresso', 'workItemsRequiringAttentionLabel': 'Itens de Trabalho Requerendo Atenção', 'workItemsRequiringAttentionDescriptionLabel': 'Itens de trabalho atrasados', 'other': 'Não Definido', })}";
 
-  static m15(label) => "${Intl.select(label, {'thisLabel': 'deste(a)', 'other': 'Not Defined', })}";
+  static m15(label) => "${Intl.select(label, {'ofTheLabel': 'do(a)', 'thisLabel': 'deste(a)', 'other': 'Not Defined', })}";
 
   static m16(label) => "${Intl.select(label, {'objectivesMapLabel': 'Mapa de Objetivos', 'other': 'Não Definido', })}";
 
@@ -59,7 +59,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static m19(label) => "${Intl.select(label, {'measuresLabel': 'Medidas', 'editMeasureLabel': 'Editar Medida', 'addMeasureLabel': 'Adicionar Medida', 'progressLabel': 'Progresso', 'startValueLabel': 'Valor Inicial', 'currentValueLabel': 'Valor Corrente', 'endValueLabel': 'Valor Final', 'other': 'Não Definido', })}";
 
-  static m20(label) => "${Intl.select(label, {'percentLabel': 'Percentual', 'moneyLabel': 'Monetário', 'indexLabel': 'Índice', 'unitaryLabel': 'Unitário', 'other': 'Não Definido',})}";
+  static m20(label) => "${Intl.select(label, {'percentLabel': 'Percentual', 'moneyLabel': 'Monetário', 'indexLabel': 'Índice', 'unitaryLabel': 'Unitário', })}";
 
   static m21(fieldName) => "${Intl.select(fieldName, {'dateField': 'Data', 'currentValueField': 'Valor Corrente', 'commentField': 'Comentário', 'other': 'Não Definido', })}";
 
@@ -109,7 +109,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static m44(label) => "${Intl.select(label, {'workKanbanLabel': 'Trabalho Kanban', 'workItemsLabel': 'Itens de Trabalho', 'editWorkItemLabel': 'Editar Itens de Trabalho', 'addWorkItemLabel': 'Adicionar Item de Trabalho', 'selectAValueLabel': 'Selecionar um Valor', 'workItemsOverDueLabel': 'Itens de Trabalho Atrasados', 'checkItemLabel': 'Item de Checagem', 'noMatchLabel': 'Sem Correspondência', 'dropFileHereLabel': 'Soltar Arquivo Aqui', 'other': 'Não Definido', })}";
 
-  static m45(label) => "${Intl.select(label, {'workLabel': 'Trabalho','worksLabel': 'Trabalhos', 'sortedByLabel': 'Ordenar Por', 'editWorkLabel': 'Editar Trabalho', 'addWorkLabel': 'Adicionar Trabalho', 'objectiveLabel': 'Objetivo', 'workItemsOverDueLabel': 'Itens de Trabalho Atrasados', 'noMatchLabel': 'Sem Correspondência', 'selectLabel': 'Selecionar', 'filterWorksLabel': 'Filtar Trabalhos', 'other': 'Não Definido', })}";
+  static m45(label) => "${Intl.select(label, {'workLabel': 'Trabalho', 'worksLabel': 'Trabalhos', 'sortedByLabel': 'Ordenar Por', 'editWorkLabel': 'Editar Trabalho', 'addWorkLabel': 'Adicionar Trabalho', 'objectiveLabel': 'Objetivo', 'workItemsOverDueLabel': 'Itens de Trabalho Atrasados', 'noMatchLabel': 'Sem Correspondência', 'selectLabel': 'Selecionar', 'filterWorksLabel': 'Filtar Trabalhos', 'other': 'Não Definido', })}";
 
   static m46(fieldName) => "${Intl.select(fieldName, {'nameField': 'Nome', 'stateField': 'Estado', 'other': 'Não Definido', })}";
 

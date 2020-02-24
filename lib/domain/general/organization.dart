@@ -25,36 +25,39 @@ class Organization {
   organization_pb.Organization writeToProtoBuf() {
     organization_pb.Organization organizatoinPb = organization_pb.Organization();
 
-    if (this.id != null) organizatoinPb.id = this.id;
-    if (this.version != null) organizatoinPb.version = this.version;
-    if (this.name != null) organizatoinPb.name = this.name;
-    if (this.code != null) organizatoinPb.code = this.code;
+    if (id != null) organizatoinPb.id = id;
+    if (version != null) organizatoinPb.version = version;
+    if (name != null) organizatoinPb.name = name;
+    if (code != null) organizatoinPb.code = code;
 
     return organizatoinPb;
   }
 
-  readFromProtoBuf(organization_pb.Organization organizationPb) {
-    if (organizationPb.hasId()) this.id = organizationPb.id;
-    if (organizationPb.hasVersion()) this.version = organizationPb.version;
-    if (organizationPb.hasName()) this.name = organizationPb.name;
-    if (organizationPb.hasCode()) this.code = organizationPb.code;
+  void readFromProtoBuf(organization_pb.Organization organizationPb) {
+    if (organizationPb.hasId()) id = organizationPb.id;
+    if (organizationPb.hasVersion()) version = organizationPb.version;
+    if (organizationPb.hasName()) name = organizationPb.name;
+    if (organizationPb.hasCode()) code = organizationPb.code;
 
   }
 
   static Map<String, dynamic> fromProtoBufToModelMap(organization_pb.Organization organizationPb, [bool onlyIdAndSpecificationForDepthFields = false, bool isDeep = false]) {
-    Map<String, dynamic> map = Map();
+    Map<String, dynamic> map = {};
 
     if (onlyIdAndSpecificationForDepthFields && isDeep) {
       if (organizationPb.hasId()) map[Organization.idField] = organizationPb.id;
       if (organizationPb.hasName()) map[Organization.nameField] = organizationPb.name;
     } else {
       if (organizationPb.hasId()) map[Organization.idField] = organizationPb.id;
-      if (organizationPb.hasVersion())
+      if (organizationPb.hasVersion()) {
         map[Organization.versionField] = organizationPb.version;
-      if (organizationPb.hasName())
+      }
+      if (organizationPb.hasName()) {
         map[Organization.nameField] = organizationPb.name;
-      if (organizationPb.hasCode())
+      }
+      if (organizationPb.hasCode()) {
         map[Organization.codeField] = organizationPb.code;
+      }
     }
 
     return map;

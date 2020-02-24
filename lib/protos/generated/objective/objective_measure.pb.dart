@@ -1084,6 +1084,8 @@ class MeasureProgressGetRequest extends $pb.GeneratedMessage {
     ..aOS(1, 'id')
     ..aOS(2, 'measureId')
     ..aOB(3, 'withMeasure')
+    ..aOB(4, 'withObjective')
+    ..aOB(5, 'withUserProfile')
     ..hasRequiredFields = false
   ;
 
@@ -1128,5 +1130,23 @@ class MeasureProgressGetRequest extends $pb.GeneratedMessage {
   $core.bool hasWithMeasure() => $_has(2);
   @$pb.TagNumber(3)
   void clearWithMeasure() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.bool get withObjective => $_getBF(3);
+  @$pb.TagNumber(4)
+  set withObjective($core.bool v) { $_setBool(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasWithObjective() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearWithObjective() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.bool get withUserProfile => $_getBF(4);
+  @$pb.TagNumber(5)
+  set withUserProfile($core.bool v) { $_setBool(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasWithUserProfile() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearWithUserProfile() => clearField(5);
 }
 

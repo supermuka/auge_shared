@@ -46,15 +46,15 @@ class WorkItem {
 
   WorkItem() {
     initializeDateFormatting(Intl.defaultLocale);
-    assignedTo = List<User>();
-    checkItems = List<WorkItemCheckItem>();
-    attachments = List<WorkItemAttachment>();
+    assignedTo = <User>[];
+    checkItems = <WorkItemCheckItem>[];
+    attachments = <WorkItemAttachment>[];
   }
 
   bool get isOverdue {
     if (dueDate != null) {
-      DateFormat formater = new DateFormat('yMd');
-      return ( formater.format(dueDate).compareTo(formater.format(new DateTime.now())) < 0 );
+      DateFormat formater = DateFormat('yMd');
+      return ( formater.format(dueDate).compareTo(formater.format(DateTime.now())) < 0 );
     } else {
       return false;
     }
@@ -63,13 +63,13 @@ class WorkItem {
   work_work_item_pb.WorkItem writeToProtoBuf() {
     work_work_item_pb.WorkItem workItemPb = work_work_item_pb.WorkItem();
 
-    if (this.id != null) workItemPb.id = this.id;
-    if (this.version != null) workItemPb.version = this.version;
-    if (this.name != null) workItemPb.name = this.name;
-    if (this.description != null) workItemPb.description = this.description;
-    if (this.completed != null) workItemPb.completed = this.completed;
+    if (id != null) workItemPb.id = id;
+    if (version != null) workItemPb.version = version;
+    if (name != null) workItemPb.name = name;
+    if (description != null) workItemPb.description = description;
+    if (completed != null) workItemPb.completed = completed;
 
-    if (this.dueDate != null) workItemPb.dueDate = CommonUtils.timestampFromDateTime(this.dueDate); /*{
+    if (dueDate != null) workItemPb.dueDate = CommonUtils.timestampFromDateTime(dueDate); /*{
       Timestamp t = Timestamp();
       int microsecondsSinceEpoch = this.dueDate.toUtc().microsecondsSinceEpoch;
       t.seconds = Int64(microsecondsSinceEpoch ~/ 1000000);
@@ -78,65 +78,75 @@ class WorkItem {
     }
     */
 
-    if (this.workStage != null) workItemPb.workStage = this.workStage.writeToProtoBuf();
-    if (this.attachments != null && this.attachments.isNotEmpty) workItemPb.attachments.addAll(this.attachments.map((m) => m.writeToProtoBuf()));
-    if (this.checkItems != null && this.checkItems.isNotEmpty) workItemPb.checkItems.addAll(this.checkItems.map((m) => m.writeToProtoBuf()));
-    if (this.assignedTo != null && this.assignedTo.isNotEmpty) workItemPb.assignedTo.addAll(this.assignedTo.map((m) => m.writeToProtoBuf()));
-    if (this.work != null) workItemPb.work = this.work.writeToProtoBuf();
+    if (workStage != null) workItemPb.workStage = workStage.writeToProtoBuf();
+    if (attachments != null && attachments.isNotEmpty) workItemPb.attachments.addAll(attachments.map((m) => m.writeToProtoBuf()));
+    if (checkItems != null && checkItems.isNotEmpty) workItemPb.checkItems.addAll(checkItems.map((m) => m.writeToProtoBuf()));
+    if (assignedTo != null && assignedTo.isNotEmpty) workItemPb.assignedTo.addAll(assignedTo.map((m) => m.writeToProtoBuf()));
+    if (work != null) workItemPb.work = work.writeToProtoBuf();
     return workItemPb;
   }
 
-  readFromProtoBuf(work_work_item_pb.WorkItem workItemPb, Map<String, dynamic> cache) {
-    if (workItemPb.hasId()) this.id = workItemPb.id;
-    if (workItemPb.hasVersion()) this.version = workItemPb.version;
-    if (workItemPb.hasName()) this.name = workItemPb.name;
-    if (workItemPb.hasDescription()) this.description = workItemPb.description;
-    if (workItemPb.hasCompleted()) this.completed = workItemPb.completed;
-    if (workItemPb.hasWorkStage()) this.workStage = WorkStage()..readFromProtoBuf(workItemPb.workStage);
+  void readFromProtoBuf(work_work_item_pb.WorkItem workItemPb, Map<String, dynamic> cache) {
+    if (workItemPb.hasId()) id = workItemPb.id;
+    if (workItemPb.hasVersion()) version = workItemPb.version;
+    if (workItemPb.hasName()) name = workItemPb.name;
+    if (workItemPb.hasDescription()) description = workItemPb.description;
+    if (workItemPb.hasCompleted()) completed = workItemPb.completed;
+    if (workItemPb.hasWorkStage()) workStage = WorkStage()..readFromProtoBuf(workItemPb.workStage, cache);
 
     // if (workItemPb.hasDueDate())  this.dueDate = CommonUtils.dateTimeFromTimestamp(workItemPb.dueDate);
-    if (workItemPb.hasDueDate())  this.dueDate = workItemPb.dueDate.toDateTime();
+    if (workItemPb.hasDueDate())  dueDate = workItemPb.dueDate.toDateTime();
     /*{
       this.dueDate = DateTime.fromMicrosecondsSinceEpoch(workItemPb.dueDate.seconds.toInt() * 1000000 + workItemPb.dueDate.nanos ~/ 1000 );
     }*/
-    if (workItemPb.attachments.isNotEmpty) this.attachments = workItemPb.attachments.map((u) => WorkItemAttachment()..readFromProtoBuf(u)).toList(); // No need cache, it is a composite
-    if (workItemPb.checkItems.isNotEmpty) this.checkItems = workItemPb.checkItems.map((c) => WorkItemCheckItem()..readFromProtoBuf(c)).toList(); // No need cache, it is a composite
-    if (workItemPb.assignedTo.isNotEmpty) this.assignedTo = workItemPb.assignedTo.map((u) => cache.putIfAbsent('${WorkItem.assignedToField}${u.id}@${User.className}', () => User()..readFromProtoBuf(u, cache))).toList().cast<User>();
-    if (workItemPb.hasWork()) this.work = cache.putIfAbsent('${WorkItem.workField}${workItemPb.work.id}@${Work.className}', () => Work()..readFromProtoBuf(workItemPb.work, cache));
+    if (workItemPb.attachments.isNotEmpty) attachments = workItemPb.attachments.map((u) => WorkItemAttachment()..readFromProtoBuf(u)).toList(); // No need cache, it is a composite
+    if (workItemPb.checkItems.isNotEmpty) checkItems = workItemPb.checkItems.map((c) => WorkItemCheckItem()..readFromProtoBuf(c)).toList(); // No need cache, it is a composite
+    if (workItemPb.assignedTo.isNotEmpty) assignedTo = workItemPb.assignedTo.map((u) => cache.putIfAbsent('${WorkItem.assignedToField}${u.id}@${User.className}', () => User()..readFromProtoBuf(u, cache))).toList().cast<User>();
+    if (workItemPb.hasWork()) work = cache.putIfAbsent('${WorkItem.workField}${workItemPb.work.id}@${Work.className}', () => Work()..readFromProtoBuf(workItemPb.work, cache));
   }
 
   static Map<String, dynamic> fromProtoBufToModelMap(work_work_item_pb.WorkItem workItemPb, [bool onlyIdAndSpecificationForDepthFields = false, bool isDeep = false]) {
-    Map<String, dynamic> map = Map();
+    Map<String, dynamic> map = {};
 
     if (onlyIdAndSpecificationForDepthFields && isDeep) {
       if (workItemPb.hasId()) map[WorkItem.idField] = workItemPb.id;
       if (workItemPb.hasName()) map[WorkItem.nameField] = workItemPb.name;
     } else {
       if (workItemPb.hasId()) map[WorkItem.idField] = workItemPb.id;
-      if (workItemPb.hasVersion())
+      if (workItemPb.hasVersion()) {
         map[WorkItem.versionField] = workItemPb.version;
+      }
       if (workItemPb.hasName()) map[WorkItem.nameField] = workItemPb.name;
-      if (workItemPb.hasDescription())
+      if (workItemPb.hasDescription()) {
         map[WorkItem.descriptionField] = workItemPb.description;
-      if (workItemPb.hasCompleted())
+      }
+      if (workItemPb.hasCompleted()) {
         map[WorkItem.completedField] = workItemPb.completed;
+      }
       if (workItemPb.hasWorkStage()) map[WorkItem.workStageField] = WorkStage.fromProtoBufToModelMap(workItemPb.workStage);
       /*
       if (workItemPb.hasDueDate())
         map[WorkItem.dueDateField] = CommonUtils.dateTimeFromTimestamp(workItemPb.dueDate);
 */
-      if (workItemPb.hasDueDate())
+      if (workItemPb.hasDueDate()) {
         map[WorkItem.dueDateField] = workItemPb.dueDate.toDateTime();
+      }
 
-      if (workItemPb.attachments.isNotEmpty) map[WorkItem.attachmentsField] =
+      if (workItemPb.attachments.isNotEmpty) {
+        map[WorkItem.attachmentsField] =
           workItemPb.attachments.map((ci) =>
               WorkItemAttachment.fromProtoBufToModelMap(ci, onlyIdAndSpecificationForDepthFields, true)).toList();
-      if (workItemPb.checkItems.isNotEmpty) map[WorkItem.checkItemsField] =
+      }
+      if (workItemPb.checkItems.isNotEmpty) {
+        map[WorkItem.checkItemsField] =
           workItemPb.checkItems.map((ci) =>
               WorkItemCheckItem.fromProtoBufToModelMap(ci, onlyIdAndSpecificationForDepthFields, true)).toList();
-      if (workItemPb.assignedTo.isNotEmpty) map[WorkItem.assignedToField] =
+      }
+      if (workItemPb.assignedTo.isNotEmpty) {
+        map[WorkItem.assignedToField] =
           workItemPb.assignedTo.map((at) =>
               User.fromProtoBufToModelMap(at, onlyIdAndSpecificationForDepthFields, true)).toList();
+      }
       if (workItemPb.hasWork()) map[WorkItem.workField] = Work.fromProtoBufToModelMap(workItemPb.work);
     }
     return map;
@@ -158,38 +168,44 @@ class WorkItemAttachment {
   work_work_item_pb.WorkItemAttachment writeToProtoBuf() {
     work_work_item_pb.WorkItemAttachment workItemAttachmentPb = work_work_item_pb.WorkItemAttachment();
 
-    if (this.id != null) workItemAttachmentPb.id = this.id;
-    if (this.name != null) workItemAttachmentPb.name = this.name;
-    if (this.type != null) workItemAttachmentPb.type = this.type;
-    if (this.content != null) workItemAttachmentPb.content = this.content;
+    if (id != null) workItemAttachmentPb.id = id;
+    if (name != null) workItemAttachmentPb.name = name;
+    if (type != null) workItemAttachmentPb.type = type;
+    if (content != null) workItemAttachmentPb.content = content;
 
     return workItemAttachmentPb;
   }
 
-  readFromProtoBuf(work_work_item_pb.WorkItemAttachment workItemAttachmentPb) {
-    if (workItemAttachmentPb.hasId()) this.id = workItemAttachmentPb.id;
-    if (workItemAttachmentPb.hasName()) this.name = workItemAttachmentPb.name;
-    if (workItemAttachmentPb.hasType()) this.type = workItemAttachmentPb.type;
-    if (workItemAttachmentPb.hasContent()) this.content = workItemAttachmentPb.content;
+  void readFromProtoBuf(work_work_item_pb.WorkItemAttachment workItemAttachmentPb) {
+    if (workItemAttachmentPb.hasId()) id = workItemAttachmentPb.id;
+    if (workItemAttachmentPb.hasName()) name = workItemAttachmentPb.name;
+    if (workItemAttachmentPb.hasType()) type = workItemAttachmentPb.type;
+    if (workItemAttachmentPb.hasContent()) content = workItemAttachmentPb.content;
   }
 
   static Map<String, dynamic> fromProtoBufToModelMap(work_work_item_pb.WorkItemAttachment workItemAttachmentPb, [bool onlyIdAndSpecificationForDepthFields = false, bool isDeep = false]) {
-    Map<String, dynamic> map = Map();
+    Map<String, dynamic> map = {};
 
     if (onlyIdAndSpecificationForDepthFields && isDeep) {
-      if (workItemAttachmentPb.hasId())
+      if (workItemAttachmentPb.hasId()) {
         map[WorkItemAttachment.idField] = workItemAttachmentPb.id;
-      if (workItemAttachmentPb.hasName())
+      }
+      if (workItemAttachmentPb.hasName()) {
         map[WorkItemAttachment.nameField] = workItemAttachmentPb.name;
+      }
     } else {
-      if (workItemAttachmentPb.hasId())
+      if (workItemAttachmentPb.hasId()) {
         map[WorkItemAttachment.idField] = workItemAttachmentPb.id;
-      if (workItemAttachmentPb.hasName())
+      }
+      if (workItemAttachmentPb.hasName()) {
         map[WorkItemAttachment.nameField] = workItemAttachmentPb.name;
-      if (workItemAttachmentPb.hasType())
+      }
+      if (workItemAttachmentPb.hasType()) {
         map[WorkItemAttachment.typeField] = workItemAttachmentPb.type;
-      if (workItemAttachmentPb.hasContent())
+      }
+      if (workItemAttachmentPb.hasContent()) {
         map[WorkItemAttachment.contentField] = workItemAttachmentPb.content;
+      }
 
     }
     return map;
@@ -213,38 +229,44 @@ class WorkItemCheckItem {
   work_work_item_pb.WorkItemCheckItem writeToProtoBuf() {
     work_work_item_pb.WorkItemCheckItem workItemCheckItemPb = work_work_item_pb.WorkItemCheckItem();
 
-    if (this.id != null) workItemCheckItemPb.id = this.id;
-    if (this.name != null) workItemCheckItemPb.name = this.name;
-    if (this.finished != null) workItemCheckItemPb.finished = this.finished;
-    if (this.index != null) workItemCheckItemPb.index = this.index;
+    if (id != null) workItemCheckItemPb.id = id;
+    if (name != null) workItemCheckItemPb.name = name;
+    if (finished != null) workItemCheckItemPb.finished = finished;
+    if (index != null) workItemCheckItemPb.index = index;
 
     return workItemCheckItemPb;
   }
 
-  readFromProtoBuf(work_work_item_pb.WorkItemCheckItem workItemCheckItemPb) {
-    if (workItemCheckItemPb.hasId()) this.id = workItemCheckItemPb.id;
-    if (workItemCheckItemPb.hasName()) this.name = workItemCheckItemPb.name;
-    if (workItemCheckItemPb.hasFinished()) this.finished = workItemCheckItemPb.finished;
-    if (workItemCheckItemPb.hasIndex()) this.index = workItemCheckItemPb.index;
+  void readFromProtoBuf(work_work_item_pb.WorkItemCheckItem workItemCheckItemPb) {
+    if (workItemCheckItemPb.hasId()) id = workItemCheckItemPb.id;
+    if (workItemCheckItemPb.hasName()) name = workItemCheckItemPb.name;
+    if (workItemCheckItemPb.hasFinished()) finished = workItemCheckItemPb.finished;
+    if (workItemCheckItemPb.hasIndex()) index = workItemCheckItemPb.index;
   }
 
   static Map<String, dynamic> fromProtoBufToModelMap(work_work_item_pb.WorkItemCheckItem workItemCheckItemPb, [bool onlyIdAndSpecificationForDepthFields = false, bool isDeep = false]) {
-    Map<String, dynamic> map = Map();
+    Map<String, dynamic> map = {};
 
     if (onlyIdAndSpecificationForDepthFields && isDeep) {
-      if (workItemCheckItemPb.hasId())
+      if (workItemCheckItemPb.hasId()) {
         map[WorkItemCheckItem.idField] = workItemCheckItemPb.id;
-      if (workItemCheckItemPb.hasName())
+      }
+      if (workItemCheckItemPb.hasName()) {
         map[WorkItemCheckItem.nameField] = workItemCheckItemPb.name;
+      }
     } else {
-      if (workItemCheckItemPb.hasId())
+      if (workItemCheckItemPb.hasId()) {
         map[WorkItemCheckItem.idField] = workItemCheckItemPb.id;
-      if (workItemCheckItemPb.hasName())
+      }
+      if (workItemCheckItemPb.hasName()) {
         map[WorkItemCheckItem.nameField] = workItemCheckItemPb.name;
-      if (workItemCheckItemPb.hasFinished())
+      }
+      if (workItemCheckItemPb.hasFinished()) {
         map[WorkItemCheckItem.finishedField] = workItemCheckItemPb.finished;
-      if (workItemCheckItemPb.hasIndex())
+      }
+      if (workItemCheckItemPb.hasIndex()) {
         map[WorkItemCheckItem.indexField] = workItemCheckItemPb.index;
+      }
     }
     return map;
   }

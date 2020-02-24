@@ -1,9 +1,11 @@
 // Copyright (c) 2018, Levius Tecnologia Ltda. All rights reserved.
 // Author: Samuel C. Schwebel
 
+import 'package:auge_shared/domain/work/work.dart';
+
 // Proto buffer transport layer.
 // ignore_for_file: uri_has_not_been_generated
-import 'package:auge_shared/protos/generated/work/work_stage.pb.dart' as work_stage_pb;
+import 'package:auge_shared/protos/generated/work/work_work_item.pb.dart' as work_work_item_pb;
 
 enum State {notStarted, inProgress, completed}
 
@@ -27,34 +29,37 @@ class WorkStage {
   static const String indexField = 'index';
   int index;
 
-  WorkStage() {
-  }
+  static const String workField = 'work';
+  Work work;
 
-  work_stage_pb.WorkStage writeToProtoBuf() {
-    work_stage_pb.WorkStage workStagePb = work_stage_pb.WorkStage();
+  WorkStage();
 
-    if (this.id != null) workStagePb.id = this.id;
-    if (this.version != null) workStagePb.version = this.version;
-    if (this.name != null) workStagePb.name = this.name;
-    if (this.index != null) workStagePb.index = this.index;
+  work_work_item_pb.WorkStage writeToProtoBuf() {
+    work_work_item_pb.WorkStage workStagePb = work_work_item_pb.WorkStage();
 
-    if (this.state != null) workStagePb.stateIndex = this.state.index;
+    if (id != null) workStagePb.id = id;
+    if (version != null) workStagePb.version = version;
+    if (name != null) workStagePb.name = name;
+    if (index != null) workStagePb.index = index;
+
+    if (state != null) workStagePb.stateIndex = state.index;
+    if (work != null) workStagePb.work = work.writeToProtoBuf();
 
 
     return workStagePb;
   }
 
-  readFromProtoBuf(work_stage_pb.WorkStage workStagePb) {
-    if (workStagePb.hasId()) this.id = workStagePb.id;
-    if (workStagePb.hasVersion()) this.version = workStagePb.version;
-    if (workStagePb.hasName()) this.name = workStagePb.name;
-    if (workStagePb.hasIndex()) this.index = workStagePb.index;
-    if (workStagePb.hasStateIndex()) this.state = State.values[workStagePb.stateIndex];
-
+  void readFromProtoBuf(work_work_item_pb.WorkStage workStagePb, Map<String, dynamic> cache) {
+    if (workStagePb.hasId()) id = workStagePb.id;
+    if (workStagePb.hasVersion()) version = workStagePb.version;
+    if (workStagePb.hasName()) name = workStagePb.name;
+    if (workStagePb.hasIndex()) index = workStagePb.index;
+    if (workStagePb.hasStateIndex()) state = State.values[workStagePb.stateIndex];
+    if (workStagePb.hasWork()) work = Work()..readFromProtoBuf(workStagePb.work, cache);
   }
 
-  static Map<String, dynamic> fromProtoBufToModelMap(work_stage_pb.WorkStage workStagePb, [bool onlyIdAndSpecificationForDepthFields = false, bool isDeep = false]) {
-    Map<String, dynamic> map = Map();
+  static Map<String, dynamic> fromProtoBufToModelMap(work_work_item_pb.WorkStage workStagePb, [bool onlyIdAndSpecificationForDepthFields = false, bool isDeep = false]) {
+    Map<String, dynamic> map = {};
 
     if (onlyIdAndSpecificationForDepthFields && isDeep) {
       if (workStagePb.hasId()) map[WorkStage.idField] = workStagePb.id;
@@ -65,6 +70,7 @@ class WorkStage {
       if (workStagePb.hasName()) map[WorkStage.nameField] = workStagePb.name;
       if (workStagePb.hasIndex()) map[WorkStage.indexField] = workStagePb.index;
       if (workStagePb.hasStateIndex()) map[WorkStage.stateField] = workStagePb.stateIndex;
+      if (workStagePb.hasWork()) map[WorkStage.workField] = Work.fromProtoBufToModelMap(workStagePb.work);
     }
     return map;
   }

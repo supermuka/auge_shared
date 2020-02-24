@@ -1,5 +1,5 @@
 {
-  "@@last_modified": "2020-02-04T21:39:49.066655",
+  "@@last_modified": "2020-02-19T11:52:45.732853",
   "CommonMsg_label": "{label,select, headerTitleLabel{AUGE}headerSubtitleLabel{Objectives, Work and Performance}searchLabel{Search}filterLabel{Filter}moreLabel{more}emptyLabel{empty}other{Not Defined}}",
   "@CommonMsg_label": {
     "description": "Common labels",
@@ -173,7 +173,7 @@
       "label": {}
     }
   },
-  "WorkMsg_label": "{label,select, worksLabel{Works}sortedByLabel{Sorted By}editWorkLabel{Edit Work}addWorkLabel{Add Work}objectiveLabel{Objective}workItemsOverDueLabel{Work Items Over Due}noMatchLabel{No Match}selectLabel{Select}filterWorksLabel{Filter Works}other{Not Defined}}",
+  "WorkMsg_label": "{label,select, workLabel{Work}worksLabel{Works}sortedByLabel{Sorted By}editWorkLabel{Edit Work}addWorkLabel{Add Work}objectiveLabel{Objective}workItemsOverDueLabel{Work Items Over Due}noMatchLabel{No Match}selectLabel{Select}filterWorksLabel{Filter Works}other{Not Defined}}",
   "@WorkMsg_label": {
     "description": "Work labels",
     "type": "text",
@@ -320,13 +320,12 @@
       "label": {}
     }
   },
-  "SystemFunctionMsg_inPastLabel": "{functionName,select, create{}update{}delete{}read{}other{Not Defined}}",
+  "SystemFunctionMsg_inPastLabel": "{functionName,select, create{Created}update{Updated}delete{Deleted}read{Read}other{Not Defined}}",
   "@SystemFunctionMsg_inPastLabel": {
     "description": "System Function labels",
     "type": "text",
     "placeholders": {
-      "functionName": {},
-      "gender": {}
+      "functionName": {}
     }
   },
   "TimelineItemdMsg_label": "{fieldName,select, timelineLabel{Timeline}dayAgoLabel{day ago}daysAgoLabel{days ago}hourAgoLabel{hour ago}hoursAgoLabel{hours ago}minuteAgoLabel{minute ago}minutesAgoLabel{minutes ago}secondAgoLabel{second ago}secondsAgoLabel{seconds ago}valueLabel{value}changedFromLabel{changed from}wasLabel{was}other{Not Defined}}",
@@ -337,7 +336,7 @@
       "fieldName": {}
     }
   },
-  "MailMsg_label": "{label,select, thisLabel{this}other{Not Defined}}",
+  "MailMsg_label": "{label,select, ofTheLabel{of the}thisLabel{this}other{Not Defined}}",
   "@MailMsg_label": {
     "description": "MailMsg labels",
     "type": "text",

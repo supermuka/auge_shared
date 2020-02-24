@@ -108,6 +108,7 @@ const WorkItemGetRequest$json = const {
     const {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
     const {'1': 'work_id', '3': 2, '4': 1, '5': 9, '10': 'workId'},
     const {'1': 'with_work', '3': 3, '4': 1, '5': 8, '10': 'withWork'},
+    const {'1': 'with_user_profile', '3': 4, '4': 1, '5': 8, '10': 'withUserProfile'},
   ],
 };
 
@@ -159,6 +160,55 @@ const WorkItemCheckItemGetRequest$json = const {
   '2': const [
     const {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
     const {'1': 'work_item_id', '3': 2, '4': 1, '5': 9, '10': 'workItemId'},
+  ],
+};
+
+const WorkStage$json = const {
+  '1': 'WorkStage',
+  '2': const [
+    const {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    const {'1': 'version', '3': 2, '4': 1, '5': 5, '10': 'version'},
+    const {'1': 'name', '3': 3, '4': 1, '5': 9, '10': 'name'},
+    const {'1': 'state_index', '3': 4, '4': 1, '5': 5, '10': 'stateIndex'},
+    const {'1': 'index', '3': 5, '4': 1, '5': 5, '10': 'index'},
+    const {'1': 'work', '3': 6, '4': 1, '5': 11, '6': '.auge.protobuf.Work', '10': 'work'},
+  ],
+};
+
+const WorkStageRequest$json = const {
+  '1': 'WorkStageRequest',
+  '2': const [
+    const {'1': 'work_stage', '3': 1, '4': 1, '5': 11, '6': '.auge.protobuf.WorkStage', '10': 'workStage'},
+    const {'1': 'work_id', '3': 2, '4': 1, '5': 9, '10': 'workId'},
+    const {'1': 'auth_user_id', '3': 3, '4': 1, '5': 9, '10': 'authUserId'},
+    const {'1': 'auth_organization_id', '3': 4, '4': 1, '5': 9, '10': 'authOrganizationId'},
+  ],
+};
+
+const WorkStageDeleteRequest$json = const {
+  '1': 'WorkStageDeleteRequest',
+  '2': const [
+    const {'1': 'work_stage_id', '3': 1, '4': 1, '5': 9, '10': 'workStageId'},
+    const {'1': 'work_stage_version', '3': 2, '4': 1, '5': 5, '10': 'workStageVersion'},
+    const {'1': 'auth_user_id', '3': 3, '4': 1, '5': 9, '10': 'authUserId'},
+    const {'1': 'auth_organization_id', '3': 4, '4': 1, '5': 9, '10': 'authOrganizationId'},
+  ],
+};
+
+const WorkStagesResponse$json = const {
+  '1': 'WorkStagesResponse',
+  '2': const [
+    const {'1': 'work_stages', '3': 1, '4': 3, '5': 11, '6': '.auge.protobuf.WorkStage', '10': 'workStages'},
+  ],
+};
+
+const WorkStageGetRequest$json = const {
+  '1': 'WorkStageGetRequest',
+  '2': const [
+    const {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    const {'1': 'work_id', '3': 2, '4': 1, '5': 9, '10': 'workId'},
+    const {'1': 'with_work', '3': 3, '4': 1, '5': 8, '10': 'withWork'},
+    const {'1': 'with_user_profile', '3': 4, '4': 1, '5': 8, '10': 'withUserProfile'},
   ],
 };
 

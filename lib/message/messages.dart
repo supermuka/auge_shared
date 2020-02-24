@@ -17,7 +17,7 @@ class CommonMsg {
   static const String moreLabel = 'moreLabel';
   static const String emptyLabel = 'emptyLabel';
 
-  static label(String label) => Intl.select(label, {
+  static String label(String label) => Intl.select(label, {
     headerTitleLabel: 'AUGE',
     headerSubtitleLabel: 'Objectives, Work and Performance',
     searchLabel: 'Search',
@@ -45,7 +45,7 @@ class CommonMsg {
   static const String selectPhotoButtonLabel = 'selectPhotoButtonLabel';
 
   /// Label for edit button
-  static buttonLabel(String label) => Intl.select(label, {
+  static String buttonLabel(String label) => Intl.select(label, {
         applyButtonLabel: 'Apply',
         editButtonLabel: 'Edit',
         deleteButtonLabel: 'Delete',
@@ -65,7 +65,7 @@ class CommonMsg {
       examples: const {"label": "Edit"}
   );
 
-  static requiredValueMsg() => Intl.message("Enter with a required value", name: "CommonMsg_requiredValueMsg");
+  static String requiredValueMsg() => Intl.message("Enter with a required value", name: "CommonMsg_requiredValueMsg");
 }
 
 /// Specific messages and labels for [Authentication and Authorization]
@@ -90,7 +90,7 @@ class AuthMsg {
   static const String saveLabel = 'saveLabel';
 
   /// Label for [Auth]
-  static label(String label) => Intl.select(label, {
+  static String label(String label) => Intl.select(label, {
 
     domainLabel: 'name@domain.com',
     identificationLabel: 'Identification',
@@ -116,19 +116,19 @@ class AuthMsg {
 
   );
 
-  static informIdentificationPasswordCorrectlyMsg() => Intl.message("Inform an identification and password correctly.", name: "AuthMsg_informIdentificationPasswordCorrectlyMsg");
-  static userNotFoundMsg() => Intl.message("User account not found with the identification and password informed.", name: "AuthMsg_userNotFoundMsg");
-  static organizationNotFoundMsg() => Intl.message("An organization to user account not found.", name: "AuthMsg_organizationNotFoundMsg");
-  static serverApiErrorMsg() => Intl.message("Server not available.", name: "AuthMsg_serverApiErrorMsg");
-  static browserCompatibleErrorMsg() => Intl.message("Browser Compatible: Chrome", name: "AuthMsg_browserCompatibleErrorMsg");
+  static String informIdentificationPasswordCorrectlyMsg() => Intl.message("Inform an identification and password correctly.", name: "AuthMsg_informIdentificationPasswordCorrectlyMsg");
+  static String userNotFoundMsg() => Intl.message("User account not found with the identification and password informed.", name: "AuthMsg_userNotFoundMsg");
+  static String organizationNotFoundMsg() => Intl.message("An organization to user account not found.", name: "AuthMsg_organizationNotFoundMsg");
+  static String serverApiErrorMsg() => Intl.message("Server not available.", name: "AuthMsg_serverApiErrorMsg");
+  static String browserCompatibleErrorMsg() => Intl.message("Browser Compatible: Chrome", name: "AuthMsg_browserCompatibleErrorMsg");
 
   // New Password
-  static informIdentificationCorrectlyMsg() => Intl.message("Inform an identification correctly.", name: "AuthMsg_informIdentificationCorrectlyMsg");
-  static codeNotGeneratedMsg() => Intl.message("Code not generated.", name: "AuthMsg_codeNotGeneratedMsg");
-  static informBelowTheCodeSentToEMailMsg() => Intl.message("Inform below the code sent to e-mail", name: "AuthMsg_informBelowTheCodeSentToEMailMsg");
-  static codeValidateMsg() => Intl.message("Code validate.", name: "AuthMsg_codeValidateMsg");
-  static newPasswordSavedMsg() => Intl.message("New Password Saved.", name: "AuthMsg_newPasswordSavedMsg");
-  static passwordNotSavedMsg() => Intl.message("Password not saved.", name: "AuthMsg_passwordNotSavedMsg");
+  static String informIdentificationCorrectlyMsg() => Intl.message("Inform an identification correctly.", name: "AuthMsg_informIdentificationCorrectlyMsg");
+  static String codeNotGeneratedMsg() => Intl.message("Code not generated.", name: "AuthMsg_codeNotGeneratedMsg");
+  static String informBelowTheCodeSentToEMailMsg() => Intl.message("Inform below the code sent to e-mail", name: "AuthMsg_informBelowTheCodeSentToEMailMsg");
+  static String codeValidateMsg() => Intl.message("Code validate.", name: "AuthMsg_codeValidateMsg");
+  static String newPasswordSavedMsg() => Intl.message("New Password Saved.", name: "AuthMsg_newPasswordSavedMsg");
+  static String passwordNotSavedMsg() => Intl.message("Password not saved.", name: "AuthMsg_passwordNotSavedMsg");
 
 }
 
@@ -151,7 +151,7 @@ class AppLayoutMsg {
   static const configurationLabel = 'configurationLabel';
 
   /// Label for [AppLayout]
-  static label(String label) => Intl.select(label, {
+  static String label(String label) => Intl.select(label, {
         organizationLabel: 'Organization',
         organizationsLabel: 'Organizations',
         adminLabel: 'Administrator',
@@ -185,7 +185,7 @@ class OrganizationMsg {
   static const organizationDetailLabel = 'organizationDetailLabel';
 
   /// Label for organization
-  static label(String label) => Intl.select(label, {
+  static String label(String label) => Intl.select(label, {
     organizationsLabel: 'Organizations',
     editOrganizationLabel: 'Edit Organization',
     addOrganizationLabel: 'Add Organization',
@@ -212,7 +212,7 @@ class ConfigurationMsg {
   static const syncAndSaveLabel = 'syncAndSaveLabel';
 
   /// Label for configuration
-  static label(String label) => Intl.select(label, {
+  static String label(String label) => Intl.select(label, {
     configurationLabel: 'Configuration',
     serverAndAdminLabel: 'Server and Admin',
     groupLabel: 'Group',
@@ -230,7 +230,7 @@ class ConfigurationMsg {
   );
 
   /// Label for status configuration
-  static statusLabel(String label) => Intl.select(label, {
+  static String statusLabel(String label) => Intl.select(label, {
         DirectoryServiceStatus.finished: 'Finished.',
         DirectoryServiceStatus.errorException: 'An exception occured.',
         DirectoryServiceStatus.errorEmailAttributeNotFound: 'Email attribute not found.',
@@ -257,7 +257,7 @@ class ConfigurationMsg {
   static const String subordinateSubtree = 'subordinateSubtree';
 
   /// Label for ldap search scope level configuration
-  static searchScopeLabel(String label) => Intl.select(label, {
+  static String searchScopeLabel(String label) => Intl.select(label, {
     baseLevel: 'Base Level',
     oneLevel: 'One Level',
     subLevel: 'Sub Level',
@@ -271,7 +271,7 @@ class ConfigurationMsg {
   );
 
   /// Label for status configuration
-  static eventSyncResultLabel(String label) => Intl.select(label, {
+  static String eventSyncResultLabel(String label) => Intl.select(label, {
         DirectoryServiceEvent
             .entry: 'Entry',
         DirectoryServiceEvent
@@ -316,7 +316,7 @@ class UserMsg {
   static const accessLabel = 'accessLabel';
 
   /// Label for user
-  static label(String label) => Intl.select(label, {
+  static String label(String label) => Intl.select(label, {
     usersLabel: 'Users',
     userLabel: 'User',
     editUserLabel: 'Edit User',
@@ -332,9 +332,9 @@ class UserMsg {
     examples: const {"Name": "Name"}
   );
 
-  static domainOrganizationConfigurationRequiredMsg() => Intl.message("Domain on organization configuration is required.", name: "UserMsg_domainOrganizationConfigurationRequiredMsg");
-  static identificationRequiredMsg() => Intl.message("Identification is required.", name: "UserMsg_identificationRequiredMsg");
-  static invalidIdentificationMsg() => Intl.message("Identification format invalid. Valid format example: id@domain.com", name: "UserMsg_invalidIdentificationMsg");
+  static String domainOrganizationConfigurationRequiredMsg() => Intl.message("Domain on organization configuration is required.", name: "UserMsg_domainOrganizationConfigurationRequiredMsg");
+  static String identificationRequiredMsg() => Intl.message("Identification is required.", name: "UserMsg_identificationRequiredMsg");
+  static String invalidIdentificationMsg() => Intl.message("Identification format invalid. Valid format example: id@domain.com", name: "UserMsg_invalidIdentificationMsg");
 
 }
 
@@ -342,7 +342,7 @@ class UserMsg {
 class UserIdentityMsg {
 
   /// Label for user
-  static label(String label) => Intl.select(label, {
+  static String label(String label) => Intl.select(label, {
         UserIdentityProvider.internal: 'Internal',
         UserIdentityProvider.directoryService: 'Directory Service',
         'other': 'Not Defined'},
@@ -358,7 +358,7 @@ class UserIdentityMsg {
 class UserAccessMsg {
 
   /// Label for user
-  static label(String label) => Intl.select(label, {
+  static String label(String label) => Intl.select(label, {
         SystemRole.superAdmin: 'Super Admin',
         SystemRole.admin: 'Admin',
         SystemRole.standard: 'Standard',
@@ -387,7 +387,7 @@ class WorkMsg {
   static const String filterWorksLabel = 'filterWorksLabel';
 
   /// Label for work
-  static label(String label) => Intl.select(label, {
+  static String label(String label) => Intl.select(label, {
     workLabel: 'Work',
     worksLabel: 'Works',
     sortedByLabel: 'Sorted By',
@@ -416,7 +416,7 @@ class StageMsg {
   static const selectLabel = 'selectLabel';
 
   /// Label
-  static label(String label) => Intl.select(label, {
+  static String label(String label) => Intl.select(label, {
     workStagesLabel: 'Work Stages',
     stageLabel: 'Stage',
     selectLabel: 'Select',
@@ -427,7 +427,7 @@ class StageMsg {
       desc: "Stage labels"
   );
 
-  static stateNotInfomedMsg() => Intl.message("State not informed.", name: "StageMsg_stateNotInfomedMsg");
+  static String stateNotInfomedMsg() => Intl.message("State not informed.", name: "StageMsg_stateNotInfomedMsg");
 
 }
 
@@ -435,7 +435,7 @@ class StageMsg {
 class StateMsg {
 
   /// Label
-  static label(String label) => Intl.select(label, {
+  static String label(String label) => Intl.select(label, {
         State.notStarted: 'Not Started',
         State.inProgress: 'In Progress',
         State.completed: 'Completed',
@@ -462,7 +462,7 @@ class WorkItemMsg {
   static const String dropFileHereLabel = 'dropFileHereLabel';
 
   /// Label for workitem
-  static label(String label) => Intl.select(label, {
+  static String label(String label) => Intl.select(label, {
     workKanbanLabel: 'Work Kanban',
     workItemsLabel: 'Work Items',
     editWorkItemLabel: 'Edit Work Item',
@@ -480,7 +480,7 @@ class WorkItemMsg {
     examples: const {"Name": "Name"}
   );
 
-  static valuePercentIntervalMsg() => Intl.message('The percentual value should be between 0 and 100', name: "WorkItemMsg_valuePercentIntervalMsg");
+  static String valuePercentIntervalMsg() => Intl.message('The percentual value should be between 0 and 100', name: "WorkItemMsg_valuePercentIntervalMsg");
 
 }
 
@@ -498,7 +498,7 @@ class ObjectiveMsg {
   static const String ultimateObjectiveLabel = 'ultimateObjectiveLabel';
 
   /// Label for work
-  static label(String label) => Intl.select(label, {
+  static String label(String label) => Intl.select(label, {
     objectiveLabel: 'Objective',
     objectivesLabel: 'Objectives',
     addObjectiveLabel: 'Add Objective',
@@ -522,7 +522,7 @@ class MapMsg {
   static const String objectivesMapLabel = 'objectivesMapLabel';
 
   /// Label for work
-  static label(String label) => Intl.select(label, {
+  static String label(String label) => Intl.select(label, {
     objectivesMapLabel: 'Objectives Map',
     'other': 'Not Defined'},
     name: "MapMsg_label",
@@ -532,7 +532,7 @@ class MapMsg {
     examples: const {"Leader": "Leader"}
   );
 
-  static notInformedMsg() => Intl.message("Not Informed!", name: "MapMsg_notInformedMsg");
+  static String notInformedMsg() => Intl.message("Not Informed!", name: "MapMsg_notInformedMsg");
 }
 
 /// Specific messages and label for [Gantt]
@@ -540,7 +540,7 @@ class GanttMsg {
 
   static const String objectivesGanttLabel = 'objectivesGanttLabel';
   /// Label for work
-  static label(String label) => Intl.select(label, {
+  static String label(String label) => Intl.select(label, {
     objectivesGanttLabel: 'Objectives Gantt',
         'other': 'Not Defined'},
       name: "GanttMsg_label",
@@ -563,7 +563,7 @@ class MeasureMsg {
   static final String endValueLabel =  'endValueLabel';
 
   /// Label for Measure
-  static label(String label) => Intl.select(label, {
+  static String label(String label) => Intl.select(label, {
     measuresLabel: 'Measures',
     editMeasureLabel: 'Edit Measure',
     addMeasureLabel: 'Add Measure',
@@ -584,7 +584,7 @@ class MeasureMsg {
   static const String unitaryLabel = 'unitaryLabel';
 
   /// Label for Measure Unit
-  static measureUnitLabel(String label) => Intl.select(label, {
+  static String measureUnitLabel(String label) => Intl.select(label, {
         percentLabel: 'Percent',
         moneyLabel: 'Money',
         indexLabel: 'Index',
@@ -596,11 +596,11 @@ class MeasureMsg {
       desc: "Measure Unit labels"
   );
 
-  static valueErrorMsg() => Intl.message("Incorret value. Possible reasons: a) Current value should be between Start and End Value. b) Start and End Value are equals.", name: "MeasureMsg_valueErrorMsg");
-  static currentDateNotBetweenStartEndDate(String startDateFormated, String endDateFormated) => Intl.message("Measure progress date should be between objective start date ${startDateFormated} and objective end date ${endDateFormated}.",
+  static String valueErrorMsg() => Intl.message("Incorret value. Possible reasons: a) Current value should be between Start and End Value. b) Start and End Value are equals.", name: "MeasureMsg_valueErrorMsg");
+  static String currentDateNotBetweenStartEndDate(String startDateFormated, String endDateFormated) => Intl.message("Measure progress date should be between objective start date ${startDateFormated} and objective end date ${endDateFormated}.",
       name: "MeasureMsg_currentDateNotBetweenStartEndDate",
       args: [startDateFormated, endDateFormated]);
-  static decimalNumberErrorMsg() => Intl.message("Decimal number should be between 0 and 5.", name: "MeasureMsg_decimalNumberErrorMsg");
+  static String decimalNumberErrorMsg() => Intl.message("Decimal number should be between 0 and 5.", name: "MeasureMsg_decimalNumberErrorMsg");
 }
 
 
@@ -611,7 +611,7 @@ class MeasureProgressMsg {
   static const String progressCurrentValuesLabel = 'progressCurrentValuesLabel';
 
   /// Label for Measure
-  static label(String label) => Intl.select(label, {
+  static String label(String label) => Intl.select(label, {
     measureProgressLabel: 'Measure Progress',
     progressCurrentValuesLabel: 'Progress Current Values',
     'other': 'Not Defined'},
@@ -621,8 +621,8 @@ class MeasureProgressMsg {
     desc: "Measure Progresslabels"
   );
 
-  static valueErrorMsg() => Intl.message("Current value should be between Start and End value.", name: "MeasureProgressMsg_valueErrorMsg");
-  static currentValueExistsAtDate() => Intl.message("Current value already exists at date informed.", name: "MeasureProgressMsg_currentValueExistsAtDate");
+  static String valueErrorMsg() => Intl.message("Current value should be between Start and End value.", name: "MeasureProgressMsg_valueErrorMsg");
+  static String currentValueExistsAtDate() => Intl.message("Current value already exists at date informed.", name: "MeasureProgressMsg_currentValueExistsAtDate");
 }
 
 /// Specific messages and label for [Group]
@@ -636,7 +636,7 @@ class GroupMsg {
   static const String inactiveLabel = 'inactiveLabel';
 
   /// Label for Group
-  static label(String label) => Intl.select(label, {
+  static String label(String label) => Intl.select(label, {
     groupsLabel: 'Groups',
     editGroupLabel: 'Edit Group',
     addGroupLabel: 'Add Group',
@@ -651,7 +651,7 @@ class GroupMsg {
   );
 
   /// Label for Group Type
-  static groupTypeLabel(String label) => Intl.select(label, {
+  static String groupTypeLabel(String label) => Intl.select(label, {
         GroupType.company: 'Company',
         GroupType.businessUnit: 'Business Unit',
         GroupType.department: 'Department',
@@ -700,7 +700,7 @@ class InsightMsg {
   static const String workItemsRequiringAttentionDescriptionLabel = 'workItemsRequiringAttentionDescriptionLabel';
 
   /// Label for Insight
-  static label(String label) => Intl.select(label, {
+  static String label(String label) => Intl.select(label, {
     insightsLabel: 'Insights',
     groupLabel: 'Group',
     leaderLabel: 'Leader',
@@ -743,7 +743,7 @@ class InsightMsg {
 class SystemFunctionMsg {
 
   /// Label in past
-  static inPastLabel(String functionName) => Intl.select(functionName, {
+  static String inPastLabel(String functionName) => Intl.select(functionName, {
       SystemFunction.create: 'Created',
       SystemFunction.update: 'Updated',
       SystemFunction.delete: 'Deleted',
@@ -773,7 +773,7 @@ class TimelineItemdMsg {
   static const String wasLabel = 'wasLabel';
 
   /// Label
-  static label(String fieldName) => Intl.select(fieldName, {
+  static String label(String fieldName) => Intl.select(fieldName, {
     timelineLabel: 'Timeline',
     dayAgoLabel: 'day ago',
     daysAgoLabel: 'days ago',
@@ -797,10 +797,12 @@ class TimelineItemdMsg {
 /// Specific messages and label for [MailMsg] class field
 class MailMsg {
 
+  static const String ofTheLabel = 'ofTheLabel';
   static const String thisLabel = 'thisLabel';
 
   /// Label
-  static label(String label) => Intl.select(label, {
+  static String label(String label) => Intl.select(label, {
+    ofTheLabel: 'of the',
     thisLabel: 'this',
     'other': 'Not Defined'},
     name: "MailMsg_label",
@@ -810,15 +812,15 @@ class MailMsg {
   );
 
   /// Message to Notification
-  static youIsReceivingThisEMailBecauseYouAreThe() => Intl.message('You are receiving this e-mail because you are the', name: "MailMsg_youIsReceivingThisEMailBecauseYouAreThe");
-  static viewOrReplyIt() => Intl.message('View or reply it on Auge', name: "MailMsg_viewOrReplyIt");
+  static String youIsReceivingThisEMailBecauseYouAreThe() => Intl.message('You are receiving this e-mail because you are the', name: "MailMsg_youIsReceivingThisEMailBecauseYouAreThe");
+  static String viewOrReplyIt() => Intl.message('View or reply it on Auge', name: "MailMsg_viewOrReplyIt");
 
   /// Message to New Password
-  static toDefineNewPasswordInformTheCode() => Intl.message("To define new password inform the code", name: "MailMsg_toDefineNewPasswordInformTheCode");
+  static String toDefineNewPasswordInformTheCode() => Intl.message("To define new password inform the code", name: "MailMsg_toDefineNewPasswordInformTheCode");
 
-  static youIsReceivingThisEMailBecauseNewPasswordWasRequired() => Intl.message("You are receiving this e-mail because new password was required. Ignore this e-mail if you didn't request new password.", name: "MailMsg_youIsReceivingThisEMailBecauseNewPasswordWasRequired");
-  static subjectNewPasswordRequired() => Intl.message('New Password Required', name: "MailMsg_subjectNewPasswordRequired");
-  static InformIt() => Intl.message('Inform it on Auge', name: "MailMsg_InformIt");
+  static String youIsReceivingThisEMailBecauseNewPasswordWasRequired() => Intl.message("You are receiving this e-mail because new password was required. Ignore this e-mail if you didn't request new password.", name: "MailMsg_youIsReceivingThisEMailBecauseNewPasswordWasRequired");
+  static String subjectNewPasswordRequired() => Intl.message('New Password Required', name: "MailMsg_subjectNewPasswordRequired");
+  static String InformIt() => Intl.message('Inform it on Auge', name: "MailMsg_InformIt");
 
 
 }

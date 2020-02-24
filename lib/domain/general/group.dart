@@ -45,34 +45,36 @@ class Group {
   group_pb.Group writeToProtoBuf() {
     group_pb.Group groupPb = group_pb.Group();
 
-    if (this.id != null) groupPb.id = this.id;
-    if (this.version != null) groupPb.version = this.version;
-    if (this.name != null) groupPb.name = this.name;
-    if (this.inactive != null) groupPb.inactive = this.inactive;
-    if (this.organization != null) groupPb.organization = this.organization.writeToProtoBuf();
-    if (this.groupType != null) groupPb.groupTypeIndex = this.groupType.index;
-    if (this.superGroup != null) groupPb.superGroup = this.superGroup.writeToProtoBuf();
-    if (this.leader != null) groupPb.leader = this.leader.writeToProtoBuf();
-    if (this.members != null && this.members.isNotEmpty) groupPb.members.addAll(this.members.map((m) => m.writeToProtoBuf()));
+    if (id != null) {
+      groupPb.id = id;
+    }
+    if (version != null) groupPb.version = version;
+    if (name != null) groupPb.name = name;
+    if (inactive != null) groupPb.inactive = inactive;
+    if (organization != null) groupPb.organization = organization.writeToProtoBuf();
+    if (groupType != null) groupPb.groupTypeIndex = groupType.index;
+    if (superGroup != null) groupPb.superGroup = superGroup.writeToProtoBuf();
+    if (leader != null) groupPb.leader = leader.writeToProtoBuf();
+    if (members != null && members.isNotEmpty) groupPb.members.addAll(members.map((m) => m.writeToProtoBuf()));
 
     return groupPb;
   }
 
   void readFromProtoBuf(group_pb.Group groupPb, Map<String, dynamic> cache) {
-    if (groupPb.hasId()) this.id = groupPb.id;
-    if (groupPb.hasVersion()) this.version = groupPb.version;
-    if (groupPb.hasName()) this.name = groupPb.name;
-    if (groupPb.hasInactive()) this.inactive = groupPb.inactive;
-    if (groupPb.hasOrganization()) this.organization = cache.putIfAbsent('${Group.organizationField}${groupPb.organization.id}@${Organization.className}', () => Organization()..readFromProtoBuf(groupPb.organization));
-    if (groupPb.hasGroupTypeIndex()) this.groupType = GroupType.values[groupPb.groupTypeIndex];
-    if (groupPb.hasSuperGroup()) this.superGroup =  cache.putIfAbsent('${Group.superGroupField}${groupPb.superGroup.id}@${Group.className}', () => Group()..readFromProtoBuf(groupPb.superGroup, cache));
-    if (groupPb.hasLeader()) this.leader = cache.putIfAbsent('${Group.leaderField}${groupPb.leader.id}@${User.className}', () => User()..readFromProtoBuf(groupPb.leader, cache));
-    if (groupPb.members.isNotEmpty) this.members = groupPb.members.map((u) => cache.putIfAbsent('${Group.membersField}${u.id}@${User.className}', () => User()..readFromProtoBuf(u, cache))).toList().cast<User>();
+    if (groupPb.hasId()) id = groupPb.id;
+    if (groupPb.hasVersion()) version = groupPb.version;
+    if (groupPb.hasName()) name = groupPb.name;
+    if (groupPb.hasInactive()) inactive = groupPb.inactive;
+    if (groupPb.hasOrganization()) organization = cache.putIfAbsent('${Group.organizationField}${groupPb.organization.id}@${Organization.className}', () => Organization()..readFromProtoBuf(groupPb.organization));
+    if (groupPb.hasGroupTypeIndex()) groupType = GroupType.values[groupPb.groupTypeIndex];
+    if (groupPb.hasSuperGroup()) superGroup =  cache.putIfAbsent('${Group.superGroupField}${groupPb.superGroup.id}@${Group.className}', () => Group()..readFromProtoBuf(groupPb.superGroup, cache));
+    if (groupPb.hasLeader()) leader = cache.putIfAbsent('${Group.leaderField}${groupPb.leader.id}@${User.className}', () => User()..readFromProtoBuf(groupPb.leader, cache));
+    if (groupPb.members.isNotEmpty) members = groupPb.members.map((u) => cache.putIfAbsent('${Group.membersField}${u.id}@${User.className}', () => User()..readFromProtoBuf(u, cache))).toList().cast<User>();
   }
 
 
   static Map<String, dynamic> fromProtoBufToModelMap(group_pb.Group groupPb, [bool onlyIdAndSpecificationForDepthFields = false, bool isDeep = false]) {
-    Map<String, dynamic> map = Map();
+    Map<String, dynamic> map = {};
 
     if (onlyIdAndSpecificationForDepthFields && isDeep) {
       if (groupPb.hasId()) map[Group.idField] = groupPb.id;
@@ -82,16 +84,24 @@ class Group {
       if (groupPb.hasVersion()) map[Group.versionField] = groupPb.version;
       if (groupPb.hasName()) map[Group.nameField] = groupPb.name;
       if (groupPb.hasInactive()) map[Group.inactiveField] = groupPb.inactive;
-      if (groupPb.hasOrganization()) map[Group.organizationField] =
+      if (groupPb.hasOrganization()) {
+        map[Group.organizationField] =
           Organization.fromProtoBufToModelMap(groupPb.organization, onlyIdAndSpecificationForDepthFields, true);
+      }
       if (groupPb.hasGroupTypeIndex()) map[Group.groupTypeField] = groupPb.groupTypeIndex;
-      if (groupPb.hasSuperGroup()) map[Group.superGroupField] =
+      if (groupPb.hasSuperGroup()) {
+        map[Group.superGroupField] =
           Group.fromProtoBufToModelMap(groupPb.superGroup, onlyIdAndSpecificationForDepthFields, true);
-      if (groupPb.hasLeader()) map[Group.leaderField] =
+      }
+      if (groupPb.hasLeader()) {
+        map[Group.leaderField] =
           User.fromProtoBufToModelMap(groupPb.leader, onlyIdAndSpecificationForDepthFields, true);
-      if (groupPb.members.isNotEmpty) map[Group.membersField] =
+      }
+      if (groupPb.members.isNotEmpty) {
+        map[Group.membersField] =
           groupPb.members.map((u) => User.fromProtoBufToModelMap(u, onlyIdAndSpecificationForDepthFields, true))
               .toList();
+      }
     }
     return map;
   }

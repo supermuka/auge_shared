@@ -42,28 +42,28 @@ class User {
   user_pb.User writeToProtoBuf() {
     user_pb.User userPb = user_pb.User();
 
-    if (this.id != null) userPb.id = this.id;
-    if (this.version != null) userPb.version = this.version;
-    if (this.name != null) userPb.name = this.name;
-    if (this.inactive != null) userPb.inactive = this.inactive;
-    if (this.managedByOrganization != null) userPb.managedByOrganization = this.managedByOrganization.writeToProtoBuf();
+    if (id != null) userPb.id = id;
+    if (version != null) userPb.version = version;
+    if (name != null) userPb.name = name;
+    if (inactive != null) userPb.inactive = inactive;
+    if (managedByOrganization != null) userPb.managedByOrganization = managedByOrganization.writeToProtoBuf();
 
-    if (this.userProfile != null) userPb.userProfile = this.userProfile.writeToProtoBuf();
+    if (userProfile != null) userPb.userProfile = userProfile.writeToProtoBuf();
 
     return userPb;
   }
 
-  readFromProtoBuf(user_pb.User userPb, Map<String, dynamic> cache) {
-    if (userPb.hasId()) this.id = userPb.id;
-    if (userPb.hasVersion()) this.version = userPb.version;
-    if (userPb.hasName()) this.name = userPb.name;
-    if (userPb.hasInactive()) this.inactive = userPb.inactive;
-    if (userPb.hasManagedByOrganization()) this.managedByOrganization = cache.putIfAbsent('${User.managedByOrganizationField}${userPb.managedByOrganization.id}@${Organization.className}', () => Organization()..readFromProtoBuf(userPb.managedByOrganization));
-    if (userPb.hasUserProfile()) this.userProfile = cache.putIfAbsent('${User.userProfileField}${userPb.id}@${UserProfile.className}', () => UserProfile()..readFromProtoBuf(userPb.userProfile));
+  void readFromProtoBuf(user_pb.User userPb, Map<String, dynamic> cache) {
+    if (userPb.hasId()) id = userPb.id;
+    if (userPb.hasVersion()) version = userPb.version;
+    if (userPb.hasName()) name = userPb.name;
+    if (userPb.hasInactive()) inactive = userPb.inactive;
+    if (userPb.hasManagedByOrganization()) managedByOrganization = cache.putIfAbsent('${User.managedByOrganizationField}${userPb.managedByOrganization.id}@${Organization.className}', () => Organization()..readFromProtoBuf(userPb.managedByOrganization));
+    if (userPb.hasUserProfile()) userProfile = cache.putIfAbsent('${User.userProfileField}${userPb.id}@${UserProfile.className}', () => UserProfile()..readFromProtoBuf(userPb.userProfile));
   }
 
   static Map<String, dynamic> fromProtoBufToModelMap(user_pb.User userPb, [bool onlyIdAndSpecificationForDepthFields = false, bool isDeep = false]) {
-    Map<String, dynamic> map = Map();
+    Map<String, dynamic> map = {};
 
     if (onlyIdAndSpecificationForDepthFields && isDeep) {
       if (userPb.hasId()) map[User.idField] = userPb.id;
@@ -80,10 +80,11 @@ class User {
                 false); // here isDeep is false, because UserProfile is like an extention
 
       }
-      if (userPb.hasManagedByOrganization())
+      if (userPb.hasManagedByOrganization()) {
         map[User.managedByOrganizationField] =
             Organization.fromProtoBufToModelMap(
                 userPb.managedByOrganization, onlyIdAndSpecificationForDepthFields, true);
+      }
     }
     return map;
   }
@@ -112,25 +113,25 @@ class UserProfile {
   user_pb.UserProfile writeToProtoBuf() {
     user_pb.UserProfile userProfilePb = user_pb.UserProfile();
 
-    if (this.eMail != null) userProfilePb.eMail = this.eMail;
-    if (this.eMailNotification != null) userProfilePb.eMailNotification = this.eMailNotification;
-    if (this.image != null) userProfilePb.image = this.image;
-    if (this.idiomLocale != null) userProfilePb.idiomLocale = this.idiomLocale;
+    if (eMail != null) userProfilePb.eMail = eMail;
+    if (eMailNotification != null) userProfilePb.eMailNotification = eMailNotification;
+    if (image != null) userProfilePb.image = image;
+    if (idiomLocale != null) userProfilePb.idiomLocale = idiomLocale;
 
 
     return userProfilePb;
   }
 
-  readFromProtoBuf(user_pb.UserProfile userProfilePb) {
-    if (userProfilePb.hasEMail()) this.eMail = userProfilePb.eMail;
-    if (userProfilePb.hasEMailNotification()) this.eMailNotification = userProfilePb.eMailNotification;
-    if (userProfilePb.hasImage()) this.image = userProfilePb.image;
-    if (userProfilePb.hasIdiomLocale()) this.idiomLocale = userProfilePb.idiomLocale;
+  void readFromProtoBuf(user_pb.UserProfile userProfilePb) {
+    if (userProfilePb.hasEMail()) eMail = userProfilePb.eMail;
+    if (userProfilePb.hasEMailNotification()) eMailNotification = userProfilePb.eMailNotification;
+    if (userProfilePb.hasImage()) image = userProfilePb.image;
+    if (userProfilePb.hasIdiomLocale()) idiomLocale = userProfilePb.idiomLocale;
 
   }
 
   static Map<String, dynamic> fromProtoBufToModelMap(user_pb.UserProfile userProfilePb, [bool onlyIdAndSpecificationForDepthFields = false, bool isDeep = false]) {
-    Map<String, dynamic> map = Map();
+    Map<String, dynamic> map = {};
 
     if (onlyIdAndSpecificationForDepthFields && isDeep) {
     //  if (userProfilePb.hasAdditionalId())
@@ -138,14 +139,18 @@ class UserProfile {
     } else {
  //     if (userProfilePb.hasIsSuperAdmin())
  //       map[UserProfile.isSuperAdminField] = userProfilePb.isSuperAdmin;
-      if (userProfilePb.hasEMail())
+      if (userProfilePb.hasEMail()) {
         map[UserProfile.eMailField] = userProfilePb.eMail;
-      if (userProfilePb.hasEMailNotification())
+      }
+      if (userProfilePb.hasEMailNotification()) {
         map[UserProfile.eMailNotificationField] = userProfilePb.eMailNotification;
-      if (userProfilePb.hasImage())
+      }
+      if (userProfilePb.hasImage()) {
         map[UserProfile.imageField] = userProfilePb.image;
-      if (userProfilePb.hasIdiomLocale())
+      }
+      if (userProfilePb.hasIdiomLocale()) {
         map[UserProfile.idiomLocaleField] = userProfilePb.idiomLocale;
+      }
 
     }
     return map;

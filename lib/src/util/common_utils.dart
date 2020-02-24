@@ -50,7 +50,7 @@ class CommonUtils {
     } else if (defaultLocale != null) {
       Intl.defaultLocale = defaultLocale;
     }
-    initializeDateFormatting(Intl.defaultLocale);
+    await initializeDateFormatting(Intl.defaultLocale);
     await initializeMessages(Intl.defaultLocale);
   }
 

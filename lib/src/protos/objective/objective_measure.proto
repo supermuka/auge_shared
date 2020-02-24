@@ -211,4 +211,6 @@ message MeasureProgressGetRequest {
   string id = 1;
   string measure_id = 2;
   bool with_measure = 3;
+  bool with_objective = 4;
+  bool with_user_profile = 5;
 }

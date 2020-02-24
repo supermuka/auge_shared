@@ -12,7 +12,7 @@ abstract class AuthorizationPolicy {
 
   // Define the authorization model
   AuthorizationPolicy() {
-    authorizations = List<Authorization>();
+    authorizations = <Authorization>[];
   }
 
   bool isAuthorized(SystemRole systemRole, SystemModule systemModule, {dynamic systemFunction, dynamic systemConstraint}) {
@@ -61,7 +61,7 @@ class GeneralAuthorizationPolicy extends AuthorizationPolicy {
     // Role: Super Admin
     // Object:  User
     // Function: CRUD
-    authorizations.add(new Authorization()
+    authorizations.add(Authorization()
       ..authorizationRole = SystemRole.superAdmin
       ..authorizationModule = SystemModule.users
       ..authorizationFunctionConstraints =
@@ -73,7 +73,7 @@ class GeneralAuthorizationPolicy extends AuthorizationPolicy {
 
     // Object:  Groups
     // Function: CRUD
-    authorizations.add(new Authorization()
+    authorizations.add(Authorization()
       ..authorizationRole = SystemRole.superAdmin
       ..authorizationModule = SystemModule.groups
       ..authorizationFunctionConstraints =
@@ -85,7 +85,7 @@ class GeneralAuthorizationPolicy extends AuthorizationPolicy {
 
     // Object:  Organizations
     // Organization, OrganizationConfiguration and OrganizationDirectoryService
-    authorizations.add(new Authorization()
+    authorizations.add(Authorization()
       ..authorizationRole = SystemRole.superAdmin
       ..authorizationModule = SystemModule.organization
       ..authorizationFunctionConstraints =
@@ -108,7 +108,7 @@ class GeneralAuthorizationPolicy extends AuthorizationPolicy {
 
     // Role: Admin
     // Object:  User
-    authorizations.add(new Authorization()
+    authorizations.add(Authorization()
       ..authorizationRole = SystemRole.admin
       ..authorizationModule = SystemModule.users
       ..authorizationFunctionConstraints =
@@ -122,7 +122,7 @@ class GeneralAuthorizationPolicy extends AuthorizationPolicy {
       });
 
     // Object:  Groups
-    authorizations.add(new Authorization()
+    authorizations.add(Authorization()
       ..authorizationRole = SystemRole.admin
       ..authorizationModule = SystemModule.groups
       ..authorizationFunctionConstraints =
@@ -134,7 +134,7 @@ class GeneralAuthorizationPolicy extends AuthorizationPolicy {
 
     // Role: standard
     // Object:  user_profile
-    authorizations.add(new Authorization()
+    authorizations.add(Authorization()
       ..authorizationRole = SystemRole.standard
       ..authorizationModule = SystemModule.user_profile
       ..authorizationFunctionConstraints = {SystemFunction.read: null, SystemFunction.update: null}

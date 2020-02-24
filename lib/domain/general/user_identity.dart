@@ -54,57 +54,66 @@ class UserIdentity {
   user_identity_pb.UserIdentity writeToProtoBuf() {
     user_identity_pb.UserIdentity userIdentityPb = user_identity_pb.UserIdentity();
 
-    if (this.id != null) userIdentityPb.id = this.id;
-    if (this.version != null) userIdentityPb.version = this.version;
-    if (this.identification != null) userIdentityPb.identification = this.identification;
-    if (this.password != null) userIdentityPb.password = this.password;
-    if (this.provider != null) userIdentityPb.provider = this.provider;
-    if (this.providerObjectId != null) userIdentityPb.providerObjectId = this.providerObjectId;
-    if (this.providerDn != null) userIdentityPb.providerObjectId = this.providerDn;
-    if (this.user != null) userIdentityPb.user = this.user.writeToProtoBuf();
+    if (id != null) userIdentityPb.id = id;
+    if (version != null) userIdentityPb.version = version;
+    if (identification != null) userIdentityPb.identification = identification;
+    if (password != null) userIdentityPb.password = password;
+    if (provider != null) userIdentityPb.provider = provider;
+    if (providerObjectId != null) userIdentityPb.providerObjectId = providerObjectId;
+    if (providerDn != null) userIdentityPb.providerObjectId = providerDn;
+    if (user != null) userIdentityPb.user = user.writeToProtoBuf();
 
     return userIdentityPb;
   }
 
-  readFromProtoBuf(user_identity_pb.UserIdentity userIdentityPb, Map<String, dynamic> cache) {
+  void readFromProtoBuf(user_identity_pb.UserIdentity userIdentityPb, Map<String, dynamic> cache) {
 
-    if (userIdentityPb.hasId()) this.id = userIdentityPb.id;
-    if (userIdentityPb.hasVersion()) this.version = userIdentityPb.version;
-    if (userIdentityPb.hasIdentification()) this.identification = userIdentityPb.identification;
-    if (userIdentityPb.hasProviderDn()) this.providerDn = userIdentityPb.providerDn;
-    if (userIdentityPb.hasPassword()) this.password = userIdentityPb.password;
-    if (userIdentityPb.hasProvider()) this.provider = userIdentityPb.provider;
-    if (userIdentityPb.hasProviderObjectId()) this.providerObjectId = userIdentityPb.providerObjectId;
-    if (userIdentityPb.hasUser()) this.user = cache.putIfAbsent('${UserIdentity.userField}${userIdentityPb.user.id}@${User.className}', () => User()..readFromProtoBuf(userIdentityPb.user, cache));
+    if (userIdentityPb.hasId()) id = userIdentityPb.id;
+    if (userIdentityPb.hasVersion()) version = userIdentityPb.version;
+    if (userIdentityPb.hasIdentification()) identification = userIdentityPb.identification;
+    if (userIdentityPb.hasProviderDn()) providerDn = userIdentityPb.providerDn;
+    if (userIdentityPb.hasPassword()) password = userIdentityPb.password;
+    if (userIdentityPb.hasProvider()) provider = userIdentityPb.provider;
+    if (userIdentityPb.hasProviderObjectId()) providerObjectId = userIdentityPb.providerObjectId;
+    if (userIdentityPb.hasUser()) user = cache.putIfAbsent('${UserIdentity.userField}${userIdentityPb.user.id}@${User.className}', () => User()..readFromProtoBuf(userIdentityPb.user, cache));
 
   }
 
   static Map<String, dynamic> fromProtoBufToModelMap(user_identity_pb.UserIdentity userIdentityPb, [bool onlyIdAndSpecificationForDepthFields = false, bool isDeep = false]) {
-    Map<String, dynamic> map = Map();
+    Map<String, dynamic> map = {};
 
     if (onlyIdAndSpecificationForDepthFields && isDeep) {
-      if (userIdentityPb.hasId())
+      if (userIdentityPb.hasId()) {
         map[UserIdentity.idField] = userIdentityPb.id;
+      }
     } else {
-      if (userIdentityPb.hasId())
+      if (userIdentityPb.hasId()) {
         map[UserIdentity.idField] = userIdentityPb.id;
-      if (userIdentityPb.hasVersion())
+      }
+      if (userIdentityPb.hasVersion()) {
         map[UserIdentity.versionField] = userIdentityPb.version;
-      if (userIdentityPb.hasIdentification())
+      }
+      if (userIdentityPb.hasIdentification()) {
         map[UserIdentity.identificationField] = userIdentityPb.identification;
-      if (userIdentityPb.hasPassword())
+      }
+      if (userIdentityPb.hasPassword()) {
         map[UserIdentity.passwordField] = userIdentityPb.password;
-      if (userIdentityPb.hasProvider())
+      }
+      if (userIdentityPb.hasProvider()) {
         map[UserIdentity.providerField] = userIdentityPb.provider;
-      if (userIdentityPb.hasProviderObjectId())
+      }
+      if (userIdentityPb.hasProviderObjectId()) {
         map[UserIdentity.providerObjectIdField] = userIdentityPb.providerObjectId;
-      if (userIdentityPb.hasProviderDn())
+      }
+      if (userIdentityPb.hasProviderDn()) {
         map[UserIdentity.providerDnField] = userIdentityPb.providerDn;
+      }
 
-      if (userIdentityPb.hasUser())
+      if (userIdentityPb.hasUser()) {
         map[UserIdentity.userField] =
             User.fromProtoBufToModelMap(
                 userIdentityPb.user, onlyIdAndSpecificationForDepthFields, true);
+      }
     }
     return map;
   }

@@ -19,11 +19,11 @@ const fieldSuffix = 'Field';
 
 class CommonFieldAndValuesMsg {
   /// Label for Field User
-  static labelAndValue(dynamic fieldName) => Intl.select(fieldName, {
+  static String labelAndValue(dynamic fieldName) => Intl.select(fieldName, {
       true: 'Yes',
       false: 'No',
       'other': 'Not Defined'},
-    name: "CommonFieldAndValuesMsg_labelAndValue",
+    name: 'CommonFieldAndValuesMsg_labelAndValue',
     args: [fieldName],
     // locale: "en",
     desc: "Common form field labels and values",
@@ -33,7 +33,7 @@ class CommonFieldAndValuesMsg {
 enum Gender {male, female}
 
 class ClassNameMsg {
-  static label(String className) {
+  static String label(String className) {
 
     return Intl.select(className, {
       //User.className >>> this does not work to intl_translation, because it split the last element after the point
@@ -469,7 +469,7 @@ class FieldMsg {
 class UserProfileValueMsg {
 
   /// Static value for User
-  static label(String valueName) => Intl.select(valueName, {
+  static String label(String valueName) => Intl.select(valueName, {
       'pt_BR': 'Português - Brasil',
       'en_US': 'English - USA',
       'es_ES': 'Espanhol - España',
