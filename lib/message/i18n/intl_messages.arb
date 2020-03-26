@@ -336,7 +336,7 @@
       "fieldName": {}
     }
   },
-  "MailMsg_label": "{label,select, ofTheLabel{of the}thisLabel{this}other{Not Defined}}",
+  "MailMsg_label": "{label,select, notificationLabel{Notification}ofTheLabel{of the}thisLabel{this}other{Not Defined}}",
   "@MailMsg_label": {
     "description": "MailMsg labels",
     "type": "text",

@@ -799,9 +799,11 @@ class MailMsg {
 
   static const String ofTheLabel = 'ofTheLabel';
   static const String thisLabel = 'thisLabel';
+  static const String notificationLabel = 'notificationLabel';
 
   /// Label
   static String label(String label) => Intl.select(label, {
+    notificationLabel: 'Notification',
     ofTheLabel: 'of the',
     thisLabel: 'this',
     'other': 'Not Defined'},

@@ -24,7 +24,7 @@
     "type": "text",
     "placeholders": {}
   },
-  "AuthMsg_label": "{label,select, domainLabel{nome@dominio.com}identificationLabel{Identificação}passwordLabel{Senha}selectLabel{Selecionar}superAdminLabel{Super Admin}organizationLabel{Organização}allOrganizationsLabel{Todas Organizações}loginLabel{Logar}logoutLabel{Sair}requestCodeToNewPasswordLabel{Soliciar Código para Nova Senha}informCodeLabel{Inserir Código}defineNewPasswordLabel{Defina Nova Senha}passwordCodeLabel{Código}newPasswordLabel{Nova Senha}repeatNewPasswordLabel{Repedir Nova Senha}saveLabel{Salvar}other{Não Definido}}",
+  "AuthMsg_label": "{label,select, domainLabel{nome@dominio.com}identificationLabel{Identificação}passwordLabel{Senha}selectLabel{Selecionar}superAdminLabel{Super Admin}organizationLabel{Organização}allOrganizationsLabel{Todas Organizações}loginLabel{Logar}logoutLabel{Sair}requestCodeToNewPasswordLabel{Solicitar Código para Nova Senha}informCodeLabel{Inserir Código}defineNewPasswordLabel{Defina Nova Senha}passwordCodeLabel{Código}newPasswordLabel{Nova Senha}repeatNewPasswordLabel{Repedir Nova Senha}saveLabel{Salvar}other{Não Definido}}",
   "@AuthMsg_label": {
     "description": "Authentication and authorizations labels",
     "type": "text",
@@ -174,7 +174,7 @@
       "label": {}
     }
   },
-  "WorkMsg_label": "{label,select, workLabel{Trabalho}worksLabel{Trabalhos}sortedByLabel{Ordenar Por}editWorkLabel{Editar Trabalho}addWorkLabel{Adicionar Trabalho}objectiveLabel{Objetivo}workItemsOverDueLabel{Itens de Trabalho Atrasados}noMatchLabel{Sem Correspondência}selectLabel{Selecionar}filterWorksLabel{Filtar Trabalhos}other{Não Definido}}",
+  "WorkMsg_label": "{label,select, workLabel{Trabalho}worksLabel{Trabalhos}sortedByLabel{Ordenado Por}editWorkLabel{Editar Trabalho}addWorkLabel{Adicionar Trabalho}objectiveLabel{Objetivo}workItemsOverDueLabel{Itens de Trabalho Atrasados}noMatchLabel{Sem Correspondência}selectLabel{Selecionar}filterWorksLabel{Filtar Trabalhos}other{Não Definido}}",
   "@WorkMsg_label": {
     "description": "Work labels",
     "type": "text",
@@ -337,7 +337,7 @@
       "fieldName": {}
     }
   },
-  "MailMsg_label": "{label,select, ofTheLabel{do(a)}thisLabel{deste(a)}other{Not Defined}}",
+  "MailMsg_label": "{label,select, notificationLabel{Notificação}ofTheLabel{do(a)}thisLabel{deste(a)}other{Not Defined}}",
   "@MailMsg_label": {
     "description": "MailMsg labels",
     "type": "text",
