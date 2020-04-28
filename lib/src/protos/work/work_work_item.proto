@@ -12,6 +12,7 @@ import "google/protobuf/timestamp.proto";
 import "general/organization.proto";
 import "general/group.proto";
 import "general/user.proto";
+import "general/unit_of_measurement.proto";
 import "objective/objective_measure.proto";
 
 /// WORK
@@ -36,13 +37,14 @@ message Work {
     // Specific
     string name = 3;
     string description = 4;
-    repeated WorkStage work_stages = 5;
-    repeated WorkItem work_items = 6;
+    bool archived = 5;
+    repeated WorkStage work_stages = 6;
+    repeated WorkItem work_items = 7;
 
-    Objective objective = 7;
-    Organization organization = 8;
-    Group group = 9;
-    User leader = 10;
+    Objective objective = 8;
+    Organization organization = 9;
+    Group group = 10;
+    User leader = 11;
 
 }
 
@@ -88,6 +90,7 @@ service WorkItemService {
 
     rpc GetWorkItemAttachment (WorkItemAttachmentGetRequest) returns (WorkItemAttachment) {}
     rpc GetWorkItemCheckItems (WorkItemCheckItemGetRequest) returns (WorkItemCheckItemsResponse) {}
+
 }
 
 /// WORKITEM
@@ -102,14 +105,17 @@ message WorkItem {
     string name = 3;
     string description = 4;
     google.protobuf.Timestamp due_date = 5;
-    int32 completed = 6;
-    WorkStage work_stage = 7;
+    double planned_value = 6;
+    double actual_value = 7;
+    UnitOfMeasurement unit_of_measurement = 8;
+    bool archived = 9;
+    WorkStage work_stage = 10;
 
-    repeated User assigned_to = 10;
-    repeated WorkItemCheckItem check_items = 11;
-    repeated WorkItemAttachment attachments = 12;
+    repeated User assigned_to = 11;
+    repeated WorkItemCheckItem check_items = 12;
+    repeated WorkItemAttachment attachments = 13;
 
-    Work work = 13;
+    Work work = 14;
 }
 
 // Request for query select
@@ -183,6 +189,14 @@ message WorkItemCheckItem {
    // string work_item_check_item_id = 6; // Just to pass parent id
 }
 
+// Request for query select
+message WorkItemCheckItemRequest {
+    WorkItemCheckItem work_item_check_item = 1;
+    string work_item_id = 2; // used just to identify parent on request
+    string auth_user_id = 3;
+    string auth_organization_id = 4;
+}
+
 // Response list of the WorkItemCheckItems
 message WorkItemCheckItemsResponse {
     repeated WorkItemCheckItem work_item_check_items = 1;
@@ -250,4 +264,60 @@ message WorkStageGetRequest {
     string work_id = 2;
     bool with_work = 3;
     bool with_user_profile = 4;
+}
+
+/// *** WORKITEMVALUE
+
+// The service definition.
+service WorkItemValueService {
+    rpc GetWorkItemValues (WorkItemValueGetRequest) returns (WorkItemValuesResponse) {}
+    rpc GetWorkItemValue (WorkItemValueGetRequest) returns (WorkItemValue) {}
+
+    rpc CreateWorkItemValue (WorkItemValueRequest) returns (google.protobuf.StringValue) {}
+    rpc UpdateWorkItemValue (WorkItemValueRequest) returns (google.protobuf.Empty) {}
+    rpc DeleteWorkItemValue (WorkItemValueDeleteRequest) returns (google.protobuf.Empty) {}
+}
+
+// Message to respective domain object.
+message WorkItemValue {
+    // Base
+    string id = 1;
+    int32 version = 2;
+
+    // Specific
+    google.protobuf.Timestamp date = 3;
+    double actual_value = 4;
+    string comment = 5;
+
+    WorkItem work_item = 6;
+}
+
+// Message to request param related to domain object.
+message WorkItemValueRequest {
+    WorkItemValue work_item_value = 1;
+    string work_item_id = 2; // used just to identify parent on request
+    string auth_user_id = 3;
+    string auth_organization_id = 4;
+}
+
+// Message request for delete to related domain model .
+message WorkItemValueDeleteRequest {
+    string work_item_value_id = 1;
+    int32 work_item_value_version = 2;
+    string auth_user_id = 3;
+    string auth_organization_id = 4;
+}
+
+// Response list of the MeasureProgress
+message WorkItemValuesResponse {
+    repeated WorkItemValue work_item_values = 1;
+}
+
+// Request for query select
+message WorkItemValueGetRequest {
+    string id = 1;
+    string work_item_id = 2;
+    bool with_work_item = 3;
+    bool with_work = 4;
+    bool with_user_profile = 5;
 }

@@ -9,11 +9,12 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../objective/objective_measure.pb.dart' as $5;
+import '../objective/objective_measure.pb.dart' as $6;
 import '../general/organization.pb.dart' as $0;
 import '../general/group.pb.dart' as $4;
 import '../general/user.pb.dart' as $3;
-import '../google/protobuf/timestamp.pb.dart' as $7;
+import '../google/protobuf/timestamp.pb.dart' as $8;
+import '../general/unit_of_measurement.pb.dart' as $5;
 
 class Work extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo('Work', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
@@ -21,12 +22,13 @@ class Work extends $pb.GeneratedMessage {
     ..a<$core.int>(2, 'version', $pb.PbFieldType.O3)
     ..aOS(3, 'name')
     ..aOS(4, 'description')
-    ..pc<WorkStage>(5, 'workStages', $pb.PbFieldType.PM, subBuilder: WorkStage.create)
-    ..pc<WorkItem>(6, 'workItems', $pb.PbFieldType.PM, subBuilder: WorkItem.create)
-    ..aOM<$5.Objective>(7, 'objective', subBuilder: $5.Objective.create)
-    ..aOM<$0.Organization>(8, 'organization', subBuilder: $0.Organization.create)
-    ..aOM<$4.Group>(9, 'group', subBuilder: $4.Group.create)
-    ..aOM<$3.User>(10, 'leader', subBuilder: $3.User.create)
+    ..aOB(5, 'archived')
+    ..pc<WorkStage>(6, 'workStages', $pb.PbFieldType.PM, subBuilder: WorkStage.create)
+    ..pc<WorkItem>(7, 'workItems', $pb.PbFieldType.PM, subBuilder: WorkItem.create)
+    ..aOM<$6.Objective>(8, 'objective', subBuilder: $6.Objective.create)
+    ..aOM<$0.Organization>(9, 'organization', subBuilder: $0.Organization.create)
+    ..aOM<$4.Group>(10, 'group', subBuilder: $4.Group.create)
+    ..aOM<$3.User>(11, 'leader', subBuilder: $3.User.create)
     ..hasRequiredFields = false
   ;
 
@@ -82,54 +84,63 @@ class Work extends $pb.GeneratedMessage {
   void clearDescription() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.List<WorkStage> get workStages => $_getList(4);
+  $core.bool get archived => $_getBF(4);
+  @$pb.TagNumber(5)
+  set archived($core.bool v) { $_setBool(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasArchived() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearArchived() => clearField(5);
 
   @$pb.TagNumber(6)
-  $core.List<WorkItem> get workItems => $_getList(5);
+  $core.List<WorkStage> get workStages => $_getList(5);
 
   @$pb.TagNumber(7)
-  $5.Objective get objective => $_getN(6);
-  @$pb.TagNumber(7)
-  set objective($5.Objective v) { setField(7, v); }
-  @$pb.TagNumber(7)
-  $core.bool hasObjective() => $_has(6);
-  @$pb.TagNumber(7)
-  void clearObjective() => clearField(7);
-  @$pb.TagNumber(7)
-  $5.Objective ensureObjective() => $_ensure(6);
+  $core.List<WorkItem> get workItems => $_getList(6);
 
   @$pb.TagNumber(8)
-  $0.Organization get organization => $_getN(7);
+  $6.Objective get objective => $_getN(7);
   @$pb.TagNumber(8)
-  set organization($0.Organization v) { setField(8, v); }
+  set objective($6.Objective v) { setField(8, v); }
   @$pb.TagNumber(8)
-  $core.bool hasOrganization() => $_has(7);
+  $core.bool hasObjective() => $_has(7);
   @$pb.TagNumber(8)
-  void clearOrganization() => clearField(8);
+  void clearObjective() => clearField(8);
   @$pb.TagNumber(8)
-  $0.Organization ensureOrganization() => $_ensure(7);
+  $6.Objective ensureObjective() => $_ensure(7);
 
   @$pb.TagNumber(9)
-  $4.Group get group => $_getN(8);
+  $0.Organization get organization => $_getN(8);
   @$pb.TagNumber(9)
-  set group($4.Group v) { setField(9, v); }
+  set organization($0.Organization v) { setField(9, v); }
   @$pb.TagNumber(9)
-  $core.bool hasGroup() => $_has(8);
+  $core.bool hasOrganization() => $_has(8);
   @$pb.TagNumber(9)
-  void clearGroup() => clearField(9);
+  void clearOrganization() => clearField(9);
   @$pb.TagNumber(9)
-  $4.Group ensureGroup() => $_ensure(8);
+  $0.Organization ensureOrganization() => $_ensure(8);
 
   @$pb.TagNumber(10)
-  $3.User get leader => $_getN(9);
+  $4.Group get group => $_getN(9);
   @$pb.TagNumber(10)
-  set leader($3.User v) { setField(10, v); }
+  set group($4.Group v) { setField(10, v); }
   @$pb.TagNumber(10)
-  $core.bool hasLeader() => $_has(9);
+  $core.bool hasGroup() => $_has(9);
   @$pb.TagNumber(10)
-  void clearLeader() => clearField(10);
+  void clearGroup() => clearField(10);
   @$pb.TagNumber(10)
-  $3.User ensureLeader() => $_ensure(9);
+  $4.Group ensureGroup() => $_ensure(9);
+
+  @$pb.TagNumber(11)
+  $3.User get leader => $_getN(10);
+  @$pb.TagNumber(11)
+  set leader($3.User v) { setField(11, v); }
+  @$pb.TagNumber(11)
+  $core.bool hasLeader() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearLeader() => clearField(11);
+  @$pb.TagNumber(11)
+  $3.User ensureLeader() => $_ensure(10);
 }
 
 class WorkRequest extends $pb.GeneratedMessage {
@@ -348,13 +359,16 @@ class WorkItem extends $pb.GeneratedMessage {
     ..a<$core.int>(2, 'version', $pb.PbFieldType.O3)
     ..aOS(3, 'name')
     ..aOS(4, 'description')
-    ..aOM<$7.Timestamp>(5, 'dueDate', subBuilder: $7.Timestamp.create)
-    ..a<$core.int>(6, 'completed', $pb.PbFieldType.O3)
-    ..aOM<WorkStage>(7, 'workStage', subBuilder: WorkStage.create)
-    ..pc<$3.User>(10, 'assignedTo', $pb.PbFieldType.PM, subBuilder: $3.User.create)
-    ..pc<WorkItemCheckItem>(11, 'checkItems', $pb.PbFieldType.PM, subBuilder: WorkItemCheckItem.create)
-    ..pc<WorkItemAttachment>(12, 'attachments', $pb.PbFieldType.PM, subBuilder: WorkItemAttachment.create)
-    ..aOM<Work>(13, 'work', subBuilder: Work.create)
+    ..aOM<$8.Timestamp>(5, 'dueDate', subBuilder: $8.Timestamp.create)
+    ..a<$core.double>(6, 'plannedValue', $pb.PbFieldType.OD)
+    ..a<$core.double>(7, 'actualValue', $pb.PbFieldType.OD)
+    ..aOM<$5.UnitOfMeasurement>(8, 'unitOfMeasurement', subBuilder: $5.UnitOfMeasurement.create)
+    ..aOB(9, 'archived')
+    ..aOM<WorkStage>(10, 'workStage', subBuilder: WorkStage.create)
+    ..pc<$3.User>(11, 'assignedTo', $pb.PbFieldType.PM, subBuilder: $3.User.create)
+    ..pc<WorkItemCheckItem>(12, 'checkItems', $pb.PbFieldType.PM, subBuilder: WorkItemCheckItem.create)
+    ..pc<WorkItemAttachment>(13, 'attachments', $pb.PbFieldType.PM, subBuilder: WorkItemAttachment.create)
+    ..aOM<Work>(14, 'work', subBuilder: Work.create)
     ..hasRequiredFields = false
   ;
 
@@ -410,55 +424,84 @@ class WorkItem extends $pb.GeneratedMessage {
   void clearDescription() => clearField(4);
 
   @$pb.TagNumber(5)
-  $7.Timestamp get dueDate => $_getN(4);
+  $8.Timestamp get dueDate => $_getN(4);
   @$pb.TagNumber(5)
-  set dueDate($7.Timestamp v) { setField(5, v); }
+  set dueDate($8.Timestamp v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasDueDate() => $_has(4);
   @$pb.TagNumber(5)
   void clearDueDate() => clearField(5);
   @$pb.TagNumber(5)
-  $7.Timestamp ensureDueDate() => $_ensure(4);
+  $8.Timestamp ensureDueDate() => $_ensure(4);
 
   @$pb.TagNumber(6)
-  $core.int get completed => $_getIZ(5);
+  $core.double get plannedValue => $_getN(5);
   @$pb.TagNumber(6)
-  set completed($core.int v) { $_setSignedInt32(5, v); }
+  set plannedValue($core.double v) { $_setDouble(5, v); }
   @$pb.TagNumber(6)
-  $core.bool hasCompleted() => $_has(5);
+  $core.bool hasPlannedValue() => $_has(5);
   @$pb.TagNumber(6)
-  void clearCompleted() => clearField(6);
+  void clearPlannedValue() => clearField(6);
 
   @$pb.TagNumber(7)
-  WorkStage get workStage => $_getN(6);
+  $core.double get actualValue => $_getN(6);
   @$pb.TagNumber(7)
-  set workStage(WorkStage v) { setField(7, v); }
+  set actualValue($core.double v) { $_setDouble(6, v); }
   @$pb.TagNumber(7)
-  $core.bool hasWorkStage() => $_has(6);
+  $core.bool hasActualValue() => $_has(6);
   @$pb.TagNumber(7)
-  void clearWorkStage() => clearField(7);
-  @$pb.TagNumber(7)
-  WorkStage ensureWorkStage() => $_ensure(6);
+  void clearActualValue() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $5.UnitOfMeasurement get unitOfMeasurement => $_getN(7);
+  @$pb.TagNumber(8)
+  set unitOfMeasurement($5.UnitOfMeasurement v) { setField(8, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasUnitOfMeasurement() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearUnitOfMeasurement() => clearField(8);
+  @$pb.TagNumber(8)
+  $5.UnitOfMeasurement ensureUnitOfMeasurement() => $_ensure(7);
+
+  @$pb.TagNumber(9)
+  $core.bool get archived => $_getBF(8);
+  @$pb.TagNumber(9)
+  set archived($core.bool v) { $_setBool(8, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasArchived() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearArchived() => clearField(9);
 
   @$pb.TagNumber(10)
-  $core.List<$3.User> get assignedTo => $_getList(7);
+  WorkStage get workStage => $_getN(9);
+  @$pb.TagNumber(10)
+  set workStage(WorkStage v) { setField(10, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasWorkStage() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearWorkStage() => clearField(10);
+  @$pb.TagNumber(10)
+  WorkStage ensureWorkStage() => $_ensure(9);
 
   @$pb.TagNumber(11)
-  $core.List<WorkItemCheckItem> get checkItems => $_getList(8);
+  $core.List<$3.User> get assignedTo => $_getList(10);
 
   @$pb.TagNumber(12)
-  $core.List<WorkItemAttachment> get attachments => $_getList(9);
+  $core.List<WorkItemCheckItem> get checkItems => $_getList(11);
 
   @$pb.TagNumber(13)
-  Work get work => $_getN(10);
-  @$pb.TagNumber(13)
-  set work(Work v) { setField(13, v); }
-  @$pb.TagNumber(13)
-  $core.bool hasWork() => $_has(10);
-  @$pb.TagNumber(13)
-  void clearWork() => clearField(13);
-  @$pb.TagNumber(13)
-  Work ensureWork() => $_ensure(10);
+  $core.List<WorkItemAttachment> get attachments => $_getList(12);
+
+  @$pb.TagNumber(14)
+  Work get work => $_getN(13);
+  @$pb.TagNumber(14)
+  set work(Work v) { setField(14, v); }
+  @$pb.TagNumber(14)
+  $core.bool hasWork() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearWork() => clearField(14);
+  @$pb.TagNumber(14)
+  Work ensureWork() => $_ensure(13);
 }
 
 class WorkItemRequest extends $pb.GeneratedMessage {
@@ -869,6 +912,69 @@ class WorkItemCheckItem extends $pb.GeneratedMessage {
   void clearIndex() => clearField(4);
 }
 
+class WorkItemCheckItemRequest extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo('WorkItemCheckItemRequest', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
+    ..aOM<WorkItemCheckItem>(1, 'workItemCheckItem', subBuilder: WorkItemCheckItem.create)
+    ..aOS(2, 'workItemId')
+    ..aOS(3, 'authUserId')
+    ..aOS(4, 'authOrganizationId')
+    ..hasRequiredFields = false
+  ;
+
+  WorkItemCheckItemRequest._() : super();
+  factory WorkItemCheckItemRequest() => create();
+  factory WorkItemCheckItemRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory WorkItemCheckItemRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  WorkItemCheckItemRequest clone() => WorkItemCheckItemRequest()..mergeFromMessage(this);
+  WorkItemCheckItemRequest copyWith(void Function(WorkItemCheckItemRequest) updates) => super.copyWith((message) => updates(message as WorkItemCheckItemRequest));
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static WorkItemCheckItemRequest create() => WorkItemCheckItemRequest._();
+  WorkItemCheckItemRequest createEmptyInstance() => create();
+  static $pb.PbList<WorkItemCheckItemRequest> createRepeated() => $pb.PbList<WorkItemCheckItemRequest>();
+  @$core.pragma('dart2js:noInline')
+  static WorkItemCheckItemRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<WorkItemCheckItemRequest>(create);
+  static WorkItemCheckItemRequest _defaultInstance;
+
+  @$pb.TagNumber(1)
+  WorkItemCheckItem get workItemCheckItem => $_getN(0);
+  @$pb.TagNumber(1)
+  set workItemCheckItem(WorkItemCheckItem v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasWorkItemCheckItem() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearWorkItemCheckItem() => clearField(1);
+  @$pb.TagNumber(1)
+  WorkItemCheckItem ensureWorkItemCheckItem() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.String get workItemId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set workItemId($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasWorkItemId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearWorkItemId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get authUserId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set authUserId($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasAuthUserId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearAuthUserId() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get authOrganizationId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set authOrganizationId($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasAuthOrganizationId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearAuthOrganizationId() => clearField(4);
+}
+
 class WorkItemCheckItemsResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo('WorkItemCheckItemsResponse', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
     ..pc<WorkItemCheckItem>(1, 'workItemCheckItems', $pb.PbFieldType.PM, subBuilder: WorkItemCheckItem.create)
@@ -1226,5 +1332,310 @@ class WorkStageGetRequest extends $pb.GeneratedMessage {
   $core.bool hasWithUserProfile() => $_has(3);
   @$pb.TagNumber(4)
   void clearWithUserProfile() => clearField(4);
+}
+
+class WorkItemValue extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo('WorkItemValue', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
+    ..aOS(1, 'id')
+    ..a<$core.int>(2, 'version', $pb.PbFieldType.O3)
+    ..aOM<$8.Timestamp>(3, 'date', subBuilder: $8.Timestamp.create)
+    ..a<$core.double>(4, 'actualValue', $pb.PbFieldType.OD)
+    ..aOS(5, 'comment')
+    ..aOM<WorkItem>(6, 'workItem', subBuilder: WorkItem.create)
+    ..hasRequiredFields = false
+  ;
+
+  WorkItemValue._() : super();
+  factory WorkItemValue() => create();
+  factory WorkItemValue.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory WorkItemValue.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  WorkItemValue clone() => WorkItemValue()..mergeFromMessage(this);
+  WorkItemValue copyWith(void Function(WorkItemValue) updates) => super.copyWith((message) => updates(message as WorkItemValue));
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static WorkItemValue create() => WorkItemValue._();
+  WorkItemValue createEmptyInstance() => create();
+  static $pb.PbList<WorkItemValue> createRepeated() => $pb.PbList<WorkItemValue>();
+  @$core.pragma('dart2js:noInline')
+  static WorkItemValue getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<WorkItemValue>(create);
+  static WorkItemValue _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get version => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set version($core.int v) { $_setSignedInt32(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasVersion() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearVersion() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $8.Timestamp get date => $_getN(2);
+  @$pb.TagNumber(3)
+  set date($8.Timestamp v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasDate() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDate() => clearField(3);
+  @$pb.TagNumber(3)
+  $8.Timestamp ensureDate() => $_ensure(2);
+
+  @$pb.TagNumber(4)
+  $core.double get actualValue => $_getN(3);
+  @$pb.TagNumber(4)
+  set actualValue($core.double v) { $_setDouble(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasActualValue() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearActualValue() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get comment => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set comment($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasComment() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearComment() => clearField(5);
+
+  @$pb.TagNumber(6)
+  WorkItem get workItem => $_getN(5);
+  @$pb.TagNumber(6)
+  set workItem(WorkItem v) { setField(6, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasWorkItem() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearWorkItem() => clearField(6);
+  @$pb.TagNumber(6)
+  WorkItem ensureWorkItem() => $_ensure(5);
+}
+
+class WorkItemValueRequest extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo('WorkItemValueRequest', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
+    ..aOM<WorkItemValue>(1, 'workItemValue', subBuilder: WorkItemValue.create)
+    ..aOS(2, 'workItemId')
+    ..aOS(3, 'authUserId')
+    ..aOS(4, 'authOrganizationId')
+    ..hasRequiredFields = false
+  ;
+
+  WorkItemValueRequest._() : super();
+  factory WorkItemValueRequest() => create();
+  factory WorkItemValueRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory WorkItemValueRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  WorkItemValueRequest clone() => WorkItemValueRequest()..mergeFromMessage(this);
+  WorkItemValueRequest copyWith(void Function(WorkItemValueRequest) updates) => super.copyWith((message) => updates(message as WorkItemValueRequest));
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static WorkItemValueRequest create() => WorkItemValueRequest._();
+  WorkItemValueRequest createEmptyInstance() => create();
+  static $pb.PbList<WorkItemValueRequest> createRepeated() => $pb.PbList<WorkItemValueRequest>();
+  @$core.pragma('dart2js:noInline')
+  static WorkItemValueRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<WorkItemValueRequest>(create);
+  static WorkItemValueRequest _defaultInstance;
+
+  @$pb.TagNumber(1)
+  WorkItemValue get workItemValue => $_getN(0);
+  @$pb.TagNumber(1)
+  set workItemValue(WorkItemValue v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasWorkItemValue() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearWorkItemValue() => clearField(1);
+  @$pb.TagNumber(1)
+  WorkItemValue ensureWorkItemValue() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.String get workItemId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set workItemId($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasWorkItemId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearWorkItemId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get authUserId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set authUserId($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasAuthUserId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearAuthUserId() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get authOrganizationId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set authOrganizationId($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasAuthOrganizationId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearAuthOrganizationId() => clearField(4);
+}
+
+class WorkItemValueDeleteRequest extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo('WorkItemValueDeleteRequest', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
+    ..aOS(1, 'workItemValueId')
+    ..a<$core.int>(2, 'workItemValueVersion', $pb.PbFieldType.O3)
+    ..aOS(3, 'authUserId')
+    ..aOS(4, 'authOrganizationId')
+    ..hasRequiredFields = false
+  ;
+
+  WorkItemValueDeleteRequest._() : super();
+  factory WorkItemValueDeleteRequest() => create();
+  factory WorkItemValueDeleteRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory WorkItemValueDeleteRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  WorkItemValueDeleteRequest clone() => WorkItemValueDeleteRequest()..mergeFromMessage(this);
+  WorkItemValueDeleteRequest copyWith(void Function(WorkItemValueDeleteRequest) updates) => super.copyWith((message) => updates(message as WorkItemValueDeleteRequest));
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static WorkItemValueDeleteRequest create() => WorkItemValueDeleteRequest._();
+  WorkItemValueDeleteRequest createEmptyInstance() => create();
+  static $pb.PbList<WorkItemValueDeleteRequest> createRepeated() => $pb.PbList<WorkItemValueDeleteRequest>();
+  @$core.pragma('dart2js:noInline')
+  static WorkItemValueDeleteRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<WorkItemValueDeleteRequest>(create);
+  static WorkItemValueDeleteRequest _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get workItemValueId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set workItemValueId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasWorkItemValueId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearWorkItemValueId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get workItemValueVersion => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set workItemValueVersion($core.int v) { $_setSignedInt32(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasWorkItemValueVersion() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearWorkItemValueVersion() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get authUserId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set authUserId($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasAuthUserId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearAuthUserId() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get authOrganizationId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set authOrganizationId($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasAuthOrganizationId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearAuthOrganizationId() => clearField(4);
+}
+
+class WorkItemValuesResponse extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo('WorkItemValuesResponse', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
+    ..pc<WorkItemValue>(1, 'workItemValues', $pb.PbFieldType.PM, subBuilder: WorkItemValue.create)
+    ..hasRequiredFields = false
+  ;
+
+  WorkItemValuesResponse._() : super();
+  factory WorkItemValuesResponse() => create();
+  factory WorkItemValuesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory WorkItemValuesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  WorkItemValuesResponse clone() => WorkItemValuesResponse()..mergeFromMessage(this);
+  WorkItemValuesResponse copyWith(void Function(WorkItemValuesResponse) updates) => super.copyWith((message) => updates(message as WorkItemValuesResponse));
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static WorkItemValuesResponse create() => WorkItemValuesResponse._();
+  WorkItemValuesResponse createEmptyInstance() => create();
+  static $pb.PbList<WorkItemValuesResponse> createRepeated() => $pb.PbList<WorkItemValuesResponse>();
+  @$core.pragma('dart2js:noInline')
+  static WorkItemValuesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<WorkItemValuesResponse>(create);
+  static WorkItemValuesResponse _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<WorkItemValue> get workItemValues => $_getList(0);
+}
+
+class WorkItemValueGetRequest extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo('WorkItemValueGetRequest', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
+    ..aOS(1, 'id')
+    ..aOS(2, 'workItemId')
+    ..aOB(3, 'withWorkItem')
+    ..aOB(4, 'withWork')
+    ..aOB(5, 'withUserProfile')
+    ..hasRequiredFields = false
+  ;
+
+  WorkItemValueGetRequest._() : super();
+  factory WorkItemValueGetRequest() => create();
+  factory WorkItemValueGetRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory WorkItemValueGetRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  WorkItemValueGetRequest clone() => WorkItemValueGetRequest()..mergeFromMessage(this);
+  WorkItemValueGetRequest copyWith(void Function(WorkItemValueGetRequest) updates) => super.copyWith((message) => updates(message as WorkItemValueGetRequest));
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static WorkItemValueGetRequest create() => WorkItemValueGetRequest._();
+  WorkItemValueGetRequest createEmptyInstance() => create();
+  static $pb.PbList<WorkItemValueGetRequest> createRepeated() => $pb.PbList<WorkItemValueGetRequest>();
+  @$core.pragma('dart2js:noInline')
+  static WorkItemValueGetRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<WorkItemValueGetRequest>(create);
+  static WorkItemValueGetRequest _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get workItemId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set workItemId($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasWorkItemId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearWorkItemId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.bool get withWorkItem => $_getBF(2);
+  @$pb.TagNumber(3)
+  set withWorkItem($core.bool v) { $_setBool(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasWithWorkItem() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearWithWorkItem() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.bool get withWork => $_getBF(3);
+  @$pb.TagNumber(4)
+  set withWork($core.bool v) { $_setBool(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasWithWork() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearWithWork() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.bool get withUserProfile => $_getBF(4);
+  @$pb.TagNumber(5)
+  set withUserProfile($core.bool v) { $_setBool(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasWithUserProfile() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearWithUserProfile() => clearField(5);
 }
 

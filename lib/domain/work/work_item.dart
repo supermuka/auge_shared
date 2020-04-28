@@ -6,6 +6,7 @@ import 'package:auge_shared/src/util/common_utils.dart';
 import 'package:auge_shared/domain/work/work.dart';
 import 'package:auge_shared/domain/work/work_stage.dart';
 import 'package:auge_shared/domain/general/user.dart';
+import 'package:auge_shared/domain/general/unit_of_measurement.dart';
 
 import 'package:intl/intl.dart';
 import 'package:intl/date_symbol_data_local.dart';
@@ -31,8 +32,8 @@ class WorkItem {
   String description;
   static const String dueDateField = 'dueDate';
   DateTime dueDate;
-  static const String completedField = 'completed';
-  int completed;
+  //static const String completedField = 'completed';
+  //int completed;
   static const String checkItemsField = 'checkItems';
   List<WorkItemCheckItem> checkItems;
   static const String workStageField = 'workStage';
@@ -43,6 +44,14 @@ class WorkItem {
   List<WorkItemAttachment> attachments;
   static const String workField = 'work';
   Work work;
+  static const String plannedValueField = 'plannedValue';
+  double plannedValue;
+  static const String actualValueField = 'actualValue';
+  double actualValue;
+  static const String unitOfMeasurementField = 'unitOfMeasurement';
+  UnitOfMeasurement unitOfMeasurement;
+  static const String archivedField = 'archived';
+  bool archived;
 
   WorkItem() {
     initializeDateFormatting(Intl.defaultLocale);
@@ -67,7 +76,12 @@ class WorkItem {
     if (version != null) workItemPb.version = version;
     if (name != null) workItemPb.name = name;
     if (description != null) workItemPb.description = description;
-    if (completed != null) workItemPb.completed = completed;
+    ///if (completed != null) workItemPb.completed = completed;
+
+    if (plannedValue != null) workItemPb.plannedValue = plannedValue;
+    if (actualValue != null) workItemPb.actualValue = actualValue;
+    if (unitOfMeasurement != null) workItemPb.unitOfMeasurement = unitOfMeasurement.writeToProtoBuf();
+    if (archived != null) workItemPb.archived = archived;
 
     if (dueDate != null) workItemPb.dueDate = CommonUtils.timestampFromDateTime(dueDate); /*{
       Timestamp t = Timestamp();
@@ -91,7 +105,13 @@ class WorkItem {
     if (workItemPb.hasVersion()) version = workItemPb.version;
     if (workItemPb.hasName()) name = workItemPb.name;
     if (workItemPb.hasDescription()) description = workItemPb.description;
-    if (workItemPb.hasCompleted()) completed = workItemPb.completed;
+    //if (workItemPb.hasCompleted()) completed = workItemPb.completed;
+    if (workItemPb.hasPlannedValue()) plannedValue = workItemPb.plannedValue;
+    if (workItemPb.hasActualValue()) actualValue = workItemPb.actualValue;
+    if (workItemPb.hasUnitOfMeasurement()) unitOfMeasurement = cache.putIfAbsent('${WorkItem.unitOfMeasurementField}${workItemPb.unitOfMeasurement.id}@${UnitOfMeasurement.className}', () => UnitOfMeasurement()..readFromProtoBuf(workItemPb.unitOfMeasurement));
+
+    if (workItemPb.hasArchived()) archived = workItemPb.archived;
+
     if (workItemPb.hasWorkStage()) workStage = WorkStage()..readFromProtoBuf(workItemPb.workStage, cache);
 
     // if (workItemPb.hasDueDate())  this.dueDate = CommonUtils.dateTimeFromTimestamp(workItemPb.dueDate);
@@ -120,8 +140,23 @@ class WorkItem {
       if (workItemPb.hasDescription()) {
         map[WorkItem.descriptionField] = workItemPb.description;
       }
+      /*
       if (workItemPb.hasCompleted()) {
         map[WorkItem.completedField] = workItemPb.completed;
+      }
+*/
+      if (workItemPb.hasPlannedValue()) {
+        map[WorkItem.plannedValueField] = workItemPb.plannedValue;
+      }
+      if (workItemPb.hasActualValue()) {
+        map[WorkItem.actualValueField] = workItemPb.actualValue;
+      }
+      if (workItemPb.hasUnitOfMeasurement()) {
+        map[WorkItem.unitOfMeasurementField] = UnitOfMeasurement.fromProtoBufToModelMap(
+            workItemPb.unitOfMeasurement, onlyIdAndSpecificationForDepthFields, true);
+      }
+      if (workItemPb.hasArchived()) {
+        map[WorkItem.archivedField] = workItemPb.archived;
       }
       if (workItemPb.hasWorkStage()) map[WorkItem.workStageField] = WorkStage.fromProtoBufToModelMap(workItemPb.workStage);
       /*
@@ -271,3 +306,121 @@ class WorkItemCheckItem {
     return map;
   }
 }
+
+class WorkItemValue {
+  static const String className = 'WorkItemValue';
+
+  // Base - implements
+  static const String idField = 'id';
+  String id;
+  static const String versionField = 'version';
+  int version;
+  //static const String isDeletedField = 'isDeleted';
+  //bool isDeleted;
+
+  // Base - History - Transient
+  // REFACTOR HistoryItem lastHistoryItem;
+
+  // Specific
+  static const String dateField = 'date';
+  DateTime date;
+  static const String actualValueField = 'actualValue';
+  double actualValue;
+  static const String commentField = 'comment';
+  String comment;
+  static const String archivedField = 'archived';
+  bool archived;
+  static const String workItemField = 'workItem';
+  WorkItem workItem;
+
+  WorkItemValue() {
+    // lastHistoryItem = HistoryItem();
+  }
+
+  work_work_item_pb.WorkItemValue writeToProtoBuf() {
+    work_work_item_pb.WorkItemValue workItemValuePb = work_work_item_pb.WorkItemValue();
+
+    if (id != null) workItemValuePb.id = id;
+    if (version != null) workItemValuePb.version = version;
+
+    if (date != null)  workItemValuePb.date =  CommonUtils.timestampFromDateTime(date.toUtc());
+
+    if (actualValue != null) {
+      workItemValuePb.actualValue = actualValue;
+    }
+    if (comment != null) {
+      workItemValuePb.comment = comment;
+    }
+
+    if (workItem != null) {
+      workItemValuePb.workItem = workItem.writeToProtoBuf();
+    }
+
+    return workItemValuePb;
+  }
+
+  void readFromProtoBuf(work_work_item_pb.WorkItemValue workItemValuePb, Map<String, dynamic> cache) {
+    if (workItemValuePb.hasId()) id = workItemValuePb.id;
+    if (workItemValuePb.hasVersion()) {
+      version = workItemValuePb.version;
+    }
+    //if (measureProgressPb.hasDate()) this.date = CommonUtils.dateTimeFromTimestamp(measureProgressPb.date);
+    if (workItemValuePb.hasDate()) date = workItemValuePb.date.toDateTime();
+    /*
+        DateTime.fromMicrosecondsSinceEpoch(
+            measureProgressPb.date.seconds.toInt() * 1000000 +
+                measureProgressPb.date.nanos ~/ 1000);
+
+     */
+    if (workItemValuePb.hasActualValue()) {
+      actualValue = workItemValuePb.actualValue;
+    }
+    if (workItemValuePb.hasComment()) {
+      comment = workItemValuePb.comment;
+    }
+
+    if (workItemValuePb.hasWorkItem()) {
+      workItem = WorkItem()..readFromProtoBuf(workItemValuePb.workItem, cache);
+    }
+  }
+
+  static Map<String, dynamic> fromProtoBufToModelMap(work_work_item_pb.WorkItemValue workItemValuePb, [bool onlyIdAndSpecificationForDepthFields = false, bool isDeep = false]) {
+    Map<String, dynamic> map = {};
+
+    if (onlyIdAndSpecificationForDepthFields && isDeep) {
+      if (workItemValuePb.hasId()) {
+        map[WorkItemValue.idField] = workItemValuePb.id;
+      }
+      if (workItemValuePb.hasComment()) {
+        map[WorkItemValue.commentField] = workItemValuePb.comment;
+      }
+    } else {
+      if (workItemValuePb.hasId()) {
+        map[WorkItemValue.idField] = workItemValuePb.id;
+      }
+      if (workItemValuePb.hasVersion()) {
+        map[WorkItemValue.versionField] = workItemValuePb.version;
+      }
+      /*
+      if (measureProgressPb.hasDate())
+        map[MeasureProgress.dateField] = CommonUtils.dateTimeFromTimestamp(measureProgressPb.date);
+       */
+      if (workItemValuePb.hasDate()) {
+        map[WorkItemValue.dateField] = workItemValuePb.date.toDateTime();
+      }
+      if (workItemValuePb.hasActualValue()) {
+        map[WorkItemValue.actualValueField] = workItemValuePb.actualValue;
+      }
+      if (workItemValuePb.hasComment()) {
+        map[WorkItemValue.commentField] = workItemValuePb.comment;
+      }
+
+      if (workItemValuePb.hasWorkItem()) {
+        map[WorkItemValue.workItemField] =
+            WorkItem.fromProtoBufToModelMap(workItemValuePb.workItem, onlyIdAndSpecificationForDepthFields, true);
+      }
+    }
+    return map;
+  }
+}
+

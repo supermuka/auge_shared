@@ -9,10 +9,11 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../google/protobuf/timestamp.pb.dart' as $6;
+import '../google/protobuf/timestamp.pb.dart' as $7;
 import '../general/organization.pb.dart' as $0;
 import '../general/group.pb.dart' as $4;
 import '../general/user.pb.dart' as $3;
+import '../general/unit_of_measurement.pb.dart' as $5;
 
 class Objective extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo('Objective', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
@@ -20,8 +21,8 @@ class Objective extends $pb.GeneratedMessage {
     ..a<$core.int>(2, 'version', $pb.PbFieldType.O3)
     ..aOS(3, 'name')
     ..aOS(4, 'description')
-    ..aOM<$6.Timestamp>(5, 'startDate', subBuilder: $6.Timestamp.create)
-    ..aOM<$6.Timestamp>(6, 'endDate', subBuilder: $6.Timestamp.create)
+    ..aOM<$7.Timestamp>(5, 'startDate', subBuilder: $7.Timestamp.create)
+    ..aOM<$7.Timestamp>(6, 'endDate', subBuilder: $7.Timestamp.create)
     ..aOM<$0.Organization>(7, 'organization', subBuilder: $0.Organization.create)
     ..aOM<$4.Group>(8, 'group', subBuilder: $4.Group.create)
     ..aOM<Objective>(9, 'alignedTo', subBuilder: Objective.create)
@@ -84,26 +85,26 @@ class Objective extends $pb.GeneratedMessage {
   void clearDescription() => clearField(4);
 
   @$pb.TagNumber(5)
-  $6.Timestamp get startDate => $_getN(4);
+  $7.Timestamp get startDate => $_getN(4);
   @$pb.TagNumber(5)
-  set startDate($6.Timestamp v) { setField(5, v); }
+  set startDate($7.Timestamp v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasStartDate() => $_has(4);
   @$pb.TagNumber(5)
   void clearStartDate() => clearField(5);
   @$pb.TagNumber(5)
-  $6.Timestamp ensureStartDate() => $_ensure(4);
+  $7.Timestamp ensureStartDate() => $_ensure(4);
 
   @$pb.TagNumber(6)
-  $6.Timestamp get endDate => $_getN(5);
+  $7.Timestamp get endDate => $_getN(5);
   @$pb.TagNumber(6)
-  set endDate($6.Timestamp v) { setField(6, v); }
+  set endDate($7.Timestamp v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasEndDate() => $_has(5);
   @$pb.TagNumber(6)
   void clearEndDate() => clearField(6);
   @$pb.TagNumber(6)
-  $6.Timestamp ensureEndDate() => $_ensure(5);
+  $7.Timestamp ensureEndDate() => $_ensure(5);
 
   @$pb.TagNumber(7)
   $0.Organization get organization => $_getN(6);
@@ -430,7 +431,7 @@ class Measure extends $pb.GeneratedMessage {
     ..a<$core.int>(6, 'decimalsNumber', $pb.PbFieldType.O3)
     ..a<$core.double>(7, 'startValue', $pb.PbFieldType.OD)
     ..a<$core.double>(8, 'endValue', $pb.PbFieldType.OD)
-    ..aOM<MeasureUnit>(9, 'measureUnit', subBuilder: MeasureUnit.create)
+    ..aOM<$5.UnitOfMeasurement>(9, 'unitOfMeasurement', subBuilder: $5.UnitOfMeasurement.create)
     ..a<$core.double>(10, 'currentValue', $pb.PbFieldType.OD)
     ..pc<MeasureProgress>(11, 'measureProgress', $pb.PbFieldType.PM, subBuilder: MeasureProgress.create)
     ..aOM<Objective>(12, 'objective', subBuilder: Objective.create)
@@ -525,15 +526,15 @@ class Measure extends $pb.GeneratedMessage {
   void clearEndValue() => clearField(8);
 
   @$pb.TagNumber(9)
-  MeasureUnit get measureUnit => $_getN(8);
+  $5.UnitOfMeasurement get unitOfMeasurement => $_getN(8);
   @$pb.TagNumber(9)
-  set measureUnit(MeasureUnit v) { setField(9, v); }
+  set unitOfMeasurement($5.UnitOfMeasurement v) { setField(9, v); }
   @$pb.TagNumber(9)
-  $core.bool hasMeasureUnit() => $_has(8);
+  $core.bool hasUnitOfMeasurement() => $_has(8);
   @$pb.TagNumber(9)
-  void clearMeasureUnit() => clearField(9);
+  void clearUnitOfMeasurement() => clearField(9);
   @$pb.TagNumber(9)
-  MeasureUnit ensureMeasureUnit() => $_ensure(8);
+  $5.UnitOfMeasurement ensureUnitOfMeasurement() => $_ensure(8);
 
   @$pb.TagNumber(10)
   $core.double get currentValue => $_getN(9);
@@ -769,87 +770,11 @@ class MeasureGetRequest extends $pb.GeneratedMessage {
   void clearWithUserProfile() => clearField(4);
 }
 
-class MeasureUnit extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('MeasureUnit', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
-    ..aOS(1, 'id')
-    ..aOS(2, 'symbol')
-    ..aOS(3, 'name')
-    ..hasRequiredFields = false
-  ;
-
-  MeasureUnit._() : super();
-  factory MeasureUnit() => create();
-  factory MeasureUnit.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory MeasureUnit.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-  MeasureUnit clone() => MeasureUnit()..mergeFromMessage(this);
-  MeasureUnit copyWith(void Function(MeasureUnit) updates) => super.copyWith((message) => updates(message as MeasureUnit));
-  $pb.BuilderInfo get info_ => _i;
-  @$core.pragma('dart2js:noInline')
-  static MeasureUnit create() => MeasureUnit._();
-  MeasureUnit createEmptyInstance() => create();
-  static $pb.PbList<MeasureUnit> createRepeated() => $pb.PbList<MeasureUnit>();
-  @$core.pragma('dart2js:noInline')
-  static MeasureUnit getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MeasureUnit>(create);
-  static MeasureUnit _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.String get id => $_getSZ(0);
-  @$pb.TagNumber(1)
-  set id($core.String v) { $_setString(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasId() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearId() => clearField(1);
-
-  @$pb.TagNumber(2)
-  $core.String get symbol => $_getSZ(1);
-  @$pb.TagNumber(2)
-  set symbol($core.String v) { $_setString(1, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasSymbol() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearSymbol() => clearField(2);
-
-  @$pb.TagNumber(3)
-  $core.String get name => $_getSZ(2);
-  @$pb.TagNumber(3)
-  set name($core.String v) { $_setString(2, v); }
-  @$pb.TagNumber(3)
-  $core.bool hasName() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearName() => clearField(3);
-}
-
-class MeasureUnitsResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('MeasureUnitsResponse', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
-    ..pc<MeasureUnit>(1, 'measureUnits', $pb.PbFieldType.PM, protoName: 'measureUnits', subBuilder: MeasureUnit.create)
-    ..hasRequiredFields = false
-  ;
-
-  MeasureUnitsResponse._() : super();
-  factory MeasureUnitsResponse() => create();
-  factory MeasureUnitsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory MeasureUnitsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-  MeasureUnitsResponse clone() => MeasureUnitsResponse()..mergeFromMessage(this);
-  MeasureUnitsResponse copyWith(void Function(MeasureUnitsResponse) updates) => super.copyWith((message) => updates(message as MeasureUnitsResponse));
-  $pb.BuilderInfo get info_ => _i;
-  @$core.pragma('dart2js:noInline')
-  static MeasureUnitsResponse create() => MeasureUnitsResponse._();
-  MeasureUnitsResponse createEmptyInstance() => create();
-  static $pb.PbList<MeasureUnitsResponse> createRepeated() => $pb.PbList<MeasureUnitsResponse>();
-  @$core.pragma('dart2js:noInline')
-  static MeasureUnitsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MeasureUnitsResponse>(create);
-  static MeasureUnitsResponse _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.List<MeasureUnit> get measureUnits => $_getList(0);
-}
-
 class MeasureProgress extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo('MeasureProgress', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
     ..aOS(1, 'id')
     ..a<$core.int>(2, 'version', $pb.PbFieldType.O3)
-    ..aOM<$6.Timestamp>(3, 'date', subBuilder: $6.Timestamp.create)
+    ..aOM<$7.Timestamp>(3, 'date', subBuilder: $7.Timestamp.create)
     ..a<$core.double>(4, 'currentValue', $pb.PbFieldType.OD)
     ..aOS(5, 'comment')
     ..aOM<Measure>(6, 'measure', subBuilder: Measure.create)
@@ -890,15 +815,15 @@ class MeasureProgress extends $pb.GeneratedMessage {
   void clearVersion() => clearField(2);
 
   @$pb.TagNumber(3)
-  $6.Timestamp get date => $_getN(2);
+  $7.Timestamp get date => $_getN(2);
   @$pb.TagNumber(3)
-  set date($6.Timestamp v) { setField(3, v); }
+  set date($7.Timestamp v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasDate() => $_has(2);
   @$pb.TagNumber(3)
   void clearDate() => clearField(3);
   @$pb.TagNumber(3)
-  $6.Timestamp ensureDate() => $_ensure(2);
+  $7.Timestamp ensureDate() => $_ensure(2);
 
   @$pb.TagNumber(4)
   $core.double get currentValue => $_getN(3);

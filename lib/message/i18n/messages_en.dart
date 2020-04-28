@@ -103,9 +103,9 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static m41(valueName) => "${Intl.select(valueName, {'pt_BR': 'Português - Brasil', 'en_US': 'English - USA', 'es_ES': 'Espanhol - España', 'other': 'Not Defined', })}";
 
-  static m42(fieldName) => "${Intl.select(fieldName, {'nameField': 'Name', 'descriptionField': 'Description', 'groupField': 'Group', 'leaderField': 'Leader', 'workStagesField': 'Stages', 'objectiveField': 'Objective', 'other': 'Not Defined', })}";
+  static m42(fieldName) => "${Intl.select(fieldName, {'nameField': 'Name', 'descriptionField': 'Description', 'groupField': 'Group', 'leaderField': 'Leader', 'remainingValueField': 'Remaining', 'workStagesField': 'Stages', 'objectiveField': 'Objective', 'archivedField': 'Archived', 'other': 'Not Defined', })}";
 
-  static m43(fieldName) => "${Intl.select(fieldName, {'nameField': 'Name', 'descriptionField': 'Description', 'dueDateField': 'Due Date', 'completedField': 'Completed', 'workStageField': 'Stage', 'assignedToField': 'Assigned To', 'attachmentsField': 'Attachments', 'checkItemsField': 'Check Items', 'other': 'Not Defined', })}";
+  static m43(fieldName) => "${Intl.select(fieldName, {'nameField': 'Name', 'descriptionField': 'Description', 'dueDateField': 'Due Date', 'plannedValueField': 'Planned', 'actualValueField': 'Actual', 'workStageField': 'Stage', 'assignedToField': 'Assigned To', 'attachmentsField': 'Attachments', 'checkItemsField': 'Check Items', 'archivedField': 'Archived', 'other': 'Not Defined', })}";
 
   static m44(label) => "${Intl.select(label, {'workKanbanLabel': 'Work Kanban', 'workItemsLabel': 'Work Items', 'editWorkItemLabel': 'Edit Work Item', 'addWorkItemLabel': 'Add Work Item', 'selectAValueLabel': 'Select a value', 'workItemsOverDueLabel': 'Work Items Over Due', 'checkItemLabel': 'Check Item', 'noMatchLabel': 'No Match', 'dropFileHereLabel': 'Drop File Here', 'other': 'Not Defined', })}";
 

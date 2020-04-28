@@ -37,10 +37,11 @@ class AppRoutesPath {
   static const workAddRoutePath = 'add';
   static const workEditRoutePath = ':${AppRoutesParam.workIdParameter}/edit';
   static const workItemsKanbanRoute = 'works/:${AppRoutesParam.workIdParameter}/kanban_work_items';
+  static const workItemsKanbanViaObjectiveRoute = 'objectives/:${AppRoutesParam.objectiveIdParameter}/works/:${AppRoutesParam.workIdParameter}/kanban_work_items';
   static const workStagesRoutePath = ':${AppRoutesParam.workIdParameter}/stages';
   static const worksByObjectiveRoutePath = 'works/:${AppRoutesParam.objectiveIdParameter}';
   static const objectivesRoutePath = 'objectives';
-  static const measuresRoutePath = 'objectives/:${AppRoutesParam.objectiveIdParameter}/measures';
+   static const measuresRoutePath = 'objectives/:${AppRoutesParam.objectiveIdParameter}/measures';
   static const organizationRoutePath = 'organizations/:${AppRoutesParam.organizationIdParameter}';
   static const groupsRoutePath = 'groups';
   static const groupAddRoutePath = 'add';
@@ -62,8 +63,10 @@ class AppRoutesPath {
 
 /// Complete url (parent + path)
 /// It is used to server side, for not used lib based on html.
+/*
 class AppRoutesUrl {
 
   static const objectivesRouteUrl = '${AppRoutesPath.appLayoutRoutePath}/${AppRoutesPath.objectivesRoutePath}';
   
 }
+*/

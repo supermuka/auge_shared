@@ -86,7 +86,7 @@
       "fieldName": {}
     }
   },
-  "WorkDomainMsg_fieldLabel": "{fieldName,select, nameField{Name}descriptionField{Description}groupField{Group}leaderField{Leader}workStagesField{Stages}objectiveField{Objective}other{Not Defined}}",
+  "WorkDomainMsg_fieldLabel": "{fieldName,select, nameField{Name}descriptionField{Description}groupField{Group}leaderField{Leader}workStagesField{Stages}objectiveField{Objective}archivedField{Archived}other{Not Defined}}",
   "@WorkDomainMsg_fieldLabel": {
     "type": "text",
     "placeholders": {
@@ -100,7 +100,7 @@
       "fieldName": {}
     }
   },
-  "WorkItemDomainMsg_fieldLabel": "{fieldName,select, nameField{Name}descriptionField{Description}dueDateField{Due Date}completedField{Completed}workStageField{Stage}assignedToField{Assigned To}attachmentsField{Attachments}checkItemsField{Check Items}other{Not Defined}}",
+  "WorkItemDomainMsg_fieldLabel": "{fieldName,select, nameField{Name}descriptionField{Description}workStageField{Stage}dueDateField{Due Date}plannedValueField{Planned}actualValueField{Actual}assignedToField{Assigned To}attachmentsField{Attachments}checkItemsField{Check Items}archivedField{Archived}other{Not Defined}}",
   "@WorkItemDomainMsg_fieldLabel": {
     "type": "text",
     "placeholders": {

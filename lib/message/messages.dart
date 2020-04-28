@@ -460,6 +460,7 @@ class WorkItemMsg {
   static const String checkItemLabel = 'checkItemLabel';
   static const String noMatchLabel = 'noMatchLabel';
   static const String dropFileHereLabel = 'dropFileHereLabel';
+  static const String remainingValueLabel = 'remainingValueLabel';
 
   /// Label for workitem
   static String label(String label) => Intl.select(label, {
@@ -578,22 +579,26 @@ class MeasureMsg {
       desc: "Measure labels"
   );
 
+  static const String dayLabel = 'dayLabel';
+  static const String hourLabel = 'hourLabel';
   static const String percentLabel = 'percentLabel';
   static const String moneyLabel = 'moneyLabel';
   static const String indexLabel = 'indexLabel';
   static const String unitaryLabel = 'unitaryLabel';
 
-  /// Label for Measure Unit
-  static String measureUnitLabel(String label) => Intl.select(label, {
+  /// Label for Unit of Measurement
+  static String UnitOfMeasurementLabel(String label) => Intl.select(label, {
+        dayLabel: 'Day',
+        hourLabel: 'Hour',
         percentLabel: 'Percent',
         moneyLabel: 'Money',
         indexLabel: 'Index',
         unitaryLabel: 'Unitary',
       'other': 'Not Defined'},
-      name: "MeasureMsg_measureUnitLabel",
+      name: "MeasureMsg_unitOfMeasurementLabel",
       args: [label],
       // locale: "en",
-      desc: "Measure Unit labels"
+      desc: "Unit of Measurement labels"
   );
 
   static String valueErrorMsg() => Intl.message("Incorret value. Possible reasons: a) Current value should be between Start and End Value. b) Start and End Value are equals.", name: "MeasureMsg_valueErrorMsg");
@@ -603,6 +608,32 @@ class MeasureMsg {
   static String decimalNumberErrorMsg() => Intl.message("Decimal number should be between 0 and 5.", name: "MeasureMsg_decimalNumberErrorMsg");
 }
 
+
+/// Specific messages and label for [UnitOfMeasurement]
+class UnitOfMeasurementMsg {
+
+  static const String dayLabel = 'dayLabel';
+  static const String hourLabel = 'hourLabel';
+  static const String percentLabel = 'percentLabel';
+  static const String moneyLabel = 'moneyLabel';
+  static const String indexLabel = 'indexLabel';
+  static const String unitaryLabel = 'unitaryLabel';
+
+  /// Label for Unit of Measurement
+  static String UnitOfMeasurementLabel(String label) => Intl.select(label, {
+    dayLabel: 'Day',
+    hourLabel: 'Hour',
+    percentLabel: 'Percent',
+    moneyLabel: 'Money',
+    indexLabel: 'Index',
+    unitaryLabel: 'Unitary',
+    'other': 'Not Defined'},
+      name: "MeasureMsg_unitOfMeasurementLabel",
+      args: [label],
+      // locale: "en",
+      desc: "Unit of Measurement labels"
+  );
+}
 
 /// Specific messages and label for [MeasureProgress]
 class MeasureProgressMsg {

@@ -1,0 +1,27 @@
+// Copyright (c) 2020, Levius Tecnologia Ltda. All rights reserved.
+// Author: Samuel C. Schwebel
+
+syntax = "proto3";
+
+package auge.protobuf;
+
+import "google/protobuf/empty.proto";
+
+/// UNIT OF MEASUREMENT
+// The service definition.
+service UnitOfMeasurementService {
+    rpc GetUnitsOfMeasurement (google.protobuf.Empty) returns (UnitsOfMeasurementResponse) {}
+}
+
+// Message to respective domain object.
+message UnitOfMeasurement {
+    string id = 1;
+
+    string symbol = 2;
+    string name = 3;
+}
+
+// Response list of the measureUnits
+message UnitsOfMeasurementResponse {
+    repeated UnitOfMeasurement unitsOfMeasurement = 1;
+}

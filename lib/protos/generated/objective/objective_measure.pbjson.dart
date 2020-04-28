@@ -81,7 +81,7 @@ const Measure$json = const {
     const {'1': 'decimals_number', '3': 6, '4': 1, '5': 5, '10': 'decimalsNumber'},
     const {'1': 'start_value', '3': 7, '4': 1, '5': 1, '10': 'startValue'},
     const {'1': 'end_value', '3': 8, '4': 1, '5': 1, '10': 'endValue'},
-    const {'1': 'measure_unit', '3': 9, '4': 1, '5': 11, '6': '.auge.protobuf.MeasureUnit', '10': 'measureUnit'},
+    const {'1': 'unit_of_measurement', '3': 9, '4': 1, '5': 11, '6': '.auge.protobuf.UnitOfMeasurement', '10': 'unitOfMeasurement'},
     const {'1': 'current_value', '3': 10, '4': 1, '5': 1, '10': 'currentValue'},
     const {'1': 'measure_progress', '3': 11, '4': 3, '5': 11, '6': '.auge.protobuf.MeasureProgress', '10': 'measureProgress'},
     const {'1': 'objective', '3': 12, '4': 1, '5': 11, '6': '.auge.protobuf.Objective', '10': 'objective'},
@@ -122,22 +122,6 @@ const MeasureGetRequest$json = const {
     const {'1': 'id', '3': 2, '4': 1, '5': 9, '10': 'id'},
     const {'1': 'with_objective', '3': 3, '4': 1, '5': 8, '10': 'withObjective'},
     const {'1': 'with_user_profile', '3': 4, '4': 1, '5': 8, '10': 'withUserProfile'},
-  ],
-};
-
-const MeasureUnit$json = const {
-  '1': 'MeasureUnit',
-  '2': const [
-    const {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
-    const {'1': 'symbol', '3': 2, '4': 1, '5': 9, '10': 'symbol'},
-    const {'1': 'name', '3': 3, '4': 1, '5': 9, '10': 'name'},
-  ],
-};
-
-const MeasureUnitsResponse$json = const {
-  '1': 'MeasureUnitsResponse',
-  '2': const [
-    const {'1': 'measureUnits', '3': 1, '4': 3, '5': 11, '6': '.auge.protobuf.MeasureUnit', '10': 'measureUnits'},
   ],
 };
 

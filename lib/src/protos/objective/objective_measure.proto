@@ -11,6 +11,7 @@ import "google/protobuf/wrappers.proto";
 import "general/organization.proto";
 import "general/group.proto";
 import "general/user.proto";
+import "general/unit_of_measurement.proto";
 
 /// OBJECTIVE
 // The service definition.
@@ -54,7 +55,6 @@ message ObjectiveRequest {
    string auth_organization_id = 3;
 }
 
-
 // Message request for delete to related domain model.
 message ObjectiveDeleteRequest {
   string objective_id = 1;
@@ -95,8 +95,6 @@ service MeasureService {
   rpc UpdateMeasure (MeasureRequest) returns (google.protobuf.Empty) {}
   rpc DeleteMeasure (MeasureDeleteRequest) returns (google.protobuf.Empty) {}
 
-  rpc GetMeasureUnits (google.protobuf.Empty) returns (MeasureUnitsResponse) {}
-
   rpc GetMeasureProgresses (MeasureProgressGetRequest) returns (MeasureProgressesResponse) {}
   rpc GetMeasureProgress (MeasureProgressGetRequest) returns (MeasureProgress) {}
 
@@ -119,7 +117,7 @@ message Measure {
   int32 decimals_number = 6;
   double start_value = 7;
   double end_value = 8;
-  MeasureUnit measure_unit = 9;
+  UnitOfMeasurement unit_of_measurement = 9;
 
   // Transient
   double current_value = 10; // field calculeted on measureProgress
@@ -156,19 +154,6 @@ message MeasureGetRequest {
   string id = 2;
   bool with_objective = 3;
   bool with_user_profile = 4;
-}
-
-// Message to respective domain object.
-message MeasureUnit {
-  string id = 1;
-
-  string symbol = 2;
-  string name = 3;
-}
-
-// Response list of the measureUnits
-message MeasureUnitsResponse {
-  repeated MeasureUnit measureUnits = 1;
 }
 
 // Message to respective domain object.

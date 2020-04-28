@@ -7,6 +7,7 @@ import 'package:auge_shared/domain/general/group.dart';
 import 'package:auge_shared/domain/general/organization.dart';
 import 'package:auge_shared/domain/general/organization_configuration.dart';
 import 'package:auge_shared/domain/general/organization_directory_service.dart';
+import 'package:auge_shared/domain/general/unit_of_measurement.dart';
 import 'package:auge_shared/domain/objective/objective.dart';
 import 'package:auge_shared/domain/objective/measure.dart';
 import 'package:auge_shared/domain/work/work.dart';
@@ -159,13 +160,13 @@ class ObjectiveDomainMsg {
 }
 
 /// Specific messages and label for [MeasureUnit] class field
-class MeasureUnitDomainMsg {
+class UnitOfMeasurementDomainMsg /* MeasureUnitDomainMsg */ {
   static String fieldLabel(String fieldName) {
     fieldName = '${fieldName}${fieldSuffix}';
 
     return Intl.select(fieldName,
-        {MeasureUnit.nameField: 'Name',
-          MeasureUnit.symbolField: 'Symbol',
+        {UnitOfMeasurement.nameField: 'Name',
+          UnitOfMeasurement.symbolField: 'Symbol',
           'other': 'Not Defined'},
         name: 'MeasureUnitDomainMsg_fieldLabel',
         args: [fieldName]);
@@ -185,7 +186,7 @@ class MeasureDomainMsg {
           Measure.startValueField: 'Start Value',
           Measure.currentValueField: 'Current Value',
           Measure.decimalsNumberField: 'Decimals Number',
-          Measure.measureUnitField: 'Unit',
+          Measure.unitOfMeasurementField: 'Unit',
           Measure.metricField: 'Metric',
           'other': 'Not Defined'},
         name: 'MeasureDomainMsg_fieldLabel',
@@ -235,6 +236,7 @@ class WorkDomainMsg {
           Work.leaderField: 'Leader',
           Work.workStagesField: 'Stages',
           Work.objectiveField: 'Objective',
+          Work.archivedField: 'Archived',
           'other': 'Not Defined'},
         name: 'WorkDomainMsg_fieldLabel',
         args: [fieldName]);
@@ -264,11 +266,14 @@ class WorkItemDomainMsg {
         {WorkItem.nameField: 'Name',
           WorkItem.descriptionField: 'Description',
           WorkItem.dueDateField: 'Due Date',
-          WorkItem.completedField: 'Completed',
+          WorkItem.plannedValueField: 'Planned',
+          WorkItem.actualValueField: 'Actual',
+          WorkItem.unitOfMeasurementField: 'Unit of Measurement',
           WorkItem.workStageField: 'Stage',
           WorkItem.assignedToField: 'Assigned To',
           WorkItem.attachmentsField: 'Attachments',
           WorkItem.checkItemsField: 'Check Items',
+          WorkItem.archivedField: 'Archived',
           'other': 'Not Defined'},
         name: 'WorkItemDomainMsg_fieldLabel',
         args: [fieldName]);

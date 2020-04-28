@@ -3,9 +3,12 @@
 
 import 'package:auge_shared/src/util/common_utils.dart';
 
+import 'package:auge_shared/domain/general/unit_of_measurement.dart';
+import 'package:auge_shared/domain/objective/objective.dart';
+
 // Proto buffer transport layer.
 // ignore_for_file: uri_has_not_been_generated
-import 'package:auge_shared/domain/objective/objective.dart';
+
 import 'package:auge_shared/protos/generated/objective/objective_measure.pb.dart' as objective_measure_pb;
 
 /// Domain model class to represent an measure
@@ -34,8 +37,8 @@ class Measure {
   double startValue;
   static const String endValueField = 'endValue';
   double endValue;
-  static const String measureUnitField = 'measureUnit';
-  MeasureUnit measureUnit;
+  static const String unitOfMeasurementField = 'unitOfMeasurement';
+  UnitOfMeasurement unitOfMeasurement;
 
   // Transient
   static const String currentValueField = 'currentValue';
@@ -94,7 +97,7 @@ class Measure {
     if (startValue != null) measurePb.startValue = startValue;
     if (endValue != null) measurePb.endValue = endValue;
     if (currentValue != null) measurePb.currentValue = currentValue;
-    if (measureUnit != null) measurePb.measureUnit = measureUnit.writeToProtoBuf();
+    if (unitOfMeasurement != null) measurePb.unitOfMeasurement = unitOfMeasurement.writeToProtoBuf();
 
     if (measureProgress != null && measureProgress.isNotEmpty) measurePb.measureProgress.addAll(measureProgress.map((m) => m.writeToProtoBuf()));
 
@@ -114,7 +117,7 @@ class Measure {
     if (measurePb.hasStartValue()) startValue = measurePb.startValue;
     if (measurePb.hasEndValue()) endValue = measurePb.endValue;
     if (measurePb.hasCurrentValue()) currentValue = measurePb.currentValue;
-    if (measurePb.hasMeasureUnit()) measureUnit = cache.putIfAbsent('${Measure.measureUnitField}${measurePb.measureUnit.id}@${MeasureUnit.className}', () => MeasureUnit()..readFromProtoBuf(measurePb.measureUnit));
+    if (measurePb.hasUnitOfMeasurement()) unitOfMeasurement = cache.putIfAbsent('${Measure.unitOfMeasurementField}${measurePb.unitOfMeasurement.id}@${UnitOfMeasurement.className}', () => UnitOfMeasurement()..readFromProtoBuf(measurePb.unitOfMeasurement));
     if (measurePb.measureProgress.isNotEmpty) measureProgress = measurePb.measureProgress.map((u) => MeasureProgress()..readFromProtoBuf(u, cache)).toList(); // It is composite, no need cache
     if (measurePb.hasObjective()) objective = cache.putIfAbsent('${Measure.objectiveField}${measurePb.objective.id}@${Objective.className}', () => Objective()..readFromProtoBuf(measurePb.objective, cache));
   }
@@ -157,9 +160,9 @@ class Measure {
       if (measurePb.hasCurrentValue()) {
         map[Measure.currentValueField] = measurePb.currentValue;
       }
-      if (measurePb.hasMeasureUnit()) {
-        map[Measure.measureUnitField] = MeasureUnit.fromProtoBufToModelMap(
-            measurePb.measureUnit, onlyIdAndSpecificationForDepthFields, true);
+      if (measurePb.hasUnitOfMeasurement()) {
+        map[Measure.unitOfMeasurementField] = UnitOfMeasurement.fromProtoBufToModelMap(
+            measurePb.unitOfMeasurement, onlyIdAndSpecificationForDepthFields, true);
       }
       if (measurePb.measureProgress.isNotEmpty) {
         map[Measure.measureProgressField] =
@@ -184,8 +187,8 @@ class MeasureProgress {
   String id;
   static const String versionField = 'version';
   int version;
-  static const String isDeletedField = 'isDeleted';
-  bool isDeleted;
+  //static const String isDeletedField = 'isDeleted';
+  //bool isDeleted;
 
   // Base - History - Transient
   // REFACTOR HistoryItem lastHistoryItem;
@@ -289,6 +292,7 @@ class MeasureProgress {
   }
 }
 
+/*
 class MeasureUnit {
   static const String className = 'MeasureUnit';
 
@@ -335,3 +339,4 @@ class MeasureUnit {
     return map;
   }
 }
+*/

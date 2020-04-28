@@ -30,6 +30,8 @@ class Work  {
   String name;
   static const String descriptionField = 'description';
   String description;
+  static const String archivedField = 'archived';
+  bool archived;
   static const String workStagesField = 'workStages';
   List<WorkStage> workStages;
   static const String objectiveField = 'objective';
@@ -40,6 +42,7 @@ class Work  {
   Group group;
   static const String leaderField = 'leader';
   User leader;
+
 
   // Transient fields
   static const String workItemsField = 'workItems';
@@ -105,6 +108,7 @@ class Work  {
     if (version != null) workPb.version = version;
     if (name != null) workPb.name = name;
     if (description != null) workPb.description = description;
+    if (archived != null) workPb.archived = archived;
 
     if (objective != null) workPb.objective = objective.writeToProtoBuf();
     if (group != null) workPb.group = group.writeToProtoBuf();
@@ -121,6 +125,7 @@ class Work  {
     if (workPb.hasVersion()) version = workPb.version;
     if (workPb.hasName()) name = workPb.name;
     if (workPb.hasDescription()) description = workPb.description;
+    if (workPb.hasArchived()) archived = workPb.archived;
     if (workPb.hasObjective()) objective = cache.putIfAbsent('${Work.objectiveField}${workPb.objective.id}@${Objective.className}', () =>  Objective()..readFromProtoBuf(workPb.objective, cache));
     if (workPb.hasGroup()) group = cache.putIfAbsent('${Work.groupField}${workPb.group.id}@${Group.className}', () => Group()..readFromProtoBuf(workPb.group, cache));
     if (workPb.hasOrganization()) organization = cache.putIfAbsent('${Work.organizationField}${workPb.organization.id}@${Organization.className}', () => Organization()..readFromProtoBuf(workPb.organization));
@@ -143,6 +148,9 @@ class Work  {
       if (workPb.hasName()) map[Work.nameField] = workPb.name;
       if (workPb.hasDescription()) {
         map[Work.descriptionField] = workPb.description;
+      }
+      if (workPb.hasArchived()) {
+        map[Work.archivedField] = workPb.archived;
       }
       if (workPb.hasObjective()) {
         map[Work.objectiveField] =

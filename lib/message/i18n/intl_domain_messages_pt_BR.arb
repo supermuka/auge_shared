@@ -87,7 +87,7 @@
       "fieldName": {}
     }
   },
-  "WorkDomainMsg_fieldLabel": "{fieldName,select, nameField{Nome}descriptionField{Descrição}groupField{Grupo}leaderField{Líder}workStagesField{Estágios}objectiveField{Objetivo}other{Não Definido}}",
+  "WorkDomainMsg_fieldLabel": "{fieldName,select, nameField{Nome}descriptionField{Descrição}groupField{Grupo}leaderField{Líder}workStagesField{Estágios}objectiveField{Objetivo}archivedField{Arquivado}other{Não Definido}}",
   "@WorkDomainMsg_fieldLabel": {
     "type": "text",
     "placeholders": {
@@ -101,7 +101,7 @@
       "fieldName": {}
     }
   },
-  "WorkItemDomainMsg_fieldLabel": "{fieldName,select, nameField{Nome}descriptionField{Descrição}dueDateField{Data Limite}completedField{Concluído}workStageField{Estágio}assignedToField{Atribuído para}attachmentsField{Anexos}checkItemsField{Itens de Checagem}other{Não Definido}}",
+  "WorkItemDomainMsg_fieldLabel": "{fieldName,select, nameField{Nome}descriptionField{Descrição}dueDateField{Data Limite}plannedValueField{Planejado}actualValueField{Real}workStageField{Estágio}assignedToField{Atribuído para}attachmentsField{Anexos}checkItemsField{Itens de Checagem}archivedField{Archived}other{Não Definido}}",
   "@WorkItemDomainMsg_fieldLabel": {
     "type": "text",
     "placeholders": {
