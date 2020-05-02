@@ -209,6 +209,21 @@ class MeasureProgressDomainMsg {
   }
 }
 
+/// Specific messages and label for [WorkItemValue] class field
+class WorkItemValueDomainMsg {
+  static String fieldLabel(String fieldName) {
+    fieldName = '${fieldName}${fieldSuffix}';
+
+    return Intl.select(fieldName,
+        {WorkItemValue.dateField: 'Date',
+          WorkItemValue.actualValueField: 'Actual Value',
+          WorkItemValue.commentField: 'Comment',
+          'other': 'Not Defined'},
+        name: 'WorkItemValueDomainMsg_fieldLabel',
+        args: [fieldName]);
+  }
+}
+
 /// Specific messages and label for [Organization] class field
 class OrganizationDomainMsg {
   static String fieldLabel(String fieldName) {

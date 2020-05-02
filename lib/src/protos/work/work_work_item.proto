@@ -91,6 +91,13 @@ service WorkItemService {
     rpc GetWorkItemAttachment (WorkItemAttachmentGetRequest) returns (WorkItemAttachment) {}
     rpc GetWorkItemCheckItems (WorkItemCheckItemGetRequest) returns (WorkItemCheckItemsResponse) {}
 
+    rpc GetWorkItemValues (WorkItemValueGetRequest) returns (WorkItemValuesResponse) {}
+    rpc GetWorkItemValue (WorkItemValueGetRequest) returns (WorkItemValue) {}
+
+    rpc CreateWorkItemValue (WorkItemValueRequest) returns (google.protobuf.StringValue) {}
+    rpc UpdateWorkItemValue (WorkItemValueRequest) returns (google.protobuf.Empty) {}
+    rpc DeleteWorkItemValue (WorkItemValueDeleteRequest) returns (google.protobuf.Empty) {}
+
 }
 
 /// WORKITEM
@@ -267,17 +274,6 @@ message WorkStageGetRequest {
 }
 
 /// *** WORKITEMVALUE
-
-// The service definition.
-service WorkItemValueService {
-    rpc GetWorkItemValues (WorkItemValueGetRequest) returns (WorkItemValuesResponse) {}
-    rpc GetWorkItemValue (WorkItemValueGetRequest) returns (WorkItemValue) {}
-
-    rpc CreateWorkItemValue (WorkItemValueRequest) returns (google.protobuf.StringValue) {}
-    rpc UpdateWorkItemValue (WorkItemValueRequest) returns (google.protobuf.Empty) {}
-    rpc DeleteWorkItemValue (WorkItemValueDeleteRequest) returns (google.protobuf.Empty) {}
-}
-
 // Message to respective domain object.
 message WorkItemValue {
     // Base
@@ -308,7 +304,7 @@ message WorkItemValueDeleteRequest {
     string auth_organization_id = 4;
 }
 
-// Response list of the MeasureProgress
+// Response list of the WorkItemValue
 message WorkItemValuesResponse {
     repeated WorkItemValue work_item_values = 1;
 }
@@ -321,3 +317,4 @@ message WorkItemValueGetRequest {
     bool with_work = 4;
     bool with_user_profile = 5;
 }
+

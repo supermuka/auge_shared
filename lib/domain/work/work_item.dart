@@ -307,6 +307,8 @@ class WorkItemCheckItem {
   }
 }
 
+/// Used 'Value' work because in the future, if necessary, this class can be used to planned_value too.
+/// For while, it is used to actual_value.
 class WorkItemValue {
   static const String className = 'WorkItemValue';
 

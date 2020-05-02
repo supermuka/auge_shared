@@ -460,7 +460,10 @@ class WorkItemMsg {
   static const String checkItemLabel = 'checkItemLabel';
   static const String noMatchLabel = 'noMatchLabel';
   static const String dropFileHereLabel = 'dropFileHereLabel';
+  static const String plannedActualLabel = 'plannedActualLabel';
   static const String remainingValueLabel = 'remainingValueLabel';
+  static const String checkItemNameLabel = 'checkItemNameLabel';
+  static const String dateAndActualValueLabel = 'dateAndActualValueLabel';
 
   /// Label for workitem
   static String label(String label) => Intl.select(label, {
@@ -473,6 +476,10 @@ class WorkItemMsg {
     checkItemLabel: 'Check Item',
     noMatchLabel: 'No Match',
     dropFileHereLabel: 'Drop File Here',
+    checkItemNameLabel: 'Check Item Name',
+    plannedActualLabel: 'Planned and Actual',
+    remainingValueLabel: 'Remaining Value',
+    dateAndActualValueLabel: 'Date and Actual Value',
     'other': 'Not Defined'},
     name: "WorkItemMsg_label",
     args: [label],
@@ -654,6 +661,25 @@ class MeasureProgressMsg {
 
   static String valueErrorMsg() => Intl.message("Current value should be between Start and End value.", name: "MeasureProgressMsg_valueErrorMsg");
   static String currentValueExistsAtDate() => Intl.message("Current value already exists at date informed.", name: "MeasureProgressMsg_currentValueExistsAtDate");
+}
+
+/// Specific messages and label for [WorkItemValue]
+class WorkItemValueMsg {
+
+  static const String workItemValuesLabel = 'workItemValuesLabel';
+
+  /// Label for Measure
+  static String label(String label) => Intl.select(label, {
+    workItemValuesLabel: 'Values',
+    'other': 'Not Defined'},
+      name: "WorkItemValueMsg_label",
+      args: [label],
+      // locale: "en",
+      desc: "Work Item Value Msg"
+  );
+
+  static String valueErrorMsg() => Intl.message("Current value should be between Start and End value.", name: "MeasureProgressMsg_valueErrorMsg");
+  static String actualValueExistsAtDate() => Intl.message("Actual value already exists at date informed.", name: "MeasureProgressMsg_actualValueExistsAtDate");
 }
 
 /// Specific messages and label for [Group]

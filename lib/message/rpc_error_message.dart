@@ -13,6 +13,7 @@ class RpcErrorDetailMessage {
   static const String measurePreconditionFailed = 'Measure precondition failed.';
   static const String measureProgressUpdatePreconditionFailed = 'MeasureProgressUpdatePreconditionFailed';
   static const String measureProgressDataNotFoundReason = 'Measure progress data not found.';
+  static const String workItemValueDataNotFoundReason = 'Work item value data not found.';
   static const String measureUnitsDataNotFoundReason = 'MeasureUnitsDataNotFound';
   static const String measureDataNotFoundReason = 'Measure data not found.';
   static const String measureInvalidArgument = 'Measure invalid argument.';
