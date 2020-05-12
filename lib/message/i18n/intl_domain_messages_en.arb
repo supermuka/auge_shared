@@ -1,5 +1,5 @@
 {
-  "@@last_modified": "2019-12-11T08:38:35.249602",
+  "@@last_modified": "2020-05-02T10:39:46.653623",
   "@@locale": "en",
   "CommonFieldAndValuesMsg_labelAndValue": "{fieldName,select, true{Yes}false{No}other{Not Defined}}",
   "@CommonFieldAndValuesMsg_labelAndValue": {
@@ -9,7 +9,7 @@
       "fieldName": {}
     }
   },
-  "ClassNameMsg_label": "{className,select, User{the User}UserProfile{the User Profile}UserAccess{the User and Profiles}Group{the Group}Objective{the Objective}Measure{the Measure}MeasureProgress{the Measure Progress}Work{the Work}WorkStage{the Stage}WorkItem{the Work Item}other{Not Defined}}",
+  "ClassNameMsg_label": "{className,select, User{User}UserProfile{User Profile}UserAccess{User and Profiles}Group{Group}Objective{Objective}Measure{Measure}MeasureProgress{Measure Progress}Work{Work}WorkStage{Stage}WorkItem{Work Item}other{Not Defined}}",
   "@ClassNameMsg_label": {
     "description": "Model class name labels",
     "type": "text",
@@ -59,14 +59,14 @@
       "fieldName": {}
     }
   },
-  "MeasureUnitDomainMsg_fieldLabel": "{fieldName,select, nameField{Name}symbolField{Symbol}other{Not Defined}}",
-  "@MeasureUnitDomainMsg_fieldLabel": {
+  "UnitOfMeasurementDomainMsg_fieldLabel": "{fieldName,select, nameField{Name}symbolField{Symbol}other{Not Defined}}",
+  "@UnitOfMeasurementDomainMsg_fieldLabel": {
     "type": "text",
     "placeholders": {
       "fieldName": {}
     }
   },
-  "MeasureDomainMsg_fieldLabel": "{fieldName,select, nameField{Name}descriptionField{Description}endValueField{End Value}startValueField{Start Value}currentValueField{Current Value}decimalsNumberField{Decimals Number}measureUnitField{Unit}metricField{Metric}other{Not Defined}}",
+  "MeasureDomainMsg_fieldLabel": "{fieldName,select, nameField{Name}descriptionField{Description}endValueField{End Value}startValueField{Start Value}currentValueField{Current Value}decimalsNumberField{Decimals Number}unitOfMeasurementField{Unit}metricField{Metric}other{Not Defined}}",
   "@MeasureDomainMsg_fieldLabel": {
     "type": "text",
     "placeholders": {
@@ -75,6 +75,13 @@
   },
   "MeasureProgressDomainMsg_fieldLabel": "{fieldName,select, dateField{Date}currentValueField{Current Value}commentField{Comment}other{Not Defined}}",
   "@MeasureProgressDomainMsg_fieldLabel": {
+    "type": "text",
+    "placeholders": {
+      "fieldName": {}
+    }
+  },
+  "WorkItemValueDomainMsg_fieldLabel": "{fieldName,select, dateField{Date}actualValueField{Actual Value}commentField{Comment}other{Not Defined}}",
+  "@WorkItemValueDomainMsg_fieldLabel": {
     "type": "text",
     "placeholders": {
       "fieldName": {}
@@ -101,7 +108,7 @@
       "fieldName": {}
     }
   },
-  "WorkItemDomainMsg_fieldLabel": "{fieldName,select, nameField{Name}descriptionField{Description}dueDateField{Due Date}plannedValueField{Planned}actualValueField{Actual}workStageField{Stage}assignedToField{Assigned To}attachmentsField{Attachments}checkItemsField{Check Items}archivedField{Archived}other{Not Defined}}",
+  "WorkItemDomainMsg_fieldLabel": "{fieldName,select, nameField{Name}descriptionField{Description}dueDateField{Due Date}plannedValueField{Planned}actualValueField{Actual}unitOfMeasurementField{Unit of Measurement}workStageField{Stage}assignedToField{Assigned To}attachmentsField{Attachments}checkItemsField{Check Items}archivedField{Archived}other{Not Defined}}",
   "@WorkItemDomainMsg_fieldLabel": {
     "type": "text",
     "placeholders": {

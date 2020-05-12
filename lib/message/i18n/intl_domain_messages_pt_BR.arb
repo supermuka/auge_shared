@@ -80,7 +80,14 @@
       "fieldName": {}
     }
   },
-  "OrganizationDomainMsg_fieldLabel": "{fieldName,select, nameField{Nome}codeField{CNPJ}other{Não Definido}}",
+  "WorkItemValueDomainMsg_fieldLabel": "{fieldName,select, dateField{Data}actualValueField{Valor Real}commentField{Comentário}other{Não Definido}}",
+  "@WorkItemValueDomainMsg_fieldLabel": {
+    "type": "text",
+    "placeholders": {
+      "fieldName": {}
+    }
+  },
+  "OrganizationDomainMsg_fieldLabel": "{fieldName,select, nameField{Name}codeField{EIN}other{Not Defined}}",
   "@OrganizationDomainMsg_fieldLabel": {
     "type": "text",
     "placeholders": {

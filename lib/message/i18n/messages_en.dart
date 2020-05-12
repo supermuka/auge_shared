@@ -23,7 +23,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static m1(label) => "${Intl.select(label, {'domainLabel': 'name@domain.com', 'identificationLabel': 'Identification', 'passwordLabel': 'Password', 'selectLabel': 'Select', 'superAdminLabel': 'Super Admin', 'organizationLabel': 'Organization', 'allOrganizationsLabel': 'All Organizations', 'loginLabel': 'Login', 'logoutLabel': 'Logout', 'requestCodeToNewPasswordLabel': 'Request Code to New Password', 'informCodeLabel': 'Inform the Code', 'defineNewPasswordLabel': 'Define New Password', 'passwordCodeLabel': 'Code', 'newPasswordLabel': 'New Password', 'repeatNewPasswordLabel': 'Repeat New Password', 'saveLabel': 'Save', 'other': 'Not Defined', })}";
 
-  static m2(className) => "${Intl.select(className, {'User': 'the User', 'UserProfile': 'the User Profile', 'UserAccess': 'the User and Profiles', 'Group': 'the Group', 'Objective': 'the Objective', 'Measure': 'the Measure', 'MeasureProgress': 'the Measure Progress', 'Work': 'the Work', 'WorkStage': 'the Stage', 'WorkItem': 'the Work Item', 'other': 'Not Defined', })}";
+  static m2(className) => "${Intl.select(className, {'User': 'User', 'UserProfile': 'User Profile', 'UserAccess': 'User and Profiles', 'Group': 'Group', 'Objective': 'Objective', 'Measure': 'Measure', 'MeasureProgress': 'Measure Progress', 'Work': 'Work', 'WorkStage': 'Stage', 'WorkItem': 'Work Item', 'other': 'Not Defined', })}";
 
   static m3(fieldName) => "${Intl.select(fieldName, {'true': 'Yes', 'false': 'No', 'other': 'Not Defined', })}";
 
@@ -49,69 +49,75 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static m14(label) => "${Intl.select(label, {'insightsLabel': 'Insights', 'groupLabel': 'Group', 'leaderLabel': 'Leader', 'objectivesOverallLabel': 'Objectives Overall', 'objectivesMeasuresLabel': 'Objectives and Measures', 'worksWorkItemsLabel': 'Works and Work Items', 'objectivesLabel': 'Objectives', 'objectivesDescriptionLabel': 'Number total of objectives', 'objectivesAchievedLabel': 'Objectives Achieved', 'measuresAchievedDescriptionLabel': 'Measures over 70% progress', 'objectivesRequiringAttentionLabel': 'Objectives Requiring Attention', 'measuresRequiringAttentionDescriptionLabel': 'Measures below 30% progress', 'measuresLabel': 'Measures', 'measuresDescriptionLabel': 'Number total of measures', 'measuresAchievedLabel': 'Measures Achieved', 'measuresRequiringAttentionLabel': 'Measures Requiring Attention', 'worksLabel': 'Works', 'worksDescriptionLabel': 'Number total of works', 'worksCompletedLabel': 'Works Completed', 'worksCompletedDescriptionLabel': 'Works with 100% work items completed', 'worksRequiringAttentionLabel': 'Works Requiring Attention', 'worksRequiringAttentionDescriptionLabel': 'Works with over due work items', 'workItemsLabel': 'Work Items', 'workItemsDescriptionLabel': 'Number total of work items', 'workItemsCompletedLabel': 'Work Items Completed', 'workItemsCompletedDescriptionLabel': 'Work items with 100% progress', 'workItemsRequiringAttentionLabel': 'Work Items Requiring Attention', 'workItemsRequiringAttentionDescriptionLabel': 'Over due work items', 'other': 'Not Defined', })}";
 
-  static m15(label) => "${Intl.select(label, {'notificationLabel': 'Notification','ofTheLabel': 'of the', 'thisLabel': 'this', 'other': 'Not Defined', })}";
+  static m15(label) => "${Intl.select(label, {'notificationLabel': 'Notification', 'ofTheLabel': 'of the', 'thisLabel': 'this', 'other': 'Not Defined', })}";
 
   static m16(label) => "${Intl.select(label, {'objectivesMapLabel': 'Objectives Map', 'other': 'Not Defined', })}";
 
-  static m17(fieldName) => "${Intl.select(fieldName, {'nameField': 'Name', 'descriptionField': 'Description', 'endValueField': 'End Value', 'startValueField': 'Start Value', 'currentValueField': 'Current Value', 'decimalsNumberField': 'Decimals Number', 'measureUnitField': 'Unit', 'metricField': 'Metric', 'other': 'Not Defined', })}";
+  static m17(fieldName) => "${Intl.select(fieldName, {'nameField': 'Name', 'descriptionField': 'Description', 'endValueField': 'End Value', 'startValueField': 'Start Value', 'currentValueField': 'Current Value', 'decimalsNumberField': 'Decimals Number', 'unitOfMeasurementField': 'Unit', 'metricField': 'Metric', 'other': 'Not Defined', })}";
 
   static m18(startDateFormated, endDateFormated) => "Measure progress date should be between objective start date ${startDateFormated} and objective end date ${endDateFormated}.";
 
   static m19(label) => "${Intl.select(label, {'measuresLabel': 'Measures', 'editMeasureLabel': 'Edit Measure', 'addMeasureLabel': 'Add Measure', 'progressLabel': 'Progress', 'startValueLabel': 'Start Value', 'currentValueLabel': 'Current Value', 'endValueLabel': 'End Value', 'other': 'Not Defined', })}";
 
-  static m20(label) => "${Intl.select(label, {'percentLabel': 'Percent', 'moneyLabel': 'Money', 'indexLabel': 'Index', 'unitaryLabel': 'Unitary', 'other': 'Not Defined', })}";
+  static m20(fieldName) => "${Intl.select(fieldName, {'dateField': 'Date', 'currentValueField': 'Current Value', 'commentField': 'Comment', 'other': 'Not Defined', })}";
 
-  static m21(fieldName) => "${Intl.select(fieldName, {'dateField': 'Date', 'currentValueField': 'Current Value', 'commentField': 'Comment', 'other': 'Not Defined', })}";
+  static m21(label) => "${Intl.select(label, {'measureProgressLabel': 'Measure Progress', 'progressCurrentValuesLabel': 'Progress Current Values', 'other': 'Not Defined', })}";
 
-  static m22(label) => "${Intl.select(label, {'measureProgressLabel': 'Measure Progress', 'progressCurrentValuesLabel': 'Progress Current Values', 'other': 'Not Defined', })}";
+  static m22(fieldName) => "${Intl.select(fieldName, {'nameField': 'Name', 'descriptionField': 'Description', 'groupField': 'Group', 'alignedToField': 'Aligned To', 'leaderField': 'Leader', 'startDateField': 'Start Date', 'endDateField': 'End Date', 'archivedField': 'Archived', 'other': 'Not Defined', })}";
 
-  static m23(fieldName) => "${Intl.select(fieldName, {'nameField': 'Name', 'symbolField': 'Symbol', 'other': 'Not Defined', })}";
+  static m23(label) => "${Intl.select(label, {'objectiveLabel': 'Objective', 'objectivesLabel': 'Objectives', 'addObjectiveLabel': 'Add Objective', 'editObjectiveLabel': 'Edit Objective', 'progressLabel': 'Progress', 'noMatchLabel': 'No Match', 'sortedByLabel': 'Sorted By', 'ultimateObjectiveLabel': 'Ultimate Objective', 'other': 'Not Defined', })}";
 
-  static m24(fieldName) => "${Intl.select(fieldName, {'nameField': 'Name', 'descriptionField': 'Description', 'groupField': 'Group', 'alignedToField': 'Aligned To', 'leaderField': 'Leader', 'startDateField': 'Start Date', 'endDateField': 'End Date', 'archivedField': 'Archived', 'other': 'Not Defined', })}";
+  static m24(fieldName) => "${Intl.select(fieldName, {'domainField': 'Domínio', 'other': 'Not Defined', })}";
 
-  static m25(label) => "${Intl.select(label, {'objectiveLabel': 'Objective', 'objectivesLabel': 'Objectives', 'addObjectiveLabel': 'Add Objective', 'editObjectiveLabel': 'Edit Objective', 'progressLabel': 'Progress', 'noMatchLabel': 'No Match', 'sortedByLabel': 'Sorted By', 'ultimateObjectiveLabel': 'Ultimate Objective', 'other': 'Not Defined', })}";
+  static m25(fieldName) => "${Intl.select(fieldName, {'directoryServiceEnabledField': 'Directory Service (LDAP) Enabled', 'hostAddressField': 'Host Address', 'portField': 'Port', 'sslTlsField': 'SSL/TLS Enabled', 'syncBindDnField': 'Sync Bind DN', 'syncBindPasswordField': 'Sync Bind Password (not saved)', 'groupSearchDNField': 'Group Search DN', 'groupSearchScopeField': 'Group Search Scope', 'groupSearchFilterField': 'Group Search Filter', 'groupMemberUserAttributeField': 'Group Member User Attribute', 'userSearchDNField': 'User Search DN', 'userSearchScopeField': 'User Search Scope', 'userSearchFilterField': 'User Search Filter', 'userProviderObjectIdAttributeField': 'User Provider Object Id (GUID/UUID) Attribute', 'userIdentificationAttributeField': 'User Identification (login) Attribute', 'userFirstNameAttributeField': 'User First Attribute', 'userLastNameAttributeField': 'User Last Attribute', 'userEmailAttributeField': 'User Email Attribute', 'userAttributeForGroupRelationshipField': 'User Attribute for Group Relationship', 'syncIntervalField': 'Sync Interval (hours)', 'syncLastDateTimeField': 'Sync Last Date Time', 'syncLastResultField': 'Sync Last Result', 'other': 'Not Defined', })}";
 
-  static m26(fieldName) => "${Intl.select(fieldName, {'domainField': 'Domínio', 'other': 'Not Defined', })}";
+  static m26(fieldName) => "${Intl.select(fieldName, {'nameField': 'Name', 'codeField': 'EIN', 'other': 'Not Defined', })}";
 
-  static m27(fieldName) => "${Intl.select(fieldName, {'directoryServiceEnabledField': 'Directory Service (LDAP) Enabled', 'hostAddressField': 'Host Address', 'portField': 'Port', 'sslTlsField': 'SSL/TLS Enabled', 'syncBindDnField': 'Sync Bind DN', 'syncBindPasswordField': 'Sync Bind Password (not saved)', 'groupSearchDNField': 'Group Search DN', 'groupSearchScopeField': 'Group Search Scope', 'groupSearchFilterField': 'Group Search Filter', 'groupMemberUserAttributeField': 'Group Member User Attribute', 'userSearchDNField': 'User Search DN', 'userSearchScopeField': 'User Search Scope', 'userSearchFilterField': 'User Search Filter', 'userProviderObjectIdAttributeField': 'User Provider Object Id (GUID/UUID) Attribute', 'userIdentificationAttributeField': 'User Identification (login) Attribute', 'userFirstNameAttributeField': 'User First Attribute', 'userLastNameAttributeField': 'User Last Attribute', 'userEmailAttributeField': 'User Email Attribute', 'userAttributeForGroupRelationshipField': 'User Attribute for Group Relationship', 'syncIntervalField': 'Sync Interval (hours)', 'syncLastDateTimeField': 'Sync Last Date Time', 'syncLastResultField': 'Sync Last Result', 'other': 'Not Defined', })}";
+  static m27(label) => "${Intl.select(label, {'organizationsLabel': 'Organizations', 'editOrganizationLabel': 'Edit Organization', 'addOrganizationLabel': 'Add Organization', 'organizationDetailLabel': 'Organization Detail', 'other': 'Not Defined', })}";
 
-  static m28(fieldName) => "${Intl.select(fieldName, {'nameField': 'Name', 'codeField': 'EIN', 'other': 'Not Defined', })}";
+  static m28(label) => "${Intl.select(label, {'workStagesLabel': 'Work Stages', 'stageLabel': 'Stage', 'selectLabel': 'Select', 'other': 'Not Defined', })}";
 
-  static m29(label) => "${Intl.select(label, {'organizationsLabel': 'Organizations', 'editOrganizationLabel': 'Edit Organization', 'addOrganizationLabel': 'Add Organization', 'organizationDetailLabel': 'Organization Detail', 'other': 'Not Defined', })}";
+  static m29(label) => "${Intl.select(label, {'notStarted': 'Not Started', 'inProgress': 'In Progress', 'completed': 'Completed', 'other': 'Not Defined', })}";
 
-  static m30(label) => "${Intl.select(label, {'workStagesLabel': 'Work Stages', 'stageLabel': 'Stage', 'selectLabel': 'Select', 'other': 'Not Defined', })}";
+  static m30(functionName) => "${Intl.select(functionName, {'create': 'Created', 'update': 'Updated', 'delete': 'Deleted', 'read': 'Read', 'other': 'Not Defined', })}";
 
-  static m31(label) => "${Intl.select(label, {'notStarted': 'Not Started', 'inProgress': 'In Progress', 'completed': 'Completed', 'other': 'Not Defined', })}";
+  static m31(moduleName) => "${Intl.select(moduleName, {'groups': 'Groups', 'users': 'Users', 'user_profile': 'User Profile', 'objectives': 'Objectives', 'organization': 'Organization', 'works': 'Works', 'other': 'Not Defined', })}";
 
-  static m32(functionName) => "${Intl.select(functionName, {'create': 'Created', 'update': 'Updated', 'delete': 'Deleted', 'read': 'Read', 'other': 'Not Defined', })}";
+  static m32(fieldName) => "${Intl.select(fieldName, {'timelineLabel': 'Timeline', 'dayAgoLabel': 'day ago', 'daysAgoLabel': 'days ago', 'hourAgoLabel': 'hour ago', 'hoursAgoLabel': 'hours ago', 'minuteAgoLabel': 'minute ago', 'minutesAgoLabel': 'minutes ago', 'secondAgoLabel': 'second ago', 'secondsAgoLabel': 'seconds ago', 'valueLabel': 'value', 'changedFromLabel': 'changed from', 'wasLabel': 'was', 'allLabel': 'All', 'systemModuleLabel': 'System Module', 'other': 'Not Defined', })}";
 
-  static m33(fieldName) => "${Intl.select(fieldName, {'timelineLabel': 'Timeline', 'dayAgoLabel': 'day ago', 'daysAgoLabel': 'days ago', 'hourAgoLabel': 'hour ago', 'hoursAgoLabel': 'hours ago', 'minuteAgoLabel': 'minute ago', 'minutesAgoLabel': 'minutes ago', 'secondAgoLabel': 'second ago', 'secondsAgoLabel': 'seconds ago', 'valueLabel': 'value', 'changedFromLabel': 'changed from', 'wasLabel': 'was', 'other': 'Not Defined', })}";
+  static m33(fieldName) => "${Intl.select(fieldName, {'nameField': 'Name', 'symbolField': 'Symbol', 'other': 'Not Defined', })}";
 
-  static m34(fieldName) => "${Intl.select(fieldName, {'organizationField': 'Organization', 'accessRoleField': 'Access Role', 'other': 'Not Defined', })}";
+  static m34(label) => "${Intl.select(label, {'dayLabel': 'Day', 'hourLabel': 'Hour', 'percentLabel': 'Percent', 'moneyLabel': 'Money', 'indexLabel': 'Index', 'unitaryLabel': 'Unitary', 'other': 'Not Defined', })}";
 
-  static m35(label) => "${Intl.select(label, {'superAdmin': 'Super Admin', 'admin': 'Admin', 'standard': 'Standard', 'other': 'Not Defined', })}";
+  static m35(fieldName) => "${Intl.select(fieldName, {'organizationField': 'Organization', 'accessRoleField': 'Access Role', 'other': 'Not Defined', })}";
 
-  static m36(fieldName) => "${Intl.select(fieldName, {'nameField': 'Name', 'inactiveField': 'Inactive', 'managedByOrganizationField': 'Managed By Organization', 'other': 'Not Defined', })}";
+  static m36(label) => "${Intl.select(label, {'superAdmin': 'Super Admin', 'admin': 'Admin', 'standard': 'Standard', 'other': 'Not Defined', })}";
 
-  static m37(fieldName) => "${Intl.select(fieldName, {'identificationField': 'Identification', 'passwordField': 'Password', 'providerField': 'Provider', 'providerObjectIdField': 'Provider Object Id', 'other': 'Not Defined', })}";
+  static m37(fieldName) => "${Intl.select(fieldName, {'nameField': 'Name', 'inactiveField': 'Inactive', 'managedByOrganizationField': 'Managed By Organization', 'other': 'Not Defined', })}";
 
-  static m38(label) => "${Intl.select(label, {'internal': 'Internal', 'directoryService': 'Directory Service', 'other': 'Not Defined', })}";
+  static m38(fieldName) => "${Intl.select(fieldName, {'identificationField': 'Identification', 'passwordField': 'Password', 'providerField': 'Provider', 'providerObjectIdField': 'Provider Object Id', 'other': 'Not Defined', })}";
 
-  static m39(label) => "${Intl.select(label, {'usersLabel': 'Users', 'userLabel': 'User', 'editUserLabel': 'Edit User', 'addUserLabel': 'Add User', 'profileLabel': 'Profile', 'identityLabel': 'Identity', 'accessLabel': 'Access', 'other': 'Not Defined', })}";
+  static m39(label) => "${Intl.select(label, {'internal': 'Internal', 'directoryService': 'Directory Service', 'other': 'Not Defined', })}";
 
-  static m40(fieldName) => "${Intl.select(fieldName, {'eMailField': 'e-Mail', 'eMailNotificationField': 'e-Mail Notification', 'imageField': 'Image', 'idiomLocaleField': 'Idioma', 'other': 'Not Defined', })}";
+  static m40(label) => "${Intl.select(label, {'usersLabel': 'Users', 'userLabel': 'User', 'editUserLabel': 'Edit User', 'addUserLabel': 'Add User', 'profileLabel': 'Profile', 'identityLabel': 'Identity', 'accessLabel': 'Access', 'other': 'Not Defined', })}";
 
-  static m41(valueName) => "${Intl.select(valueName, {'pt_BR': 'Português - Brasil', 'en_US': 'English - USA', 'es_ES': 'Espanhol - España', 'other': 'Not Defined', })}";
+  static m41(fieldName) => "${Intl.select(fieldName, {'eMailField': 'e-Mail', 'eMailNotificationField': 'e-Mail Notification', 'imageField': 'Image', 'idiomLocaleField': 'Idioma', 'other': 'Not Defined', })}";
 
-  static m42(fieldName) => "${Intl.select(fieldName, {'nameField': 'Name', 'descriptionField': 'Description', 'groupField': 'Group', 'leaderField': 'Leader', 'remainingValueField': 'Remaining', 'workStagesField': 'Stages', 'objectiveField': 'Objective', 'archivedField': 'Archived', 'other': 'Not Defined', })}";
+  static m42(valueName) => "${Intl.select(valueName, {'pt_BR': 'Português - Brasil', 'en_US': 'English - USA', 'es_ES': 'Espanhol - España', 'other': 'Not Defined', })}";
 
-  static m43(fieldName) => "${Intl.select(fieldName, {'nameField': 'Name', 'descriptionField': 'Description', 'dueDateField': 'Due Date', 'plannedValueField': 'Planned', 'actualValueField': 'Actual', 'workStageField': 'Stage', 'assignedToField': 'Assigned To', 'attachmentsField': 'Attachments', 'checkItemsField': 'Check Items', 'archivedField': 'Archived', 'other': 'Not Defined', })}";
+  static m43(fieldName) => "${Intl.select(fieldName, {'nameField': 'Name', 'descriptionField': 'Description', 'groupField': 'Group', 'leaderField': 'Leader', 'workStagesField': 'Stages', 'objectiveField': 'Objective', 'archivedField': 'Archived', 'other': 'Not Defined', })}";
 
-  static m44(label) => "${Intl.select(label, {'workKanbanLabel': 'Work Kanban', 'workItemsLabel': 'Work Items', 'editWorkItemLabel': 'Edit Work Item', 'addWorkItemLabel': 'Add Work Item', 'selectAValueLabel': 'Select a value', 'workItemsOverDueLabel': 'Work Items Over Due', 'checkItemLabel': 'Check Item', 'noMatchLabel': 'No Match', 'dropFileHereLabel': 'Drop File Here', 'other': 'Not Defined', })}";
+  static m44(fieldName) => "${Intl.select(fieldName, {'nameField': 'Name', 'descriptionField': 'Description', 'dueDateField': 'Due Date', 'plannedValueField': 'Planned', 'actualValueField': 'Actual', 'unitOfMeasurementField': 'Unit of Measurement', 'workStageField': 'Stage', 'assignedToField': 'Assigned To', 'attachmentsField': 'Attachments', 'checkItemsField': 'Check Items', 'archivedField': 'Archived', 'other': 'Not Defined', })}";
 
-  static m45(label) => "${Intl.select(label, {'workLabel': 'Work', 'worksLabel': 'Works', 'sortedByLabel': 'Sorted By', 'editWorkLabel': 'Edit Work', 'addWorkLabel': 'Add Work', 'objectiveLabel': 'Objective', 'workItemsOverDueLabel': 'Work Items Over Due', 'noMatchLabel': 'No Match', 'selectLabel': 'Select', 'filterWorksLabel': 'Filter Works', 'other': 'Not Defined', })}";
+  static m45(label) => "${Intl.select(label, {'workKanbanLabel': 'Work Kanban', 'workItemsLabel': 'Work Items', 'editWorkItemLabel': 'Edit Work Item', 'addWorkItemLabel': 'Add Work Item', 'selectAValueLabel': 'Select a value', 'workItemsOverDueLabel': 'Work Items Over Due', 'checkItemLabel': 'Check Item', 'noMatchLabel': 'No Match', 'dropFileHereLabel': 'Drop File Here', 'checkItemNameLabel': 'Check Item Name', 'plannedActualLabel': 'Planned and Actual', 'remainingValueLabel': 'Remaining Value', 'dateAndActualValueLabel': 'Date and Actual Value', 'other': 'Not Defined', })}";
 
-  static m46(fieldName) => "${Intl.select(fieldName, {'nameField': 'Name', 'stateField': 'State', 'other': 'Not Defined', })}";
+  static m46(fieldName) => "${Intl.select(fieldName, {'dateField': 'Date', 'actualValueField': 'Actual Value', 'commentField': 'Comment', 'other': 'Not Defined', })}";
+
+  static m47(label) => "${Intl.select(label, {'workItemValuesLabel': 'Values', 'other': 'Not Defined', })}";
+
+  static m48(label) => "${Intl.select(label, {'workLabel': 'Work', 'worksLabel': 'Works', 'sortedByLabel': 'Sorted By', 'editWorkLabel': 'Edit Work', 'addWorkLabel': 'Add Work', 'objectiveLabel': 'Objective', 'workItemsOverDueLabel': 'Work Items Over Due', 'noMatchLabel': 'No Match', 'selectLabel': 'Select', 'filterWorksLabel': 'Filter Works', 'other': 'Not Defined', })}";
+
+  static m49(fieldName) => "${Intl.select(fieldName, {'nameField': 'Name', 'stateField': 'State', 'other': 'Not Defined', })}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
@@ -155,40 +161,45 @@ class MessageLookup extends MessageLookupByLibrary {
     "MeasureMsg_currentDateNotBetweenStartEndDate" : m18,
     "MeasureMsg_decimalNumberErrorMsg" : MessageLookupByLibrary.simpleMessage("Decimal number should be between 0 and 5."),
     "MeasureMsg_label" : m19,
-    "MeasureMsg_measureUnitLabel" : m20,
     "MeasureMsg_valueErrorMsg" : MessageLookupByLibrary.simpleMessage("Incorret value. Possible reasons: a) Current value should be between Start and End Value. b) Start and End Value are equals."),
-    "MeasureProgressDomainMsg_fieldLabel" : m21,
+    "MeasureProgressDomainMsg_fieldLabel" : m20,
     "MeasureProgressMsg_currentValueExistsAtDate" : MessageLookupByLibrary.simpleMessage("Current value already exists at date informed."),
-    "MeasureProgressMsg_label" : m22,
+    "MeasureProgressMsg_label" : m21,
     "MeasureProgressMsg_valueErrorMsg" : MessageLookupByLibrary.simpleMessage("Current value should be between Start and End value."),
-    "MeasureUnitDomainMsg_fieldLabel" : m23,
-    "ObjectiveDomainMsg_fieldLabel" : m24,
-    "ObjectiveMsg_label" : m25,
-    "OrganizationConfigurationDomainMsg_fieldLabel" : m26,
-    "OrganizationDirectoryServiceDomainMsg_fieldLabel" : m27,
-    "OrganizationDomainMsg_fieldLabel" : m28,
-    "OrganizationMsg_label" : m29,
-    "StageMsg_label" : m30,
+    "ObjectiveDomainMsg_fieldLabel" : m22,
+    "ObjectiveMsg_label" : m23,
+    "OrganizationConfigurationDomainMsg_fieldLabel" : m24,
+    "OrganizationDirectoryServiceDomainMsg_fieldLabel" : m25,
+    "OrganizationDomainMsg_fieldLabel" : m26,
+    "OrganizationMsg_label" : m27,
+    "StageMsg_label" : m28,
     "StageMsg_stateNotInfomedMsg" : MessageLookupByLibrary.simpleMessage("State not informed."),
-    "StateMsg_label" : m31,
-    "SystemFunctionMsg_inPastLabel" : m32,
-    "TimelineItemdMsg_label" : m33,
-    "UserAccessDomainMsg_fieldLabel" : m34,
-    "UserAccessMsg_label" : m35,
-    "UserDomainMsg_fieldLabel" : m36,
-    "UserIdentityDomainMsg_fieldLabel" : m37,
-    "UserIdentityMsg_label" : m38,
+    "StateMsg_label" : m29,
+    "SystemFunctionMsg_inPastLabel" : m30,
+    "SystemModuleMsg_label" : m31,
+    "TimelineMsg_label" : m32,
+    "UnitOfMeasurementDomainMsg_fieldLabel" : m33,
+    "UnitOfMeasurementMsg_unitNameLabel" : m34,
+    "UserAccessDomainMsg_fieldLabel" : m35,
+    "UserAccessMsg_label" : m36,
+    "UserDomainMsg_fieldLabel" : m37,
+    "UserIdentityDomainMsg_fieldLabel" : m38,
+    "UserIdentityMsg_label" : m39,
     "UserMsg_domainOrganizationConfigurationRequiredMsg" : MessageLookupByLibrary.simpleMessage("Domain on organization configuration is required."),
     "UserMsg_identificationRequiredMsg" : MessageLookupByLibrary.simpleMessage("Identification is required."),
     "UserMsg_invalidIdentificationMsg" : MessageLookupByLibrary.simpleMessage("Identification format invalid. Valid format example: id@domain.com"),
-    "UserMsg_label" : m39,
-    "UserProfileDomainMsg_fieldLabel" : m40,
-    "UserProfileValueMsg_label" : m41,
-    "WorkDomainMsg_fieldLabel" : m42,
-    "WorkItemDomainMsg_fieldLabel" : m43,
-    "WorkItemMsg_label" : m44,
+    "UserMsg_label" : m40,
+    "UserProfileDomainMsg_fieldLabel" : m41,
+    "UserProfileValueMsg_label" : m42,
+    "WorkDomainMsg_fieldLabel" : m43,
+    "WorkItemDomainMsg_fieldLabel" : m44,
+    "WorkItemMsg_label" : m45,
     "WorkItemMsg_valuePercentIntervalMsg" : MessageLookupByLibrary.simpleMessage("The percentual value should be between 0 and 100"),
-    "WorkMsg_label" : m45,
-    "WorkStageDomainMsg_fieldLabel" : m46
+    "WorkItemValueDomainMsg_fieldLabel" : m46,
+    "WorkItemValueMsg_actualValueExistsAtDate" : MessageLookupByLibrary.simpleMessage("Actual value already exists at date informed."),
+    "WorkItemValueMsg_label" : m47,
+    "WorkItemValueMsg_valueErrorMsg" : MessageLookupByLibrary.simpleMessage("Actual value must be less or equal than planned value."),
+    "WorkMsg_label" : m48,
+    "WorkStageDomainMsg_fieldLabel" : m49
   };
 }

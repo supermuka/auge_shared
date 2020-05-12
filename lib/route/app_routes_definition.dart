@@ -42,7 +42,8 @@ class AppRoutesPath {
   static const workStagesRoutePath = ':${AppRoutesParam.workIdParameter}/stages';
   static const worksByObjectiveRoutePath = 'works/:${AppRoutesParam.objectiveIdParameter}';
   static const objectivesRoutePath = 'objectives';
-   static const measuresRoutePath = 'objectives/:${AppRoutesParam.objectiveIdParameter}/measures';
+  static const objectivesFilterRoutePath = 'filter';
+  static const measuresRoutePath = 'objectives/:${AppRoutesParam.objectiveIdParameter}/measures';
   static const organizationRoutePath = 'organizations/:${AppRoutesParam.organizationIdParameter}';
   static const groupsRoutePath = 'groups';
   static const groupAddRoutePath = 'add';
@@ -60,6 +61,7 @@ class AppRoutesPath {
   static const userAddRoutePath = 'add';
   static const userEditRoutePath = ':${AppRoutesParam.userIdParameter}/edit';
   static const userEditWithAppLayoutParentRoutePath = 'users/:${AppRoutesParam.userIdParameter}/auth/edit';
+  static const historyRoutePath = 'history';
 }
 
 /// Complete url (parent + path)

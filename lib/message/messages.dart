@@ -498,6 +498,7 @@ class ObjectiveMsg {
 
   static const String objectiveLabel = 'objectiveLabel';
   static const String objectivesLabel = 'objectivesLabel';
+  static const String objectivesFilterLabel = 'objectivesFilterLabel';
   static const String addObjectiveLabel = 'addObjectiveLabel';
   static const String editObjectiveLabel = 'editObjectiveLabel';
   static const String progressLabel = 'progressLabel';
@@ -509,6 +510,7 @@ class ObjectiveMsg {
   static String label(String label) => Intl.select(label, {
     objectiveLabel: 'Objective',
     objectivesLabel: 'Objectives',
+    objectivesFilterLabel: 'Objectives Filter',
     addObjectiveLabel: 'Add Objective',
     editObjectiveLabel: 'Edit Objective',
     progressLabel: 'Progress',
@@ -594,6 +596,7 @@ class MeasureMsg {
   static const String unitaryLabel = 'unitaryLabel';
 
   /// Label for Unit of Measurement
+/*
   static String UnitOfMeasurementLabel(String label) => Intl.select(label, {
         dayLabel: 'Day',
         hourLabel: 'Hour',
@@ -607,6 +610,7 @@ class MeasureMsg {
       // locale: "en",
       desc: "Unit of Measurement labels"
   );
+*/
 
   static String valueErrorMsg() => Intl.message("Incorret value. Possible reasons: a) Current value should be between Start and End Value. b) Start and End Value are equals.", name: "MeasureMsg_valueErrorMsg");
   static String currentDateNotBetweenStartEndDate(String startDateFormated, String endDateFormated) => Intl.message("Measure progress date should be between objective start date ${startDateFormated} and objective end date ${endDateFormated}.",
@@ -627,7 +631,7 @@ class UnitOfMeasurementMsg {
   static const String unitaryLabel = 'unitaryLabel';
 
   /// Label for Unit of Measurement
-  static String UnitOfMeasurementLabel(String label) => Intl.select(label, {
+  static String unitNameLabel(String label) => Intl.select(label, {
     dayLabel: 'Day',
     hourLabel: 'Hour',
     percentLabel: 'Percent',
@@ -635,7 +639,7 @@ class UnitOfMeasurementMsg {
     indexLabel: 'Index',
     unitaryLabel: 'Unitary',
     'other': 'Not Defined'},
-      name: "MeasureMsg_unitOfMeasurementLabel",
+      name: "UnitOfMeasurementMsg_unitNameLabel",
       args: [label],
       // locale: "en",
       desc: "Unit of Measurement labels"
@@ -678,8 +682,8 @@ class WorkItemValueMsg {
       desc: "Work Item Value Msg"
   );
 
-  static String valueErrorMsg() => Intl.message("Current value should be between Start and End value.", name: "MeasureProgressMsg_valueErrorMsg");
-  static String actualValueExistsAtDate() => Intl.message("Actual value already exists at date informed.", name: "MeasureProgressMsg_actualValueExistsAtDate");
+  static String valueErrorMsg() => Intl.message("Actual value must be less or equal than planned value.", name: "WorkItemValueMsg_valueErrorMsg");
+  static String actualValueExistsAtDate() => Intl.message("Actual value already exists at date informed.", name: "WorkItemValueMsg_actualValueExistsAtDate");
 }
 
 /// Specific messages and label for [Group]
@@ -796,6 +800,25 @@ class InsightMsg {
   );
 }
 
+/// Specific messages and label for [SystemModule]
+class SystemModuleMsg {
+
+  /// Label
+  static String label(String moduleName) => Intl.select(moduleName, {
+    SystemModule.groups: 'Groups',
+    SystemModule.users: 'Users',
+    SystemModule.user_profile: 'User Profile',
+    SystemModule.objectives: 'Objectives',
+    SystemModule.organization: 'Organization',
+    SystemModule.works: 'Works',
+    'other': 'Not Defined'},
+    name: "SystemModuleMsg_label",
+    args: [moduleName],
+    // locale: "en",
+    desc: "System Module labels",
+  );
+}
+
 /// Specific messages and label for [SystemFunction]
 class SystemFunctionMsg {
 
@@ -813,8 +836,8 @@ class SystemFunctionMsg {
   );
 }
 
-/// Specific messages and label for [TimelineItem] class field
-class TimelineItemdMsg {
+/// Specific messages and label for [Timeline] class field
+class TimelineMsg {
 
   static const String timelineLabel = 'timelineLabel';
   static const String dayAgoLabel = 'dayAgoLabel';
@@ -828,6 +851,8 @@ class TimelineItemdMsg {
   static const String valueLabel = 'valueLabel';
   static const String changedFromLabel = 'changedFromLabel';
   static const String wasLabel = 'wasLabel';
+  static const String allLabel = 'allLabel';
+  static const String selectModuleLabel = 'selectModuleLabel';
 
   /// Label
   static String label(String fieldName) => Intl.select(fieldName, {
@@ -843,8 +868,11 @@ class TimelineItemdMsg {
     valueLabel: 'value',
     changedFromLabel: 'changed from',
     wasLabel: 'was',
+    allLabel: 'All',
+    selectModuleLabel: 'Select module',
+
       'other': 'Not Defined'},
-    name: "TimelineItemdMsg_label",
+    name: "TimelineMsg_label",
     args: [fieldName],
     // locale: "en",
     desc: "TimelineItem labels",

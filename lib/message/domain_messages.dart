@@ -168,7 +168,7 @@ class UnitOfMeasurementDomainMsg /* MeasureUnitDomainMsg */ {
         {UnitOfMeasurement.nameField: 'Name',
           UnitOfMeasurement.symbolField: 'Symbol',
           'other': 'Not Defined'},
-        name: 'MeasureUnitDomainMsg_fieldLabel',
+        name: 'UnitOfMeasurementDomainMsg_fieldLabel',
         args: [fieldName]);
   }
 }

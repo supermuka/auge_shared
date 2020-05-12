@@ -1,7 +1,7 @@
 {
   "@@last_modified": "2019-12-11T09:32:29.322497",
   "@@locale": "pt_BR",
-  "CommonMsg_label": "{label,select, headerTitleLabel{AUGE}headerSubtitleLabel{Objetivos, Trabalho e Desempenho}searchLabel{Busca}filterLabel{Filtro}moreLabel{mais}emptyLabel{vazio}ofLabel{de}other{Não Definido}}",
+  "CommonMsg_label": "{label,select, headerTitleLabel{AUGE}headerSubtitleLabel{Objetivos, Trabalho e Desempenho}searchLabel{Busca}filterLabel{Filtro}moreLabel{mais}emptyLabel{vazio}other{Não Definido}}",
   "@CommonMsg_label": {
     "description": "Common labels",
     "type": "text",
@@ -203,7 +203,7 @@
       "label": {}
     }
   },
-  "WorkItemMsg_label": "{label,select, workKanbanLabel{Trabalho Kanban}workItemsLabel{Itens de Trabalho}editWorkItemLabel{Editar Itens de Trabalho}addWorkItemLabel{Adicionar Item de Trabalho}selectAValueLabel{Selecionar um Valor}workItemsOverDueLabel{Itens de Trabalho Atrasados}checkItemLabel{Item de Checagem}noMatchLabel{Sem Correspondência}dropFileHereLabel{Soltar Arquivo Aqui}other{Não Definido}}",
+  "WorkItemMsg_label": "{label,select, workKanbanLabel{Trabalho Kanban}workItemsLabel{Itens de Trabalho}editWorkItemLabel{Editar Itens de Trabalho}addWorkItemLabel{Adicionar Item de Trabalho}selectAValueLabel{Selecionar um Valor}workItemsOverDueLabel{Itens de Trabalho Atrasados}checkItemLabel{Item de Checagem}noMatchLabel{Sem Correspondência}dropFileHereLabel{Soltar Arquivo Aqui}checkItemNameLabel{Nome do Item de Checagem}plannedActualLabel{Planejado e Real}remainingValueLabel{Valor Restante}dateAndActualValueLabel{Date e Valor Real}other{Não Definido}}",
   "@WorkItemMsg_label": {
     "description": "Work Item labels",
     "type": "text",
@@ -253,14 +253,6 @@
       "label": {}
     }
   },
-  "MeasureMsg_measureUnitLabel": "{label,select, percentLabel{Percentual}moneyLabel{Monetário}indexLabel{Índice}unitaryLabel{Unitário}}",
-  "@MeasureMsg_measureUnitLabel": {
-    "description": "Measure Unit labels",
-    "type": "text",
-    "placeholders": {
-      "label": {}
-    }
-  },
   "MeasureMsg_valueErrorMsg": "Valor Incorreto. Razões Possíveis: a) Valor corrente deveria estar entre valor inicial e final. b) Valor inicial e final são iguais.",
   "@MeasureMsg_valueErrorMsg": {
     "type": "text",
@@ -279,7 +271,15 @@
     "type": "text",
     "placeholders": {}
   },
-  "MeasureProgressMsg_label": "{label,select, measureProgressLabel{Progresso da Medida}progressCurrentValuesLabel{Valores do Progresso Corrente}other{Não Definido}}",
+  "UnitOfMeasurementMsg_unitNameLabel": "{label,select, dayLabel{Dia}hourLabel{Hora}percentLabel{Percentual}moneyLabel{Mês}indexLabel{Índice}unitaryLabel{Unitário}other{Não Definido}}",
+  "@UnitOfMeasurementMsg_unitNameLabel": {
+    "description": "Unit of Measurement labels",
+    "type": "text",
+    "placeholders": {
+      "label": {}
+    }
+  },
+  "MeasureProgressMsg_label": "{label,select, measureProgressLabel{Measure Progress}progressCurrentValuesLabel{Progress Current Values}other{Not Defined}}",
   "@MeasureProgressMsg_label": {
     "description": "Measure Progresslabels",
     "type": "text",
@@ -297,7 +297,25 @@
     "type": "text",
     "placeholders": {}
   },
-  "GroupMsg_label": "{label,select, groupsLabel{Grupos}editGroupLabel{Editar Grupo}addGroupLabel{Adicionar Grupo}noMatchLabel{Sem Correspondência}activeLabel{Ativo}inactiveLabel{Inativo}other{Não Definido}}",
+  "WorkItemValueMsg_label": "{label,select, workItemValuesLabel{Valores}other{Não Definido}}",
+  "@WorkItemValueMsg_label": {
+    "description": "Work Item Value Msg",
+    "type": "text",
+    "placeholders": {
+      "label": {}
+    }
+  },
+  "WorkItemValueMsg_valueErrorMsg": "O valor real deve ser menor ou igual ao valor planejado.",
+  "@WorkItemValueMsg_valueErrorMsg": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "WorkItemValueMsg_actualValueExistsAtDate": "Valor real já existe na data informada.",
+  "@WorkItemValueMsg_actualValueExistsAtDate": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "GroupMsg_label": "{label,select, groupsLabel{Groups}editGroupLabel{Edit Group}addGroupLabel{Add Group}noMatchLabel{No Match}activeLabel{Active}inactiveLabel{Inactive}other{Not Defined}}",
   "@GroupMsg_label": {
     "description": "Group labels",
     "type": "text",
@@ -321,7 +339,15 @@
       "label": {}
     }
   },
-  "SystemFunctionMsg_inPastLabel": "{functionName,select, create{Criado(a)}update{Atualizado(a)}delete{Deletado(a)}read{Lido(a)}other{Não Definido}}",
+  "SystemModuleMsg_label": "{moduleName,select, groups{Grupos}users{Usuários}user_profile{Perfil Usuário}objectives{Objetivos}organization{Organização}works{Trabalhos}other{Não Definido}}",
+  "@SystemModuleMsg_label": {
+    "description": "System Module labels",
+    "type": "text",
+    "placeholders": {
+      "moduleName": {}
+    }
+  },
+  "SystemFunctionMsg_inPastLabel": "{functionName,select, create{Created}update{Updated}delete{Deleted}read{Read}other{Not Defined}}",
   "@SystemFunctionMsg_inPastLabel": {
     "description": "System Function labels",
     "type": "text",
@@ -329,8 +355,8 @@
       "functionName": {}
     }
   },
-  "TimelineItemdMsg_label": "{fieldName,select, timelineLabel{Linha do tempo}dayAgoLabel{dia atrás}daysAgoLabel{dias atrás}hourAgoLabel{hora atrás}hoursAgoLabel{horas atrás}minuteAgoLabel{minuto atrás}minutesAgoLabel{minutos atrás}secondAgoLabel{segundo atrás}secondsAgoLabel{segundos atrás}valueLabel{valor}theLabel{o}changedFromLabel{alterado de}wasLabel{era}other{Não Definido}}",
-  "@TimelineItemdMsg_label": {
+  "TimelineMsg_label": "{fieldName,select, timelineLabel{Linha do tempo}dayAgoLabel{dia atrás}daysAgoLabel{dias atrás}hourAgoLabel{hora atrás}hoursAgoLabel{horas atrás}minuteAgoLabel{minuto atrás}minutesAgoLabel{minutos atrás}secondAgoLabel{segundo atrás}secondsAgoLabel{segundos atrás}valueLabel{valor}theLabel{o}changedFromLabel{alterado de}wasLabel{era}allLabel{Todos}selectModuleLabel{Selecione o módulo}other{Não Definido}}",
+  "@TimelineMsg_label": {
     "description": "TimelineItem labels",
     "type": "text",
     "placeholders": {

@@ -1,5 +1,5 @@
 {
-  "@@last_modified": "2020-02-19T11:52:45.732853",
+  "@@last_modified": "2020-05-06T15:46:33.103786",
   "CommonMsg_label": "{label,select, headerTitleLabel{AUGE}headerSubtitleLabel{Objectives, Work and Performance}searchLabel{Search}filterLabel{Filter}moreLabel{more}emptyLabel{empty}other{Not Defined}}",
   "@CommonMsg_label": {
     "description": "Common labels",
@@ -202,7 +202,7 @@
       "label": {}
     }
   },
-  "WorkItemMsg_label": "{label,select, workKanbanLabel{Work Kanban}workItemsLabel{Work Items}editWorkItemLabel{Edit Work Item}addWorkItemLabel{Add Work Item}selectAValueLabel{Select a value}workItemsOverDueLabel{Work Items Over Due}checkItemLabel{Check Item}noMatchLabel{No Match}dropFileHereLabel{Drop File Here}other{Not Defined}}",
+  "WorkItemMsg_label": "{label,select, workKanbanLabel{Work Kanban}workItemsLabel{Work Items}editWorkItemLabel{Edit Work Item}addWorkItemLabel{Add Work Item}selectAValueLabel{Select a value}workItemsOverDueLabel{Work Items Over Due}checkItemLabel{Check Item}noMatchLabel{No Match}dropFileHereLabel{Drop File Here}checkItemNameLabel{Check Item Name}plannedActualLabel{Planned and Actual}remainingValueLabel{Remaining Value}dateAndActualValueLabel{Date and Actual Value}other{Not Defined}}",
   "@WorkItemMsg_label": {
     "description": "Work Item labels",
     "type": "text",
@@ -252,14 +252,6 @@
       "label": {}
     }
   },
-  "MeasureMsg_measureUnitLabel": "{label,select, percentLabel{Percent}moneyLabel{Money}indexLabel{Index}unitaryLabel{Unitary}other{Not Defined}}",
-  "@MeasureMsg_measureUnitLabel": {
-    "description": "Measure Unit labels",
-    "type": "text",
-    "placeholders": {
-      "label": {}
-    }
-  },
   "MeasureMsg_valueErrorMsg": "Incorret value. Possible reasons: a) Current value should be between Start and End Value. b) Start and End Value are equals.",
   "@MeasureMsg_valueErrorMsg": {
     "type": "text",
@@ -278,6 +270,14 @@
     "type": "text",
     "placeholders": {}
   },
+  "UnitOfMeasurementMsg_unitNameLabel": "{label,select, dayLabel{Day}hourLabel{Hour}percentLabel{Percent}moneyLabel{Money}indexLabel{Index}unitaryLabel{Unitary}other{Not Defined}}",
+  "@UnitOfMeasurementMsg_unitNameLabel": {
+    "description": "Unit of Measurement labels",
+    "type": "text",
+    "placeholders": {
+      "label": {}
+    }
+  },
   "MeasureProgressMsg_label": "{label,select, measureProgressLabel{Measure Progress}progressCurrentValuesLabel{Progress Current Values}other{Not Defined}}",
   "@MeasureProgressMsg_label": {
     "description": "Measure Progresslabels",
@@ -293,6 +293,24 @@
   },
   "MeasureProgressMsg_currentValueExistsAtDate": "Current value already exists at date informed.",
   "@MeasureProgressMsg_currentValueExistsAtDate": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "WorkItemValueMsg_label": "{label,select, workItemValuesLabel{Values}other{Not Defined}}",
+  "@WorkItemValueMsg_label": {
+    "description": "Work Item Value Msg",
+    "type": "text",
+    "placeholders": {
+      "label": {}
+    }
+  },
+  "WorkItemValueMsg_valueErrorMsg": "Actual value must be less or equal than planned value.",
+  "@WorkItemValueMsg_valueErrorMsg": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "WorkItemValueMsg_actualValueExistsAtDate": "Actual value already exists at date informed.",
+  "@WorkItemValueMsg_actualValueExistsAtDate": {
     "type": "text",
     "placeholders": {}
   },
@@ -320,6 +338,14 @@
       "label": {}
     }
   },
+  "SystemModuleMsg_label": "{moduleName,select, groups{Groups}users{Users}user_profile{User Profile}objectives{Objectives}organization{Organization}works{Works}other{Not Defined}}",
+  "@SystemModuleMsg_label": {
+    "description": "System Module labels",
+    "type": "text",
+    "placeholders": {
+      "moduleName": {}
+    }
+  },
   "SystemFunctionMsg_inPastLabel": "{functionName,select, create{Created}update{Updated}delete{Deleted}read{Read}other{Not Defined}}",
   "@SystemFunctionMsg_inPastLabel": {
     "description": "System Function labels",
@@ -328,8 +354,8 @@
       "functionName": {}
     }
   },
-  "TimelineItemdMsg_label": "{fieldName,select, timelineLabel{Timeline}dayAgoLabel{day ago}daysAgoLabel{days ago}hourAgoLabel{hour ago}hoursAgoLabel{hours ago}minuteAgoLabel{minute ago}minutesAgoLabel{minutes ago}secondAgoLabel{second ago}secondsAgoLabel{seconds ago}valueLabel{value}changedFromLabel{changed from}wasLabel{was}other{Not Defined}}",
-  "@TimelineItemdMsg_label": {
+  "TimelineMsg_label": "{fieldName,select, timelineLabel{Timeline}dayAgoLabel{day ago}daysAgoLabel{days ago}hourAgoLabel{hour ago}hoursAgoLabel{hours ago}minuteAgoLabel{minute ago}minutesAgoLabel{minutes ago}secondAgoLabel{second ago}secondsAgoLabel{seconds ago}valueLabel{value}changedFromLabel{changed from}wasLabel{was}allLabel{All}selectModuleLabel{Select module}other{Not Defined}}",
+  "@TimelineMsg_label": {
     "description": "TimelineItem labels",
     "type": "text",
     "placeholders": {
