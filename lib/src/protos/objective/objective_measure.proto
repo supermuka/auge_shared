@@ -77,6 +77,8 @@ message ObjectiveGetRequest {
   bool with_measures = 5;
   bool with_user_profile = 6;
   bool with_archived = 7;
+  repeated string group_ids = 8;
+  repeated string leader_user_ids = 9;
 }
 
 // Response list of the objectives

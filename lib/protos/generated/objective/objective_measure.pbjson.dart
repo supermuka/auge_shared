@@ -60,6 +60,8 @@ const ObjectiveGetRequest$json = const {
     const {'1': 'with_measures', '3': 5, '4': 1, '5': 8, '10': 'withMeasures'},
     const {'1': 'with_user_profile', '3': 6, '4': 1, '5': 8, '10': 'withUserProfile'},
     const {'1': 'with_archived', '3': 7, '4': 1, '5': 8, '10': 'withArchived'},
+    const {'1': 'group_ids', '3': 8, '4': 3, '5': 9, '10': 'groupIds'},
+    const {'1': 'leader_user_ids', '3': 9, '4': 3, '5': 9, '10': 'leaderUserIds'},
   ],
 };
 

@@ -1,5 +1,5 @@
 {
-  "@@last_modified": "2020-05-06T15:46:33.103786",
+  "@@last_modified": "2020-05-17T21:34:26.014973",
   "@@locale": "en",
   "CommonMsg_label": "{label,select, headerTitleLabel{AUGE}headerSubtitleLabel{Objectives, Work and Performance}searchLabel{Search}filterLabel{Filter}moreLabel{more}emptyLabel{empty}other{Not Defined}}",
   "@CommonMsg_label": {
@@ -23,6 +23,14 @@
   "@CommonMsg_requiredValueMsg": {
     "type": "text",
     "placeholders": {}
+  },
+  "SearchFilterMsg_label": "{label,select, searchLabel{Search}filterLabel{Filter}other{Not Defined}}",
+  "@SearchFilterMsg_label": {
+    "description": "Serach and Filter labels",
+    "type": "text",
+    "placeholders": {
+      "label": {}
+    }
   },
   "AuthMsg_label": "{label,select, domainLabel{name@domain.com}identificationLabel{Identification}passwordLabel{Password}selectLabel{Select}superAdminLabel{Super Admin}organizationLabel{Organization}allOrganizationsLabel{All Organizations}loginLabel{Login}logoutLabel{Logout}requestCodeToNewPasswordLabel{Request Code to New Password}informCodeLabel{Inform the Code}defineNewPasswordLabel{Define New Password}passwordCodeLabel{Code}newPasswordLabel{New Password}repeatNewPasswordLabel{Repeat New Password}saveLabel{Save}other{Not Defined}}",
   "@AuthMsg_label": {
@@ -216,7 +224,7 @@
     "type": "text",
     "placeholders": {}
   },
-  "ObjectiveMsg_label": "{label,select, objectiveLabel{Objective}objectivesLabel{Objectives}addObjectiveLabel{Add Objective}editObjectiveLabel{Edit Objective}progressLabel{Progress}noMatchLabel{No Match}sortedByLabel{Sorted By}ultimateObjectiveLabel{Ultimate Objective}other{Not Defined}}",
+  "ObjectiveMsg_label": "{label,select, objectiveLabel{Objective}objectivesLabel{Objectives}objectivesFilterLabel{Objectives Filter}addObjectiveLabel{Add Objective}editObjectiveLabel{Edit Objective}progressLabel{Progress}noMatchLabel{No Match}orderedByLabel{Ordered By}ultimateObjectiveLabel{Ultimate Objective}other{Not Defined}}",
   "@ObjectiveMsg_label": {
     "description": "Objective labels",
     "type": "text",

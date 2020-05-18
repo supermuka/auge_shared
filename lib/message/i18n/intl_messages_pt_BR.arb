@@ -1,7 +1,7 @@
 {
   "@@last_modified": "2019-12-11T09:32:29.322497",
   "@@locale": "pt_BR",
-  "CommonMsg_label": "{label,select, headerTitleLabel{AUGE}headerSubtitleLabel{Objetivos, Trabalho e Desempenho}searchLabel{Busca}filterLabel{Filtro}moreLabel{mais}emptyLabel{vazio}other{Não Definido}}",
+  "CommonMsg_label": "{label,select, headerTitleLabel{AUGE}headerSubtitleLabel{Objetivos, Trabalho e Desempenho}searchLabel{Busca}filterLabel{Filtro}moreLabel{a mais}emptyLabel{vazio}other{Não Definido}}",
   "@CommonMsg_label": {
     "description": "Common labels",
     "type": "text",
@@ -23,6 +23,14 @@
   "@CommonMsg_requiredValueMsg": {
     "type": "text",
     "placeholders": {}
+  },
+  "SearchFilterMsg_label": "{label,select, searchLabel{Pesquisa}filterLabel{Filtro}other{Não Definido}}",
+  "@SearchFilterMsg_label": {
+    "description": "Serach and Filter labels",
+    "type": "text",
+    "placeholders": {
+      "label": {}
+    }
   },
   "AuthMsg_label": "{label,select, domainLabel{nome@dominio.com}identificationLabel{Identificação}passwordLabel{Senha}selectLabel{Selecionar}superAdminLabel{Super Admin}organizationLabel{Organização}allOrganizationsLabel{Todas Organizações}loginLabel{Logar}logoutLabel{Sair}requestCodeToNewPasswordLabel{Solicitar Código para Nova Senha}informCodeLabel{Inserir Código}defineNewPasswordLabel{Defina Nova Senha}passwordCodeLabel{Código}newPasswordLabel{Nova Senha}repeatNewPasswordLabel{Repedir Nova Senha}saveLabel{Salvar}other{Não Definido}}",
   "@AuthMsg_label": {
@@ -216,7 +224,7 @@
     "type": "text",
     "placeholders": {}
   },
-  "ObjectiveMsg_label": "{label,select, objectiveLabel{Objetivo}objectivesLabel{Objetivos}addObjectiveLabel{Adicionar Objetivo}editObjectiveLabel{Editar Objetivo}progressLabel{Progresso}noMatchLabel{Sem Correspondência}sortedByLabel{Ordenado Por}ultimateObjectiveLabel{Objetivo Final}other{Não Definido}}",
+  "ObjectiveMsg_label": "{label,select, objectiveLabel{Objetivo}objectivesLabel{Objetivos}addObjectiveLabel{Adicionar Objetivo}editObjectiveLabel{Editar Objetivo}progressLabel{Progresso}noMatchLabel{Sem Correspondência}orderedByLabel{Ordenado Por}ultimateObjectiveLabel{Objetivo Final}other{Não Definido}}",
   "@ObjectiveMsg_label": {
     "description": "Objective labels",
     "type": "text",

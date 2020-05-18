@@ -6,13 +6,12 @@ import 'package:auge_shared/domain/general/user_identity.dart';
 import 'package:auge_shared/domain/general/group.dart';
 import 'package:auge_shared/domain/work/work_stage.dart';
 
-
 class CommonMsg {
   /// Commum Label
   static const String headerTitleLabel = 'headerTitleLabel';
   static const String headerSubtitleLabel = 'headerSubtitleLabel';
   static const String searchLabel = 'searchLabel';
-  static const String noCorrespondenceLabel = 'noCorrespondenceLabel';
+ // static const String noCorrespondenceLabel = 'noCorrespondenceLabel';
   static const String filterLabel = 'filterLabel';
   static const String moreLabel = 'moreLabel';
   static const String emptyLabel = 'emptyLabel';
@@ -66,6 +65,23 @@ class CommonMsg {
   );
 
   static String requiredValueMsg() => Intl.message("Enter with a required value", name: "CommonMsg_requiredValueMsg");
+}
+
+class SearchFilterMsg {
+  /// Commum Label
+  static const String searchLabel = 'searchLabel';
+  static const String filterLabel = 'filterLabel';
+
+  static String label(String label) => Intl.select(label, {
+    searchLabel: 'Search',
+    filterLabel: 'Filter',
+    'other': 'Not Defined'},
+      name: "SearchFilterMsg_label",
+      args: <String>[label],
+      // locale: "en",
+      desc: "Serach and Filter labels",
+      examples: const {"AUGE": "AUGE"}
+  );
 }
 
 /// Specific messages and labels for [Authentication and Authorization]
@@ -503,9 +519,9 @@ class ObjectiveMsg {
   static const String editObjectiveLabel = 'editObjectiveLabel';
   static const String progressLabel = 'progressLabel';
   static const String noMatchLabel = 'noMatchLabel';
-  static const String sortedByLabel = 'sortedByLabel';
+  static const String orderedByLabel = 'orderedByLabel';
   static const String ultimateObjectiveLabel = 'ultimateObjectiveLabel';
-
+  
   /// Label for work
   static String label(String label) => Intl.select(label, {
     objectiveLabel: 'Objective',
@@ -515,8 +531,9 @@ class ObjectiveMsg {
     editObjectiveLabel: 'Edit Objective',
     progressLabel: 'Progress',
     noMatchLabel: 'No Match',
-    sortedByLabel: 'Sorted By',
+    orderedByLabel: 'Ordered By',
     ultimateObjectiveLabel: 'Ultimate Objective',
+    objectivesFilterLabel: 'Objectives Filter',
     'other': 'Not Defined'},
     name: "ObjectiveMsg_label",
     args: [label],

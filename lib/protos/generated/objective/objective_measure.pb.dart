@@ -314,6 +314,8 @@ class ObjectiveGetRequest extends $pb.GeneratedMessage {
     ..aOB(5, 'withMeasures')
     ..aOB(6, 'withUserProfile')
     ..aOB(7, 'withArchived')
+    ..pPS(8, 'groupIds')
+    ..pPS(9, 'leaderUserIds')
     ..hasRequiredFields = false
   ;
 
@@ -394,6 +396,12 @@ class ObjectiveGetRequest extends $pb.GeneratedMessage {
   $core.bool hasWithArchived() => $_has(6);
   @$pb.TagNumber(7)
   void clearWithArchived() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.List<$core.String> get groupIds => $_getList(7);
+
+  @$pb.TagNumber(9)
+  $core.List<$core.String> get leaderUserIds => $_getList(8);
 }
 
 class ObjectivesResponse extends $pb.GeneratedMessage {
