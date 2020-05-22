@@ -15,6 +15,8 @@ class CommonMsg {
   static const String filterLabel = 'filterLabel';
   static const String moreLabel = 'moreLabel';
   static const String emptyLabel = 'emptyLabel';
+  static const selectLabel = 'selectLabel';
+  static const String noMatchLabel = 'noMatchLabel';
 
   static String label(String label) => Intl.select(label, {
     headerTitleLabel: 'AUGE',
@@ -23,6 +25,8 @@ class CommonMsg {
     filterLabel: 'Filter',
     moreLabel: 'more',
     emptyLabel: 'empty',
+    selectLabel: 'Select',
+    noMatchLabel: 'No Match',
     'other': 'Not Defined'},
       name: "CommonMsg_label",
       args: <String>[label],
@@ -90,7 +94,6 @@ class AuthMsg {
   static const String domainLabel = 'domainLabel';
   static const String identificationLabel = 'identificationLabel';
   static const String passwordLabel = 'passwordLabel';
-  static const String selectLabel = 'selectLabel';
   static const String superAdminLabel = 'superAdminLabel';
   static const String organizationLabel = 'organizationLabel';
   static const String allOrganizationsLabel = 'allOrganizationsLabel';
@@ -111,7 +114,6 @@ class AuthMsg {
     domainLabel: 'name@domain.com',
     identificationLabel: 'Identification',
     passwordLabel: 'Password',
-    selectLabel: 'Select',
     superAdminLabel: 'Super Admin',
     organizationLabel: 'Organization',
     allOrganizationsLabel: 'All Organizations',
@@ -393,27 +395,24 @@ class WorkMsg {
 
   static const String workLabel = 'workLabel';
   static const String worksLabel = 'worksLabel';
-  static const String sortedByLabel = 'sortedByLabel';
+  static const String orderedByLabel = 'orderedByLabel';
   static const String editWorkLabel = 'editWorkLabel';
   static const String addWorkLabel = 'addWorkLabel';
   static const String objectiveLabel = 'objectiveLabel';
   static const String workItemsOverDueLabel = 'workItemsOverDueLabel';
-  static const String noMatchLabel = 'noMatchLabel';
-  static const String selectLabel = 'selectLabel';
-  static const String filterWorksLabel = 'filterWorksLabel';
+
+  static const String worksFilterLabel = 'worksFilterLabel';
 
   /// Label for work
   static String label(String label) => Intl.select(label, {
     workLabel: 'Work',
     worksLabel: 'Works',
-    sortedByLabel: 'Sorted By',
+    orderedByLabel: 'Ordeed By',
     editWorkLabel: 'Edit Work',
     addWorkLabel: 'Add Work',
     objectiveLabel: 'Objective',
     workItemsOverDueLabel: 'Work Items Over Due',
-    noMatchLabel: 'No Match',
-    selectLabel: 'Select',
-    filterWorksLabel: 'Filter Works',
+    worksFilterLabel: 'Works Filter',
     'other': 'Not Defined'},
       name: "WorkMsg_label",
       args: [label],
@@ -429,13 +428,11 @@ class StageMsg {
 
   static const workStagesLabel = 'workStagesLabel';
   static const stageLabel = 'stageLabel';
-  static const selectLabel = 'selectLabel';
 
   /// Label
   static String label(String label) => Intl.select(label, {
     workStagesLabel: 'Work Stages',
     stageLabel: 'Stage',
-    selectLabel: 'Select',
      'other': 'Not Defined'},
       name: "StageMsg_label",
       args: [label],
@@ -474,7 +471,6 @@ class WorkItemMsg {
   static const String selectAValueLabel = 'selectAValueLabel';
   static const String workItemsOverDueLabel = 'workItemsOverDueLabel';
   static const String checkItemLabel = 'checkItemLabel';
-  static const String noMatchLabel = 'noMatchLabel';
   static const String dropFileHereLabel = 'dropFileHereLabel';
   static const String plannedActualLabel = 'plannedActualLabel';
   static const String remainingValueLabel = 'remainingValueLabel';
@@ -490,7 +486,6 @@ class WorkItemMsg {
     selectAValueLabel: 'Select a value',
     workItemsOverDueLabel: 'Work Items Over Due',
     checkItemLabel: 'Check Item',
-    noMatchLabel: 'No Match',
     dropFileHereLabel: 'Drop File Here',
     checkItemNameLabel: 'Check Item Name',
     plannedActualLabel: 'Planned and Actual',
@@ -518,7 +513,6 @@ class ObjectiveMsg {
   static const String addObjectiveLabel = 'addObjectiveLabel';
   static const String editObjectiveLabel = 'editObjectiveLabel';
   static const String progressLabel = 'progressLabel';
-  static const String noMatchLabel = 'noMatchLabel';
   static const String orderedByLabel = 'orderedByLabel';
   static const String ultimateObjectiveLabel = 'ultimateObjectiveLabel';
   
@@ -530,7 +524,6 @@ class ObjectiveMsg {
     addObjectiveLabel: 'Add Objective',
     editObjectiveLabel: 'Edit Objective',
     progressLabel: 'Progress',
-    noMatchLabel: 'No Match',
     orderedByLabel: 'Ordered By',
     ultimateObjectiveLabel: 'Ultimate Objective',
     objectivesFilterLabel: 'Objectives Filter',
@@ -667,12 +660,18 @@ class UnitOfMeasurementMsg {
 class MeasureProgressMsg {
 
   static const String measureProgressLabel = 'measureProgressLabel';
-  static const String progressCurrentValuesLabel = 'progressCurrentValuesLabel';
+  static const String measureLabel = 'measureLabel';
+  static const String progressValuesLabel = 'progressValuesLabel';
+  static const String valuesLabel = 'valuesLabel';
+  static const String chartLabel = 'chartLabel';
 
   /// Label for Measure
   static String label(String label) => Intl.select(label, {
+    measureLabel: 'Measure',
+    valuesLabel: 'Values',
+    chartLabel: 'Chart',
     measureProgressLabel: 'Measure Progress',
-    progressCurrentValuesLabel: 'Progress Current Values',
+    progressValuesLabel: 'Progress Values',
     'other': 'Not Defined'},
     name: "MeasureProgressMsg_label",
     args: [label],
@@ -709,7 +708,6 @@ class GroupMsg {
   static const String groupsLabel = 'groupsLabel';
   static const String editGroupLabel = 'editGroupLabel';
   static const String addGroupLabel = 'addGroupLabel';
-  static const String noMatchLabel = 'noMatchLabel';
   static const String activeLabel = 'activeLabel';
   static const String inactiveLabel = 'inactiveLabel';
 
@@ -718,7 +716,6 @@ class GroupMsg {
     groupsLabel: 'Groups',
     editGroupLabel: 'Edit Group',
     addGroupLabel: 'Add Group',
-    noMatchLabel: 'No Match',
     activeLabel: 'Active',
     inactiveLabel: 'Inactive',
     'other': 'Not Defined'},

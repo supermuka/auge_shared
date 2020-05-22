@@ -75,6 +75,9 @@ message WorkGetRequest {
     string objective_id = 3;
     bool with_work_items = 4;
     bool with_user_profile = 5;
+    bool with_archived = 7;
+    repeated string group_ids = 8;
+    repeated string leader_user_ids = 9;
 }
 
 // The service definition.

@@ -1,7 +1,7 @@
 {
   "@@last_modified": "2019-12-11T09:32:29.322497",
   "@@locale": "pt_BR",
-  "CommonMsg_label": "{label,select, headerTitleLabel{AUGE}headerSubtitleLabel{Objetivos, Trabalho e Desempenho}searchLabel{Busca}filterLabel{Filtro}moreLabel{a mais}emptyLabel{vazio}other{Não Definido}}",
+  "CommonMsg_label": "{label,select, headerTitleLabel{AUGE}headerSubtitleLabel{Objetivos, Trabalho e Desempenho}searchLabel{Busca}filterLabel{Filtro}moreLabel{a mais}emptyLabel{vazio}selectLabel{Selecionar}noMatchLabel{Sem Correspondência}other{Não Definido}}",
   "@CommonMsg_label": {
     "description": "Common labels",
     "type": "text",
@@ -32,7 +32,7 @@
       "label": {}
     }
   },
-  "AuthMsg_label": "{label,select, domainLabel{nome@dominio.com}identificationLabel{Identificação}passwordLabel{Senha}selectLabel{Selecionar}superAdminLabel{Super Admin}organizationLabel{Organização}allOrganizationsLabel{Todas Organizações}loginLabel{Logar}logoutLabel{Sair}requestCodeToNewPasswordLabel{Solicitar Código para Nova Senha}informCodeLabel{Inserir Código}defineNewPasswordLabel{Defina Nova Senha}passwordCodeLabel{Código}newPasswordLabel{Nova Senha}repeatNewPasswordLabel{Repedir Nova Senha}saveLabel{Salvar}other{Não Definido}}",
+  "AuthMsg_label": "{label,select, domainLabel{nome@dominio.com}identificationLabel{Identificação}passwordLabel{Senha}superAdminLabel{Super Admin}organizationLabel{Organização}allOrganizationsLabel{Todas Organizações}loginLabel{Logar}logoutLabel{Sair}requestCodeToNewPasswordLabel{Solicitar Código para Nova Senha}informCodeLabel{Inserir Código}defineNewPasswordLabel{Defina Nova Senha}passwordCodeLabel{Código}newPasswordLabel{Nova Senha}repeatNewPasswordLabel{Repedir Nova Senha}saveLabel{Salvar}other{Não Definido}}",
   "@AuthMsg_label": {
     "description": "Authentication and authorizations labels",
     "type": "text",
@@ -182,7 +182,7 @@
       "label": {}
     }
   },
-  "WorkMsg_label": "{label,select, workLabel{Trabalho}worksLabel{Trabalhos}sortedByLabel{Ordenado Por}editWorkLabel{Editar Trabalho}addWorkLabel{Adicionar Trabalho}objectiveLabel{Objetivo}workItemsOverDueLabel{Itens de Trabalho Atrasados}noMatchLabel{Sem Correspondência}selectLabel{Selecionar}filterWorksLabel{Filtar Trabalhos}other{Não Definido}}",
+  "WorkMsg_label": "{label,select, workLabel{Trabalho}worksLabel{Trabalhos}orderedByLabel{Ordenado Por}editWorkLabel{Editar Trabalho}addWorkLabel{Adicionar Trabalho}objectiveLabel{Objetivo}workItemsOverDueLabel{Itens de Trabalho Atrasados}worksFilterLabel{Filtro de Trabalhos}other{Não Definido}}",
   "@WorkMsg_label": {
     "description": "Work labels",
     "type": "text",
@@ -190,7 +190,7 @@
       "label": {}
     }
   },
-  "StageMsg_label": "{label,select, workStagesLabel{Estágios do Trabalho}stageLabel{Estágio}selectLabel{Selecionar}other{Não Definido}}",
+  "StageMsg_label": "{label,select, workStagesLabel{Estágios do Trabalho}stageLabel{Estágio}other{Não Definido}}",
   "@StageMsg_label": {
     "description": "Stage labels",
     "type": "text",
@@ -211,7 +211,7 @@
       "label": {}
     }
   },
-  "WorkItemMsg_label": "{label,select, workKanbanLabel{Trabalho Kanban}workItemsLabel{Itens de Trabalho}editWorkItemLabel{Editar Itens de Trabalho}addWorkItemLabel{Adicionar Item de Trabalho}selectAValueLabel{Selecionar um Valor}workItemsOverDueLabel{Itens de Trabalho Atrasados}checkItemLabel{Item de Checagem}noMatchLabel{Sem Correspondência}dropFileHereLabel{Soltar Arquivo Aqui}checkItemNameLabel{Nome do Item de Checagem}plannedActualLabel{Planejado e Real}remainingValueLabel{Valor Restante}dateAndActualValueLabel{Date e Valor Real}other{Não Definido}}",
+  "WorkItemMsg_label": "{label,select, workKanbanLabel{Trabalho Kanban}workItemsLabel{Itens de Trabalho}editWorkItemLabel{Editar Itens de Trabalho}addWorkItemLabel{Adicionar Item de Trabalho}selectAValueLabel{Selecionar um Valor}workItemsOverDueLabel{Itens de Trabalho Atrasados}checkItemLabel{Item de Checagem}dropFileHereLabel{Soltar Arquivo Aqui}checkItemNameLabel{Nome do Item de Checagem}plannedActualLabel{Planejado e Real}remainingValueLabel{Valor Restante}dateAndActualValueLabel{Date e Valor Real}other{Não Definido}}",
   "@WorkItemMsg_label": {
     "description": "Work Item labels",
     "type": "text",
@@ -224,7 +224,7 @@
     "type": "text",
     "placeholders": {}
   },
-  "ObjectiveMsg_label": "{label,select, objectiveLabel{Objetivo}objectivesLabel{Objetivos}addObjectiveLabel{Adicionar Objetivo}editObjectiveLabel{Editar Objetivo}progressLabel{Progresso}noMatchLabel{Sem Correspondência}orderedByLabel{Ordenado Por}ultimateObjectiveLabel{Objetivo Final}other{Não Definido}}",
+  "ObjectiveMsg_label": "{label,select, objectiveLabel{Objetivo}objectivesLabel{Objetivos}objectivesFilterLabel{Filtro de Objetivos}addObjectiveLabel{Adicionar Objetivo}editObjectiveLabel{Editar Objetivo}progressLabel{Progresso}orderedByLabel{Ordenado Por}ultimateObjectiveLabel{Objetivo Final}other{Não Definido}}",
   "@ObjectiveMsg_label": {
     "description": "Objective labels",
     "type": "text",
@@ -287,7 +287,7 @@
       "label": {}
     }
   },
-  "MeasureProgressMsg_label": "{label,select, measureProgressLabel{Measure Progress}progressCurrentValuesLabel{Progress Current Values}other{Not Defined}}",
+  "MeasureProgressMsg_label": "{label,select, measureLabel{Medida}valuesLabel{Valores}chartLabel{Gráfico}measureProgressLabel{Progresso da Medida}progressValuesLabel{Valores do Progresso}other{Não Definido}}",
   "@MeasureProgressMsg_label": {
     "description": "Measure Progresslabels",
     "type": "text",
@@ -323,7 +323,7 @@
     "type": "text",
     "placeholders": {}
   },
-  "GroupMsg_label": "{label,select, groupsLabel{Groups}editGroupLabel{Edit Group}addGroupLabel{Add Group}noMatchLabel{No Match}activeLabel{Active}inactiveLabel{Inactive}other{Not Defined}}",
+  "GroupMsg_label": "{label,select, groupsLabel{Groups}editGroupLabel{Edit Group}addGroupLabel{Add Group}activeLabel{Active}inactiveLabel{Inactive}other{Not Defined}}",
   "@GroupMsg_label": {
     "description": "Group labels",
     "type": "text",

@@ -21,7 +21,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static m0(label) => "${Intl.select(label, {'organizationLabel': 'Organization', 'organizationsLabel': 'Organizations', 'adminLabel': 'Administrator', 'superAdminLabel': 'Super Administrator', 'userDetailLabel': 'User Detail', 'logoutLabel': 'Logout', 'ingightsLabel': 'Insights', 'worksLabel': 'Works', 'objectivesLabel': 'Objectives', 'objectivesMapLabel': 'Objectives Map', 'objectivesGanttLabel': 'Objectives Gantt', 'usersLabel': 'Users', 'groupsLabel': 'Groups', 'configurationLabel': 'Configuration', 'other': 'Not Defined', })}";
 
-  static m1(label) => "${Intl.select(label, {'domainLabel': 'name@domain.com', 'identificationLabel': 'Identification', 'passwordLabel': 'Password', 'selectLabel': 'Select', 'superAdminLabel': 'Super Admin', 'organizationLabel': 'Organization', 'allOrganizationsLabel': 'All Organizations', 'loginLabel': 'Login', 'logoutLabel': 'Logout', 'requestCodeToNewPasswordLabel': 'Request Code to New Password', 'informCodeLabel': 'Inform the Code', 'defineNewPasswordLabel': 'Define New Password', 'passwordCodeLabel': 'Code', 'newPasswordLabel': 'New Password', 'repeatNewPasswordLabel': 'Repeat New Password', 'saveLabel': 'Save', 'other': 'Not Defined', })}";
+  static m1(label) => "${Intl.select(label, {'domainLabel': 'name@domain.com', 'identificationLabel': 'Identification', 'passwordLabel': 'Password', 'superAdminLabel': 'Super Admin', 'organizationLabel': 'Organization', 'allOrganizationsLabel': 'All Organizations', 'loginLabel': 'Login', 'logoutLabel': 'Logout', 'requestCodeToNewPasswordLabel': 'Request Code to New Password', 'informCodeLabel': 'Inform the Code', 'defineNewPasswordLabel': 'Define New Password', 'passwordCodeLabel': 'Code', 'newPasswordLabel': 'New Password', 'repeatNewPasswordLabel': 'Repeat New Password', 'saveLabel': 'Save', 'other': 'Not Defined', })}";
 
   static m2(className) => "${Intl.select(className, {'User': 'User', 'UserProfile': 'User Profile', 'UserAccess': 'User and Profiles', 'Group': 'Group', 'Objective': 'Objective', 'Measure': 'Measure', 'MeasureProgress': 'Measure Progress', 'Work': 'Work', 'WorkStage': 'Stage', 'WorkItem': 'Work Item', 'other': 'Not Defined', })}";
 
@@ -29,7 +29,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static m4(label) => "${Intl.select(label, {'applyButtonLabel': 'Apply', 'editButtonLabel': 'Edit', 'deleteButtonLabel': 'Delete', 'saveButtonLabel': 'Save', 'cancelButtonLabel': 'Cancel', 'closeButtonLabel': 'Close', 'uploadButtonLabel': 'Upload', 'clearButtonLabel': 'Clear', 'loginButtonLabel': 'Login', 'logoutButtonLabel': 'Logout', 'selectPhotoButtonLabel': 'Select Photo', 'other': 'Not Defined', })}";
 
-  static m5(label) => "${Intl.select(label, {'headerTitleLabel': 'AUGE', 'headerSubtitleLabel': 'Objectives, Work and Performance', 'searchLabel': 'Search', 'filterLabel': 'Filter', 'moreLabel': 'more', 'emptyLabel': 'empty', 'other': 'Not Defined', })}";
+  static m5(label) => "${Intl.select(label, {'headerTitleLabel': 'AUGE', 'headerSubtitleLabel': 'Objectives, Work and Performance', 'searchLabel': 'Search', 'filterLabel': 'Filter', 'moreLabel': 'more', 'emptyLabel': 'empty', 'selectLabel': 'Select', 'noMatchLabel': 'No Match', 'other': 'Not Defined', })}";
 
   static m6(label) => "${Intl.select(label, {'entry': 'Entry', 'skipEntry': 'Skip Entry', 'userInsert': 'User Insert', 'userUpdate': 'User Update', 'userDelete': 'User Delete', 'userIdentityInsert': 'User Identity Insert', 'userIdentityUpdate': 'User Identity Update', 'userIdentityDelete': 'User Identity Delete', 'userAccessInsert': 'User Access Insert', 'userAccessUpdate': 'User Access Update', 'userAccessDelete': 'User Access Delete', 'other': 'Not Defined', })}";
 
@@ -45,7 +45,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static m12(label) => "${Intl.select(label, {'company': 'Company', 'businessUnit': 'Business Unit', 'department': 'Department', 'team': 'Team', 'other': 'Not Defined', })}";
 
-  static m13(label) => "${Intl.select(label, {'groupsLabel': 'Groups', 'editGroupLabel': 'Edit Group', 'addGroupLabel': 'Add Group', 'noMatchLabel': 'No Match', 'activeLabel': 'Active', 'inactiveLabel': 'Inactive', 'other': 'Not Defined', })}";
+  static m13(label) => "${Intl.select(label, {'groupsLabel': 'Groups', 'editGroupLabel': 'Edit Group', 'addGroupLabel': 'Add Group', 'activeLabel': 'Active', 'inactiveLabel': 'Inactive', 'other': 'Not Defined', })}";
 
   static m14(label) => "${Intl.select(label, {'insightsLabel': 'Insights', 'groupLabel': 'Group', 'leaderLabel': 'Leader', 'objectivesOverallLabel': 'Objectives Overall', 'objectivesMeasuresLabel': 'Objectives and Measures', 'worksWorkItemsLabel': 'Works and Work Items', 'objectivesLabel': 'Objectives', 'objectivesDescriptionLabel': 'Number total of objectives', 'objectivesAchievedLabel': 'Objectives Achieved', 'measuresAchievedDescriptionLabel': 'Measures over 70% progress', 'objectivesRequiringAttentionLabel': 'Objectives Requiring Attention', 'measuresRequiringAttentionDescriptionLabel': 'Measures below 30% progress', 'measuresLabel': 'Measures', 'measuresDescriptionLabel': 'Number total of measures', 'measuresAchievedLabel': 'Measures Achieved', 'measuresRequiringAttentionLabel': 'Measures Requiring Attention', 'worksLabel': 'Works', 'worksDescriptionLabel': 'Number total of works', 'worksCompletedLabel': 'Works Completed', 'worksCompletedDescriptionLabel': 'Works with 100% work items completed', 'worksRequiringAttentionLabel': 'Works Requiring Attention', 'worksRequiringAttentionDescriptionLabel': 'Works with over due work items', 'workItemsLabel': 'Work Items', 'workItemsDescriptionLabel': 'Number total of work items', 'workItemsCompletedLabel': 'Work Items Completed', 'workItemsCompletedDescriptionLabel': 'Work items with 100% progress', 'workItemsRequiringAttentionLabel': 'Work Items Requiring Attention', 'workItemsRequiringAttentionDescriptionLabel': 'Over due work items', 'other': 'Not Defined', })}";
 
@@ -61,11 +61,11 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static m20(fieldName) => "${Intl.select(fieldName, {'dateField': 'Date', 'currentValueField': 'Current Value', 'commentField': 'Comment', 'other': 'Not Defined', })}";
 
-  static m21(label) => "${Intl.select(label, {'measureProgressLabel': 'Measure Progress', 'progressCurrentValuesLabel': 'Progress Current Values', 'other': 'Not Defined', })}";
+  static m21(label) => "${Intl.select(label, {'measureLabel': 'Measure', 'valuesLabel': 'Values', 'chartLabel': 'Chart', 'measureProgressLabel': 'Measure Progress', 'progressValuesLabel': 'Progress Values', 'other': 'Not Defined', })}";
 
   static m22(fieldName) => "${Intl.select(fieldName, {'nameField': 'Name', 'descriptionField': 'Description', 'groupField': 'Group', 'alignedToField': 'Aligned To', 'leaderField': 'Leader', 'startDateField': 'Start Date', 'endDateField': 'End Date', 'archivedField': 'Archived', 'other': 'Not Defined', })}";
 
-  static m23(label) => "${Intl.select(label, {'objectiveLabel': 'Objective', 'objectivesLabel': 'Objectives', 'objectivesFilterLabel': 'Objectives Filter', 'addObjectiveLabel': 'Add Objective', 'editObjectiveLabel': 'Edit Objective', 'progressLabel': 'Progress', 'noMatchLabel': 'No Match', 'orderedByLabel': 'Ordered By', 'ultimateObjectiveLabel': 'Ultimate Objective', 'other': 'Not Defined', })}";
+  static m23(label) => "${Intl.select(label, {'objectiveLabel': 'Objective', 'objectivesLabel': 'Objectives', 'objectivesFilterLabel': 'Objectives Filter', 'addObjectiveLabel': 'Add Objective', 'editObjectiveLabel': 'Edit Objective', 'progressLabel': 'Progress', 'orderedByLabel': 'Ordered By', 'ultimateObjectiveLabel': 'Ultimate Objective', 'other': 'Not Defined', })}";
 
   static m24(fieldName) => "${Intl.select(fieldName, {'domainField': 'Domínio', 'other': 'Not Defined', })}";
 
@@ -77,7 +77,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static m28(label) => "${Intl.select(label, {'searchLabel': 'Search', 'filterLabel': 'Filter', 'other': 'Not Defined', })}";
 
-  static m29(label) => "${Intl.select(label, {'workStagesLabel': 'Work Stages', 'stageLabel': 'Stage', 'selectLabel': 'Select', 'other': 'Not Defined', })}";
+  static m29(label) => "${Intl.select(label, {'workStagesLabel': 'Work Stages', 'stageLabel': 'Stage', 'other': 'Not Defined', })}";
 
   static m30(label) => "${Intl.select(label, {'notStarted': 'Not Started', 'inProgress': 'In Progress', 'completed': 'Completed', 'other': 'Not Defined', })}";
 
@@ -111,13 +111,13 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static m45(fieldName) => "${Intl.select(fieldName, {'nameField': 'Name', 'descriptionField': 'Description', 'dueDateField': 'Due Date', 'plannedValueField': 'Planned', 'actualValueField': 'Actual', 'unitOfMeasurementField': 'Unit of Measurement', 'workStageField': 'Stage', 'assignedToField': 'Assigned To', 'attachmentsField': 'Attachments', 'checkItemsField': 'Check Items', 'archivedField': 'Archived', 'other': 'Not Defined', })}";
 
-  static m46(label) => "${Intl.select(label, {'workKanbanLabel': 'Work Kanban', 'workItemsLabel': 'Work Items', 'editWorkItemLabel': 'Edit Work Item', 'addWorkItemLabel': 'Add Work Item', 'selectAValueLabel': 'Select a value', 'workItemsOverDueLabel': 'Work Items Over Due', 'checkItemLabel': 'Check Item', 'noMatchLabel': 'No Match', 'dropFileHereLabel': 'Drop File Here', 'checkItemNameLabel': 'Check Item Name', 'plannedActualLabel': 'Planned and Actual', 'remainingValueLabel': 'Remaining Value', 'dateAndActualValueLabel': 'Date and Actual Value', 'other': 'Not Defined', })}";
+  static m46(label) => "${Intl.select(label, {'workKanbanLabel': 'Work Kanban', 'workItemsLabel': 'Work Items', 'editWorkItemLabel': 'Edit Work Item', 'addWorkItemLabel': 'Add Work Item', 'selectAValueLabel': 'Select a value', 'workItemsOverDueLabel': 'Work Items Over Due', 'checkItemLabel': 'Check Item', 'dropFileHereLabel': 'Drop File Here', 'checkItemNameLabel': 'Check Item Name', 'plannedActualLabel': 'Planned and Actual', 'remainingValueLabel': 'Remaining Value', 'dateAndActualValueLabel': 'Date and Actual Value', 'other': 'Not Defined', })}";
 
   static m47(fieldName) => "${Intl.select(fieldName, {'dateField': 'Date', 'actualValueField': 'Actual Value', 'commentField': 'Comment', 'other': 'Not Defined', })}";
 
   static m48(label) => "${Intl.select(label, {'workItemValuesLabel': 'Values', 'other': 'Not Defined', })}";
 
-  static m49(label) => "${Intl.select(label, {'workLabel': 'Work', 'worksLabel': 'Works', 'sortedByLabel': 'Sorted By', 'editWorkLabel': 'Edit Work', 'addWorkLabel': 'Add Work', 'objectiveLabel': 'Objective', 'workItemsOverDueLabel': 'Work Items Over Due', 'noMatchLabel': 'No Match', 'selectLabel': 'Select', 'filterWorksLabel': 'Filter Works', 'other': 'Not Defined', })}";
+  static m49(label) => "${Intl.select(label, {'workLabel': 'Work', 'worksLabel': 'Works', 'orderedByLabel': 'Ordeed By', 'editWorkLabel': 'Edit Work', 'addWorkLabel': 'Add Work', 'objectiveLabel': 'Objective', 'workItemsOverDueLabel': 'Work Items Over Due', 'worksFilterLabel': 'Works Filter', 'other': 'Not Defined', })}";
 
   static m50(fieldName) => "${Intl.select(fieldName, {'nameField': 'Name', 'stateField': 'State', 'other': 'Not Defined', })}";
 

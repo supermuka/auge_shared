@@ -32,11 +32,13 @@ class AppRoutesPath {
   // Path
   static const authRoutePath = 'auth';
   static const appLayoutRoutePath = 'app';
-  static const insightslRoutePath = 'insights';
+  static const insightsRoutePath = 'insights';
+  static const insightsFilterRoutePath = 'filter';
   static const usersRoutePath =  'users';
   static const mapRoutePath = 'map';
   static const ganttRoutePath = 'gantt';
   static const worksRoutePath = 'works';
+  static const worksFilterRoutePath = 'filter';
   static const workAddRoutePath = 'add';
   static const workEditRoutePath = ':${AppRoutesParam.workIdParameter}/edit';
   static const workItemsKanbanRoute = 'works/:${AppRoutesParam.workIdParameter}/kanban_work_items';

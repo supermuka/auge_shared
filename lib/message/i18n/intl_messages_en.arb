@@ -1,7 +1,7 @@
 {
-  "@@last_modified": "2020-05-17T21:34:26.014973",
+  "@@last_modified": "2020-05-21T22:18:03.455535",
   "@@locale": "en",
-  "CommonMsg_label": "{label,select, headerTitleLabel{AUGE}headerSubtitleLabel{Objectives, Work and Performance}searchLabel{Search}filterLabel{Filter}moreLabel{more}emptyLabel{empty}other{Not Defined}}",
+  "CommonMsg_label": "{label,select, headerTitleLabel{AUGE}headerSubtitleLabel{Objectives, Work and Performance}searchLabel{Search}filterLabel{Filter}moreLabel{more}emptyLabel{empty}selectLabel{Select}noMatchLabel{No Match}other{Not Defined}}",
   "@CommonMsg_label": {
     "description": "Common labels",
     "type": "text",
@@ -32,7 +32,7 @@
       "label": {}
     }
   },
-  "AuthMsg_label": "{label,select, domainLabel{name@domain.com}identificationLabel{Identification}passwordLabel{Password}selectLabel{Select}superAdminLabel{Super Admin}organizationLabel{Organization}allOrganizationsLabel{All Organizations}loginLabel{Login}logoutLabel{Logout}requestCodeToNewPasswordLabel{Request Code to New Password}informCodeLabel{Inform the Code}defineNewPasswordLabel{Define New Password}passwordCodeLabel{Code}newPasswordLabel{New Password}repeatNewPasswordLabel{Repeat New Password}saveLabel{Save}other{Not Defined}}",
+  "AuthMsg_label": "{label,select, domainLabel{name@domain.com}identificationLabel{Identification}passwordLabel{Password}superAdminLabel{Super Admin}organizationLabel{Organization}allOrganizationsLabel{All Organizations}loginLabel{Login}logoutLabel{Logout}requestCodeToNewPasswordLabel{Request Code to New Password}informCodeLabel{Inform the Code}defineNewPasswordLabel{Define New Password}passwordCodeLabel{Code}newPasswordLabel{New Password}repeatNewPasswordLabel{Repeat New Password}saveLabel{Save}other{Not Defined}}",
   "@AuthMsg_label": {
     "description": "Authentication and authorizations labels",
     "type": "text",
@@ -182,7 +182,7 @@
       "label": {}
     }
   },
-  "WorkMsg_label": "{label,select, workLabel{Work}worksLabel{Works}sortedByLabel{Sorted By}editWorkLabel{Edit Work}addWorkLabel{Add Work}objectiveLabel{Objective}workItemsOverDueLabel{Work Items Over Due}noMatchLabel{No Match}selectLabel{Select}filterWorksLabel{Filter Works}other{Not Defined}}",
+  "WorkMsg_label": "{label,select, workLabel{Work}worksLabel{Works}orderedByLabel{Ordeed By}editWorkLabel{Edit Work}addWorkLabel{Add Work}objectiveLabel{Objective}workItemsOverDueLabel{Work Items Over Due}worksFilterLabel{Works Filter}other{Not Defined}}",
   "@WorkMsg_label": {
     "description": "Work labels",
     "type": "text",
@@ -190,7 +190,7 @@
       "label": {}
     }
   },
-  "StageMsg_label": "{label,select, workStagesLabel{Work Stages}stageLabel{Stage}selectLabel{Select}other{Not Defined}}",
+  "StageMsg_label": "{label,select, workStagesLabel{Work Stages}stageLabel{Stage}other{Not Defined}}",
   "@StageMsg_label": {
     "description": "Stage labels",
     "type": "text",
@@ -211,7 +211,7 @@
       "label": {}
     }
   },
-  "WorkItemMsg_label": "{label,select, workKanbanLabel{Work Kanban}workItemsLabel{Work Items}editWorkItemLabel{Edit Work Item}addWorkItemLabel{Add Work Item}selectAValueLabel{Select a value}workItemsOverDueLabel{Work Items Over Due}checkItemLabel{Check Item}noMatchLabel{No Match}dropFileHereLabel{Drop File Here}checkItemNameLabel{Check Item Name}plannedActualLabel{Planned and Actual}remainingValueLabel{Remaining Value}dateAndActualValueLabel{Date and Actual Value}other{Not Defined}}",
+  "WorkItemMsg_label": "{label,select, workKanbanLabel{Work Kanban}workItemsLabel{Work Items}editWorkItemLabel{Edit Work Item}addWorkItemLabel{Add Work Item}selectAValueLabel{Select a value}workItemsOverDueLabel{Work Items Over Due}checkItemLabel{Check Item}dropFileHereLabel{Drop File Here}checkItemNameLabel{Check Item Name}plannedActualLabel{Planned and Actual}remainingValueLabel{Remaining Value}dateAndActualValueLabel{Date and Actual Value}other{Not Defined}}",
   "@WorkItemMsg_label": {
     "description": "Work Item labels",
     "type": "text",
@@ -224,7 +224,7 @@
     "type": "text",
     "placeholders": {}
   },
-  "ObjectiveMsg_label": "{label,select, objectiveLabel{Objective}objectivesLabel{Objectives}objectivesFilterLabel{Objectives Filter}addObjectiveLabel{Add Objective}editObjectiveLabel{Edit Objective}progressLabel{Progress}noMatchLabel{No Match}orderedByLabel{Ordered By}ultimateObjectiveLabel{Ultimate Objective}other{Not Defined}}",
+  "ObjectiveMsg_label": "{label,select, objectiveLabel{Objective}objectivesLabel{Objectives}objectivesFilterLabel{Objectives Filter}addObjectiveLabel{Add Objective}editObjectiveLabel{Edit Objective}progressLabel{Progress}orderedByLabel{Ordered By}ultimateObjectiveLabel{Ultimate Objective}other{Not Defined}}",
   "@ObjectiveMsg_label": {
     "description": "Objective labels",
     "type": "text",
@@ -287,7 +287,7 @@
       "label": {}
     }
   },
-  "MeasureProgressMsg_label": "{label,select, measureProgressLabel{Measure Progress}progressCurrentValuesLabel{Progress Current Values}other{Not Defined}}",
+  "MeasureProgressMsg_label": "{label,select, measureLabel{Measure}valuesLabel{Values}chartLabel{Chart}measureProgressLabel{Measure Progress}progressValuesLabel{Progress Values}other{Not Defined}}",
   "@MeasureProgressMsg_label": {
     "description": "Measure Progresslabels",
     "type": "text",
@@ -323,7 +323,7 @@
     "type": "text",
     "placeholders": {}
   },
-  "GroupMsg_label": "{label,select, groupsLabel{Groups}editGroupLabel{Edit Group}addGroupLabel{Add Group}noMatchLabel{No Match}activeLabel{Active}inactiveLabel{Inactive}other{Not Defined}}",
+  "GroupMsg_label": "{label,select, groupsLabel{Groups}editGroupLabel{Edit Group}addGroupLabel{Add Group}activeLabel{Active}inactiveLabel{Inactive}other{Not Defined}}",
   "@GroupMsg_label": {
     "description": "Group labels",
     "type": "text",

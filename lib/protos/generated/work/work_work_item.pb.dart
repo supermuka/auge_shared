@@ -289,6 +289,9 @@ class WorkGetRequest extends $pb.GeneratedMessage {
     ..aOS(3, 'objectiveId')
     ..aOB(4, 'withWorkItems')
     ..aOB(5, 'withUserProfile')
+    ..aOB(7, 'withArchived')
+    ..pPS(8, 'groupIds')
+    ..pPS(9, 'leaderUserIds')
     ..hasRequiredFields = false
   ;
 
@@ -351,6 +354,21 @@ class WorkGetRequest extends $pb.GeneratedMessage {
   $core.bool hasWithUserProfile() => $_has(4);
   @$pb.TagNumber(5)
   void clearWithUserProfile() => clearField(5);
+
+  @$pb.TagNumber(7)
+  $core.bool get withArchived => $_getBF(5);
+  @$pb.TagNumber(7)
+  set withArchived($core.bool v) { $_setBool(5, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasWithArchived() => $_has(5);
+  @$pb.TagNumber(7)
+  void clearWithArchived() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.List<$core.String> get groupIds => $_getList(6);
+
+  @$pb.TagNumber(9)
+  $core.List<$core.String> get leaderUserIds => $_getList(7);
 }
 
 class WorkItem extends $pb.GeneratedMessage {
