@@ -75,9 +75,11 @@ message WorkGetRequest {
     string objective_id = 3;
     bool with_work_items = 4;
     bool with_user_profile = 5;
-    bool with_archived = 7;
-    repeated string group_ids = 8;
-    repeated string leader_user_ids = 9;
+    bool with_archived = 6;
+    repeated string group_ids = 7;
+    repeated string leader_user_ids = 8;
+    bool work_item_with_archived = 9;
+    repeated string work_item_assigned_to_ids = 10;
 }
 
 // The service definition.
@@ -157,6 +159,8 @@ message WorkItemGetRequest {
     string work_id = 2;
     bool with_work = 3;
     bool with_user_profile = 4;
+    bool with_archived = 5;
+    repeated string assigned_to_ids = 6;
 }
 
 // Message to respective domain object.
@@ -320,4 +324,3 @@ message WorkItemValueGetRequest {
     bool with_work = 4;
     bool with_user_profile = 5;
 }
-

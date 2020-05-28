@@ -3,9 +3,7 @@
 
 // Proto buffer transport layer.
 // ignore_for_file: uri_has_not_been_generated
-
 import 'package:auge_shared/domain/general/organization.dart';
-
 import 'package:auge_shared/protos/generated/general/user.pb.dart' as user_pb;
 
 /// Domain model class to represent an user account
@@ -20,6 +18,7 @@ class User {
   // Base fields
   static const String idField = 'id';
   String id;
+
   static const String versionField = 'version';
   int version;
 
@@ -108,7 +107,7 @@ class UserProfile {
   static const String idiomLocaleField = 'idiomLocale';
   String idiomLocale;
 
-
+//  static const String datelastHistoryReadingField = 'lastHistoryReading';
 
   user_pb.UserProfile writeToProtoBuf() {
     user_pb.UserProfile userProfilePb = user_pb.UserProfile();
@@ -117,7 +116,7 @@ class UserProfile {
     if (eMailNotification != null) userProfilePb.eMailNotification = eMailNotification;
     if (image != null) userProfilePb.image = image;
     if (idiomLocale != null) userProfilePb.idiomLocale = idiomLocale;
-
+   // if (lastHistoryReading != null) userProfilePb.dateTimeReadingHistory = CommonUtils.timestampFromDateTime(dateTimeReadingHistory);
 
     return userProfilePb;
   }

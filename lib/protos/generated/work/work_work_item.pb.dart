@@ -289,9 +289,11 @@ class WorkGetRequest extends $pb.GeneratedMessage {
     ..aOS(3, 'objectiveId')
     ..aOB(4, 'withWorkItems')
     ..aOB(5, 'withUserProfile')
-    ..aOB(7, 'withArchived')
-    ..pPS(8, 'groupIds')
-    ..pPS(9, 'leaderUserIds')
+    ..aOB(6, 'withArchived')
+    ..pPS(7, 'groupIds')
+    ..pPS(8, 'leaderUserIds')
+    ..aOB(9, 'workItemWithArchived')
+    ..pPS(10, 'workItemAssignedToIds')
     ..hasRequiredFields = false
   ;
 
@@ -355,20 +357,32 @@ class WorkGetRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   void clearWithUserProfile() => clearField(5);
 
-  @$pb.TagNumber(7)
+  @$pb.TagNumber(6)
   $core.bool get withArchived => $_getBF(5);
-  @$pb.TagNumber(7)
+  @$pb.TagNumber(6)
   set withArchived($core.bool v) { $_setBool(5, v); }
-  @$pb.TagNumber(7)
+  @$pb.TagNumber(6)
   $core.bool hasWithArchived() => $_has(5);
-  @$pb.TagNumber(7)
-  void clearWithArchived() => clearField(7);
+  @$pb.TagNumber(6)
+  void clearWithArchived() => clearField(6);
 
-  @$pb.TagNumber(8)
+  @$pb.TagNumber(7)
   $core.List<$core.String> get groupIds => $_getList(6);
 
-  @$pb.TagNumber(9)
+  @$pb.TagNumber(8)
   $core.List<$core.String> get leaderUserIds => $_getList(7);
+
+  @$pb.TagNumber(9)
+  $core.bool get workItemWithArchived => $_getBF(8);
+  @$pb.TagNumber(9)
+  set workItemWithArchived($core.bool v) { $_setBool(8, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasWorkItemWithArchived() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearWorkItemWithArchived() => clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.List<$core.String> get workItemAssignedToIds => $_getList(9);
 }
 
 class WorkItem extends $pb.GeneratedMessage {
@@ -677,6 +691,8 @@ class WorkItemGetRequest extends $pb.GeneratedMessage {
     ..aOS(2, 'workId')
     ..aOB(3, 'withWork')
     ..aOB(4, 'withUserProfile')
+    ..aOB(5, 'withArchived')
+    ..pPS(6, 'assignedToIds')
     ..hasRequiredFields = false
   ;
 
@@ -730,6 +746,18 @@ class WorkItemGetRequest extends $pb.GeneratedMessage {
   $core.bool hasWithUserProfile() => $_has(3);
   @$pb.TagNumber(4)
   void clearWithUserProfile() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.bool get withArchived => $_getBF(4);
+  @$pb.TagNumber(5)
+  set withArchived($core.bool v) { $_setBool(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasWithArchived() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearWithArchived() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.List<$core.String> get assignedToIds => $_getList(5);
 }
 
 class WorkItemAttachment extends $pb.GeneratedMessage {

@@ -63,13 +63,7 @@ class HistoryItem {
       historyItemPb.systemFunctionIndex = systemFunctionIndex;
     }
 
-    if (dateTime != null) historyItemPb.dateTime = CommonUtils.timestampFromDateTime(dateTime);/*{
-      Timestamp t = Timestamp();
-      int microsecondsSinceEpoch = this.dateTime.toUtc().microsecondsSinceEpoch;
-      t.seconds = Int64(microsecondsSinceEpoch ~/ 1000000);
-      t.nanos = ((microsecondsSinceEpoch % 1000000) * 1000);
-      historyItemPb.dateTime = t;
-    }*/
+    if (dateTime != null) historyItemPb.dateTime = CommonUtils.timestampFromDateTime(dateTime);
     if (organization != null) historyItemPb.organization = organization.writeToProtoBuf();
     if (user != null) historyItemPb.user = user.writeToProtoBuf();
     if (description != null) historyItemPb.description = description;
@@ -91,7 +85,6 @@ class HistoryItem {
     if (historyItemPb.hasSystemFunctionIndex()) systemFunctionIndex = historyItemPb.systemFunctionIndex;
 
     if (historyItemPb.hasDateTime()) {
-      // this.dateTime = CommonUtils.dateTimeFromTimestamp(historyItemPb.dateTime);
       dateTime = historyItemPb.dateTime.toDateTime();
     }
     if (historyItemPb.hasOrganization()) organization = cache.putIfAbsent('${HistoryItem.organizationField}${historyItemPb.organization.id}@${Organization.className}', () => Organization()..readFromProtoBuf(historyItemPb.organization));

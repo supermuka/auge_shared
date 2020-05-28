@@ -25,7 +25,7 @@ class AppRoutesQueryParam {
   static const measureCurrentValueQueryParameter = 'measure_current_value';
   static const workItemActualValueQueryParameter = 'work_item_actual_value';
 
-  static const filter = 'filter';
+  static const search = 'search';
 }
 
 class AppRoutesPath {
@@ -41,7 +41,8 @@ class AppRoutesPath {
   static const worksFilterRoutePath = 'filter';
   static const workAddRoutePath = 'add';
   static const workEditRoutePath = ':${AppRoutesParam.workIdParameter}/edit';
-  static const workItemsKanbanRoute = 'works/:${AppRoutesParam.workIdParameter}/kanban_work_items';
+  static const workItemsKanbanRoutePath = 'works/:${AppRoutesParam.workIdParameter}/kanban_work_items';
+  static const workItemsKanbanFilterRoutePath = 'filter';
   static const workItemsKanbanViaObjectiveRoute = 'objectives/:${AppRoutesParam.objectiveIdParameter}/works/:${AppRoutesParam.workIdParameter}/kanban_work_items';
   static const workStagesRoutePath = ':${AppRoutesParam.workIdParameter}/stages';
   static const worksByObjectiveRoutePath = 'works/:${AppRoutesParam.objectiveIdParameter}';

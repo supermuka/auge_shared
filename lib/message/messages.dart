@@ -401,13 +401,14 @@ class WorkMsg {
   static const String objectiveLabel = 'objectiveLabel';
   static const String workItemsOverDueLabel = 'workItemsOverDueLabel';
 
+
   static const String worksFilterLabel = 'worksFilterLabel';
 
   /// Label for work
   static String label(String label) => Intl.select(label, {
     workLabel: 'Work',
     worksLabel: 'Works',
-    orderedByLabel: 'Ordeed By',
+    orderedByLabel: 'Ordered By',
     editWorkLabel: 'Edit Work',
     addWorkLabel: 'Add Work',
     objectiveLabel: 'Objective',
@@ -466,6 +467,8 @@ class WorkItemMsg {
 
   static const String workKanbanLabel = 'workKanbanLabel';
   static const String workItemsLabel = 'workItemsLabel';
+  static const String workItemsFilterLabel = 'workItemsFilterLabel';
+  static const String orderedByLabel = 'orderedByLabel';
   static const String editWorkItemLabel = 'editWorkItemLabel';
   static const String addWorkItemLabel = 'addWorkItemLabel';
   static const String selectAValueLabel = 'selectAValueLabel';
@@ -481,6 +484,8 @@ class WorkItemMsg {
   static String label(String label) => Intl.select(label, {
     workKanbanLabel: 'Work Kanban',
     workItemsLabel: 'Work Items',
+    workItemsFilterLabel: 'Work items Filter',
+    orderedByLabel: 'Ordered By',
     editWorkItemLabel: 'Edit Work Item',
     addWorkItemLabel: 'Add Work Item',
     selectAValueLabel: 'Select a value',

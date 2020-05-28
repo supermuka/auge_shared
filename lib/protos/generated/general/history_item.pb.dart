@@ -155,6 +155,8 @@ class HistoryItemGetRequest extends $pb.GeneratedMessage {
     ..aOS(1, 'id')
     ..aOS(2, 'organizationId')
     ..a<$core.int>(3, 'systemModuleIndex', $pb.PbFieldType.O3)
+    ..aOM<$5.Timestamp>(4, 'fromDateTime', subBuilder: $5.Timestamp.create)
+    ..a<$core.int>(5, 'rowsLimit', $pb.PbFieldType.O3)
     ..hasRequiredFields = false
   ;
 
@@ -199,6 +201,26 @@ class HistoryItemGetRequest extends $pb.GeneratedMessage {
   $core.bool hasSystemModuleIndex() => $_has(2);
   @$pb.TagNumber(3)
   void clearSystemModuleIndex() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $5.Timestamp get fromDateTime => $_getN(3);
+  @$pb.TagNumber(4)
+  set fromDateTime($5.Timestamp v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasFromDateTime() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearFromDateTime() => clearField(4);
+  @$pb.TagNumber(4)
+  $5.Timestamp ensureFromDateTime() => $_ensure(3);
+
+  @$pb.TagNumber(5)
+  $core.int get rowsLimit => $_getIZ(4);
+  @$pb.TagNumber(5)
+  set rowsLimit($core.int v) { $_setSignedInt32(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasRowsLimit() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearRowsLimit() => clearField(5);
 }
 
 class HistoryResponse extends $pb.GeneratedMessage {

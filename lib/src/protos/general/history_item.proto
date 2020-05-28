@@ -34,6 +34,8 @@ message HistoryItemGetRequest {
    string id = 1;
    string organization_id = 2;
    int32 system_module_index = 3;
+   google.protobuf.Timestamp from_date_time = 4;
+   int32 rows_limit = 5;
 }
 
 // Response list of the history item

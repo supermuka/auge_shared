@@ -1,5 +1,5 @@
 {
-  "@@last_modified": "2020-05-21T22:18:03.455535",
+  "@@last_modified": "2020-05-24T13:19:38.309116",
   "@@locale": "en",
   "CommonMsg_label": "{label,select, headerTitleLabel{AUGE}headerSubtitleLabel{Objectives, Work and Performance}searchLabel{Search}filterLabel{Filter}moreLabel{more}emptyLabel{empty}selectLabel{Select}noMatchLabel{No Match}other{Not Defined}}",
   "@CommonMsg_label": {
@@ -182,7 +182,7 @@
       "label": {}
     }
   },
-  "WorkMsg_label": "{label,select, workLabel{Work}worksLabel{Works}orderedByLabel{Ordeed By}editWorkLabel{Edit Work}addWorkLabel{Add Work}objectiveLabel{Objective}workItemsOverDueLabel{Work Items Over Due}worksFilterLabel{Works Filter}other{Not Defined}}",
+  "WorkMsg_label": "{label,select, workLabel{Work}worksLabel{Works}orderedByLabel{Ordered By}editWorkLabel{Edit Work}addWorkLabel{Add Work}objectiveLabel{Objective}workItemsOverDueLabel{Work Items Over Due}worksFilterLabel{Works Filter}other{Not Defined}}",
   "@WorkMsg_label": {
     "description": "Work labels",
     "type": "text",
@@ -211,7 +211,7 @@
       "label": {}
     }
   },
-  "WorkItemMsg_label": "{label,select, workKanbanLabel{Work Kanban}workItemsLabel{Work Items}editWorkItemLabel{Edit Work Item}addWorkItemLabel{Add Work Item}selectAValueLabel{Select a value}workItemsOverDueLabel{Work Items Over Due}checkItemLabel{Check Item}dropFileHereLabel{Drop File Here}checkItemNameLabel{Check Item Name}plannedActualLabel{Planned and Actual}remainingValueLabel{Remaining Value}dateAndActualValueLabel{Date and Actual Value}other{Not Defined}}",
+  "WorkItemMsg_label": "{label,select, workKanbanLabel{Work Kanban}workItemsLabel{Work Items}workItemsFilterLabel{Work items Filter}orderedByLabel{Ordered By}editWorkItemLabel{Edit Work Item}addWorkItemLabel{Add Work Item}selectAValueLabel{Select a value}workItemsOverDueLabel{Work Items Over Due}checkItemLabel{Check Item}dropFileHereLabel{Drop File Here}checkItemNameLabel{Check Item Name}plannedActualLabel{Planned and Actual}remainingValueLabel{Remaining Value}dateAndActualValueLabel{Date and Actual Value}other{Not Defined}}",
   "@WorkItemMsg_label": {
     "description": "Work Item labels",
     "type": "text",

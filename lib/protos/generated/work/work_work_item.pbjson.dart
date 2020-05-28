@@ -56,9 +56,11 @@ const WorkGetRequest$json = const {
     const {'1': 'objective_id', '3': 3, '4': 1, '5': 9, '10': 'objectiveId'},
     const {'1': 'with_work_items', '3': 4, '4': 1, '5': 8, '10': 'withWorkItems'},
     const {'1': 'with_user_profile', '3': 5, '4': 1, '5': 8, '10': 'withUserProfile'},
-    const {'1': 'with_archived', '3': 7, '4': 1, '5': 8, '10': 'withArchived'},
-    const {'1': 'group_ids', '3': 8, '4': 3, '5': 9, '10': 'groupIds'},
-    const {'1': 'leader_user_ids', '3': 9, '4': 3, '5': 9, '10': 'leaderUserIds'},
+    const {'1': 'with_archived', '3': 6, '4': 1, '5': 8, '10': 'withArchived'},
+    const {'1': 'group_ids', '3': 7, '4': 3, '5': 9, '10': 'groupIds'},
+    const {'1': 'leader_user_ids', '3': 8, '4': 3, '5': 9, '10': 'leaderUserIds'},
+    const {'1': 'work_item_with_archived', '3': 9, '4': 1, '5': 8, '10': 'workItemWithArchived'},
+    const {'1': 'work_item_assigned_to_ids', '3': 10, '4': 3, '5': 9, '10': 'workItemAssignedToIds'},
   ],
 };
 
@@ -116,6 +118,8 @@ const WorkItemGetRequest$json = const {
     const {'1': 'work_id', '3': 2, '4': 1, '5': 9, '10': 'workId'},
     const {'1': 'with_work', '3': 3, '4': 1, '5': 8, '10': 'withWork'},
     const {'1': 'with_user_profile', '3': 4, '4': 1, '5': 8, '10': 'withUserProfile'},
+    const {'1': 'with_archived', '3': 5, '4': 1, '5': 8, '10': 'withArchived'},
+    const {'1': 'assigned_to_ids', '3': 6, '4': 3, '5': 9, '10': 'assignedToIds'},
   ],
 };
 

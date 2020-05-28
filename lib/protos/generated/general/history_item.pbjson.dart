@@ -28,6 +28,8 @@ const HistoryItemGetRequest$json = const {
     const {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
     const {'1': 'organization_id', '3': 2, '4': 1, '5': 9, '10': 'organizationId'},
     const {'1': 'system_module_index', '3': 3, '4': 1, '5': 5, '10': 'systemModuleIndex'},
+    const {'1': 'from_date_time', '3': 4, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'fromDateTime'},
+    const {'1': 'rows_limit', '3': 5, '4': 1, '5': 5, '10': 'rowsLimit'},
   ],
 };
 

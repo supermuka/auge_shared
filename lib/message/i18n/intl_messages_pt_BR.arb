@@ -211,7 +211,7 @@
       "label": {}
     }
   },
-  "WorkItemMsg_label": "{label,select, workKanbanLabel{Trabalho Kanban}workItemsLabel{Itens de Trabalho}editWorkItemLabel{Editar Itens de Trabalho}addWorkItemLabel{Adicionar Item de Trabalho}selectAValueLabel{Selecionar um Valor}workItemsOverDueLabel{Itens de Trabalho Atrasados}checkItemLabel{Item de Checagem}dropFileHereLabel{Soltar Arquivo Aqui}checkItemNameLabel{Nome do Item de Checagem}plannedActualLabel{Planejado e Real}remainingValueLabel{Valor Restante}dateAndActualValueLabel{Date e Valor Real}other{Não Definido}}",
+  "WorkItemMsg_label": "{label,select, workKanbanLabel{Trabalho Kanban}workItemsLabel{Itens de Trabalho}workItemsFilterLabel{Filtro de Items de Trabalho}orderedByLabel{Ordenado Por}editWorkItemLabel{Editar Itens de Trabalho}addWorkItemLabel{Adicionar Item de Trabalho}selectAValueLabel{Selecionar um Valor}workItemsOverDueLabel{Itens de Trabalho Atrasados}checkItemLabel{Item de Checagem}dropFileHereLabel{Soltar Arquivo Aqui}checkItemNameLabel{Nome do Item de Checagem}plannedActualLabel{Planejado e Real}remainingValueLabel{Valor Restante}dateAndActualValueLabel{Date e Valor Real}other{Não Definido}}",
   "@WorkItemMsg_label": {
     "description": "Work Item labels",
     "type": "text",

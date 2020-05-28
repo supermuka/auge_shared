@@ -111,13 +111,13 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static m45(fieldName) => "${Intl.select(fieldName, {'nameField': 'Name', 'descriptionField': 'Description', 'dueDateField': 'Due Date', 'plannedValueField': 'Planned', 'actualValueField': 'Actual', 'unitOfMeasurementField': 'Unit of Measurement', 'workStageField': 'Stage', 'assignedToField': 'Assigned To', 'attachmentsField': 'Attachments', 'checkItemsField': 'Check Items', 'archivedField': 'Archived', 'other': 'Not Defined', })}";
 
-  static m46(label) => "${Intl.select(label, {'workKanbanLabel': 'Work Kanban', 'workItemsLabel': 'Work Items', 'editWorkItemLabel': 'Edit Work Item', 'addWorkItemLabel': 'Add Work Item', 'selectAValueLabel': 'Select a value', 'workItemsOverDueLabel': 'Work Items Over Due', 'checkItemLabel': 'Check Item', 'dropFileHereLabel': 'Drop File Here', 'checkItemNameLabel': 'Check Item Name', 'plannedActualLabel': 'Planned and Actual', 'remainingValueLabel': 'Remaining Value', 'dateAndActualValueLabel': 'Date and Actual Value', 'other': 'Not Defined', })}";
+  static m46(label) => "${Intl.select(label, {'workKanbanLabel': 'Work Kanban', 'workItemsLabel': 'Work Items', 'workItemsFilterLabel': 'Work items Filter', 'orderedByLabel': 'Ordered By', 'editWorkItemLabel': 'Edit Work Item', 'addWorkItemLabel': 'Add Work Item', 'selectAValueLabel': 'Select a value', 'workItemsOverDueLabel': 'Work Items Over Due', 'checkItemLabel': 'Check Item', 'dropFileHereLabel': 'Drop File Here', 'checkItemNameLabel': 'Check Item Name', 'plannedActualLabel': 'Planned and Actual', 'remainingValueLabel': 'Remaining Value', 'dateAndActualValueLabel': 'Date and Actual Value', 'other': 'Not Defined', })}";
 
   static m47(fieldName) => "${Intl.select(fieldName, {'dateField': 'Date', 'actualValueField': 'Actual Value', 'commentField': 'Comment', 'other': 'Not Defined', })}";
 
   static m48(label) => "${Intl.select(label, {'workItemValuesLabel': 'Values', 'other': 'Not Defined', })}";
 
-  static m49(label) => "${Intl.select(label, {'workLabel': 'Work', 'worksLabel': 'Works', 'orderedByLabel': 'Ordeed By', 'editWorkLabel': 'Edit Work', 'addWorkLabel': 'Add Work', 'objectiveLabel': 'Objective', 'workItemsOverDueLabel': 'Work Items Over Due', 'worksFilterLabel': 'Works Filter', 'other': 'Not Defined', })}";
+  static m49(label) => "${Intl.select(label, {'workLabel': 'Work', 'worksLabel': 'Works', 'orderedByLabel': 'Ordered By', 'editWorkLabel': 'Edit Work', 'addWorkLabel': 'Add Work', 'objectiveLabel': 'Objective', 'workItemsOverDueLabel': 'Work Items Over Due', 'worksFilterLabel': 'Works Filter', 'other': 'Not Defined', })}";
 
   static m50(fieldName) => "${Intl.select(fieldName, {'nameField': 'Name', 'stateField': 'State', 'other': 'Not Defined', })}";
 
