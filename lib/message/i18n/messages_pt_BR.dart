@@ -85,7 +85,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static m32(moduleName) => "${Intl.select(moduleName, {'groups': 'Grupos', 'users': 'Usuários', 'user_profile': 'Perfil Usuário', 'objectives': 'Objetivos', 'organization': 'Organização', 'works': 'Trabalhos', 'other': 'Não Definido', })}";
 
-  static m33(fieldName) => "${Intl.select(fieldName, {'timelineLabel': 'Linha do tempo', 'dayAgoLabel': 'dia atrás', 'daysAgoLabel': 'dias atrás', 'hourAgoLabel': 'hora atrás', 'hoursAgoLabel': 'horas atrás', 'minuteAgoLabel': 'minuto atrás', 'minutesAgoLabel': 'minutos atrás', 'secondAgoLabel': 'segundo atrás', 'secondsAgoLabel': 'segundos atrás', 'valueLabel': 'valor', 'theLabel': 'o', 'changedFromLabel': 'alterado de', 'wasLabel': 'era', 'allLabel': 'Todos', 'selectModuleLabel': 'Selecione o módulo', 'other': 'Não Definido', })}";
+  static m33(fieldName) => "${Intl.select(fieldName, {'timelineLabel': 'Linha do tempo', 'dayAgoLabel': 'dia atrás', 'daysAgoLabel': 'dias atrás', 'hourAgoLabel': 'hora atrás', 'hoursAgoLabel': 'horas atrás', 'minuteAgoLabel': 'minuto atrás', 'minutesAgoLabel': 'minutos atrás', 'secondAgoLabel': 'segundo atrás', 'secondsAgoLabel': 'segundos atrás', 'valueLabel': 'valor', 'theLabel': 'o', 'changedFromLabel': 'alterado de', 'wasLabel': 'era', 'allLabel': 'Todos', 'selectModuleLabel': 'Selecione o módulo', 'noNewRecordsLabel': 'Não há novos registros', 'newRecordsLabel': 'Novos Registros', 'loadMoreLabel': 'Carregar Mais', 'other': 'Não Definido', })}";
 
   static m35(label) => "${Intl.select(label, {'dayLabel': 'Dia', 'hourLabel': 'Hora', 'percentLabel': 'Percentual', 'moneyLabel': 'Mês', 'indexLabel': 'Índice', 'unitaryLabel': 'Unitário', 'other': 'Não Definido', })}";
 

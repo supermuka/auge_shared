@@ -85,7 +85,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static m32(moduleName) => "${Intl.select(moduleName, {'groups': 'Groups', 'users': 'Users', 'user_profile': 'User Profile', 'objectives': 'Objectives', 'organization': 'Organization', 'works': 'Works', 'other': 'Not Defined', })}";
 
-  static m33(fieldName) => "${Intl.select(fieldName, {'timelineLabel': 'Timeline', 'dayAgoLabel': 'day ago', 'daysAgoLabel': 'days ago', 'hourAgoLabel': 'hour ago', 'hoursAgoLabel': 'hours ago', 'minuteAgoLabel': 'minute ago', 'minutesAgoLabel': 'minutes ago', 'secondAgoLabel': 'second ago', 'secondsAgoLabel': 'seconds ago', 'valueLabel': 'value', 'changedFromLabel': 'changed from', 'wasLabel': 'was', 'allLabel': 'All', 'selectModuleLabel': 'Select module', 'other': 'Not Defined', })}";
+  static m33(fieldName) => "${Intl.select(fieldName, {'timelineLabel': 'Timeline', 'dayAgoLabel': 'day ago', 'daysAgoLabel': 'days ago', 'hourAgoLabel': 'hour ago', 'hoursAgoLabel': 'hours ago', 'minuteAgoLabel': 'minute ago', 'minutesAgoLabel': 'minutes ago', 'secondAgoLabel': 'second ago', 'secondsAgoLabel': 'seconds ago', 'valueLabel': 'value', 'changedFromLabel': 'changed from', 'wasLabel': 'was', 'allLabel': 'All', 'selectModuleLabel': 'Select module', 'noNewRecordsLabel': 'No New Records', 'newRecordsLabel': 'New Records', 'loadMoreLabel': 'Load More', 'other': 'Not Defined', })}";
 
   static m34(fieldName) => "${Intl.select(fieldName, {'nameField': 'Name', 'symbolField': 'Symbol', 'other': 'Not Defined', })}";
 

@@ -872,6 +872,9 @@ class TimelineMsg {
   static const String wasLabel = 'wasLabel';
   static const String allLabel = 'allLabel';
   static const String selectModuleLabel = 'selectModuleLabel';
+  static const String noNewRecordsLabel = 'noNewRecordsLabel';
+  static const String newRecordsLabel = 'newRecordsLabel';
+  static const String loadMoreLabel = 'loadMoreLabel';
 
   /// Label
   static String label(String fieldName) => Intl.select(fieldName, {
@@ -889,8 +892,10 @@ class TimelineMsg {
     wasLabel: 'was',
     allLabel: 'All',
     selectModuleLabel: 'Select module',
-
-      'other': 'Not Defined'},
+    noNewRecordsLabel: 'No New Records',
+    newRecordsLabel: 'New Records',
+    loadMoreLabel: 'Load More',
+    'other': 'Not Defined'},
     name: "TimelineMsg_label",
     args: [fieldName],
     // locale: "en",

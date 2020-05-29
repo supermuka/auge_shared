@@ -1,5 +1,5 @@
 {
-  "@@last_modified": "2020-05-24T13:19:38.309116",
+  "@@last_modified": "2020-05-29T11:55:49.180898",
   "CommonMsg_label": "{label,select, headerTitleLabel{AUGE}headerSubtitleLabel{Objectives, Work and Performance}searchLabel{Search}filterLabel{Filter}moreLabel{more}emptyLabel{empty}selectLabel{Select}noMatchLabel{No Match}other{Not Defined}}",
   "@CommonMsg_label": {
     "description": "Common labels",
@@ -362,7 +362,7 @@
       "functionName": {}
     }
   },
-  "TimelineMsg_label": "{fieldName,select, timelineLabel{Timeline}dayAgoLabel{day ago}daysAgoLabel{days ago}hourAgoLabel{hour ago}hoursAgoLabel{hours ago}minuteAgoLabel{minute ago}minutesAgoLabel{minutes ago}secondAgoLabel{second ago}secondsAgoLabel{seconds ago}valueLabel{value}changedFromLabel{changed from}wasLabel{was}allLabel{All}selectModuleLabel{Select module}other{Not Defined}}",
+  "TimelineMsg_label": "{fieldName,select, timelineLabel{Timeline}dayAgoLabel{day ago}daysAgoLabel{days ago}hourAgoLabel{hour ago}hoursAgoLabel{hours ago}minuteAgoLabel{minute ago}minutesAgoLabel{minutes ago}secondAgoLabel{second ago}secondsAgoLabel{seconds ago}valueLabel{value}changedFromLabel{changed from}wasLabel{was}allLabel{All}selectModuleLabel{Select module}noNewRecordsLabel{No New Records}newRecordsLabel{New Records}loadMoreLabel{Load More}other{Not Defined}}",
   "@TimelineMsg_label": {
     "description": "TimelineItem labels",
     "type": "text",
