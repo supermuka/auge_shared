@@ -1,0 +1,47 @@
+// Copyright (c) 2019, Levius Tecnologia Ltda. All rights reserved.
+// Author: Samuel C. Schwebel
+
+syntax = "proto3";
+
+package auge.protobuf;
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/empty.proto";
+//import "google/protobuf/wrappers.proto";
+
+//import "general/organization.proto";
+import "general/user.proto";
+
+/// USERCONTROL
+// The service definition.
+service UserControlService {
+    rpc GetUserControl (UserControlGetRequest) returns (UserControl) {}
+
+    rpc CreateOrUpdateUserControl (UserControlRequest) returns (google.protobuf.Empty) {}
+    rpc DeleteUserControl (UserControlDeleteRequest) returns (google.protobuf.Empty) {}
+}
+
+// Message to respective domain object.
+message UserControl {
+    User user = 1;
+    google.protobuf.Timestamp date_time_last_notification = 2;
+}
+
+// Message request related to domain object.
+message UserControlRequest {
+    UserControl user_control = 1;
+    string auth_user_id = 2;
+    string auth_organization_id = 3;
+}
+
+message UserControlGetRequest {
+    string user_id = 1;
+    bool with_user = 2;
+}
+
+// Message request for delete related to domain object.
+message UserControlDeleteRequest {
+    string user_id = 1;
+    string auth_user_id = 3;
+    string auth_organization_id = 4;
+}
