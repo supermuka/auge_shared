@@ -248,3 +248,44 @@ class HistoryResponse extends $pb.GeneratedMessage {
   $core.List<HistoryItem> get history => $_getList(0);
 }
 
+class HistoryCountGetRequest extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo('HistoryCountGetRequest', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
+    ..aOS(1, 'authUserId')
+    ..aOS(2, 'authOrganizationId')
+    ..hasRequiredFields = false
+  ;
+
+  HistoryCountGetRequest._() : super();
+  factory HistoryCountGetRequest() => create();
+  factory HistoryCountGetRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory HistoryCountGetRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  HistoryCountGetRequest clone() => HistoryCountGetRequest()..mergeFromMessage(this);
+  HistoryCountGetRequest copyWith(void Function(HistoryCountGetRequest) updates) => super.copyWith((message) => updates(message as HistoryCountGetRequest));
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static HistoryCountGetRequest create() => HistoryCountGetRequest._();
+  HistoryCountGetRequest createEmptyInstance() => create();
+  static $pb.PbList<HistoryCountGetRequest> createRepeated() => $pb.PbList<HistoryCountGetRequest>();
+  @$core.pragma('dart2js:noInline')
+  static HistoryCountGetRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<HistoryCountGetRequest>(create);
+  static HistoryCountGetRequest _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get authUserId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set authUserId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasAuthUserId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAuthUserId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get authOrganizationId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set authOrganizationId($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasAuthOrganizationId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAuthOrganizationId() => clearField(2);
+}
+

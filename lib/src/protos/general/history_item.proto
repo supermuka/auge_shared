@@ -6,12 +6,14 @@ syntax = "proto3";
 package auge.protobuf;
 
 import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
 import "general/user.proto";
 import "general/organization.proto";
 
 // The service definition.
 service HistoryItemService {
    rpc GetHistory (HistoryItemGetRequest) returns (HistoryResponse) {}
+   rpc GetHistoryCount (HistoryCountGetRequest) returns (google.protobuf.Int32Value) {}
 }
 
 // Message to respective domain object.
@@ -42,4 +44,10 @@ message HistoryItemGetRequest {
 message HistoryResponse {
    repeated HistoryItem history = 1;
    //bool webListWorkAround = 2;
+}
+
+// HISTORY COUNT
+message HistoryCountGetRequest {
+   string auth_user_id = 1;
+   string auth_organization_id = 2;
 }

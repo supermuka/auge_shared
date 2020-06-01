@@ -40,3 +40,11 @@ const HistoryResponse$json = const {
   ],
 };
 
+const HistoryCountGetRequest$json = const {
+  '1': 'HistoryCountGetRequest',
+  '2': const [
+    const {'1': 'auth_user_id', '3': 1, '4': 1, '5': 9, '10': 'authUserId'},
+    const {'1': 'auth_organization_id', '3': 2, '4': 1, '5': 9, '10': 'authOrganizationId'},
+  ],
+};
+
