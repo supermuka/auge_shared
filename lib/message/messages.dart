@@ -141,7 +141,7 @@ class AuthMsg {
   static String browserCompatibleErrorMsg() => Intl.message("Browser Compatible: Chrome", name: "AuthMsg_browserCompatibleErrorMsg");
 
   // New Password
-  static String informIdentificationCorrectlyMsg() => Intl.message("Inform an identification correctly.", name: "AuthMsg_informIdentificationCorrectlyMsg");
+  static String informIdentificationCorrectlyMsg() => Intl.message("Inform an identification correctly. The pattern is id@domain.", name: "AuthMsg_informIdentificationCorrectlyMsg");
   static String codeNotGeneratedMsg() => Intl.message("Code not generated.", name: "AuthMsg_codeNotGeneratedMsg");
   static String informBelowTheCodeSentToEMailMsg() => Intl.message("Inform below the code sent to e-mail", name: "AuthMsg_informBelowTheCodeSentToEMailMsg");
   static String codeValidateMsg() => Intl.message("Code validate.", name: "AuthMsg_codeValidateMsg");
@@ -166,6 +166,7 @@ class AppLayoutMsg {
   static const objectivesGanttLabel = 'objectivesGanttLabel';
   static const usersLabel = 'usersLabel';
   static const groupsLabel = 'groupsLabel';
+  static const workItemsLabel = 'workItemsLabel';
   static const configurationLabel = 'configurationLabel';
 
   /// Label for [AppLayout]
@@ -183,6 +184,7 @@ class AppLayoutMsg {
         objectivesGanttLabel: 'Objectives Gantt',
         usersLabel: 'Users',
         groupsLabel: 'Groups',
+        workItemsLabel: 'Work Items',
         configurationLabel: 'Configuration',
         'other': 'Not Defined'},
       name: "AppLayoutMsg_label",
@@ -790,6 +792,8 @@ class InsightMsg {
     objectivesLabel: 'Objectives',
     objectivesDescriptionLabel: 'Number total of objectives',
     objectivesAchievedLabel: 'Objectives Achieved',
+    objectivesAchievedDescriptionLabel: 'Objectives with average measures above 70%',
+    objectivesRequiringAttentionDescriptionLabel: 'Objectives with average measures below 30%',
     measuresAchievedDescriptionLabel: 'Objectives over 70% progress',
     objectivesRequiringAttentionLabel: 'Objectives Requiring Attention',
     measuresRequiringAttentionDescriptionLabel: 'Objectives below 30% progress',

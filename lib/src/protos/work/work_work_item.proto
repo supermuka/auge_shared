@@ -154,13 +154,13 @@ message WorkItemsResponse {
 
 // Request for Work Item
 message WorkItemGetRequest {
-
     string id = 1;
     string work_id = 2;
-    bool with_work = 3;
-    bool with_user_profile = 4;
-    bool with_archived = 5;
-    repeated string assigned_to_ids = 6;
+    string organization_id = 3;
+    bool with_work = 4;
+    bool with_user_profile = 5;
+    bool with_archived = 6;
+    repeated string assigned_to_ids = 7;
 }
 
 // Message to respective domain object.

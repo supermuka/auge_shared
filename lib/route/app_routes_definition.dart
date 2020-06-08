@@ -20,6 +20,7 @@ class AppRoutesQueryParam {
   static const objectiveIdQueryParameter = 'objective_id';
   static const groupIdsQueryParameter = 'group_ids';
   static const leaderUserIdsQueryParameter = 'leader_user_ids';
+  static const assignedToUserIdQueryParameter = 'assigned_to_user_id';
   static const objectiveStartDateQueryParameter = 'objective_start_date';
   static const objectiveEndDateQueryParameter = 'objective_end_date';
   static const measureCurrentValueQueryParameter = 'measure_current_value';
@@ -43,7 +44,9 @@ class AppRoutesPath {
   static const workEditRoutePath = ':${AppRoutesParam.workIdParameter}/edit';
   static const workItemsKanbanRoutePath = 'works/:${AppRoutesParam.workIdParameter}/kanban_work_items';
   static const workItemsKanbanFilterRoutePath = 'filter';
-  static const workItemsKanbanViaObjectiveRoute = 'objectives/:${AppRoutesParam.objectiveIdParameter}/works/:${AppRoutesParam.workIdParameter}/kanban_work_items';
+  static const workItemsFilterRoutePath = 'filter';
+  static const workItemsKanbanViaObjectivePath = 'objectives/:${AppRoutesParam.objectiveIdParameter}/works/:${AppRoutesParam.workIdParameter}/kanban_work_items';
+  static const workItemsRoutePath = 'work_items';
   static const workStagesRoutePath = ':${AppRoutesParam.workIdParameter}/stages';
   static const worksByObjectiveRoutePath = 'works/:${AppRoutesParam.objectiveIdParameter}';
   static const objectivesRoutePath = 'objectives';

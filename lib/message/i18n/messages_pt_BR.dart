@@ -19,7 +19,7 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'pt_BR';
 
-  static m0(label) => "${Intl.select(label, {'organizationLabel': 'Organização', 'organizationsLabel': 'Organizações', 'adminLabel': 'Administrador', 'superAdminLabel': 'Super Administrador', 'userDetailLabel': 'Detalhes do Usuário', 'logoutLabel': 'Sair', 'ingightsLabel': 'Insights', 'worksLabel': 'Trabalhos', 'objectivesLabel': 'Objetivos', 'objectivesMapLabel': 'Mapa de Objetivos', 'objectivesGanttLabel': 'Gantt de Objetivos', 'usersLabel': 'Usuários', 'groupsLabel': 'Grupos', 'configurationLabel': 'Configuração', 'other': 'Não Definido', })}";
+  static m0(label) => "${Intl.select(label, {'organizationLabel': 'Organização', 'organizationsLabel': 'Organizações', 'adminLabel': 'Administrador', 'superAdminLabel': 'Super Administrador', 'userDetailLabel': 'Detalhes do Usuário', 'logoutLabel': 'Sair', 'ingightsLabel': 'Insights', 'worksLabel': 'Trabalhos', 'objectivesLabel': 'Objetivos', 'objectivesMapLabel': 'Mapa de Objetivos', 'objectivesGanttLabel': 'Gantt de Objetivos', 'usersLabel': 'Usuários', 'groupsLabel': 'Grupos', 'workItemsLabel': 'Itens de Trabalho', 'configurationLabel': 'Configuração', 'other': 'Não Definido', })}";
 
   static m1(label) => "${Intl.select(label, {'domainLabel': 'nome@dominio.com', 'identificationLabel': 'Identificação', 'passwordLabel': 'Senha', 'superAdminLabel': 'Super Admin', 'organizationLabel': 'Organização', 'allOrganizationsLabel': 'Todas Organizações', 'loginLabel': 'Logar', 'logoutLabel': 'Sair', 'requestCodeToNewPasswordLabel': 'Solicitar Código para Nova Senha', 'informCodeLabel': 'Inserir Código', 'defineNewPasswordLabel': 'Defina Nova Senha', 'passwordCodeLabel': 'Código', 'newPasswordLabel': 'Nova Senha', 'repeatNewPasswordLabel': 'Repedir Nova Senha', 'saveLabel': 'Salvar', 'other': 'Não Definido', })}";
 
@@ -126,7 +126,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "AuthMsg_codeNotGeneratedMsg" : MessageLookupByLibrary.simpleMessage("Código não gerado."),
     "AuthMsg_codeValidateMsg" : MessageLookupByLibrary.simpleMessage("Código validado."),
     "AuthMsg_informBelowTheCodeSentToEMailMsg" : MessageLookupByLibrary.simpleMessage("Informe abaixo o código enviado para o e-mail."),
-    "AuthMsg_informIdentificationCorrectlyMsg" : MessageLookupByLibrary.simpleMessage("Informe uma identificação corretamente."),
+    "AuthMsg_informIdentificationCorrectlyMsg" : MessageLookupByLibrary.simpleMessage("Informe uma identificação corretamente. O padrão é id@domínio."),
     "AuthMsg_informIdentificationPasswordCorrectlyMsg" : MessageLookupByLibrary.simpleMessage("Informe uma identificação e senha corretamente."),
     "AuthMsg_label" : m1,
     "AuthMsg_newPasswordSavedMsg" : MessageLookupByLibrary.simpleMessage("Nova senha salva."),

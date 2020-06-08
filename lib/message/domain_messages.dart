@@ -289,6 +289,7 @@ class WorkItemDomainMsg {
           WorkItem.attachmentsField: 'Attachments',
           WorkItem.checkItemsField: 'Check Items',
           WorkItem.archivedField: 'Archived',
+          WorkItem.workField: 'Work',
           'other': 'Not Defined'},
         name: 'WorkItemDomainMsg_fieldLabel',
         args: [fieldName]);

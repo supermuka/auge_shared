@@ -65,7 +65,7 @@
     "type": "text",
     "placeholders": {}
   },
-  "AuthMsg_informIdentificationCorrectlyMsg": "Informe uma identificação corretamente.",
+  "AuthMsg_informIdentificationCorrectlyMsg": "Informe uma identificação corretamente. O padrão é id@domínio.",
   "@AuthMsg_informIdentificationCorrectlyMsg": {
     "type": "text",
     "placeholders": {}
@@ -95,7 +95,7 @@
     "type": "text",
     "placeholders": {}
   },
-  "AppLayoutMsg_label": "{label,select, organizationLabel{Organização}organizationsLabel{Organizações}adminLabel{Administrador}superAdminLabel{Super Administrador}userDetailLabel{Detalhes do Usuário}logoutLabel{Sair}ingightsLabel{Insights}worksLabel{Trabalhos}objectivesLabel{Objetivos}objectivesMapLabel{Mapa de Objetivos}objectivesGanttLabel{Gantt de Objetivos}usersLabel{Usuários}groupsLabel{Grupos}configurationLabel{Configuração}other{Não Definido}}",
+  "AppLayoutMsg_label": "{label,select, organizationLabel{Organização}organizationsLabel{Organizações}adminLabel{Administrador}superAdminLabel{Super Administrador}userDetailLabel{Detalhes do Usuário}logoutLabel{Sair}ingightsLabel{Insights}worksLabel{Trabalhos}objectivesLabel{Objetivos}objectivesMapLabel{Mapa de Objetivos}objectivesGanttLabel{Gantt de Objetivos}usersLabel{Usuários}groupsLabel{Grupos}workItemsLabel{Itens de Trabalho}configurationLabel{Configuração}other{Não Definido}}",
   "@AppLayoutMsg_label": {
     "description": "Applayout labels",
     "type": "text",
