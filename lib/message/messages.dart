@@ -753,8 +753,7 @@ class InsightMsg {
   static const String groupLabel = 'groupLabel';
   static const String leaderLabel = 'leaderLabel';
   static const String objectivesOverallLabel = 'objectivesOverallLabel';
-  static const String objectivesMeasuresLabel = 'objectivesMeasuresLabel';
-  static const String worksWorkItemsLabel = 'worksWorkItemsLabel';
+
   static const String objectivesLabel = 'objectivesLabel';
   static const String objectivesDescriptionLabel = 'objectivesDescriptionLabel';
 
@@ -762,59 +761,60 @@ class InsightMsg {
   static const String objectivesAchievedDescriptionLabel = 'objectivesAchievedDescriptionLabel';
   static const String objectivesRequiringAttentionLabel = 'objectivesRequiringAttentionLabel';
   static const String objectivesRequiringAttentionDescriptionLabel = 'objectivesRequiringAttentionDescriptionLabel';
-  static const String measuresLabel = 'measuresLabel';
-  static const String measuresDescriptionLabel = 'measuresDescriptionLabel';
-  static const String measuresAchievedLabel = 'measuresAchievedLabel';
-  static const String measuresAchievedDescriptionLabel = 'measuresAchievedDescriptionLabel';
-  static const String measuresRequiringAttentionLabel = 'measuresRequiringAttentionLabel';
-  static const String measuresRequiringAttentionDescriptionLabel = 'measuresRequiringAttentionDescriptionLabel';
+
   static const String worksLabel = 'worksLabel';
   static const String worksDescriptionLabel = 'worksDescriptionLabel';
   static const String worksCompletedLabel = 'worksCompletedLabel';
   static const String worksCompletedDescriptionLabel = 'worksCompletedDescriptionLabel';
   static const String worksRequiringAttentionLabel = 'worksRequiringAttentionLabel';
   static const String worksRequiringAttentionDescriptionLabel = 'worksRequiringAttentionDescriptionLabel';
+
   static const String workItemsLabel = 'workItemsLabel';
   static const String workItemsDescriptionLabel = 'workItemsDescriptionLabel';
+  static const String workItemsNotStartedLabel = 'workItemsNotStartedLabel';
+  static const String workItemsNotStartedDescriptionLabel = 'workItemsNotStartedDescriptionLabel';
+  static const String workItemsInProgressLabel = 'workItemsInProgressLabel';
+  static const String workItemsInProgressDescriptionLabel = 'workItemsInProgressDescriptionLabel';
   static const String workItemsCompletedLabel = 'workItemsCompletedLabel';
   static const String workItemsCompletedDescriptionLabel = 'workItemsCompletedDescriptionLabel';
   static const String workItemsRequiringAttentionLabel = 'workItemsRequiringAttentionLabel';
   static const String workItemsRequiringAttentionDescriptionLabel = 'workItemsRequiringAttentionDescriptionLabel';
+
+  static const String worksMyWorkItemsLabel = 'worksMyWorkItemsLabel';
 
   /// Label for Insight
   static String label(String label) => Intl.select(label, {
     insightsLabel: 'Insights',
     groupLabel: 'Group',
     leaderLabel: 'Leader',
+
     objectivesOverallLabel: 'Objectives Overall',
-    objectivesMeasuresLabel: 'Objectives and Measures',
-    worksWorkItemsLabel: 'Works and Work Items',
     objectivesLabel: 'Objectives',
+
     objectivesDescriptionLabel: 'Number total of objectives',
     objectivesAchievedLabel: 'Objectives Achieved',
     objectivesAchievedDescriptionLabel: 'Objectives with average measures above 70%',
     objectivesRequiringAttentionDescriptionLabel: 'Objectives with average measures below 30%',
-    measuresAchievedDescriptionLabel: 'Objectives over 70% progress',
     objectivesRequiringAttentionLabel: 'Objectives Requiring Attention',
-    measuresRequiringAttentionDescriptionLabel: 'Objectives below 30% progress',
-    measuresLabel: 'Measures',
-    measuresDescriptionLabel: 'Number total of measures',
-    measuresAchievedLabel: 'Measures Achieved',
-    measuresAchievedDescriptionLabel: 'Measures over 70% progress',
-    measuresRequiringAttentionLabel: 'Measures Requiring Attention',
-    measuresRequiringAttentionDescriptionLabel: 'Measures below 30% progress',
+
     worksLabel: 'Works',
-    worksDescriptionLabel: 'Number total of works',
+    worksDescriptionLabel: 'Total of works',
     worksCompletedLabel: 'Works Completed',
     worksCompletedDescriptionLabel: 'Works with 100% work items completed',
     worksRequiringAttentionLabel: 'Works Requiring Attention',
     worksRequiringAttentionDescriptionLabel: 'Works with over due work items',
     workItemsLabel: 'Work Items',
-    workItemsDescriptionLabel: 'Number total of work items',
+    workItemsDescriptionLabel: 'Total of work items',
+    workItemsNotStartedLabel: 'Work Items Not Started',
+    workItemsNotStartedDescriptionLabel: 'Work items in the not started state',
+    workItemsInProgressLabel: 'Work Items in Progress',
+    workItemsInProgressDescriptionLabel: 'Work items in the in progress state',
     workItemsCompletedLabel: 'Work Items Completed',
-    workItemsCompletedDescriptionLabel: 'Work items with 100% progress',
+    workItemsCompletedDescriptionLabel: 'Work items in the completed state',
     workItemsRequiringAttentionLabel: 'Work Items Requiring Attention',
     workItemsRequiringAttentionDescriptionLabel: 'Over due work items',
+
+    worksMyWorkItemsLabel: 'My Work Items',
     'other': 'Not Defined'},
     name: "InsightMsg_label",
     args: [label],

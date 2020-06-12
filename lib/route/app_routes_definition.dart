@@ -48,6 +48,7 @@ class AppRoutesPath {
   static const workItemsKanbanViaObjectivePath = 'objectives/:${AppRoutesParam.objectiveIdParameter}/works/:${AppRoutesParam.workIdParameter}/kanban_work_items';
   static const workItemsRoutePath = 'work_items';
   static const workStagesRoutePath = ':${AppRoutesParam.workIdParameter}/stages';
+  static const workStagesViaKanbanRoutePath = 'work_stages';
   static const worksByObjectiveRoutePath = 'works/:${AppRoutesParam.objectiveIdParameter}';
   static const objectivesRoutePath = 'objectives';
   static const objectivesFilterRoutePath = 'filter';
@@ -64,8 +65,6 @@ class AppRoutesPath {
   static const objectiveEditRoutePath = ':${AppRoutesParam.objectiveIdParameter}/edit';
   static const workItemAddRoutePath = ':${AppRoutesParam.workIdParameter}/work_items/add';
   static const workItemEditRoutePath = ':${AppRoutesParam.workIdParameter}/work_items/:${AppRoutesParam.workItemIdParameter}/edit';
-  static const workItemKanbanAddRoutePath = 'add';
-  static const workItemKanbanEditRoutePath = ':${AppRoutesParam.workItemIdParameter}/edit';
   static const userAddRoutePath = 'add';
   static const userEditRoutePath = ':${AppRoutesParam.userIdParameter}/edit';
   static const userEditWithAppLayoutParentRoutePath = 'users/:${AppRoutesParam.userIdParameter}/auth/edit';
