@@ -22,25 +22,34 @@ class Organization {
   static const String codeField = 'code';
   String code;
 
-  organization_pb.Organization writeToProtoBuf() {
+
+}
+
+class OrganizationHelper {
+
+  static organization_pb.Organization writeToProtoBuf(Organization organization) {
     organization_pb.Organization organizatoinPb = organization_pb.Organization();
 
-    if (id != null) organizatoinPb.id = id;
-    if (version != null) organizatoinPb.version = version;
-    if (name != null) organizatoinPb.name = name;
-    if (code != null) organizatoinPb.code = code;
+    if (organization.id != null) organizatoinPb.id = organization.id;
+    if (organization.version != null) organizatoinPb.version = organization.version;
+    if (organization.name != null) organizatoinPb.name = organization.name;
+    if (organization.code != null) organizatoinPb.code = organization.code;
 
     return organizatoinPb;
   }
 
-  void readFromProtoBuf(organization_pb.Organization organizationPb) {
-    if (organizationPb.hasId()) id = organizationPb.id;
-    if (organizationPb.hasVersion()) version = organizationPb.version;
-    if (organizationPb.hasName()) name = organizationPb.name;
-    if (organizationPb.hasCode()) code = organizationPb.code;
+  static Organization readFromProtoBuf(organization_pb.Organization organizationPb) {
+    Organization organization = Organization();
 
+    if (organizationPb.hasId()) organization.id = organizationPb.id;
+    if (organizationPb.hasVersion()) organization.version = organizationPb.version;
+    if (organizationPb.hasName()) organization.name = organizationPb.name;
+    if (organizationPb.hasCode()) organization.code = organizationPb.code;
+
+    return organization;
   }
 
+  /*
   static Map<String, dynamic> fromProtoBufToModelMap(organization_pb.Organization organizationPb, [bool onlyIdAndSpecificationForDepthFields = false, bool isDeep = false]) {
     Map<String, dynamic> map = {};
 
@@ -62,4 +71,6 @@ class Organization {
 
     return map;
   }
+  */
+
 }

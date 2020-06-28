@@ -131,6 +131,7 @@ class OrganizationConfigurationGetRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo('OrganizationConfigurationGetRequest', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
     ..aOS(1, 'id')
     ..aOS(2, 'organizationId')
+    ..aOB(3, 'withOrganization')
     ..hasRequiredFields = false
   ;
 
@@ -166,5 +167,14 @@ class OrganizationConfigurationGetRequest extends $pb.GeneratedMessage {
   $core.bool hasOrganizationId() => $_has(1);
   @$pb.TagNumber(2)
   void clearOrganizationId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.bool get withOrganization => $_getBF(2);
+  @$pb.TagNumber(3)
+  set withOrganization($core.bool v) { $_setBool(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasWithOrganization() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearWithOrganization() => clearField(3);
 }
 

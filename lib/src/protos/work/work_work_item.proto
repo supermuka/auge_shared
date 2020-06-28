@@ -73,13 +73,14 @@ message WorkGetRequest {
     string id = 1;
     string organization_id = 2;
     string objective_id = 3;
-    bool with_work_items = 4;
-    bool with_user_profile = 5;
-    bool with_archived = 6;
-    repeated string group_ids = 7;
-    repeated string leader_user_ids = 8;
-    bool work_item_with_archived = 9;
-    repeated string work_item_assigned_to_ids = 10;
+    bool with_organization = 4;
+    bool with_work_items = 5;
+    bool with_user_profile = 6;
+    bool with_archived = 7;
+    repeated string group_ids = 8;
+    repeated string leader_user_ids = 9;
+    bool work_item_with_archived = 10;
+    repeated string work_item_assigned_to_ids = 11;
 }
 
 // The service definition.

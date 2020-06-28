@@ -30,25 +30,8 @@ class UserAccess {
     organization = Organization();
   }
 
-  user_access_pb.UserAccess writeToProtoBuf() {
-    user_access_pb.UserAccess userAccessPb = user_access_pb.UserAccess();
 
-    if (id != null) userAccessPb.id = id;
-    if (version != null) userAccessPb.version = version;
-    if (user != null) userAccessPb.user = user.writeToProtoBuf();
-    if (organization != null) userAccessPb.organization = organization.writeToProtoBuf();
-    if (accessRole != null) userAccessPb.accessRole = accessRole;
-
-    return userAccessPb;
-  }
-
-  void readFromProtoBuf(user_access_pb.UserAccess userAccessPb, Map<String, dynamic> cache) {
-    if (userAccessPb.hasId()) id = userAccessPb.id;
-    if (userAccessPb.hasVersion()) version = userAccessPb.version;
-    if (userAccessPb.hasUser()) user =  cache.putIfAbsent('${UserAccess.userField}${userAccessPb.user.id}@${User.className}', () => User()..readFromProtoBuf(userAccessPb.user, cache));
-    if (userAccessPb.hasOrganization()) organization = cache.putIfAbsent('${UserAccess.userField}${userAccessPb.organization.id}@${Organization.className}', () => Organization()..readFromProtoBuf(userAccessPb.organization));
-    if (userAccessPb.hasAccessRole()) accessRole = userAccessPb.accessRole;
-  }
+  /*
   static Map<String, dynamic> fromProtoBufToModelMap(user_access_pb.UserAccess userAccessPb, [bool onlyIdAndSpecificationForDepthFields = false, bool isDeep = false]) {
     Map<String, dynamic> map = {};
 
@@ -88,5 +71,33 @@ class UserAccess {
       }
     }
     return map;
+  }
+   */
+}
+
+class UserAccessHelper {
+
+  static user_access_pb.UserAccess writeToProtoBuf(UserAccess userAccess) {
+    user_access_pb.UserAccess userAccessPb = user_access_pb.UserAccess();
+
+    if (userAccess.id != null) userAccessPb.id = userAccess.id;
+    if (userAccess.version != null) userAccessPb.version = userAccess.version;
+    if (userAccess.user != null) userAccessPb.user = UserHelper.writeToProtoBuf(userAccess.user);
+    if (userAccess.organization != null) userAccessPb.organization = OrganizationHelper.writeToProtoBuf(userAccess.organization);
+    if (userAccess.accessRole != null) userAccessPb.accessRole = userAccess.accessRole;
+
+    return userAccessPb;
+  }
+
+  static UserAccess readFromProtoBuf(user_access_pb.UserAccess userAccessPb, Map<String, dynamic> cache) {
+    UserAccess userAccess = UserAccess();
+
+    if (userAccessPb.hasId()) userAccess.id = userAccessPb.id;
+    if (userAccessPb.hasVersion()) userAccess.version = userAccessPb.version;
+    if (userAccessPb.hasUser()) userAccess.user =  cache.putIfAbsent('${UserAccess.userField}${userAccessPb.user.id}@${User.className}', () => UserHelper.readFromProtoBuf(userAccessPb.user, cache));
+    if (userAccessPb.hasOrganization()) userAccess.organization = cache.putIfAbsent('${UserAccess.userField}${userAccessPb.organization.id}@${Organization.className}', () => OrganizationHelper.readFromProtoBuf(userAccessPb.organization));
+    if (userAccessPb.hasAccessRole()) userAccess.accessRole = userAccessPb.accessRole;
+
+    return userAccess;
   }
 }

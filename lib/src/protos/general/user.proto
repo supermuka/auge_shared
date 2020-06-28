@@ -63,8 +63,9 @@ message UserGetRequest {
     string managed_by_organization_id = 2;
     string managed_by_organization_id_or_accessed_by_organization_id = 3;
     string accessedByOrganizationId = 4;
-    bool with_user_profile = 5;
-    bool with_objective = 6;
+    bool only_id_and_name = 5;
+    bool with_user_profile = 6;
+    bool with_objective = 7;
 }
 
 // Response list of the organization

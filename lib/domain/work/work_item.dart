@@ -69,62 +69,7 @@ class WorkItem {
     }
   }
 
-  work_work_item_pb.WorkItem writeToProtoBuf() {
-    work_work_item_pb.WorkItem workItemPb = work_work_item_pb.WorkItem();
-
-    if (id != null) workItemPb.id = id;
-    if (version != null) workItemPb.version = version;
-    if (name != null) workItemPb.name = name;
-    if (description != null) workItemPb.description = description;
-    ///if (completed != null) workItemPb.completed = completed;
-
-    if (plannedValue != null) workItemPb.plannedValue = plannedValue;
-    if (actualValue != null) workItemPb.actualValue = actualValue;
-    if (unitOfMeasurement != null) workItemPb.unitOfMeasurement = unitOfMeasurement.writeToProtoBuf();
-    if (archived != null) workItemPb.archived = archived;
-
-    if (dueDate != null) workItemPb.dueDate = CommonUtils.timestampFromDateTime(dueDate); /*{
-      Timestamp t = Timestamp();
-      int microsecondsSinceEpoch = this.dueDate.toUtc().microsecondsSinceEpoch;
-      t.seconds = Int64(microsecondsSinceEpoch ~/ 1000000);
-      t.nanos = ((microsecondsSinceEpoch % 1000000) * 1000);
-      workItemPb.dueDate = t;
-    }
-    */
-
-    if (workStage != null) workItemPb.workStage = workStage.writeToProtoBuf();
-    if (attachments != null && attachments.isNotEmpty) workItemPb.attachments.addAll(attachments.map((m) => m.writeToProtoBuf()));
-    if (checkItems != null && checkItems.isNotEmpty) workItemPb.checkItems.addAll(checkItems.map((m) => m.writeToProtoBuf()));
-    if (assignedTo != null && assignedTo.isNotEmpty) workItemPb.assignedTo.addAll(assignedTo.map((m) => m.writeToProtoBuf()));
-    if (work != null) workItemPb.work = work.writeToProtoBuf();
-    return workItemPb;
-  }
-
-  void readFromProtoBuf(work_work_item_pb.WorkItem workItemPb, Map<String, dynamic> cache) {
-    if (workItemPb.hasId()) id = workItemPb.id;
-    if (workItemPb.hasVersion()) version = workItemPb.version;
-    if (workItemPb.hasName()) name = workItemPb.name;
-    if (workItemPb.hasDescription()) description = workItemPb.description;
-    //if (workItemPb.hasCompleted()) completed = workItemPb.completed;
-    if (workItemPb.hasPlannedValue()) plannedValue = workItemPb.plannedValue;
-    if (workItemPb.hasActualValue()) actualValue = workItemPb.actualValue;
-    if (workItemPb.hasUnitOfMeasurement()) unitOfMeasurement = cache.putIfAbsent('${WorkItem.unitOfMeasurementField}${workItemPb.unitOfMeasurement.id}@${UnitOfMeasurement.className}', () => UnitOfMeasurement()..readFromProtoBuf(workItemPb.unitOfMeasurement));
-
-    if (workItemPb.hasArchived()) archived = workItemPb.archived;
-
-    if (workItemPb.hasWorkStage()) workStage = WorkStage()..readFromProtoBuf(workItemPb.workStage, cache);
-
-    // if (workItemPb.hasDueDate())  this.dueDate = CommonUtils.dateTimeFromTimestamp(workItemPb.dueDate);
-    if (workItemPb.hasDueDate())  dueDate = workItemPb.dueDate.toDateTime();
-    /*{
-      this.dueDate = DateTime.fromMicrosecondsSinceEpoch(workItemPb.dueDate.seconds.toInt() * 1000000 + workItemPb.dueDate.nanos ~/ 1000 );
-    }*/
-    if (workItemPb.attachments.isNotEmpty) attachments = workItemPb.attachments.map((u) => WorkItemAttachment()..readFromProtoBuf(u)).toList(); // No need cache, it is a composite
-    if (workItemPb.checkItems.isNotEmpty) checkItems = workItemPb.checkItems.map((c) => WorkItemCheckItem()..readFromProtoBuf(c)).toList(); // No need cache, it is a composite
-    if (workItemPb.assignedTo.isNotEmpty) assignedTo = workItemPb.assignedTo.map((u) => cache.putIfAbsent('${WorkItem.assignedToField}${u.id}@${User.className}', () => User()..readFromProtoBuf(u, cache))).toList().cast<User>();
-    if (workItemPb.hasWork()) work = cache.putIfAbsent('${WorkItem.workField}${workItemPb.work.id}@${Work.className}', () => Work()..readFromProtoBuf(workItemPb.work, cache));
-  }
-
+  /*
   static Map<String, dynamic> fromProtoBufToModelMap(work_work_item_pb.WorkItem workItemPb, [bool onlyIdAndSpecificationForDepthFields = false, bool isDeep = false]) {
     Map<String, dynamic> map = {};
 
@@ -186,6 +131,72 @@ class WorkItem {
     }
     return map;
   }
+
+   */
+}
+
+class WorkItemHelper {
+
+  static work_work_item_pb.WorkItem writeToProtoBuf(WorkItem workItem) {
+    work_work_item_pb.WorkItem workItemPb = work_work_item_pb.WorkItem();
+
+    if (workItem.id != null) workItemPb.id = workItem.id;
+    if (workItem.version != null) workItemPb.version = workItem.version;
+    if (workItem.name != null) workItemPb.name = workItem.name;
+    if (workItem.description != null) workItemPb.description = workItem.description;
+    ///if (completed != null) workItemPb.completed = completed;
+
+    if (workItem.plannedValue != null) workItemPb.plannedValue = workItem.plannedValue;
+    if (workItem.actualValue != null) workItemPb.actualValue = workItem.actualValue;
+    if (workItem.unitOfMeasurement != null) workItemPb.unitOfMeasurement = UnitOfMeasurementHelper.writeToProtoBuf(workItem.unitOfMeasurement);
+    if (workItem.archived != null) workItemPb.archived = workItem.archived;
+
+    if (workItem.dueDate != null) workItemPb.dueDate = CommonUtils.timestampFromDateTime(workItem.dueDate); /*{
+      Timestamp t = Timestamp();
+      int microsecondsSinceEpoch = this.dueDate.toUtc().microsecondsSinceEpoch;
+      t.seconds = Int64(microsecondsSinceEpoch ~/ 1000000);
+      t.nanos = ((microsecondsSinceEpoch % 1000000) * 1000);
+      workItemPb.dueDate = t;
+    }
+    */
+
+    if (workItem.workStage != null) workItemPb.workStage = WorkStageHelper.writeToProtoBuf(workItem.workStage);
+    if (workItem.attachments != null && workItem.attachments.isNotEmpty) workItemPb.attachments.addAll(workItem.attachments.map((m) => WorkItemAttachmentHelper.writeToProtoBuf(m)));
+    if (workItem.checkItems != null && workItem.checkItems.isNotEmpty) workItemPb.checkItems.addAll(workItem.checkItems.map((m) => m.writeToProtoBuf()));
+    if (workItem.assignedTo != null && workItem.assignedTo.isNotEmpty) workItemPb.assignedTo.addAll(workItem.assignedTo.map((m) => UserHelper.writeToProtoBuf(m)));
+    if (workItem.work != null) workItemPb.work = WorkHelper.writeToProtoBuf(workItem.work);
+
+    return workItemPb;
+  }
+
+  static WorkItem readFromProtoBuf(work_work_item_pb.WorkItem workItemPb, Map<String, dynamic> cache) {
+    WorkItem workItem = WorkItem();
+
+    if (workItemPb.hasId()) workItem.id = workItemPb.id;
+    if (workItemPb.hasVersion()) workItem.version = workItemPb.version;
+    if (workItemPb.hasName()) workItem.name = workItemPb.name;
+    if (workItemPb.hasDescription()) workItem.description = workItemPb.description;
+    //if (workItemPb.hasCompleted()) completed = workItemPb.completed;
+    if (workItemPb.hasPlannedValue()) workItem.plannedValue = workItemPb.plannedValue;
+    if (workItemPb.hasActualValue()) workItem.actualValue = workItemPb.actualValue;
+    if (workItemPb.hasUnitOfMeasurement()) workItem.unitOfMeasurement = cache.putIfAbsent('${WorkItem.unitOfMeasurementField}${workItemPb.unitOfMeasurement.id}@${UnitOfMeasurement.className}', () => UnitOfMeasurementHelper.readFromProtoBuf(workItemPb.unitOfMeasurement));
+
+    if (workItemPb.hasArchived()) workItem.archived = workItemPb.archived;
+
+    if (workItemPb.hasWorkStage()) workItem.workStage = WorkStageHelper.readFromProtoBuf(workItemPb.workStage, cache);
+
+    // if (workItemPb.hasDueDate())  this.dueDate = CommonUtils.dateTimeFromTimestamp(workItemPb.dueDate);
+    if (workItemPb.hasDueDate())  workItem.dueDate = workItemPb.dueDate.toDateTime();
+    /*{
+      this.dueDate = DateTime.fromMicrosecondsSinceEpoch(workItemPb.dueDate.seconds.toInt() * 1000000 + workItemPb.dueDate.nanos ~/ 1000 );
+    }*/
+    if (workItemPb.attachments.isNotEmpty) workItem.attachments = workItemPb.attachments.map((u) => WorkItemAttachmentHelper.readFromProtoBuf(u)).toList(); // No need cache, it is a composite
+    if (workItemPb.checkItems.isNotEmpty) workItem.checkItems = workItemPb.checkItems.map((c) => WorkItemCheckItem()..readFromProtoBuf(c)).toList(); // No need cache, it is a composite
+    if (workItemPb.assignedTo.isNotEmpty) workItem.assignedTo = workItemPb.assignedTo.map((u) => cache.putIfAbsent('${WorkItem.assignedToField}${u.id}@${User.className}', () => UserHelper.readFromProtoBuf(u, cache))).toList().cast<User>();
+    if (workItemPb.hasWork()) workItem.work = cache.putIfAbsent('${WorkItem.workField}${workItemPb.work.id}@${Work.className}', () => WorkHelper.readFromProtoBuf(workItemPb.work, cache));
+    return workItem;
+  }
+
 }
 
 class WorkItemAttachment {
@@ -200,24 +211,8 @@ class WorkItemAttachment {
   static const String contentField = 'content';
   String content; // base64
 
-  work_work_item_pb.WorkItemAttachment writeToProtoBuf() {
-    work_work_item_pb.WorkItemAttachment workItemAttachmentPb = work_work_item_pb.WorkItemAttachment();
 
-    if (id != null) workItemAttachmentPb.id = id;
-    if (name != null) workItemAttachmentPb.name = name;
-    if (type != null) workItemAttachmentPb.type = type;
-    if (content != null) workItemAttachmentPb.content = content;
-
-    return workItemAttachmentPb;
-  }
-
-  void readFromProtoBuf(work_work_item_pb.WorkItemAttachment workItemAttachmentPb) {
-    if (workItemAttachmentPb.hasId()) id = workItemAttachmentPb.id;
-    if (workItemAttachmentPb.hasName()) name = workItemAttachmentPb.name;
-    if (workItemAttachmentPb.hasType()) type = workItemAttachmentPb.type;
-    if (workItemAttachmentPb.hasContent()) content = workItemAttachmentPb.content;
-  }
-
+/*
   static Map<String, dynamic> fromProtoBufToModelMap(work_work_item_pb.WorkItemAttachment workItemAttachmentPb, [bool onlyIdAndSpecificationForDepthFields = false, bool isDeep = false]) {
     Map<String, dynamic> map = {};
 
@@ -245,6 +240,32 @@ class WorkItemAttachment {
     }
     return map;
   }
+  */
+}
+
+class WorkItemAttachmentHelper {
+
+  static work_work_item_pb.WorkItemAttachment writeToProtoBuf(WorkItemAttachment workItemAttachment) {
+    work_work_item_pb.WorkItemAttachment workItemAttachmentPb = work_work_item_pb.WorkItemAttachment();
+
+    if (workItemAttachment.id != null) workItemAttachmentPb.id = workItemAttachment.id;
+    if (workItemAttachment.name != null) workItemAttachmentPb.name = workItemAttachment.name;
+    if (workItemAttachment.type != null) workItemAttachmentPb.type = workItemAttachment.type;
+    if (workItemAttachment.content != null) workItemAttachmentPb.content = workItemAttachment.content;
+
+    return workItemAttachmentPb;
+  }
+
+  static WorkItemAttachment readFromProtoBuf(work_work_item_pb.WorkItemAttachment workItemAttachmentPb) {
+    WorkItemAttachment workItemAttachment = WorkItemAttachment();
+    if (workItemAttachmentPb.hasId()) workItemAttachment.id = workItemAttachmentPb.id;
+    if (workItemAttachmentPb.hasName()) workItemAttachment.name = workItemAttachmentPb.name;
+    if (workItemAttachmentPb.hasType()) workItemAttachment.type = workItemAttachmentPb.type;
+    if (workItemAttachmentPb.hasContent()) workItemAttachment.content = workItemAttachmentPb.content;
+
+    return workItemAttachment;
+  }
+
 }
 
 class WorkItemCheckItem {
@@ -339,53 +360,8 @@ class WorkItemValue {
     // lastHistoryItem = HistoryItem();
   }
 
-  work_work_item_pb.WorkItemValue writeToProtoBuf() {
-    work_work_item_pb.WorkItemValue workItemValuePb = work_work_item_pb.WorkItemValue();
 
-    if (id != null) workItemValuePb.id = id;
-    if (version != null) workItemValuePb.version = version;
-
-    if (date != null)  workItemValuePb.date =  CommonUtils.timestampFromDateTime(date.toUtc());
-
-    if (actualValue != null) {
-      workItemValuePb.actualValue = actualValue;
-    }
-    if (comment != null) {
-      workItemValuePb.comment = comment;
-    }
-
-    if (workItem != null) {
-      workItemValuePb.workItem = workItem.writeToProtoBuf();
-    }
-
-    return workItemValuePb;
-  }
-
-  void readFromProtoBuf(work_work_item_pb.WorkItemValue workItemValuePb, Map<String, dynamic> cache) {
-    if (workItemValuePb.hasId()) id = workItemValuePb.id;
-    if (workItemValuePb.hasVersion()) {
-      version = workItemValuePb.version;
-    }
-    //if (measureProgressPb.hasDate()) this.date = CommonUtils.dateTimeFromTimestamp(measureProgressPb.date);
-    if (workItemValuePb.hasDate()) date = workItemValuePb.date.toDateTime();
-    /*
-        DateTime.fromMicrosecondsSinceEpoch(
-            measureProgressPb.date.seconds.toInt() * 1000000 +
-                measureProgressPb.date.nanos ~/ 1000);
-
-     */
-    if (workItemValuePb.hasActualValue()) {
-      actualValue = workItemValuePb.actualValue;
-    }
-    if (workItemValuePb.hasComment()) {
-      comment = workItemValuePb.comment;
-    }
-
-    if (workItemValuePb.hasWorkItem()) {
-      workItem = WorkItem()..readFromProtoBuf(workItemValuePb.workItem, cache);
-    }
-  }
-
+/*
   static Map<String, dynamic> fromProtoBufToModelMap(work_work_item_pb.WorkItemValue workItemValuePb, [bool onlyIdAndSpecificationForDepthFields = false, bool isDeep = false]) {
     Map<String, dynamic> map = {};
 
@@ -423,6 +399,59 @@ class WorkItemValue {
       }
     }
     return map;
+  }
+ */
+}
+
+class WorkItemValueHelper {
+
+  static work_work_item_pb.WorkItemValue writeToProtoBuf(WorkItemValue workItemValue) {
+    work_work_item_pb.WorkItemValue workItemValuePb = work_work_item_pb.WorkItemValue();
+
+    if (workItemValue.id != null) workItemValuePb.id = workItemValue.id;
+    if (workItemValue.version != null) workItemValuePb.version = workItemValue.version;
+
+    if (workItemValue.date != null)  workItemValuePb.date =  CommonUtils.timestampFromDateTime(workItemValue.date.toUtc());
+
+    if (workItemValue.actualValue != null) {
+      workItemValuePb.actualValue = workItemValue.actualValue;
+    }
+    if (workItemValue.comment != null) {
+      workItemValuePb.comment = workItemValue.comment;
+    }
+
+    if (workItemValue.workItem != null) {
+      workItemValuePb.workItem = WorkItemHelper.writeToProtoBuf(workItemValue.workItem);
+    }
+
+    return workItemValuePb;
+  }
+
+  static WorkItemValue readFromProtoBuf(work_work_item_pb.WorkItemValue workItemValuePb, Map<String, dynamic> cache) {
+    WorkItemValue workItemValue = WorkItemValue();
+    if (workItemValuePb.hasId()) workItemValue.id = workItemValuePb.id;
+    if (workItemValuePb.hasVersion()) {
+      workItemValue.version = workItemValuePb.version;
+    }
+    //if (measureProgressPb.hasDate()) this.date = CommonUtils.dateTimeFromTimestamp(measureProgressPb.date);
+    if (workItemValuePb.hasDate()) workItemValue.date = workItemValuePb.date.toDateTime();
+    /*
+        DateTime.fromMicrosecondsSinceEpoch(
+            measureProgressPb.date.seconds.toInt() * 1000000 +
+                measureProgressPb.date.nanos ~/ 1000);
+
+     */
+    if (workItemValuePb.hasActualValue()) {
+      workItemValue.actualValue = workItemValuePb.actualValue;
+    }
+    if (workItemValuePb.hasComment()) {
+      workItemValue.comment = workItemValuePb.comment;
+    }
+
+    if (workItemValuePb.hasWorkItem()) {
+      workItemValue.workItem = WorkItemHelper.readFromProtoBuf(workItemValuePb.workItem, cache);
+    }
+    return workItemValue;
   }
 }
 

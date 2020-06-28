@@ -277,8 +277,9 @@ class UserGetRequest extends $pb.GeneratedMessage {
     ..aOS(2, 'managedByOrganizationId')
     ..aOS(3, 'managedByOrganizationIdOrAccessedByOrganizationId')
     ..aOS(4, 'accessedByOrganizationId', protoName: 'accessedByOrganizationId')
-    ..aOB(5, 'withUserProfile')
-    ..aOB(6, 'withObjective')
+    ..aOB(5, 'onlyIdAndName')
+    ..aOB(6, 'withUserProfile')
+    ..aOB(7, 'withObjective')
     ..hasRequiredFields = false
   ;
 
@@ -334,22 +335,31 @@ class UserGetRequest extends $pb.GeneratedMessage {
   void clearAccessedByOrganizationId() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.bool get withUserProfile => $_getBF(4);
+  $core.bool get onlyIdAndName => $_getBF(4);
   @$pb.TagNumber(5)
-  set withUserProfile($core.bool v) { $_setBool(4, v); }
+  set onlyIdAndName($core.bool v) { $_setBool(4, v); }
   @$pb.TagNumber(5)
-  $core.bool hasWithUserProfile() => $_has(4);
+  $core.bool hasOnlyIdAndName() => $_has(4);
   @$pb.TagNumber(5)
-  void clearWithUserProfile() => clearField(5);
+  void clearOnlyIdAndName() => clearField(5);
 
   @$pb.TagNumber(6)
-  $core.bool get withObjective => $_getBF(5);
+  $core.bool get withUserProfile => $_getBF(5);
   @$pb.TagNumber(6)
-  set withObjective($core.bool v) { $_setBool(5, v); }
+  set withUserProfile($core.bool v) { $_setBool(5, v); }
   @$pb.TagNumber(6)
-  $core.bool hasWithObjective() => $_has(5);
+  $core.bool hasWithUserProfile() => $_has(5);
   @$pb.TagNumber(6)
-  void clearWithObjective() => clearField(6);
+  void clearWithUserProfile() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.bool get withObjective => $_getBF(6);
+  @$pb.TagNumber(7)
+  set withObjective($core.bool v) { $_setBool(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasWithObjective() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearWithObjective() => clearField(7);
 }
 
 class UsersResponse extends $pb.GeneratedMessage {

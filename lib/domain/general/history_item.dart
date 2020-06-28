@@ -40,71 +40,77 @@ class HistoryItem {
   static const String changedValuesField = 'changedValues';
   Map<String, dynamic> changedValues;  // previousValuesChanged;
 
+}
 
-  history_item_pb.HistoryItem writeToProtoBuf() {
+class HistoryItemHelper {
+
+  static history_item_pb.HistoryItem writeToProtoBuf(HistoryItem historyItem) {
     history_item_pb.HistoryItem historyItemPb = history_item_pb.HistoryItem();
 
-    if (id != null) {
-      historyItemPb.id = id;
+    if (historyItem.id != null) {
+      historyItemPb.id = historyItem.id;
     }
-    if (objectClassName != null) {
-      historyItemPb.objectClassName = objectClassName;
+    if (historyItem.objectClassName != null) {
+      historyItemPb.objectClassName = historyItem.objectClassName;
     }
-    if (objectId != null) {
-      historyItemPb.objectId = objectId;
+    if (historyItem.objectId != null) {
+      historyItemPb.objectId = historyItem.objectId;
     }
-    if (objectVersion != null) {
-      historyItemPb.objectVersion = objectVersion;
+    if (historyItem.objectVersion != null) {
+      historyItemPb.objectVersion = historyItem.objectVersion;
     }
-    if (systemModuleIndex != null) {
-      historyItemPb.systemModuleIndex = systemModuleIndex;
+    if (historyItem.systemModuleIndex != null) {
+      historyItemPb.systemModuleIndex = historyItem.systemModuleIndex;
     }
-    if (systemFunctionIndex != null) {
-      historyItemPb.systemFunctionIndex = systemFunctionIndex;
+    if (historyItem.systemFunctionIndex != null) {
+      historyItemPb.systemFunctionIndex = historyItem.systemFunctionIndex;
     }
 
-    if (dateTime != null) historyItemPb.dateTime = CommonUtils.timestampFromDateTime(dateTime);
-    if (organization != null) historyItemPb.organization = organization.writeToProtoBuf();
-    if (user != null) historyItemPb.user = user.writeToProtoBuf();
-    if (description != null) historyItemPb.description = description;
+    if (historyItem.dateTime != null) historyItemPb.dateTime = CommonUtils.timestampFromDateTime(historyItem.dateTime);
+    if (historyItem.organization != null) historyItemPb.organization = OrganizationHelper.writeToProtoBuf(historyItem.organization);
+    if (historyItem.user != null) historyItemPb.user = UserHelper.writeToProtoBuf(historyItem.user);
+    if (historyItem.description != null) historyItemPb.description = historyItem.description;
 
-    if (changedValues != null) {
+    if (historyItem.changedValues != null) {
 
       // Convert value from dart json to protobuf string
-      historyItemPb.changedValuesJson = json.encode(changedValues);
+      historyItemPb.changedValuesJson = json.encode(historyItem.changedValues);
     }
     return historyItemPb;
   }
 
-  void readFromProtoBuf(history_item_pb.HistoryItem historyItemPb, Map<String, dynamic> cache) {
-    if (historyItemPb.hasId()) id = historyItemPb.id;
-    if (historyItemPb.hasObjectClassName()) objectClassName = historyItemPb.objectClassName;
-    if (historyItemPb.hasObjectId()) objectId = historyItemPb.objectId;
-    if (historyItemPb.hasObjectVersion()) objectVersion = historyItemPb.objectVersion;
-    if (historyItemPb.hasSystemModuleIndex()) systemModuleIndex = historyItemPb.systemModuleIndex;
-    if (historyItemPb.hasSystemFunctionIndex()) systemFunctionIndex = historyItemPb.systemFunctionIndex;
+  static HistoryItem readFromProtoBuf(history_item_pb.HistoryItem historyItemPb, Map<String, dynamic> cache) {
+    HistoryItem historyItem = HistoryItem();
+    if (historyItemPb.hasId()) historyItem.id = historyItemPb.id;
+    if (historyItemPb.hasObjectClassName()) historyItem.objectClassName = historyItemPb.objectClassName;
+    if (historyItemPb.hasObjectId()) historyItem.objectId = historyItemPb.objectId;
+    if (historyItemPb.hasObjectVersion()) historyItem.objectVersion = historyItemPb.objectVersion;
+    if (historyItemPb.hasSystemModuleIndex()) historyItem.systemModuleIndex = historyItemPb.systemModuleIndex;
+    if (historyItemPb.hasSystemFunctionIndex()) historyItem.systemFunctionIndex = historyItemPb.systemFunctionIndex;
 
     if (historyItemPb.hasDateTime()) {
-      dateTime = historyItemPb.dateTime.toDateTime();
+      historyItem.dateTime = historyItemPb.dateTime.toDateTime();
     }
-    if (historyItemPb.hasOrganization()) organization = cache.putIfAbsent('${HistoryItem.organizationField}${historyItemPb.organization.id}@${Organization.className}', () => Organization()..readFromProtoBuf(historyItemPb.organization));
-    if (historyItemPb.hasUser()) user = cache.putIfAbsent('${HistoryItem.userField}${historyItemPb.user.id}@${User.className}', () => User()..readFromProtoBuf(historyItemPb.user, cache));
-    if (historyItemPb.hasDescription()) description = historyItemPb.description;
+    if (historyItemPb.hasOrganization()) historyItem.organization = cache.putIfAbsent('${HistoryItem.organizationField}${historyItemPb.organization.id}@${Organization.className}', () => OrganizationHelper.readFromProtoBuf(historyItemPb.organization));
+    if (historyItemPb.hasUser()) historyItem.user = cache.putIfAbsent('${HistoryItem.userField}${historyItemPb.user.id}@${User.className}', () => UserHelper.readFromProtoBuf(historyItemPb.user, cache));
+    if (historyItemPb.hasDescription()) historyItem.description = historyItemPb.description;
     //if (historyItemPb.changedValues.isNotEmpty) this.changedValues = historyItemPb.changedValues;
     // Convert value from protobuf string to dart json
-    if (historyItemPb.hasChangedValuesJson()) changedValues = json.decode(historyItemPb.changedValuesJson);
+    if (historyItemPb.hasChangedValuesJson()) historyItem.changedValues = json.decode(historyItemPb.changedValuesJson);
+    return historyItem;
   }
 
   static const previousKey = 'p', currentKey = 'c';
 
-  static Map<dynamic, dynamic> changedValuesMap(Map<dynamic, dynamic> previous, Map<dynamic, dynamic> current, [bool onlyDiff = true]) {
+  static Map<dynamic, dynamic> changedValuesMap(Map<dynamic, dynamic> previous, Map<dynamic, dynamic> current, {bool onlyDiff = true}) {
 
-    Map<dynamic, dynamic> processPrevious(Map<dynamic, dynamic> previous) {
+    Map<dynamic, dynamic> _processPrevious(Map<dynamic, dynamic> previous) {
       //   Map<String, dynamic> mP = Map.from(map);
       Map<dynamic, dynamic> mP = {};
+
       previous.forEach((k, v) {
         if (v is Map) {
-          mP[k] = processPrevious(v);
+          mP[k] = _processPrevious(v);
         } else {
           mP.putIfAbsent(k, () => {});
           mP[k][previousKey] = v;
@@ -113,11 +119,11 @@ class HistoryItem {
       return mP;
     }
 
-    Map<dynamic, dynamic> processCurrent(Map<dynamic, dynamic> current) {
+    Map<dynamic, dynamic> _processCurrent(Map<dynamic, dynamic> current) {
       Map<dynamic, dynamic> mC = {};
       current.forEach((k, v) {
         if (v is Map) {
-          mC[k] = processCurrent(v);
+          mC[k] = _processCurrent(v);
         } else {
           mC.putIfAbsent(k, () => {});
           mC[k][currentKey] = v;
@@ -126,19 +132,19 @@ class HistoryItem {
       return mC;
     }
 
-    Map<dynamic, dynamic> processMerge(Map<dynamic, dynamic> mapWithP, Map<dynamic, dynamic> mapWithC) {
+    Map<dynamic, dynamic> _processMerge(Map<dynamic, dynamic> mapWithP, Map<dynamic, dynamic> mapWithC) {
       Map<dynamic, dynamic> mergeMap = Map.from(mapWithP ?? {});
 
       mapWithC.forEach((k, v) {
         if (v is Map) {
-          mergeMap[k] = processMerge(mapWithP[k] ?? {}, mapWithC[k]);
+          mergeMap[k] = _processMerge(mapWithP[k] ?? {}, mapWithC[k]);
         }
         mergeMap.putIfAbsent(k, () => mapWithC[k]);
       });
       return mergeMap;
     }
 
-    Map<dynamic, dynamic> processOnlyDiffPreviousCurrent(Map<dynamic, dynamic> merge) {
+    Map<dynamic, dynamic> _processOnlyDiffPreviousCurrent(Map<dynamic, dynamic> merge) {
 
       Map<dynamic, dynamic> diff = Map.from(merge);
 
@@ -157,7 +163,7 @@ class HistoryItem {
               diff.remove(k);
             }
           } else {
-            diffSub = processOnlyDiffPreviousCurrent(v);
+            diffSub = _processOnlyDiffPreviousCurrent(v);
 
             if (diffSub.isEmpty) {
               diff.remove(k);
@@ -173,20 +179,20 @@ class HistoryItem {
 
     }
 
-    Map<dynamic, dynamic> withP = processPrevious(previous);
-    Map<dynamic, dynamic> withC = processCurrent(current);
-    Map<dynamic, dynamic> merge = processMerge(withP, withC);
+    Map<dynamic, dynamic> withP = _processPrevious(previous);
+    Map<dynamic, dynamic> withC = _processCurrent(current);
+    Map<dynamic, dynamic> merge = _processMerge(withP, withC);
     if (onlyDiff) {
 
-      return processOnlyDiffPreviousCurrent(merge);
+      return _processOnlyDiffPreviousCurrent(merge);
     }
     else {
       return merge;
     }
   }
 
-  static String changedValuesJson(Map<dynamic, dynamic> previous, Map<dynamic, dynamic> current, [bool onlyDiff = true]) {
-    return json.encode(changedValuesMap(previous, current, onlyDiff), toEncodable: changedValuesEncode);
+  static String changedValuesJson(Map<dynamic, dynamic> previous, Map<dynamic, dynamic> current, {bool onlyDiff = true}) {
+    return json.encode(changedValuesMap(previous, current, onlyDiff: onlyDiff), toEncodable: changedValuesEncode);
   }
 
   static dynamic changedValuesEncode(dynamic item) {

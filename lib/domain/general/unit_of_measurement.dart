@@ -13,22 +13,31 @@ class UnitOfMeasurement {
   static const nameField = 'name';
   String name;
 
-  unit_of_measurement_pbgrpc.UnitOfMeasurement writeToProtoBuf() {
+
+}
+
+class UnitOfMeasurementHelper {
+
+  static unit_of_measurement_pbgrpc.UnitOfMeasurement writeToProtoBuf(UnitOfMeasurement unitOfMeasurement) {
     unit_of_measurement_pbgrpc.UnitOfMeasurement unitOfMeasurementPb = unit_of_measurement_pbgrpc.UnitOfMeasurement();
 
-    if (id != null) unitOfMeasurementPb.id = id;
-    if (symbol != null) unitOfMeasurementPb.symbol = symbol;
-    if (name != null) unitOfMeasurementPb.name = name;
+    if (unitOfMeasurement.id != null) unitOfMeasurementPb.id = unitOfMeasurement.id;
+    if (unitOfMeasurement.symbol != null) unitOfMeasurementPb.symbol = unitOfMeasurement.symbol;
+    if (unitOfMeasurement.name != null) unitOfMeasurementPb.name = unitOfMeasurement.name;
 
     return unitOfMeasurementPb;
   }
 
-  void readFromProtoBuf(unit_of_measurement_pbgrpc.UnitOfMeasurement unitOfMeasurementPb) {
-    if (unitOfMeasurementPb.hasId()) id = unitOfMeasurementPb.id;
-    if (unitOfMeasurementPb.hasSymbol()) symbol = unitOfMeasurementPb.symbol;
-    if (unitOfMeasurementPb.hasName()) name = unitOfMeasurementPb.name;
-  }
+  static UnitOfMeasurement readFromProtoBuf(unit_of_measurement_pbgrpc.UnitOfMeasurement unitOfMeasurementPb) {
+    UnitOfMeasurement unitOfMeasurement = UnitOfMeasurement();
 
+    if (unitOfMeasurementPb.hasId()) unitOfMeasurement.id = unitOfMeasurementPb.id;
+    if (unitOfMeasurementPb.hasSymbol()) unitOfMeasurement.symbol = unitOfMeasurementPb.symbol;
+    if (unitOfMeasurementPb.hasName()) unitOfMeasurement.name = unitOfMeasurementPb.name;
+
+    return unitOfMeasurement;
+  }
+/*
   static Map<String, dynamic> fromProtoBufToModelMap(unit_of_measurement_pbgrpc.UnitOfMeasurement unitOfMeasurementPb, [bool onlyIdAndSpecificationForDepthFields = false, bool isDeep = false]) {
     Map<String, dynamic> map = {};
 
@@ -48,4 +57,6 @@ class UnitOfMeasurement {
     }
     return map;
   }
+
+ */
 }

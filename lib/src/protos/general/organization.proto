@@ -46,6 +46,7 @@ message OrganizationDeleteRequest {
 // Request for query select
 message OrganizationGetRequest {
     string id = 1;
+    bool only_id_and_name = 2;
 }
 
 // Response list of the organization

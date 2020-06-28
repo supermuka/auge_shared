@@ -34,30 +34,9 @@ class WorkStage {
 
   WorkStage();
 
-  work_work_item_pb.WorkStage writeToProtoBuf() {
-    work_work_item_pb.WorkStage workStagePb = work_work_item_pb.WorkStage();
-
-    if (id != null) workStagePb.id = id;
-    if (version != null) workStagePb.version = version;
-    if (name != null) workStagePb.name = name;
-    if (index != null) workStagePb.index = index;
-
-    if (state != null) workStagePb.stateIndex = state.index;
-    if (work != null) workStagePb.work = work.writeToProtoBuf();
 
 
-    return workStagePb;
-  }
-
-  void readFromProtoBuf(work_work_item_pb.WorkStage workStagePb, Map<String, dynamic> cache) {
-    if (workStagePb.hasId()) id = workStagePb.id;
-    if (workStagePb.hasVersion()) version = workStagePb.version;
-    if (workStagePb.hasName()) name = workStagePb.name;
-    if (workStagePb.hasIndex()) index = workStagePb.index;
-    if (workStagePb.hasStateIndex()) state = State.values[workStagePb.stateIndex];
-    if (workStagePb.hasWork()) work = Work()..readFromProtoBuf(workStagePb.work, cache);
-  }
-
+  /*
   static Map<String, dynamic> fromProtoBufToModelMap(work_work_item_pb.WorkStage workStagePb, [bool onlyIdAndSpecificationForDepthFields = false, bool isDeep = false]) {
     Map<String, dynamic> map = {};
 
@@ -74,4 +53,37 @@ class WorkStage {
     }
     return map;
   }
+   */
+}
+
+class WorkStageHelper {
+
+  static work_work_item_pb.WorkStage writeToProtoBuf(WorkStage workStage) {
+    work_work_item_pb.WorkStage workStagePb = work_work_item_pb.WorkStage();
+
+    if (workStage.id != null) workStagePb.id = workStage.id;
+    if (workStage.version != null) workStagePb.version = workStage.version;
+    if (workStage.name != null) workStagePb.name = workStage.name;
+    if (workStage.index != null) workStagePb.index = workStage.index;
+
+    if (workStage.state != null) workStagePb.stateIndex = workStage.state.index;
+    if (workStage.work != null) workStagePb.work = WorkHelper.writeToProtoBuf(workStage.work);
+
+
+    return workStagePb;
+  }
+
+  static WorkStage readFromProtoBuf(work_work_item_pb.WorkStage workStagePb, Map<String, dynamic> cache) {
+    WorkStage workStage = WorkStage();
+
+    if (workStagePb.hasId()) workStage.id = workStagePb.id;
+    if (workStagePb.hasVersion()) workStage.version = workStagePb.version;
+    if (workStagePb.hasName()) workStage.name = workStagePb.name;
+    if (workStagePb.hasIndex()) workStage.index = workStagePb.index;
+    if (workStagePb.hasStateIndex()) workStage.state = State.values[workStagePb.stateIndex];
+    if (workStagePb.hasWork()) workStage.work = WorkHelper.readFromProtoBuf(workStagePb.work, cache);
+
+    return workStage;
+  }
+
 }

@@ -104,66 +104,8 @@ class OrganizationDirectoryService {
   Organization organization;
 
 
-  organization_directory_service_pb.OrganizationDirectoryService writeToProtoBuf() {
-    organization_directory_service_pb.OrganizationDirectoryService organizationDirectoryServicePb = organization_directory_service_pb.OrganizationDirectoryService();
 
-
-    if (directoryServiceEnabled != null) organizationDirectoryServicePb.directoryServiceEnabled = directoryServiceEnabled;
-    if (hostAddress != null) organizationDirectoryServicePb.hostAddress = hostAddress;
-    if (port != null) organizationDirectoryServicePb.port = port;
-    if (sslTls != null) organizationDirectoryServicePb.sslTls = sslTls;
-    if (syncBindDn != null) organizationDirectoryServicePb.syncBindDn = syncBindDn;
-    if (syncBindPassword != null) organizationDirectoryServicePb.syncBindPassword = syncBindPassword;
-    if (syncInterval != null) organizationDirectoryServicePb.syncInterval = syncInterval;
-    if (syncLastDateTime != null) organizationDirectoryServicePb.syncLastDateTime = CommonUtils.timestampFromDateTime(syncLastDateTime);
-    if (syncLastResult != null) organizationDirectoryServicePb.syncLastResult = syncLastResult;
-    if (groupSearchDN != null) organizationDirectoryServicePb.groupSearchDN = groupSearchDN;
-    if (groupSearchScope != null) organizationDirectoryServicePb.groupSearchScope = groupSearchScope;
-    if (groupSearchFilter != null) organizationDirectoryServicePb.groupSearchFilter = groupSearchFilter;
-    if (groupMemberUserAttribute != null) organizationDirectoryServicePb.groupMemberUserAttribute = groupMemberUserAttribute;
-    if (userAttributeForGroupRelationship != null) organizationDirectoryServicePb.userAttributeForGroupRelationship = userAttributeForGroupRelationship;
-    if (userSearchDN != null) organizationDirectoryServicePb.userSearchDN = userSearchDN;
-    if (userSearchScope != null) organizationDirectoryServicePb.userSearchScope = userSearchScope;
-    if (userSearchFilter != null) organizationDirectoryServicePb.userSearchFilter = userSearchFilter;
-    if (userProviderObjectIdAttribute != null) organizationDirectoryServicePb.userProviderObjectIdAttribute = userProviderObjectIdAttribute;
-    if (userIdentificationAttribute != null) organizationDirectoryServicePb.userIdentificationAttribute = userIdentificationAttribute;
-    if (userFirstNameAttribute != null) organizationDirectoryServicePb.userFirstNameAttribute = userFirstNameAttribute;
-    if (userLastNameAttribute != null) organizationDirectoryServicePb.userLastNameAttribute = userLastNameAttribute;
-    if (userEmailAttribute != null) organizationDirectoryServicePb.userEmailAttribute = userEmailAttribute;
-    if (organization != null) organizationDirectoryServicePb.organization = organization.writeToProtoBuf();
-
-    return organizationDirectoryServicePb;
-  }
-
-  void readFromProtoBuf(organization_directory_service_pb.OrganizationDirectoryService organizationDirectoryServicePb) {
-
-    if (organizationDirectoryServicePb.hasDirectoryServiceEnabled()) directoryServiceEnabled = organizationDirectoryServicePb.directoryServiceEnabled;
-    if (organizationDirectoryServicePb.hasHostAddress()) hostAddress = organizationDirectoryServicePb.hostAddress;
-    if (organizationDirectoryServicePb.hasPort()) port = organizationDirectoryServicePb.port;
-    if (organizationDirectoryServicePb.hasSslTls()) sslTls = organizationDirectoryServicePb.sslTls;
-    if (organizationDirectoryServicePb.hasSyncBindDn()) syncBindDn = organizationDirectoryServicePb.syncBindDn;
-    if (organizationDirectoryServicePb.hasSyncBindPassword()) syncBindPassword = organizationDirectoryServicePb.syncBindPassword;
-    if (organizationDirectoryServicePb.hasSyncInterval()) syncInterval = organizationDirectoryServicePb.syncInterval;
-   // if (organizationDirectoryServicePb.hasSyncLastDateTime()) this.syncLastDateTime = CommonUtils.dateTimeFromTimestamp(organizationDirectoryServicePb.syncLastDateTime);
-    if (organizationDirectoryServicePb.hasSyncLastDateTime()) syncLastDateTime = organizationDirectoryServicePb.syncLastDateTime.toDateTime();
-    if (organizationDirectoryServicePb.hasSyncLastResult()) syncLastResult = organizationDirectoryServicePb.syncLastResult;
-    if (organizationDirectoryServicePb.hasGroupSearchDN()) groupSearchDN = organizationDirectoryServicePb.groupSearchDN;
-    if (organizationDirectoryServicePb.hasGroupSearchScope()) groupSearchScope = organizationDirectoryServicePb.groupSearchScope;
-    if (organizationDirectoryServicePb.hasGroupSearchFilter()) groupSearchFilter = organizationDirectoryServicePb.groupSearchFilter;
-    if (organizationDirectoryServicePb.hasGroupMemberUserAttribute()) groupMemberUserAttribute = organizationDirectoryServicePb.groupMemberUserAttribute;
-    if (organizationDirectoryServicePb.hasUserAttributeForGroupRelationship()) userAttributeForGroupRelationship = organizationDirectoryServicePb.userAttributeForGroupRelationship;
-    if (organizationDirectoryServicePb.hasUserSearchDN()) userSearchDN = organizationDirectoryServicePb.userSearchDN;
-    if (organizationDirectoryServicePb.hasUserSearchScope()) userSearchScope = organizationDirectoryServicePb.userSearchScope;
-    if (organizationDirectoryServicePb.hasUserSearchFilter()) userSearchFilter = organizationDirectoryServicePb.userSearchFilter;
-    if (organizationDirectoryServicePb.hasUserProviderObjectIdAttribute()) userProviderObjectIdAttribute = organizationDirectoryServicePb.userProviderObjectIdAttribute;
-    if (organizationDirectoryServicePb.hasUserIdentificationAttribute()) userIdentificationAttribute = organizationDirectoryServicePb.userIdentificationAttribute;
-    if (organizationDirectoryServicePb.hasUserFirstNameAttribute()) userFirstNameAttribute = organizationDirectoryServicePb.userFirstNameAttribute;
-    if (organizationDirectoryServicePb.hasUserLastNameAttribute()) userLastNameAttribute = organizationDirectoryServicePb.userLastNameAttribute;
-    if (organizationDirectoryServicePb.hasUserEmailAttribute()) userEmailAttribute = organizationDirectoryServicePb.userEmailAttribute;
-    if (organizationDirectoryServicePb.hasOrganization()) organization = Organization()..readFromProtoBuf(organizationDirectoryServicePb.organization); // No need cache, normally it has just one instance.
-
-  }
-
+  /*
   static Map<String, dynamic> fromProtoBufToModelMap(organization_directory_service_pb.OrganizationDirectoryService organizationDirectoryServicePb, [bool onlyIdAndSpecificationForDepthFields = false, bool isDeep = false]) {
   Map<String, dynamic> map = {};
 
@@ -287,5 +229,71 @@ class OrganizationDirectoryService {
 
     }
     return map;
+  }
+  */
+}
+
+class OrganizationDirectoryServiceHelper {
+
+  static organization_directory_service_pb.OrganizationDirectoryService writeToProtoBuf(OrganizationDirectoryService organizationDirectoryService) {
+    organization_directory_service_pb.OrganizationDirectoryService organizationDirectoryServicePb = organization_directory_service_pb.OrganizationDirectoryService();
+
+    if (organizationDirectoryService.directoryServiceEnabled != null) organizationDirectoryServicePb.directoryServiceEnabled = organizationDirectoryService.directoryServiceEnabled;
+    if (organizationDirectoryService.hostAddress != null) organizationDirectoryServicePb.hostAddress = organizationDirectoryService.hostAddress;
+    if (organizationDirectoryService.port != null) organizationDirectoryServicePb.port = organizationDirectoryService.port;
+    if (organizationDirectoryService.sslTls != null) organizationDirectoryServicePb.sslTls = organizationDirectoryService.sslTls;
+    if (organizationDirectoryService.syncBindDn != null) organizationDirectoryServicePb.syncBindDn = organizationDirectoryService.syncBindDn;
+    if (organizationDirectoryService.syncBindPassword != null) organizationDirectoryServicePb.syncBindPassword = organizationDirectoryService.syncBindPassword;
+    if (organizationDirectoryService.syncInterval != null) organizationDirectoryServicePb.syncInterval = organizationDirectoryService.syncInterval;
+    if (organizationDirectoryService.syncLastDateTime != null) organizationDirectoryServicePb.syncLastDateTime = CommonUtils.timestampFromDateTime(organizationDirectoryService.syncLastDateTime);
+    if (organizationDirectoryService.syncLastResult != null) organizationDirectoryServicePb.syncLastResult = organizationDirectoryService.syncLastResult;
+    if (organizationDirectoryService.groupSearchDN != null) organizationDirectoryServicePb.groupSearchDN = organizationDirectoryService.groupSearchDN;
+    if (organizationDirectoryService.groupSearchScope != null) organizationDirectoryServicePb.groupSearchScope = organizationDirectoryService.groupSearchScope;
+    if (organizationDirectoryService.groupSearchFilter != null) organizationDirectoryServicePb.groupSearchFilter = organizationDirectoryService.groupSearchFilter;
+    if (organizationDirectoryService.groupMemberUserAttribute != null) organizationDirectoryServicePb.groupMemberUserAttribute = organizationDirectoryService.groupMemberUserAttribute;
+    if (organizationDirectoryService.userAttributeForGroupRelationship != null) organizationDirectoryServicePb.userAttributeForGroupRelationship = organizationDirectoryService.userAttributeForGroupRelationship;
+    if (organizationDirectoryService.userSearchDN != null) organizationDirectoryServicePb.userSearchDN = organizationDirectoryService.userSearchDN;
+    if (organizationDirectoryService.userSearchScope != null) organizationDirectoryServicePb.userSearchScope = organizationDirectoryService.userSearchScope;
+    if (organizationDirectoryService.userSearchFilter != null) organizationDirectoryServicePb.userSearchFilter = organizationDirectoryService.userSearchFilter;
+    if (organizationDirectoryService.userProviderObjectIdAttribute != null) organizationDirectoryServicePb.userProviderObjectIdAttribute = organizationDirectoryService.userProviderObjectIdAttribute;
+    if (organizationDirectoryService.userIdentificationAttribute != null) organizationDirectoryServicePb.userIdentificationAttribute = organizationDirectoryService.userIdentificationAttribute;
+    if (organizationDirectoryService.userFirstNameAttribute != null) organizationDirectoryServicePb.userFirstNameAttribute = organizationDirectoryService.userFirstNameAttribute;
+    if (organizationDirectoryService.userLastNameAttribute != null) organizationDirectoryServicePb.userLastNameAttribute = organizationDirectoryService.userLastNameAttribute;
+    if (organizationDirectoryService.userEmailAttribute != null) organizationDirectoryServicePb.userEmailAttribute = organizationDirectoryService.userEmailAttribute;
+    if (organizationDirectoryService.organization != null) organizationDirectoryServicePb.organization = OrganizationHelper.writeToProtoBuf(organizationDirectoryService.organization);
+
+    return organizationDirectoryServicePb;
+  }
+
+  static OrganizationDirectoryService readFromProtoBuf(organization_directory_service_pb.OrganizationDirectoryService organizationDirectoryServicePb) {
+    OrganizationDirectoryService organizationDirectoryService = OrganizationDirectoryService();
+
+
+    if (organizationDirectoryServicePb.hasDirectoryServiceEnabled()) organizationDirectoryService.directoryServiceEnabled = organizationDirectoryServicePb.directoryServiceEnabled;
+    if (organizationDirectoryServicePb.hasHostAddress()) organizationDirectoryService.hostAddress = organizationDirectoryServicePb.hostAddress;
+    if (organizationDirectoryServicePb.hasPort()) organizationDirectoryService.port = organizationDirectoryServicePb.port;
+    if (organizationDirectoryServicePb.hasSslTls()) organizationDirectoryService.sslTls = organizationDirectoryServicePb.sslTls;
+    if (organizationDirectoryServicePb.hasSyncBindDn()) organizationDirectoryService.syncBindDn = organizationDirectoryServicePb.syncBindDn;
+    if (organizationDirectoryServicePb.hasSyncBindPassword()) organizationDirectoryService.syncBindPassword = organizationDirectoryServicePb.syncBindPassword;
+    if (organizationDirectoryServicePb.hasSyncInterval()) organizationDirectoryService.syncInterval = organizationDirectoryServicePb.syncInterval;
+    // if (organizationDirectoryServicePb.hasSyncLastDateTime()) this.syncLastDateTime = CommonUtils.dateTimeFromTimestamp(organizationDirectoryServicePb.syncLastDateTime);
+    if (organizationDirectoryServicePb.hasSyncLastDateTime()) organizationDirectoryService.syncLastDateTime = organizationDirectoryServicePb.syncLastDateTime.toDateTime();
+    if (organizationDirectoryServicePb.hasSyncLastResult()) organizationDirectoryService.syncLastResult = organizationDirectoryServicePb.syncLastResult;
+    if (organizationDirectoryServicePb.hasGroupSearchDN()) organizationDirectoryService.groupSearchDN = organizationDirectoryServicePb.groupSearchDN;
+    if (organizationDirectoryServicePb.hasGroupSearchScope()) organizationDirectoryService.groupSearchScope = organizationDirectoryServicePb.groupSearchScope;
+    if (organizationDirectoryServicePb.hasGroupSearchFilter()) organizationDirectoryService.groupSearchFilter = organizationDirectoryServicePb.groupSearchFilter;
+    if (organizationDirectoryServicePb.hasGroupMemberUserAttribute()) organizationDirectoryService.groupMemberUserAttribute = organizationDirectoryServicePb.groupMemberUserAttribute;
+    if (organizationDirectoryServicePb.hasUserAttributeForGroupRelationship()) organizationDirectoryService.userAttributeForGroupRelationship = organizationDirectoryServicePb.userAttributeForGroupRelationship;
+    if (organizationDirectoryServicePb.hasUserSearchDN()) organizationDirectoryService.userSearchDN = organizationDirectoryServicePb.userSearchDN;
+    if (organizationDirectoryServicePb.hasUserSearchScope()) organizationDirectoryService.userSearchScope = organizationDirectoryServicePb.userSearchScope;
+    if (organizationDirectoryServicePb.hasUserSearchFilter()) organizationDirectoryService.userSearchFilter = organizationDirectoryServicePb.userSearchFilter;
+    if (organizationDirectoryServicePb.hasUserProviderObjectIdAttribute()) organizationDirectoryService.userProviderObjectIdAttribute = organizationDirectoryServicePb.userProviderObjectIdAttribute;
+    if (organizationDirectoryServicePb.hasUserIdentificationAttribute()) organizationDirectoryService.userIdentificationAttribute = organizationDirectoryServicePb.userIdentificationAttribute;
+    if (organizationDirectoryServicePb.hasUserFirstNameAttribute()) organizationDirectoryService.userFirstNameAttribute = organizationDirectoryServicePb.userFirstNameAttribute;
+    if (organizationDirectoryServicePb.hasUserLastNameAttribute()) organizationDirectoryService.userLastNameAttribute = organizationDirectoryServicePb.userLastNameAttribute;
+    if (organizationDirectoryServicePb.hasUserEmailAttribute()) organizationDirectoryService.userEmailAttribute = organizationDirectoryServicePb.userEmailAttribute;
+    if (organizationDirectoryServicePb.hasOrganization()) organizationDirectoryService.organization = OrganizationHelper.readFromProtoBuf(organizationDirectoryServicePb.organization); // No need cache, normally it has just one instance.
+
+    return organizationDirectoryService;
   }
 }

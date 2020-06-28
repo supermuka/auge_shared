@@ -241,7 +241,9 @@ class GroupGetRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo('GroupGetRequest', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
     ..aOS(1, 'id')
     ..aOS(2, 'organizationId')
-    ..a<$core.int>(3, 'alignedToRecursive', $pb.PbFieldType.O3)
+    ..aOB(3, 'withOrganization')
+    ..aOB(4, 'onlyIdAndName')
+    ..a<$core.int>(5, 'alignedToRecursive', $pb.PbFieldType.O3)
     ..hasRequiredFields = false
   ;
 
@@ -279,13 +281,31 @@ class GroupGetRequest extends $pb.GeneratedMessage {
   void clearOrganizationId() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.int get alignedToRecursive => $_getIZ(2);
+  $core.bool get withOrganization => $_getBF(2);
   @$pb.TagNumber(3)
-  set alignedToRecursive($core.int v) { $_setSignedInt32(2, v); }
+  set withOrganization($core.bool v) { $_setBool(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasAlignedToRecursive() => $_has(2);
+  $core.bool hasWithOrganization() => $_has(2);
   @$pb.TagNumber(3)
-  void clearAlignedToRecursive() => clearField(3);
+  void clearWithOrganization() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.bool get onlyIdAndName => $_getBF(3);
+  @$pb.TagNumber(4)
+  set onlyIdAndName($core.bool v) { $_setBool(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasOnlyIdAndName() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearOnlyIdAndName() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.int get alignedToRecursive => $_getIZ(4);
+  @$pb.TagNumber(5)
+  set alignedToRecursive($core.int v) { $_setSignedInt32(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasAlignedToRecursive() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearAlignedToRecursive() => clearField(5);
 }
 
 class GroupTypeGetRequest extends $pb.GeneratedMessage {

@@ -1,6 +1,7 @@
 // Copyright (c) 2018, Levius Tecnologia Ltda. All rights reserved.
 // Author: Samuel C. Schwebel
 
+
 import 'package:auge_shared/src/util/common_utils.dart';
 
 import 'package:auge_shared/domain/general/unit_of_measurement.dart';
@@ -9,6 +10,7 @@ import 'package:auge_shared/domain/objective/objective.dart';
 // Proto buffer transport layer.
 // ignore_for_file: uri_has_not_been_generated
 
+import 'package:auge_shared/protos/generated/general/unit_of_measurement.pb.dart' as unit_of_measurement_pb;
 import 'package:auge_shared/protos/generated/objective/objective_measure.pb.dart' as objective_measure_pb;
 
 /// Domain model class to represent an measure
@@ -82,46 +84,7 @@ class Measure {
     }
     return _progress;
   }
-
-  objective_measure_pb.Measure writeToProtoBuf() {
-    objective_measure_pb.Measure measurePb = objective_measure_pb.Measure();
-
-    if (id != null) measurePb.id = id;
-    if (version != null) measurePb.version = version;
-    if (name != null) measurePb.name = name;
-    if (description != null) measurePb.description = description;
-
-    if (metric != null) measurePb.metric = metric;
-
-    if (decimalsNumber != null) measurePb.decimalsNumber = decimalsNumber;
-    if (startValue != null) measurePb.startValue = startValue;
-    if (endValue != null) measurePb.endValue = endValue;
-    if (currentValue != null) measurePb.currentValue = currentValue;
-    if (unitOfMeasurement != null) measurePb.unitOfMeasurement = unitOfMeasurement.writeToProtoBuf();
-
-    if (measureProgress != null && measureProgress.isNotEmpty) measurePb.measureProgress.addAll(measureProgress.map((m) => m.writeToProtoBuf()));
-
-    if (objective != null) measurePb.objective = objective.writeToProtoBuf();
-
-    return measurePb;
-  }
-
-  void readFromProtoBuf(objective_measure_pb.Measure measurePb, Map<String, dynamic> cache) {
-    if (measurePb.hasId()) id = measurePb.id;
-    if (measurePb.hasVersion()) version = measurePb.version;
-    if (measurePb.hasName()) name = measurePb.name;
-    if (measurePb.hasDescription()) description = measurePb.description;
-
-    if (measurePb.hasMetric()) metric = measurePb.metric;
-    if (measurePb.hasDecimalsNumber()) decimalsNumber = measurePb.decimalsNumber;
-    if (measurePb.hasStartValue()) startValue = measurePb.startValue;
-    if (measurePb.hasEndValue()) endValue = measurePb.endValue;
-    if (measurePb.hasCurrentValue()) currentValue = measurePb.currentValue;
-    if (measurePb.hasUnitOfMeasurement()) unitOfMeasurement = cache.putIfAbsent('${Measure.unitOfMeasurementField}${measurePb.unitOfMeasurement.id}@${UnitOfMeasurement.className}', () => UnitOfMeasurement()..readFromProtoBuf(measurePb.unitOfMeasurement));
-    if (measurePb.measureProgress.isNotEmpty) measureProgress = measurePb.measureProgress.map((u) => MeasureProgress()..readFromProtoBuf(u, cache)).toList(); // It is composite, no need cache
-    if (measurePb.hasObjective()) objective = cache.putIfAbsent('${Measure.objectiveField}${measurePb.objective.id}@${Objective.className}', () => Objective()..readFromProtoBuf(measurePb.objective, cache));
-  }
-
+/*
   static Map<String, dynamic> fromProtoBufToModelMap(objective_measure_pb.Measure measurePb, [bool onlyIdAndSpecificationForDepthFields = false, bool isDeep = false]) {
     Map<String, dynamic> map = {};
 
@@ -177,6 +140,67 @@ class Measure {
 
     return map;
   }
+ */
+}
+
+class MeasureHelper {
+
+  static objective_measure_pb.Measure writeToProtoBuf(Measure measure) {
+    objective_measure_pb.Measure measurePb = objective_measure_pb.Measure();
+
+    if (measure.id != null) measurePb.id = measure.id;
+    if (measure.version != null) measurePb.version = measure.version;
+    if (measure.name != null) measurePb.name = measure.name;
+    if (measure.description != null) measurePb.description = measure.description;
+
+    if (measure.metric != null) measurePb.metric = measure.metric;
+
+    if (measure.decimalsNumber != null) measurePb.decimalsNumber = measure.decimalsNumber;
+    if (measure.startValue != null) measurePb.startValue = measure.startValue;
+    if (measure.endValue != null) measurePb.endValue = measure.endValue;
+    if (measure.currentValue != null) measurePb.currentValue = measure.currentValue;
+    if (measure.unitOfMeasurement != null) measurePb.unitOfMeasurement =
+        UnitOfMeasurementHelper.writeToProtoBuf(measure.unitOfMeasurement);
+
+    if (measure.measureProgress != null && measure.measureProgress.isNotEmpty) measurePb
+        .measureProgress.addAll(
+        measure.measureProgress.map((m) => MeasureProgressHelper.writeToProtoBuf(m)));
+
+    if (measure.objective != null) measurePb.objective = ObjectiveHelper.writeToProtoBuf(measure.objective);
+
+    return measurePb;
+  }
+
+  static Measure readFromProtoBuf(objective_measure_pb.Measure measurePb,
+      Map<String, dynamic> cache) {
+    Measure measure = Measure();
+
+    if (measurePb.hasId()) measure.id = measurePb.id;
+    if (measurePb.hasVersion()) measure.version = measurePb.version;
+    if (measurePb.hasName()) measure.name = measurePb.name;
+    if (measurePb.hasDescription()) measure.description = measurePb.description;
+
+    if (measurePb.hasMetric()) measure.metric = measurePb.metric;
+    if (measurePb.hasDecimalsNumber())
+      measure.decimalsNumber = measurePb.decimalsNumber;
+    if (measurePb.hasStartValue()) measure.startValue = measurePb.startValue;
+    if (measurePb.hasEndValue()) measure.endValue = measurePb.endValue;
+    if (measurePb.hasCurrentValue()) measure.currentValue = measurePb.currentValue;
+    if (measurePb.hasUnitOfMeasurement()) measure.unitOfMeasurement = cache.putIfAbsent(
+        '${Measure.unitOfMeasurementField}${measurePb.unitOfMeasurement
+            .id}@${UnitOfMeasurement.className}', () =>
+        UnitOfMeasurementHelper.readFromProtoBuf(measurePb.unitOfMeasurement));
+    if (measurePb.measureProgress.isNotEmpty)
+      measure.measureProgress = measurePb.measureProgress.map((u) =>
+      MeasureProgressHelper.readFromProtoBuf(u, cache))
+          .toList(); // It is composite, no need cache
+    if (measurePb.hasObjective()) measure.objective = cache.putIfAbsent(
+        '${Measure.objectiveField}${measurePb.objective.id}@${Objective
+            .className}', () =>
+    ObjectiveHelper.readFromProtoBuf(measurePb.objective, cache));
+
+    return measure;
+  }
 }
 
 class MeasureProgress {
@@ -207,52 +231,7 @@ class MeasureProgress {
     // lastHistoryItem = HistoryItem();
   }
 
-  objective_measure_pb.MeasureProgress writeToProtoBuf() {
-    objective_measure_pb.MeasureProgress measureProgressPb = objective_measure_pb.MeasureProgress();
-
-    if (id != null) measureProgressPb.id = id;
-    if (version != null) measureProgressPb.version = version;
-
-    if (date != null)  measureProgressPb.date =  CommonUtils.timestampFromDateTime(date.toUtc());
-
-    if (currentValue != null) {
-      measureProgressPb.currentValue = currentValue;
-    }
-    if (comment != null) {
-      measureProgressPb.comment = comment;
-    }
-
-    if (measure != null) {
-      measureProgressPb.measure = measure.writeToProtoBuf();
-    }
-
-    return measureProgressPb;
-  }
-
-  void readFromProtoBuf(objective_measure_pb.MeasureProgress measureProgressPb, Map<String, dynamic> cache) {
-    if (measureProgressPb.hasId()) id = measureProgressPb.id;
-    if (measureProgressPb.hasVersion()) {
-      version = measureProgressPb.version;
-    }
-    //if (measureProgressPb.hasDate()) this.date = CommonUtils.dateTimeFromTimestamp(measureProgressPb.date);
-    if (measureProgressPb.hasDate()) date = measureProgressPb.date.toDateTime();
-    /*
-        DateTime.fromMicrosecondsSinceEpoch(
-            measureProgressPb.date.seconds.toInt() * 1000000 +
-                measureProgressPb.date.nanos ~/ 1000);
-
-     */
-    if (measureProgressPb.hasCurrentValue()) {
-      currentValue = measureProgressPb.currentValue;
-    }
-    if (measureProgressPb.hasComment()) {
-      comment = measureProgressPb.comment;
-    }
-    if (measureProgressPb.hasMeasure()) {
-      measure = Measure()..readFromProtoBuf(measureProgressPb.measure, cache);
-    }
-  }
-
+/*
   static Map<String, dynamic> fromProtoBufToModelMap(objective_measure_pb.MeasureProgress measureProgressPb, [bool onlyIdAndSpecificationForDepthFields = false, bool isDeep = false]) {
     Map<String, dynamic> map = {};
 
@@ -289,6 +268,61 @@ class MeasureProgress {
       }
     }
     return map;
+  }
+ */
+
+}
+
+class MeasureProgressHelper {
+
+  static objective_measure_pb.MeasureProgress writeToProtoBuf(MeasureProgress measureProgress) {
+    objective_measure_pb.MeasureProgress measureProgressPb = objective_measure_pb.MeasureProgress();
+
+    if (measureProgress.id != null) measureProgressPb.id = measureProgress.id;
+    if (measureProgress.version != null) measureProgressPb.version = measureProgress.version;
+
+    if (measureProgress.date != null)  measureProgressPb.date =  CommonUtils.timestampFromDateTime(measureProgress.date.toUtc());
+
+    if (measureProgress.currentValue != null) {
+      measureProgressPb.currentValue = measureProgress.currentValue;
+    }
+    if (measureProgress.comment != null) {
+      measureProgressPb.comment = measureProgress.comment;
+    }
+
+    if (measureProgress.measure != null) {
+      measureProgressPb.measure = MeasureHelper.writeToProtoBuf(measureProgress.measure);
+    }
+
+    return measureProgressPb;
+  }
+
+  static MeasureProgress readFromProtoBuf(objective_measure_pb.MeasureProgress measureProgressPb, Map<String, dynamic> cache) {
+    MeasureProgress measureProgress = MeasureProgress();
+
+    if (measureProgressPb.hasId()) measureProgress.id = measureProgressPb.id;
+    if (measureProgressPb.hasVersion()) {
+      measureProgress.version = measureProgressPb.version;
+    }
+    //if (measureProgressPb.hasDate()) this.date = CommonUtils.dateTimeFromTimestamp(measureProgressPb.date);
+    if (measureProgressPb.hasDate()) measureProgress.date = measureProgressPb.date.toDateTime();
+    /*
+        DateTime.fromMicrosecondsSinceEpoch(
+            measureProgressPb.date.seconds.toInt() * 1000000 +
+                measureProgressPb.date.nanos ~/ 1000);
+
+     */
+    if (measureProgressPb.hasCurrentValue()) {
+      measureProgress.currentValue = measureProgressPb.currentValue;
+    }
+    if (measureProgressPb.hasComment()) {
+      measureProgress.comment = measureProgressPb.comment;
+    }
+    if (measureProgressPb.hasMeasure()) {
+      measureProgress.measure = MeasureHelper.readFromProtoBuf(measureProgressPb.measure, cache);
+    }
+
+    return measureProgress;
   }
 }
 

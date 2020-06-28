@@ -287,13 +287,14 @@ class WorkGetRequest extends $pb.GeneratedMessage {
     ..aOS(1, 'id')
     ..aOS(2, 'organizationId')
     ..aOS(3, 'objectiveId')
-    ..aOB(4, 'withWorkItems')
-    ..aOB(5, 'withUserProfile')
-    ..aOB(6, 'withArchived')
-    ..pPS(7, 'groupIds')
-    ..pPS(8, 'leaderUserIds')
-    ..aOB(9, 'workItemWithArchived')
-    ..pPS(10, 'workItemAssignedToIds')
+    ..aOB(4, 'withOrganization')
+    ..aOB(5, 'withWorkItems')
+    ..aOB(6, 'withUserProfile')
+    ..aOB(7, 'withArchived')
+    ..pPS(8, 'groupIds')
+    ..pPS(9, 'leaderUserIds')
+    ..aOB(10, 'workItemWithArchived')
+    ..pPS(11, 'workItemAssignedToIds')
     ..hasRequiredFields = false
   ;
 
@@ -340,49 +341,58 @@ class WorkGetRequest extends $pb.GeneratedMessage {
   void clearObjectiveId() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.bool get withWorkItems => $_getBF(3);
+  $core.bool get withOrganization => $_getBF(3);
   @$pb.TagNumber(4)
-  set withWorkItems($core.bool v) { $_setBool(3, v); }
+  set withOrganization($core.bool v) { $_setBool(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasWithWorkItems() => $_has(3);
+  $core.bool hasWithOrganization() => $_has(3);
   @$pb.TagNumber(4)
-  void clearWithWorkItems() => clearField(4);
+  void clearWithOrganization() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.bool get withUserProfile => $_getBF(4);
+  $core.bool get withWorkItems => $_getBF(4);
   @$pb.TagNumber(5)
-  set withUserProfile($core.bool v) { $_setBool(4, v); }
+  set withWorkItems($core.bool v) { $_setBool(4, v); }
   @$pb.TagNumber(5)
-  $core.bool hasWithUserProfile() => $_has(4);
+  $core.bool hasWithWorkItems() => $_has(4);
   @$pb.TagNumber(5)
-  void clearWithUserProfile() => clearField(5);
+  void clearWithWorkItems() => clearField(5);
 
   @$pb.TagNumber(6)
-  $core.bool get withArchived => $_getBF(5);
+  $core.bool get withUserProfile => $_getBF(5);
   @$pb.TagNumber(6)
-  set withArchived($core.bool v) { $_setBool(5, v); }
+  set withUserProfile($core.bool v) { $_setBool(5, v); }
   @$pb.TagNumber(6)
-  $core.bool hasWithArchived() => $_has(5);
+  $core.bool hasWithUserProfile() => $_has(5);
   @$pb.TagNumber(6)
-  void clearWithArchived() => clearField(6);
+  void clearWithUserProfile() => clearField(6);
 
   @$pb.TagNumber(7)
-  $core.List<$core.String> get groupIds => $_getList(6);
+  $core.bool get withArchived => $_getBF(6);
+  @$pb.TagNumber(7)
+  set withArchived($core.bool v) { $_setBool(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasWithArchived() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearWithArchived() => clearField(7);
 
   @$pb.TagNumber(8)
-  $core.List<$core.String> get leaderUserIds => $_getList(7);
+  $core.List<$core.String> get groupIds => $_getList(7);
 
   @$pb.TagNumber(9)
-  $core.bool get workItemWithArchived => $_getBF(8);
-  @$pb.TagNumber(9)
-  set workItemWithArchived($core.bool v) { $_setBool(8, v); }
-  @$pb.TagNumber(9)
-  $core.bool hasWorkItemWithArchived() => $_has(8);
-  @$pb.TagNumber(9)
-  void clearWorkItemWithArchived() => clearField(9);
+  $core.List<$core.String> get leaderUserIds => $_getList(8);
 
   @$pb.TagNumber(10)
-  $core.List<$core.String> get workItemAssignedToIds => $_getList(9);
+  $core.bool get workItemWithArchived => $_getBF(9);
+  @$pb.TagNumber(10)
+  set workItemWithArchived($core.bool v) { $_setBool(9, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasWorkItemWithArchived() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearWorkItemWithArchived() => clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.List<$core.String> get workItemAssignedToIds => $_getList(10);
 }
 
 class WorkItem extends $pb.GeneratedMessage {

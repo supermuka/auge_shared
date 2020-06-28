@@ -51,34 +51,7 @@ class UserIdentity {
   static const String userField = 'user';
   User user;
 
-  user_identity_pb.UserIdentity writeToProtoBuf() {
-    user_identity_pb.UserIdentity userIdentityPb = user_identity_pb.UserIdentity();
-
-    if (id != null) userIdentityPb.id = id;
-    if (version != null) userIdentityPb.version = version;
-    if (identification != null) userIdentityPb.identification = identification;
-    if (password != null) userIdentityPb.password = password;
-    if (provider != null) userIdentityPb.provider = provider;
-    if (providerObjectId != null) userIdentityPb.providerObjectId = providerObjectId;
-    if (providerDn != null) userIdentityPb.providerObjectId = providerDn;
-    if (user != null) userIdentityPb.user = user.writeToProtoBuf();
-
-    return userIdentityPb;
-  }
-
-  void readFromProtoBuf(user_identity_pb.UserIdentity userIdentityPb, Map<String, dynamic> cache) {
-
-    if (userIdentityPb.hasId()) id = userIdentityPb.id;
-    if (userIdentityPb.hasVersion()) version = userIdentityPb.version;
-    if (userIdentityPb.hasIdentification()) identification = userIdentityPb.identification;
-    if (userIdentityPb.hasProviderDn()) providerDn = userIdentityPb.providerDn;
-    if (userIdentityPb.hasPassword()) password = userIdentityPb.password;
-    if (userIdentityPb.hasProvider()) provider = userIdentityPb.provider;
-    if (userIdentityPb.hasProviderObjectId()) providerObjectId = userIdentityPb.providerObjectId;
-    if (userIdentityPb.hasUser()) user = cache.putIfAbsent('${UserIdentity.userField}${userIdentityPb.user.id}@${User.className}', () => User()..readFromProtoBuf(userIdentityPb.user, cache));
-
-  }
-
+/*
   static Map<String, dynamic> fromProtoBufToModelMap(user_identity_pb.UserIdentity userIdentityPb, [bool onlyIdAndSpecificationForDepthFields = false, bool isDeep = false]) {
     Map<String, dynamic> map = {};
 
@@ -117,4 +90,41 @@ class UserIdentity {
     }
     return map;
   }
+ */
+
+}
+
+class UserIdentityHelper {
+
+  static user_identity_pb.UserIdentity writeToProtoBuf(UserIdentity userIdentity) {
+    user_identity_pb.UserIdentity userIdentityPb = user_identity_pb.UserIdentity();
+
+    if (userIdentity.id != null) userIdentityPb.id = userIdentity.id;
+    if (userIdentity.version != null) userIdentityPb.version = userIdentity.version;
+    if (userIdentity.identification != null) userIdentityPb.identification = userIdentity.identification;
+    if (userIdentity.password != null) userIdentityPb.password = userIdentity.password;
+    if (userIdentity.provider != null) userIdentityPb.provider = userIdentity.provider;
+    if (userIdentity.providerObjectId != null) userIdentityPb.providerObjectId = userIdentity.providerObjectId;
+    if (userIdentity.providerDn != null) userIdentityPb.providerObjectId = userIdentity.providerDn;
+    if (userIdentity.user != null) userIdentityPb.user = UserHelper.writeToProtoBuf(userIdentity.user);
+
+    return userIdentityPb;
+  }
+
+  static UserIdentity readFromProtoBuf(user_identity_pb.UserIdentity userIdentityPb, Map<String, dynamic> cache) {
+
+    UserIdentity userIdentity = UserIdentity();
+
+    if (userIdentityPb.hasId()) userIdentity.id = userIdentityPb.id;
+    if (userIdentityPb.hasVersion()) userIdentity.version = userIdentityPb.version;
+    if (userIdentityPb.hasIdentification()) userIdentity.identification = userIdentityPb.identification;
+    if (userIdentityPb.hasProviderDn()) userIdentity.providerDn = userIdentityPb.providerDn;
+    if (userIdentityPb.hasPassword()) userIdentity.password = userIdentityPb.password;
+    if (userIdentityPb.hasProvider()) userIdentity.provider = userIdentityPb.provider;
+    if (userIdentityPb.hasProviderObjectId()) userIdentity.providerObjectId = userIdentityPb.providerObjectId;
+    if (userIdentityPb.hasUser()) userIdentity.user = cache.putIfAbsent('${UserIdentity.userField}${userIdentityPb.user.id}@${User.className}', () => UserHelper.readFromProtoBuf(userIdentityPb.user, cache));
+
+    return userIdentity;
+  }
+
 }

@@ -101,39 +101,7 @@ class Work  {
     return n;
   }
 
-  work_work_item_pb.Work writeToProtoBuf() {
-    work_work_item_pb.Work workPb = work_work_item_pb.Work();
-
-    if (id != null) workPb.id = id;
-    if (version != null) workPb.version = version;
-    if (name != null) workPb.name = name;
-    if (description != null) workPb.description = description;
-    if (archived != null) workPb.archived = archived;
-
-    if (objective != null) workPb.objective = objective.writeToProtoBuf();
-    if (group != null) workPb.group = group.writeToProtoBuf();
-    if (organization != null) workPb.organization = organization.writeToProtoBuf();
-    if (leader != null) workPb.leader = leader.writeToProtoBuf();
-    if (workItems != null && workItems.isNotEmpty) workPb.workItems.addAll(workItems.map((m) => m.writeToProtoBuf()));
-    if (workStages != null && workStages.isNotEmpty) workPb.workStages.addAll(workStages.map((m) => m.writeToProtoBuf()));
-
-    return workPb;
-  }
-
-  void readFromProtoBuf(work_work_item_pb.Work workPb, Map<String, dynamic> cache) {
-    if (workPb.hasId()) id = workPb.id;
-    if (workPb.hasVersion()) version = workPb.version;
-    if (workPb.hasName()) name = workPb.name;
-    if (workPb.hasDescription()) description = workPb.description;
-    if (workPb.hasArchived()) archived = workPb.archived;
-    if (workPb.hasObjective()) objective = cache.putIfAbsent('${Work.objectiveField}${workPb.objective.id}@${Objective.className}', () =>  Objective()..readFromProtoBuf(workPb.objective, cache));
-    if (workPb.hasGroup()) group = cache.putIfAbsent('${Work.groupField}${workPb.group.id}@${Group.className}', () => Group()..readFromProtoBuf(workPb.group, cache));
-    if (workPb.hasOrganization()) organization = cache.putIfAbsent('${Work.organizationField}${workPb.organization.id}@${Organization.className}', () => Organization()..readFromProtoBuf(workPb.organization));
-    if (workPb.hasLeader()) leader = cache.putIfAbsent('${Work.leaderField}${workPb.leader.id}@${User.className}', () => User()..readFromProtoBuf(workPb.leader, cache));
-    if (workPb.workItems.isNotEmpty) workItems = workPb.workItems.map((u) => WorkItem()..readFromProtoBuf(u, cache)).toList(); // Not need the cache, if a composite.
-    if (workPb.workStages.isNotEmpty) workStages = workPb.workStages.map((u) => WorkStage()..readFromProtoBuf(u, cache)).toList();  // Not need the cache, if a composite.
-  }
-
+  /*
   static Map<String, dynamic> fromProtoBufToModelMap(work_work_item_pb.Work workPb, [bool onlyIdAndSpecificationForDepthFields = false, bool isDeep = false]) {
     Map<String, dynamic> map = {};
 
@@ -158,7 +126,7 @@ class Work  {
       }
       if (workPb.hasGroup()) {
         map[Work.groupField] =
-          Group.fromProtoBufToModelMap(workPb.group, onlyIdAndSpecificationForDepthFields, true);
+          GroupHelper.fromProtoBufToModelMap(workPb.group, onlyIdAndSpecificationForDepthFields, true);
       }
       if (workPb.hasOrganization()) {
         map[Work.organizationField] =
@@ -181,4 +149,47 @@ class Work  {
     }
     return map;
   }
+
+   */
+}
+
+class WorkHelper {
+
+  static work_work_item_pb.Work writeToProtoBuf(Work work) {
+    work_work_item_pb.Work workPb = work_work_item_pb.Work();
+
+    if (work.id != null) workPb.id = work.id;
+    if (work.version != null) workPb.version = work.version;
+    if (work.name != null) workPb.name = work.name;
+    if (work.description != null) workPb.description = work.description;
+    if (work.archived != null) workPb.archived = work.archived;
+
+    if (work.objective != null) workPb.objective = ObjectiveHelper.writeToProtoBuf(work.objective);
+    if (work.group != null) workPb.group = GroupHelper.writeToProtoBuf(work.group);
+    if (work.organization != null) workPb.organization = OrganizationHelper.writeToProtoBuf(work.organization);
+    if (work.leader != null) workPb.leader = UserHelper.writeToProtoBuf(work.leader);
+    if (work.workItems != null && work.workItems.isNotEmpty) workPb.workItems.addAll(work.workItems.map((m) => WorkItemHelper.writeToProtoBuf(m)));
+    if (work.workStages != null && work.workStages.isNotEmpty) workPb.workStages.addAll(work.workStages.map((m) => WorkStageHelper.writeToProtoBuf(m)));
+
+    return workPb;
+  }
+
+  static Work readFromProtoBuf(work_work_item_pb.Work workPb, Map<String, dynamic> cache) {
+    Work work = Work();
+
+    if (workPb.hasId()) work.id = workPb.id;
+    if (workPb.hasVersion()) work.version = workPb.version;
+    if (workPb.hasName()) work.name = workPb.name;
+    if (workPb.hasDescription()) work.description = workPb.description;
+    if (workPb.hasArchived()) work.archived = workPb.archived;
+    if (workPb.hasObjective()) work.objective = cache.putIfAbsent('${Work.objectiveField}${workPb.objective.id}@${Objective.className}', () =>  ObjectiveHelper.readFromProtoBuf(workPb.objective, cache));
+    if (workPb.hasGroup()) work.group = cache.putIfAbsent('${Work.groupField}${workPb.group.id}@${Group.className}', () => GroupHelper.readFromProtoBuf(workPb.group, cache));
+    if (workPb.hasOrganization()) work.organization = cache.putIfAbsent('${Work.organizationField}${workPb.organization.id}@${Organization.className}', () => OrganizationHelper.readFromProtoBuf(workPb.organization));
+    if (workPb.hasLeader()) work.leader = cache.putIfAbsent('${Work.leaderField}${workPb.leader.id}@${User.className}', () => UserHelper.readFromProtoBuf(workPb.leader, cache));
+    if (workPb.workItems.isNotEmpty) work.workItems = workPb.workItems.map((u) => WorkItemHelper.readFromProtoBuf(u, cache)).toList(); // Not need the cache, if a composite.
+    if (workPb.workStages.isNotEmpty) work.workStages = workPb.workStages.map((u) => WorkStageHelper.readFromProtoBuf(u, cache)).toList();  // Not need the cache, if a composite.
+
+    return work;
+  }
+
 }

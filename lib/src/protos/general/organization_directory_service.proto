@@ -78,4 +78,5 @@ message OrganizationDirectoryServiceAuthRequest {
 message OrganizationDirectoryServiceGetRequest {
     string id = 1;
     string organization_id = 2;
+    bool with_organization = 3;
 }

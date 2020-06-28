@@ -38,6 +38,7 @@ const OrganizationGetRequest$json = const {
   '1': 'OrganizationGetRequest',
   '2': const [
     const {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    const {'1': 'only_id_and_name', '3': 2, '4': 1, '5': 8, '10': 'onlyIdAndName'},
   ],
 };
 

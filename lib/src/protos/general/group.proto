@@ -55,7 +55,9 @@ message GroupDeleteRequest {
 message GroupGetRequest {
     string id = 1;
     string organization_id = 2;
-    int32 aligned_to_recursive = 3;
+    bool with_organization = 3;
+    bool only_id_and_name = 4;
+    int32 aligned_to_recursive = 5;
 }
 
 // Request for query select

@@ -53,8 +53,9 @@ const UserGetRequest$json = const {
     const {'1': 'managed_by_organization_id', '3': 2, '4': 1, '5': 9, '10': 'managedByOrganizationId'},
     const {'1': 'managed_by_organization_id_or_accessed_by_organization_id', '3': 3, '4': 1, '5': 9, '10': 'managedByOrganizationIdOrAccessedByOrganizationId'},
     const {'1': 'accessedByOrganizationId', '3': 4, '4': 1, '5': 9, '10': 'accessedByOrganizationId'},
-    const {'1': 'with_user_profile', '3': 5, '4': 1, '5': 8, '10': 'withUserProfile'},
-    const {'1': 'with_objective', '3': 6, '4': 1, '5': 8, '10': 'withObjective'},
+    const {'1': 'only_id_and_name', '3': 5, '4': 1, '5': 8, '10': 'onlyIdAndName'},
+    const {'1': 'with_user_profile', '3': 6, '4': 1, '5': 8, '10': 'withUserProfile'},
+    const {'1': 'with_objective', '3': 7, '4': 1, '5': 8, '10': 'withObjective'},
   ],
 };
 

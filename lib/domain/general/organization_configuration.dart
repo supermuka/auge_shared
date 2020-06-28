@@ -28,26 +28,8 @@ class OrganizationConfiguration {
     organization = Organization();
   }
 
-  organization_configuration_pb.OrganizationConfiguration writeToProtoBuf() {
-    organization_configuration_pb.OrganizationConfiguration organizationConfigurationPb = organization_configuration_pb.OrganizationConfiguration();
 
-    if (id != null) organizationConfigurationPb.id = id;
-    if (version != null) organizationConfigurationPb.version = version;
-    if (domain != null) organizationConfigurationPb.domain = domain;
-    if (organization != null) organizationConfigurationPb.organization = organization.writeToProtoBuf();
-  //  if (this.organization != null) configurationPb.organization = this.organization.writeToProtoBuf();
-
-    return organizationConfigurationPb;
-  }
-
-  void readFromProtoBuf(organization_configuration_pb.OrganizationConfiguration organizationConfigurationPb) {
-    if (organizationConfigurationPb.hasId()) id = organizationConfigurationPb.id;
-    if (organizationConfigurationPb.hasVersion()) version = organizationConfigurationPb.version;
-    if (organizationConfigurationPb.hasDomain()) domain = organizationConfigurationPb.domain;
-    if (organizationConfigurationPb.hasOrganization()) organization = Organization()..readFromProtoBuf(organizationConfigurationPb.organization); // No need cache, normally it has one instance
- //   if (organizationConfigurationPb.hasOrganization()) this.organization = Organization()..readFromProtoBuf(organizationConfigurationPb.organization);
-  }
-
+/*
   static Map<String, dynamic> fromProtoBufToModelMap(organization_configuration_pb.OrganizationConfiguration organizationConfigurationPb, [bool onlyIdAndSpecificationForDepthFields = false, bool isDeep = false]) {
     // ignore: prefer_collection_literals
     Map<String, dynamic> map = Map();
@@ -87,6 +69,34 @@ class OrganizationConfiguration {
 
     }
     return map;
+  }
+*/
+}
+
+class OrganizationConfigurationHelper {
+
+  static organization_configuration_pb.OrganizationConfiguration writeToProtoBuf(OrganizationConfiguration organizationConfiguration) {
+    organization_configuration_pb.OrganizationConfiguration organizationConfigurationPb = organization_configuration_pb.OrganizationConfiguration();
+
+    if (organizationConfiguration.id != null) organizationConfigurationPb.id = organizationConfiguration.id;
+    if (organizationConfiguration.version != null) organizationConfigurationPb.version = organizationConfiguration.version;
+    if (organizationConfiguration.domain != null) organizationConfigurationPb.domain = organizationConfiguration.domain;
+    if (organizationConfiguration.organization != null) organizationConfigurationPb.organization = OrganizationHelper.writeToProtoBuf(organizationConfiguration.organization);
+    //  if (this.organization != null) configurationPb.organization = this.organization.writeToProtoBuf();
+
+    return organizationConfigurationPb;
+  }
+
+  static OrganizationConfiguration readFromProtoBuf(organization_configuration_pb.OrganizationConfiguration organizationConfigurationPb) {
+    OrganizationConfiguration organizationConfiguration = OrganizationConfiguration();
+
+    if (organizationConfigurationPb.hasId()) organizationConfiguration.id = organizationConfigurationPb.id;
+    if (organizationConfigurationPb.hasVersion()) organizationConfiguration.version = organizationConfigurationPb.version;
+    if (organizationConfigurationPb.hasDomain()) organizationConfiguration.domain = organizationConfigurationPb.domain;
+    if (organizationConfigurationPb.hasOrganization()) organizationConfiguration.organization = OrganizationHelper.readFromProtoBuf(organizationConfigurationPb.organization); // No need cache, normally it has one instance
+    //   if (organizationConfigurationPb.hasOrganization()) this.organization = Organization()..readFromProtoBuf(organizationConfigurationPb.organization);
+
+    return organizationConfiguration;
   }
 
 }

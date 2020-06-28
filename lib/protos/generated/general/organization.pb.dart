@@ -187,6 +187,7 @@ class OrganizationDeleteRequest extends $pb.GeneratedMessage {
 class OrganizationGetRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo('OrganizationGetRequest', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
     ..aOS(1, 'id')
+    ..aOB(2, 'onlyIdAndName')
     ..hasRequiredFields = false
   ;
 
@@ -213,6 +214,15 @@ class OrganizationGetRequest extends $pb.GeneratedMessage {
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
   void clearId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.bool get onlyIdAndName => $_getBF(1);
+  @$pb.TagNumber(2)
+  set onlyIdAndName($core.bool v) { $_setBool(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasOnlyIdAndName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearOnlyIdAndName() => clearField(2);
 }
 
 class OrganizationsResponse extends $pb.GeneratedMessage {

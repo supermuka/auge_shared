@@ -44,7 +44,9 @@ const GroupGetRequest$json = const {
   '2': const [
     const {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
     const {'1': 'organization_id', '3': 2, '4': 1, '5': 9, '10': 'organizationId'},
-    const {'1': 'aligned_to_recursive', '3': 3, '4': 1, '5': 5, '10': 'alignedToRecursive'},
+    const {'1': 'with_organization', '3': 3, '4': 1, '5': 8, '10': 'withOrganization'},
+    const {'1': 'only_id_and_name', '3': 4, '4': 1, '5': 8, '10': 'onlyIdAndName'},
+    const {'1': 'aligned_to_recursive', '3': 5, '4': 1, '5': 5, '10': 'alignedToRecursive'},
   ],
 };
 
