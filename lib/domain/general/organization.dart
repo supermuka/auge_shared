@@ -11,6 +11,7 @@ class Organization {
   // Base fields
   static const String idField = 'id';
   String id;
+
   static const String versionField = 'version';
   int version;
 

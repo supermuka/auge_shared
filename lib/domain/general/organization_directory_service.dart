@@ -61,7 +61,7 @@ class OrganizationDirectoryService {
   String syncBindDn;
   static const String syncBindPasswordField = 'syncBindPassword';
   String syncBindPassword;
-  static const String syncIntervalField = 'sync';
+  static const String syncIntervalField = 'syncInterval';
   int syncInterval;
   static const String syncLastDateTimeField = 'syncLastDateTime';
   DateTime syncLastDateTime;

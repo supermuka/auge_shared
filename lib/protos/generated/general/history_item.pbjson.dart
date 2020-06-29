@@ -18,7 +18,7 @@ const HistoryItem$json = const {
     const {'1': 'user', '3': 8, '4': 1, '5': 11, '6': '.auge.protobuf.User', '10': 'user'},
     const {'1': 'organization', '3': 9, '4': 1, '5': 11, '6': '.auge.protobuf.Organization', '10': 'organization'},
     const {'1': 'description', '3': 10, '4': 1, '5': 9, '10': 'description'},
-    const {'1': 'changed_values_json', '3': 11, '4': 1, '5': 9, '10': 'changedValuesJson'},
+    const {'1': 'changed_values', '3': 11, '4': 1, '5': 9, '10': 'changedValues'},
   ],
 };
 

@@ -4,7 +4,7 @@
 import 'package:auge_shared/protos/generated/general/unit_of_measurement.pbgrpc.dart' as unit_of_measurement_pbgrpc;
 
 class UnitOfMeasurement {
-  static const String className = 'MeasureUnit';
+  static const String className = 'UnitOfMeasurement';
 
   static const idField = 'id';
   String id;
@@ -12,8 +12,6 @@ class UnitOfMeasurement {
   String symbol;
   static const nameField = 'name';
   String name;
-
-
 }
 
 class UnitOfMeasurementHelper {

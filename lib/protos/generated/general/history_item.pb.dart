@@ -25,7 +25,7 @@ class HistoryItem extends $pb.GeneratedMessage {
     ..aOM<$3.User>(8, 'user', subBuilder: $3.User.create)
     ..aOM<$0.Organization>(9, 'organization', subBuilder: $0.Organization.create)
     ..aOS(10, 'description')
-    ..aOS(11, 'changedValuesJson')
+    ..aOS(11, 'changedValues')
     ..hasRequiredFields = false
   ;
 
@@ -141,13 +141,13 @@ class HistoryItem extends $pb.GeneratedMessage {
   void clearDescription() => clearField(10);
 
   @$pb.TagNumber(11)
-  $core.String get changedValuesJson => $_getSZ(10);
+  $core.String get changedValues => $_getSZ(10);
   @$pb.TagNumber(11)
-  set changedValuesJson($core.String v) { $_setString(10, v); }
+  set changedValues($core.String v) { $_setString(10, v); }
   @$pb.TagNumber(11)
-  $core.bool hasChangedValuesJson() => $_has(10);
+  $core.bool hasChangedValues() => $_has(10);
   @$pb.TagNumber(11)
-  void clearChangedValuesJson() => clearField(11);
+  void clearChangedValues() => clearField(11);
 }
 
 class HistoryItemGetRequest extends $pb.GeneratedMessage {

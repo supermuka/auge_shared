@@ -30,8 +30,9 @@ class Group {
   static const String organizationField = 'organization';
   Organization organization;
 
-  static const String groupTypeField = 'groupType';
-  GroupType groupType;
+  static const String groupTypeIndexField = 'groupTypeIndex';
+  int groupTypeIndex;
+  //GroupType groupType;
 
   static const String superGroupField = 'superGroup';
   Group superGroup;
@@ -55,7 +56,8 @@ class GroupHelper {
     if (group.name != null) groupPb.name = group.name;
     if (group.inactive != null) groupPb.inactive = group.inactive;
     if (group.organization != null) groupPb.organization = OrganizationHelper.writeToProtoBuf(group.organization);
-    if (group.groupType != null) groupPb.groupTypeIndex = group.groupType.index;
+    //if (group.groupType != null) groupPb.groupTypeIndex = group.groupType.index;
+    if (group.groupTypeIndex != null) groupPb.groupTypeIndex = group.groupTypeIndex;
     if (group.superGroup != null) groupPb.superGroup = GroupHelper.writeToProtoBuf(group.superGroup);
     if (group.leader != null) groupPb.leader = UserHelper.writeToProtoBuf(group.leader);
     if (group.members != null && group.members.isNotEmpty) groupPb.members.addAll(group.members.map((m) => UserHelper.writeToProtoBuf(m)));
@@ -71,7 +73,8 @@ class GroupHelper {
     if (groupPb.hasName()) group.name = groupPb.name;
     if (groupPb.hasInactive()) group.inactive = groupPb.inactive;
     if (groupPb.hasOrganization()) group.organization = cache.putIfAbsent('${Group.organizationField}${groupPb.organization.id}@${Organization.className}', () => OrganizationHelper.readFromProtoBuf(groupPb.organization));
-    if (groupPb.hasGroupTypeIndex()) group.groupType = GroupType.values[groupPb.groupTypeIndex];
+   // if (groupPb.hasGroupTypeIndex()) group.groupType = GroupType.values[groupPb.groupTypeIndex];
+    if (groupPb.hasGroupTypeIndex()) group.groupTypeIndex = groupPb.groupTypeIndex;
     if (groupPb.hasSuperGroup()) group.superGroup =  cache.putIfAbsent('${Group.superGroupField}${groupPb.superGroup.id}@${Group.className}', () => GroupHelper.readFromProtoBuf(groupPb.superGroup, cache));
     if (groupPb.hasLeader()) group.leader = cache.putIfAbsent('${Group.leaderField}${groupPb.leader.id}@${User.className}', () => UserHelper.readFromProtoBuf(groupPb.leader, cache));
     if (groupPb.members.isNotEmpty) group.members = groupPb.members.map((u) => cache.putIfAbsent('${Group.membersField}${u.id}@${User.className}', () => UserHelper.readFromProtoBuf(u, cache))).toList().cast<User>();

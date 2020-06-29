@@ -128,7 +128,7 @@ class GroupDomainMsg {
         {Group.nameField: 'Name',
           Group.inactiveField: 'Inactive',
           Group.leaderField: 'Leader',
-          Group.groupTypeField: 'Group Type',
+          Group.groupTypeIndexField: 'Group Type',
           Group.superGroupField: 'Super Group',
           Group.leaderField: 'Leader',
           Group.membersField: 'Members',

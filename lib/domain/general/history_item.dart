@@ -13,6 +13,8 @@ import 'package:auge_shared/domain/general/user.dart';
 import 'package:auge_shared/protos/generated/general/history_item.pb.dart' as history_item_pb;
 
 class HistoryItem {
+  static const String className = 'HistoryItem';
+
   static const String idField = 'id';
   String id;
   static const String organizationField = 'organization';
@@ -74,7 +76,7 @@ class HistoryItemHelper {
     if (historyItem.changedValues != null) {
 
       // Convert value from dart json to protobuf string
-      historyItemPb.changedValuesJson = json.encode(historyItem.changedValues);
+      historyItemPb.changedValues = json.encode(historyItem.changedValues);
     }
     return historyItemPb;
   }
@@ -96,7 +98,7 @@ class HistoryItemHelper {
     if (historyItemPb.hasDescription()) historyItem.description = historyItemPb.description;
     //if (historyItemPb.changedValues.isNotEmpty) this.changedValues = historyItemPb.changedValues;
     // Convert value from protobuf string to dart json
-    if (historyItemPb.hasChangedValuesJson()) historyItem.changedValues = json.decode(historyItemPb.changedValuesJson);
+    if (historyItemPb.hasChangedValues()) historyItem.changedValues = json.decode(historyItemPb.changedValues);
     return historyItem;
   }
 

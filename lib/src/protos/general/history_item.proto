@@ -28,7 +28,7 @@ message HistoryItem {
    User user = 8;
    Organization organization = 9;
    string description = 10;
-   string changed_values_json = 11;
+   string changed_values = 11;
 }
 
 // Request for query select

@@ -45,7 +45,7 @@
       "fieldName": {}
     }
   },
-  "GroupDomainMsg_fieldLabel": "{fieldName,select, nameField{Nome}inactiveField{Inativo}leaderField{Líder}groupTypeField{Tipo do Grupo}superGroupField{Super Grupo}membersField{Membros}other{Não Definido}}",
+  "GroupDomainMsg_fieldLabel": "{fieldName,select, nameField{Nome}inactiveField{Inativo}leaderField{Líder}groupTypeIndexField{Tipo do Grupo}superGroupField{Super Grupo}membersField{Membros}other{Não Definido}}",
   "@GroupDomainMsg_fieldLabel": {
     "type": "text",
     "placeholders": {
