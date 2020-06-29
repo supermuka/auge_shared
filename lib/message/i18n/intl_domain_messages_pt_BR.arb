@@ -101,7 +101,7 @@
       "fieldName": {}
     }
   },
-  "WorkStageDomainMsg_fieldLabel": "{fieldName,select, nameField{Nome}stateField{Estado}other{Não Definido}}",
+  "WorkStageDomainMsg_fieldLabel": "{fieldName,select, nameField{Nome}stateIndexField{Estado}other{Não Definido}}",
   "@WorkStageDomainMsg_fieldLabel": {
     "type": "text",
     "placeholders": {

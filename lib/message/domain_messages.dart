@@ -265,7 +265,7 @@ class WorkStageDomainMsg {
 
     return Intl.select(fieldName,
         {WorkStage.nameField: 'Name',
-          WorkStage.stateField: 'State',
+         WorkStage.stateIndexField: 'State',
           'other': 'Not Defined'},
         name: 'WorkStageDomainMsg_fieldLabel',
         args: [fieldName]);

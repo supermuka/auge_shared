@@ -196,14 +196,17 @@ class WorkItemHelper {
     if (workItemPb.hasWork()) workItem.work = cache.putIfAbsent('${WorkItem.workField}${workItemPb.work.id}@${Work.className}', () => WorkHelper.readFromProtoBuf(workItemPb.work, cache));
     return workItem;
   }
-
 }
 
 class WorkItemAttachment {
+  static const String className = 'WorkItemAttachment';
+
   static const String idField = 'id';
   String id;
-  static const String versionField = 'version';
-  int version;
+
+  //static const String versionField = 'version';
+  //int version;
+
   static const String nameField = 'name';
   String name;
   static const String typeField = 'type';
@@ -269,12 +272,17 @@ class WorkItemAttachmentHelper {
 }
 
 class WorkItemCheckItem {
+  static const String className = 'WorkItemCheckItem';
+
   static const String idField = 'id';
   String id;
-  static const String versionField = 'version';
-  int version;
+
+ // static const String versionField = 'version';
+ // int version;
+
   static const String nameField = 'name';
   String name;
+
   static const String finishedField = 'finished';
   bool finished;
 
@@ -336,6 +344,7 @@ class WorkItemValue {
   // Base - implements
   static const String idField = 'id';
   String id;
+
   static const String versionField = 'version';
   int version;
   //static const String isDeletedField = 'isDeleted';
@@ -347,12 +356,16 @@ class WorkItemValue {
   // Specific
   static const String dateField = 'date';
   DateTime date;
+
   static const String actualValueField = 'actualValue';
   double actualValue;
+
   static const String commentField = 'comment';
   String comment;
-  static const String archivedField = 'archived';
-  bool archived;
+
+  //static const String archivedField = 'archived';
+ // bool archived;
+
   static const String workItemField = 'workItem';
   WorkItem workItem;
 

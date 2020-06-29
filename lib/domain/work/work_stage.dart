@@ -22,8 +22,10 @@ class WorkStage {
   // Specific
   static const String nameField = 'name';
   String name;
-  static const String stateField = 'state';
-  State state;
+
+  // State enumeration
+  static const String stateIndexField = 'stateIndex';
+  int stateIndex;
 
   // Define work state order
   static const String indexField = 'index';
@@ -66,7 +68,7 @@ class WorkStageHelper {
     if (workStage.name != null) workStagePb.name = workStage.name;
     if (workStage.index != null) workStagePb.index = workStage.index;
 
-    if (workStage.state != null) workStagePb.stateIndex = workStage.state.index;
+    if (workStage.stateIndex != null) workStagePb.stateIndex = workStage.stateIndex;
     if (workStage.work != null) workStagePb.work = WorkHelper.writeToProtoBuf(workStage.work);
 
 
@@ -80,7 +82,7 @@ class WorkStageHelper {
     if (workStagePb.hasVersion()) workStage.version = workStagePb.version;
     if (workStagePb.hasName()) workStage.name = workStagePb.name;
     if (workStagePb.hasIndex()) workStage.index = workStagePb.index;
-    if (workStagePb.hasStateIndex()) workStage.state = State.values[workStagePb.stateIndex];
+    if (workStagePb.hasStateIndex()) workStage.stateIndex = workStagePb.stateIndex;
     if (workStagePb.hasWork()) workStage.work = WorkHelper.readFromProtoBuf(workStagePb.work, cache);
 
     return workStage;

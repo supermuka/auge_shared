@@ -30,6 +30,7 @@ class Group {
   static const String organizationField = 'organization';
   Organization organization;
 
+  /// GroupType enumeration
   static const String groupTypeIndexField = 'groupTypeIndex';
   int groupTypeIndex;
   //GroupType groupType;

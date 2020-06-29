@@ -61,7 +61,7 @@ class Work  {
     List<dynamic> state;
     workItems.forEach( (key) {
       // Get a same object for all State objects with identical index. Used index as a key to sort
-      state =  mSameState.putIfAbsent(key.workStage.state.index, () => [key.workStage.state, 0]);
+      state =  mSameState.putIfAbsent(key.workStage.stateIndex, () => [key.workStage.stateIndex, 0]);
 
       //
       state[1]++;
@@ -70,7 +70,7 @@ class Work  {
    //   m.update(state, (i) => i + 1);
     });
 
-    mSameState.forEach((k, v) => m.putIfAbsent(v.first, () => v.last));
+    mSameState.forEach((k, v) => m.putIfAbsent(State.values[v.first], () => v.last));
 
     return m;
 
