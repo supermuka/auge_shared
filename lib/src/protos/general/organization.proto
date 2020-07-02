@@ -12,7 +12,7 @@ import "google/protobuf/wrappers.proto";
 service OrganizationService {
 
     rpc GetOrganizations (OrganizationGetRequest) returns (OrganizationsResponse) {}
-    rpc GetOrganization (OrganizationGetRequest) returns (Organization) {}
+  //  rpc GetOrganization (OrganizationGetRequest) returns (Organization) {}
 
     rpc CreateOrganization (OrganizationRequest) returns (google.protobuf.StringValue) {}
     rpc UpdateOrganization (OrganizationRequest) returns (google.protobuf.Empty) {}
@@ -43,10 +43,15 @@ message OrganizationDeleteRequest {
     string auth_organization_id = 4;
 }
 
-// Request for query select
+enum RestrictOrganization {
+    organizationNone = 0;
+    organizationIdName = 1;
+}
+
+// Request for query Restrict
 message OrganizationGetRequest {
     string id = 1;
-    bool only_id_and_name = 2;
+    RestrictOrganization restrict_organization = 2;
 }
 
 // Response list of the organization

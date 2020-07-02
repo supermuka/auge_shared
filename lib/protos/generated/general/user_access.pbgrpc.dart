@@ -22,11 +22,6 @@ class UserAccessServiceClient extends $grpc.Client {
           ($4.UserAccessGetRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
               $4.UserAccessesResponse.fromBuffer(value));
-  static final _$getUserAccess =
-      $grpc.ClientMethod<$4.UserAccessGetRequest, $4.UserAccess>(
-          '/auge.protobuf.UserAccessService/GetUserAccess',
-          ($4.UserAccessGetRequest value) => value.writeToBuffer(),
-          ($core.List<$core.int> value) => $4.UserAccess.fromBuffer(value));
   static final _$createUserAccess =
       $grpc.ClientMethod<$4.UserAccessRequest, $1.StringValue>(
           '/auge.protobuf.UserAccessService/CreateUserAccess',
@@ -52,15 +47,6 @@ class UserAccessServiceClient extends $grpc.Client {
       {$grpc.CallOptions options}) {
     final call = $createCall(
         _$getUserAccesses, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
-  }
-
-  $grpc.ResponseFuture<$4.UserAccess> getUserAccess(
-      $4.UserAccessGetRequest request,
-      {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$getUserAccess, $async.Stream.fromIterable([request]),
         options: options);
     return $grpc.ResponseFuture(call);
   }
@@ -105,14 +91,6 @@ abstract class UserAccessServiceBase extends $grpc.Service {
             ($core.List<$core.int> value) =>
                 $4.UserAccessGetRequest.fromBuffer(value),
             ($4.UserAccessesResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$4.UserAccessGetRequest, $4.UserAccess>(
-        'GetUserAccess',
-        getUserAccess_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) =>
-            $4.UserAccessGetRequest.fromBuffer(value),
-        ($4.UserAccess value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$4.UserAccessRequest, $1.StringValue>(
         'CreateUserAccess',
         createUserAccess_Pre,
@@ -143,11 +121,6 @@ abstract class UserAccessServiceBase extends $grpc.Service {
     return getUserAccesses(call, await request);
   }
 
-  $async.Future<$4.UserAccess> getUserAccess_Pre($grpc.ServiceCall call,
-      $async.Future<$4.UserAccessGetRequest> request) async {
-    return getUserAccess(call, await request);
-  }
-
   $async.Future<$1.StringValue> createUserAccess_Pre($grpc.ServiceCall call,
       $async.Future<$4.UserAccessRequest> request) async {
     return createUserAccess(call, await request);
@@ -164,8 +137,6 @@ abstract class UserAccessServiceBase extends $grpc.Service {
   }
 
   $async.Future<$4.UserAccessesResponse> getUserAccesses(
-      $grpc.ServiceCall call, $4.UserAccessGetRequest request);
-  $async.Future<$4.UserAccess> getUserAccess(
       $grpc.ServiceCall call, $4.UserAccessGetRequest request);
   $async.Future<$1.StringValue> createUserAccess(
       $grpc.ServiceCall call, $4.UserAccessRequest request);

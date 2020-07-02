@@ -22,11 +22,6 @@ class ObjectiveServiceClient extends $grpc.Client {
           ($6.ObjectiveGetRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
               $6.ObjectivesResponse.fromBuffer(value));
-  static final _$getObjective =
-      $grpc.ClientMethod<$6.ObjectiveGetRequest, $6.Objective>(
-          '/auge.protobuf.ObjectiveService/GetObjective',
-          ($6.ObjectiveGetRequest value) => value.writeToBuffer(),
-          ($core.List<$core.int> value) => $6.Objective.fromBuffer(value));
   static final _$createObjective =
       $grpc.ClientMethod<$6.ObjectiveRequest, $1.StringValue>(
           '/auge.protobuf.ObjectiveService/CreateObjective',
@@ -52,15 +47,6 @@ class ObjectiveServiceClient extends $grpc.Client {
       {$grpc.CallOptions options}) {
     final call = $createCall(
         _$getObjectives, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
-  }
-
-  $grpc.ResponseFuture<$6.Objective> getObjective(
-      $6.ObjectiveGetRequest request,
-      {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$getObjective, $async.Stream.fromIterable([request]),
         options: options);
     return $grpc.ResponseFuture(call);
   }
@@ -105,14 +91,6 @@ abstract class ObjectiveServiceBase extends $grpc.Service {
             ($core.List<$core.int> value) =>
                 $6.ObjectiveGetRequest.fromBuffer(value),
             ($6.ObjectivesResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$6.ObjectiveGetRequest, $6.Objective>(
-        'GetObjective',
-        getObjective_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) =>
-            $6.ObjectiveGetRequest.fromBuffer(value),
-        ($6.Objective value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$6.ObjectiveRequest, $1.StringValue>(
         'CreateObjective',
         createObjective_Pre,
@@ -142,11 +120,6 @@ abstract class ObjectiveServiceBase extends $grpc.Service {
     return getObjectives(call, await request);
   }
 
-  $async.Future<$6.Objective> getObjective_Pre($grpc.ServiceCall call,
-      $async.Future<$6.ObjectiveGetRequest> request) async {
-    return getObjective(call, await request);
-  }
-
   $async.Future<$1.StringValue> createObjective_Pre($grpc.ServiceCall call,
       $async.Future<$6.ObjectiveRequest> request) async {
     return createObjective(call, await request);
@@ -164,8 +137,6 @@ abstract class ObjectiveServiceBase extends $grpc.Service {
 
   $async.Future<$6.ObjectivesResponse> getObjectives(
       $grpc.ServiceCall call, $6.ObjectiveGetRequest request);
-  $async.Future<$6.Objective> getObjective(
-      $grpc.ServiceCall call, $6.ObjectiveGetRequest request);
   $async.Future<$1.StringValue> createObjective(
       $grpc.ServiceCall call, $6.ObjectiveRequest request);
   $async.Future<$2.Empty> updateObjective(
@@ -181,11 +152,6 @@ class MeasureServiceClient extends $grpc.Client {
           ($6.MeasureGetRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
               $6.MeasuresResponse.fromBuffer(value));
-  static final _$getMeasure =
-      $grpc.ClientMethod<$6.MeasureGetRequest, $6.Measure>(
-          '/auge.protobuf.MeasureService/GetMeasure',
-          ($6.MeasureGetRequest value) => value.writeToBuffer(),
-          ($core.List<$core.int> value) => $6.Measure.fromBuffer(value));
   static final _$createMeasure =
       $grpc.ClientMethod<$6.MeasureRequest, $1.StringValue>(
           '/auge.protobuf.MeasureService/CreateMeasure',
@@ -207,12 +173,6 @@ class MeasureServiceClient extends $grpc.Client {
       ($6.MeasureProgressGetRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) =>
           $6.MeasureProgressesResponse.fromBuffer(value));
-  static final _$getMeasureProgress =
-      $grpc.ClientMethod<$6.MeasureProgressGetRequest, $6.MeasureProgress>(
-          '/auge.protobuf.MeasureService/GetMeasureProgress',
-          ($6.MeasureProgressGetRequest value) => value.writeToBuffer(),
-          ($core.List<$core.int> value) =>
-              $6.MeasureProgress.fromBuffer(value));
   static final _$createMeasureProgress =
       $grpc.ClientMethod<$6.MeasureProgressRequest, $1.StringValue>(
           '/auge.protobuf.MeasureService/CreateMeasureProgress',
@@ -237,14 +197,6 @@ class MeasureServiceClient extends $grpc.Client {
       {$grpc.CallOptions options}) {
     final call = $createCall(
         _$getMeasures, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
-  }
-
-  $grpc.ResponseFuture<$6.Measure> getMeasure($6.MeasureGetRequest request,
-      {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$getMeasure, $async.Stream.fromIterable([request]),
         options: options);
     return $grpc.ResponseFuture(call);
   }
@@ -278,15 +230,6 @@ class MeasureServiceClient extends $grpc.Client {
       {$grpc.CallOptions options}) {
     final call = $createCall(
         _$getMeasureProgresses, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
-  }
-
-  $grpc.ResponseFuture<$6.MeasureProgress> getMeasureProgress(
-      $6.MeasureProgressGetRequest request,
-      {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$getMeasureProgress, $async.Stream.fromIterable([request]),
         options: options);
     return $grpc.ResponseFuture(call);
   }
@@ -330,13 +273,6 @@ abstract class MeasureServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $6.MeasureGetRequest.fromBuffer(value),
         ($6.MeasuresResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$6.MeasureGetRequest, $6.Measure>(
-        'GetMeasure',
-        getMeasure_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $6.MeasureGetRequest.fromBuffer(value),
-        ($6.Measure value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$6.MeasureRequest, $1.StringValue>(
         'CreateMeasure',
         createMeasure_Pre,
@@ -368,15 +304,6 @@ abstract class MeasureServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $6.MeasureProgressGetRequest.fromBuffer(value),
         ($6.MeasureProgressesResponse value) => value.writeToBuffer()));
-    $addMethod(
-        $grpc.ServiceMethod<$6.MeasureProgressGetRequest, $6.MeasureProgress>(
-            'GetMeasureProgress',
-            getMeasureProgress_Pre,
-            false,
-            false,
-            ($core.List<$core.int> value) =>
-                $6.MeasureProgressGetRequest.fromBuffer(value),
-            ($6.MeasureProgress value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$6.MeasureProgressRequest, $1.StringValue>(
         'CreateMeasureProgress',
         createMeasureProgress_Pre,
@@ -408,11 +335,6 @@ abstract class MeasureServiceBase extends $grpc.Service {
     return getMeasures(call, await request);
   }
 
-  $async.Future<$6.Measure> getMeasure_Pre($grpc.ServiceCall call,
-      $async.Future<$6.MeasureGetRequest> request) async {
-    return getMeasure(call, await request);
-  }
-
   $async.Future<$1.StringValue> createMeasure_Pre(
       $grpc.ServiceCall call, $async.Future<$6.MeasureRequest> request) async {
     return createMeasure(call, await request);
@@ -434,12 +356,6 @@ abstract class MeasureServiceBase extends $grpc.Service {
     return getMeasureProgresses(call, await request);
   }
 
-  $async.Future<$6.MeasureProgress> getMeasureProgress_Pre(
-      $grpc.ServiceCall call,
-      $async.Future<$6.MeasureProgressGetRequest> request) async {
-    return getMeasureProgress(call, await request);
-  }
-
   $async.Future<$1.StringValue> createMeasureProgress_Pre(
       $grpc.ServiceCall call,
       $async.Future<$6.MeasureProgressRequest> request) async {
@@ -458,8 +374,6 @@ abstract class MeasureServiceBase extends $grpc.Service {
 
   $async.Future<$6.MeasuresResponse> getMeasures(
       $grpc.ServiceCall call, $6.MeasureGetRequest request);
-  $async.Future<$6.Measure> getMeasure(
-      $grpc.ServiceCall call, $6.MeasureGetRequest request);
   $async.Future<$1.StringValue> createMeasure(
       $grpc.ServiceCall call, $6.MeasureRequest request);
   $async.Future<$2.Empty> updateMeasure(
@@ -467,8 +381,6 @@ abstract class MeasureServiceBase extends $grpc.Service {
   $async.Future<$2.Empty> deleteMeasure(
       $grpc.ServiceCall call, $6.MeasureDeleteRequest request);
   $async.Future<$6.MeasureProgressesResponse> getMeasureProgresses(
-      $grpc.ServiceCall call, $6.MeasureProgressGetRequest request);
-  $async.Future<$6.MeasureProgress> getMeasureProgress(
       $grpc.ServiceCall call, $6.MeasureProgressGetRequest request);
   $async.Future<$1.StringValue> createMeasureProgress(
       $grpc.ServiceCall call, $6.MeasureProgressRequest request);

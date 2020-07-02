@@ -15,6 +15,11 @@ import '../general/group.pb.dart' as $4;
 import '../general/user.pb.dart' as $3;
 import '../general/unit_of_measurement.pb.dart' as $5;
 
+import 'objective_measure.pbenum.dart';
+import '../general/user.pbenum.dart' as $3;
+
+export 'objective_measure.pbenum.dart';
+
 class Objective extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo('Objective', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
     ..aOS(1, 'id')
@@ -311,11 +316,12 @@ class ObjectiveGetRequest extends $pb.GeneratedMessage {
     ..aOS(2, 'organizationId')
     ..a<$core.int>(3, 'alignedToRecursive', $pb.PbFieldType.O3)
     ..aOB(4, 'treeAlignedWithChildren')
-    ..aOB(5, 'withMeasures')
-    ..aOB(6, 'withUserProfile')
-    ..aOB(7, 'withArchived')
-    ..pPS(8, 'groupIds')
-    ..pPS(9, 'leaderUserIds')
+    ..e<RestrictObjective>(5, 'restrictObjective', $pb.PbFieldType.OE, defaultOrMaker: RestrictObjective.objectiveNone, valueOf: RestrictObjective.valueOf, enumValues: RestrictObjective.values)
+    ..e<RestrictMeasure>(6, 'restrictMeasure', $pb.PbFieldType.OE, defaultOrMaker: RestrictMeasure.measureNone, valueOf: RestrictMeasure.valueOf, enumValues: RestrictMeasure.values)
+    ..e<$3.RestrictUserProfile>(7, 'restrictUserProfile', $pb.PbFieldType.OE, defaultOrMaker: $3.RestrictUserProfile.userProfileNone, valueOf: $3.RestrictUserProfile.valueOf, enumValues: $3.RestrictUserProfile.values)
+    ..aOB(8, 'withArchived')
+    ..pPS(9, 'groupIds')
+    ..pPS(10, 'leaderUserIds')
     ..hasRequiredFields = false
   ;
 
@@ -371,37 +377,46 @@ class ObjectiveGetRequest extends $pb.GeneratedMessage {
   void clearTreeAlignedWithChildren() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.bool get withMeasures => $_getBF(4);
+  RestrictObjective get restrictObjective => $_getN(4);
   @$pb.TagNumber(5)
-  set withMeasures($core.bool v) { $_setBool(4, v); }
+  set restrictObjective(RestrictObjective v) { setField(5, v); }
   @$pb.TagNumber(5)
-  $core.bool hasWithMeasures() => $_has(4);
+  $core.bool hasRestrictObjective() => $_has(4);
   @$pb.TagNumber(5)
-  void clearWithMeasures() => clearField(5);
+  void clearRestrictObjective() => clearField(5);
 
   @$pb.TagNumber(6)
-  $core.bool get withUserProfile => $_getBF(5);
+  RestrictMeasure get restrictMeasure => $_getN(5);
   @$pb.TagNumber(6)
-  set withUserProfile($core.bool v) { $_setBool(5, v); }
+  set restrictMeasure(RestrictMeasure v) { setField(6, v); }
   @$pb.TagNumber(6)
-  $core.bool hasWithUserProfile() => $_has(5);
+  $core.bool hasRestrictMeasure() => $_has(5);
   @$pb.TagNumber(6)
-  void clearWithUserProfile() => clearField(6);
+  void clearRestrictMeasure() => clearField(6);
 
   @$pb.TagNumber(7)
-  $core.bool get withArchived => $_getBF(6);
+  $3.RestrictUserProfile get restrictUserProfile => $_getN(6);
   @$pb.TagNumber(7)
-  set withArchived($core.bool v) { $_setBool(6, v); }
+  set restrictUserProfile($3.RestrictUserProfile v) { setField(7, v); }
   @$pb.TagNumber(7)
-  $core.bool hasWithArchived() => $_has(6);
+  $core.bool hasRestrictUserProfile() => $_has(6);
   @$pb.TagNumber(7)
-  void clearWithArchived() => clearField(7);
+  void clearRestrictUserProfile() => clearField(7);
 
   @$pb.TagNumber(8)
-  $core.List<$core.String> get groupIds => $_getList(7);
+  $core.bool get withArchived => $_getBF(7);
+  @$pb.TagNumber(8)
+  set withArchived($core.bool v) { $_setBool(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasWithArchived() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearWithArchived() => clearField(8);
 
   @$pb.TagNumber(9)
-  $core.List<$core.String> get leaderUserIds => $_getList(8);
+  $core.List<$core.String> get groupIds => $_getList(8);
+
+  @$pb.TagNumber(10)
+  $core.List<$core.String> get leaderUserIds => $_getList(9);
 }
 
 class ObjectivesResponse extends $pb.GeneratedMessage {
@@ -721,8 +736,8 @@ class MeasureGetRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo('MeasureGetRequest', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
     ..aOS(1, 'objectiveId')
     ..aOS(2, 'id')
-    ..aOB(3, 'withObjective')
-    ..aOB(4, 'withUserProfile')
+    ..e<RestrictObjective>(3, 'restrictObjective', $pb.PbFieldType.OE, defaultOrMaker: RestrictObjective.objectiveNone, valueOf: RestrictObjective.valueOf, enumValues: RestrictObjective.values)
+    ..e<$3.RestrictUserProfile>(4, 'restricUserProfile', $pb.PbFieldType.OE, defaultOrMaker: $3.RestrictUserProfile.userProfileNone, valueOf: $3.RestrictUserProfile.valueOf, enumValues: $3.RestrictUserProfile.values)
     ..hasRequiredFields = false
   ;
 
@@ -760,22 +775,22 @@ class MeasureGetRequest extends $pb.GeneratedMessage {
   void clearId() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.bool get withObjective => $_getBF(2);
+  RestrictObjective get restrictObjective => $_getN(2);
   @$pb.TagNumber(3)
-  set withObjective($core.bool v) { $_setBool(2, v); }
+  set restrictObjective(RestrictObjective v) { setField(3, v); }
   @$pb.TagNumber(3)
-  $core.bool hasWithObjective() => $_has(2);
+  $core.bool hasRestrictObjective() => $_has(2);
   @$pb.TagNumber(3)
-  void clearWithObjective() => clearField(3);
+  void clearRestrictObjective() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.bool get withUserProfile => $_getBF(3);
+  $3.RestrictUserProfile get restricUserProfile => $_getN(3);
   @$pb.TagNumber(4)
-  set withUserProfile($core.bool v) { $_setBool(3, v); }
+  set restricUserProfile($3.RestrictUserProfile v) { setField(4, v); }
   @$pb.TagNumber(4)
-  $core.bool hasWithUserProfile() => $_has(3);
+  $core.bool hasRestricUserProfile() => $_has(3);
   @$pb.TagNumber(4)
-  void clearWithUserProfile() => clearField(4);
+  void clearRestricUserProfile() => clearField(4);
 }
 
 class MeasureProgress extends $pb.GeneratedMessage {
@@ -1016,9 +1031,9 @@ class MeasureProgressGetRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo('MeasureProgressGetRequest', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
     ..aOS(1, 'id')
     ..aOS(2, 'measureId')
-    ..aOB(3, 'withMeasure')
-    ..aOB(4, 'withObjective')
-    ..aOB(5, 'withUserProfile')
+    ..e<RestrictMeasure>(3, 'restrictMeasure', $pb.PbFieldType.OE, defaultOrMaker: RestrictMeasure.measureNone, valueOf: RestrictMeasure.valueOf, enumValues: RestrictMeasure.values)
+    ..e<RestrictObjective>(4, 'restrictObjective', $pb.PbFieldType.OE, defaultOrMaker: RestrictObjective.objectiveNone, valueOf: RestrictObjective.valueOf, enumValues: RestrictObjective.values)
+    ..e<$3.RestrictUserProfile>(5, 'restrictUserProfile', $pb.PbFieldType.OE, defaultOrMaker: $3.RestrictUserProfile.userProfileNone, valueOf: $3.RestrictUserProfile.valueOf, enumValues: $3.RestrictUserProfile.values)
     ..hasRequiredFields = false
   ;
 
@@ -1056,30 +1071,30 @@ class MeasureProgressGetRequest extends $pb.GeneratedMessage {
   void clearMeasureId() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.bool get withMeasure => $_getBF(2);
+  RestrictMeasure get restrictMeasure => $_getN(2);
   @$pb.TagNumber(3)
-  set withMeasure($core.bool v) { $_setBool(2, v); }
+  set restrictMeasure(RestrictMeasure v) { setField(3, v); }
   @$pb.TagNumber(3)
-  $core.bool hasWithMeasure() => $_has(2);
+  $core.bool hasRestrictMeasure() => $_has(2);
   @$pb.TagNumber(3)
-  void clearWithMeasure() => clearField(3);
+  void clearRestrictMeasure() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.bool get withObjective => $_getBF(3);
+  RestrictObjective get restrictObjective => $_getN(3);
   @$pb.TagNumber(4)
-  set withObjective($core.bool v) { $_setBool(3, v); }
+  set restrictObjective(RestrictObjective v) { setField(4, v); }
   @$pb.TagNumber(4)
-  $core.bool hasWithObjective() => $_has(3);
+  $core.bool hasRestrictObjective() => $_has(3);
   @$pb.TagNumber(4)
-  void clearWithObjective() => clearField(4);
+  void clearRestrictObjective() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.bool get withUserProfile => $_getBF(4);
+  $3.RestrictUserProfile get restrictUserProfile => $_getN(4);
   @$pb.TagNumber(5)
-  set withUserProfile($core.bool v) { $_setBool(4, v); }
+  set restrictUserProfile($3.RestrictUserProfile v) { setField(5, v); }
   @$pb.TagNumber(5)
-  $core.bool hasWithUserProfile() => $_has(4);
+  $core.bool hasRestrictUserProfile() => $_has(4);
   @$pb.TagNumber(5)
-  void clearWithUserProfile() => clearField(5);
+  void clearRestrictUserProfile() => clearField(5);
 }
 

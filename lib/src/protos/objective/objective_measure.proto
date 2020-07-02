@@ -18,7 +18,7 @@ import "general/unit_of_measurement.proto";
 service ObjectiveService {
 
   rpc GetObjectives (ObjectiveGetRequest) returns (ObjectivesResponse) {}
-  rpc GetObjective (ObjectiveGetRequest) returns (Objective) {}
+  // rpc GetObjective (ObjectiveGetRequest) returns (Objective) {}
 
   rpc CreateObjective (ObjectiveRequest) returns (google.protobuf.StringValue) {}
   rpc UpdateObjective (ObjectiveRequest) returns (google.protobuf.Empty) {}
@@ -68,17 +68,26 @@ message Objectives {
   repeated Objective objectives = 1;
 }
 
-// Used to query select params
+
+enum RestrictObjective {
+  objectiveNone = 0;
+  objectiveIdName = 1;
+  objectiveIdNameStartDateEndDate = 2;
+}
+
+
+// Used to query Restrict params
 message ObjectiveGetRequest {
   string id = 1;
   string organization_id = 2;
   int32 aligned_to_recursive = 3;
   bool tree_aligned_with_children = 4;
-  bool with_measures = 5;
-  bool with_user_profile = 6;
-  bool with_archived = 7;
-  repeated string group_ids = 8;
-  repeated string leader_user_ids = 9;
+  RestrictObjective restrict_objective = 5;
+  RestrictMeasure restrict_measure = 6;
+  RestrictUserProfile restrict_user_profile = 7;
+  bool with_archived = 8;
+  repeated string group_ids = 9;
+  repeated string leader_user_ids = 10;
 }
 
 // Response list of the objectives
@@ -91,14 +100,14 @@ message ObjectivesResponse {
 service MeasureService {
 
   rpc GetMeasures (MeasureGetRequest) returns (MeasuresResponse) {}
-  rpc GetMeasure (MeasureGetRequest) returns (Measure) {}
+  // rpc GetMeasure (MeasureGetRequest) returns (Measure) {}
 
   rpc CreateMeasure (MeasureRequest) returns (google.protobuf.StringValue) {}
   rpc UpdateMeasure (MeasureRequest) returns (google.protobuf.Empty) {}
   rpc DeleteMeasure (MeasureDeleteRequest) returns (google.protobuf.Empty) {}
 
   rpc GetMeasureProgresses (MeasureProgressGetRequest) returns (MeasureProgressesResponse) {}
-  rpc GetMeasureProgress (MeasureProgressGetRequest) returns (MeasureProgress) {}
+  // rpc GetMeasureProgress (MeasureProgressGetRequest) returns (MeasureProgress) {}
 
   rpc CreateMeasureProgress (MeasureProgressRequest) returns (google.protobuf.StringValue) {}
   rpc UpdateMeasureProgress (MeasureProgressRequest) returns (google.protobuf.Empty) {}
@@ -150,12 +159,16 @@ message MeasuresResponse {
   repeated Measure measures = 1;
 }
 
-// Request for query select
+enum RestrictMeasure {
+  measureNone = 0;
+}
+
+// Request for query Restrict
 message MeasureGetRequest {
   string objective_id = 1;
   string id = 2;
-  bool with_objective = 3;
-  bool with_user_profile = 4;
+  RestrictObjective restrict_objective = 3;
+  RestrictUserProfile restric_user_profile = 4;
 }
 
 // Message to respective domain object.
@@ -193,11 +206,11 @@ message MeasureProgressesResponse {
   repeated MeasureProgress measure_progresses = 1;
 }
 
-// Request for query select
+// Request for query Restrict
 message MeasureProgressGetRequest {
   string id = 1;
   string measure_id = 2;
-  bool with_measure = 3;
-  bool with_objective = 4;
-  bool with_user_profile = 5;
+  RestrictMeasure restrict_measure = 3;
+  RestrictObjective restrict_objective = 4;
+  RestrictUserProfile restrict_user_profile = 5;
 }

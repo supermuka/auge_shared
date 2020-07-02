@@ -74,9 +74,9 @@ message OrganizationDirectoryServiceAuthRequest {
     string password = 3;
 }
 
-// Request for query select
+// Request for query Restrict
 message OrganizationDirectoryServiceGetRequest {
     string id = 1;
     string organization_id = 2;
-    bool with_organization = 3;
+    RestrictOrganization restrict_organization = 3;
 }

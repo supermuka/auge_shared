@@ -22,11 +22,6 @@ class OrganizationServiceClient extends $grpc.Client {
           ($0.OrganizationGetRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
               $0.OrganizationsResponse.fromBuffer(value));
-  static final _$getOrganization =
-      $grpc.ClientMethod<$0.OrganizationGetRequest, $0.Organization>(
-          '/auge.protobuf.OrganizationService/GetOrganization',
-          ($0.OrganizationGetRequest value) => value.writeToBuffer(),
-          ($core.List<$core.int> value) => $0.Organization.fromBuffer(value));
   static final _$createOrganization =
       $grpc.ClientMethod<$0.OrganizationRequest, $1.StringValue>(
           '/auge.protobuf.OrganizationService/CreateOrganization',
@@ -52,15 +47,6 @@ class OrganizationServiceClient extends $grpc.Client {
       {$grpc.CallOptions options}) {
     final call = $createCall(
         _$getOrganizations, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
-  }
-
-  $grpc.ResponseFuture<$0.Organization> getOrganization(
-      $0.OrganizationGetRequest request,
-      {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$getOrganization, $async.Stream.fromIterable([request]),
         options: options);
     return $grpc.ResponseFuture(call);
   }
@@ -106,14 +92,6 @@ abstract class OrganizationServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $0.OrganizationGetRequest.fromBuffer(value),
         ($0.OrganizationsResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.OrganizationGetRequest, $0.Organization>(
-        'GetOrganization',
-        getOrganization_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) =>
-            $0.OrganizationGetRequest.fromBuffer(value),
-        ($0.Organization value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.OrganizationRequest, $1.StringValue>(
         'CreateOrganization',
         createOrganization_Pre,
@@ -146,11 +124,6 @@ abstract class OrganizationServiceBase extends $grpc.Service {
     return getOrganizations(call, await request);
   }
 
-  $async.Future<$0.Organization> getOrganization_Pre($grpc.ServiceCall call,
-      $async.Future<$0.OrganizationGetRequest> request) async {
-    return getOrganization(call, await request);
-  }
-
   $async.Future<$1.StringValue> createOrganization_Pre($grpc.ServiceCall call,
       $async.Future<$0.OrganizationRequest> request) async {
     return createOrganization(call, await request);
@@ -167,8 +140,6 @@ abstract class OrganizationServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.OrganizationsResponse> getOrganizations(
-      $grpc.ServiceCall call, $0.OrganizationGetRequest request);
-  $async.Future<$0.Organization> getOrganization(
       $grpc.ServiceCall call, $0.OrganizationGetRequest request);
   $async.Future<$1.StringValue> createOrganization(
       $grpc.ServiceCall call, $0.OrganizationRequest request);

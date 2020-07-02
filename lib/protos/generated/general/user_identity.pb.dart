@@ -255,7 +255,6 @@ class UserIdentityGetRequest extends $pb.GeneratedMessage {
     ..aOS(3, 'password')
     ..aOS(4, 'userId')
     ..aOS(5, 'managedByOrganizationId')
-    ..aOB(6, 'withUserProfile')
     ..hasRequiredFields = false
   ;
 
@@ -318,15 +317,6 @@ class UserIdentityGetRequest extends $pb.GeneratedMessage {
   $core.bool hasManagedByOrganizationId() => $_has(4);
   @$pb.TagNumber(5)
   void clearManagedByOrganizationId() => clearField(5);
-
-  @$pb.TagNumber(6)
-  $core.bool get withUserProfile => $_getBF(5);
-  @$pb.TagNumber(6)
-  set withUserProfile($core.bool v) { $_setBool(5, v); }
-  @$pb.TagNumber(6)
-  $core.bool hasWithUserProfile() => $_has(5);
-  @$pb.TagNumber(6)
-  void clearWithUserProfile() => clearField(6);
 }
 
 class NewPasswordCodeRequest extends $pb.GeneratedMessage {

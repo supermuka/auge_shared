@@ -20,7 +20,7 @@ import "objective/objective_measure.proto";
 service WorkService {
 
     rpc GetWorks (WorkGetRequest) returns (WorksResponse) {}
-    rpc GetWork (WorkGetRequest) returns (Work) {}
+  //  rpc GetWork (WorkGetRequest) returns (Work) {}
 
     rpc CreateWork (WorkRequest) returns (google.protobuf.StringValue) {}
     rpc UpdateWork (WorkRequest) returns (google.protobuf.Empty) {}
@@ -68,26 +68,32 @@ message WorksResponse {
     repeated Work works = 1;
 }
 
+enum RestrictWork {
+    workNone = 0;
+    workIdName = 1;
+}
+
 // Request for query param
 message WorkGetRequest {
     string id = 1;
     string organization_id = 2;
     string objective_id = 3;
-    bool with_organization = 4;
-    bool with_work_items = 5;
-    bool with_user_profile = 6;
-    bool with_archived = 7;
-    repeated string group_ids = 8;
-    repeated string leader_user_ids = 9;
-    bool work_item_with_archived = 10;
-    repeated string work_item_assigned_to_ids = 11;
+    RestrictWork restrict_work = 4;
+    RestrictOrganization restrict_organization = 5;
+    RestrictWorkItem restrict_work_item = 6;
+    RestrictUserProfile restrict_user_profile = 7;
+    bool with_archived = 8;
+    repeated string group_ids = 9;
+    repeated string leader_user_ids = 10;
+    bool work_item_with_archived = 11;
+    repeated string work_item_assigned_to_ids = 12;
 }
 
 // The service definition.
 service WorkItemService {
 
     rpc GetWorkItems (WorkItemGetRequest) returns (WorkItemsResponse) {}
-    rpc GetWorkItem (WorkItemGetRequest) returns (WorkItem) {}
+  //  rpc GetWorkItem (WorkItemGetRequest) returns (WorkItem) {}
 
     rpc CreateWorkItem (WorkItemRequest) returns (google.protobuf.StringValue) {}
     rpc UpdateWorkItem (WorkItemRequest) returns (google.protobuf.Empty) {}
@@ -131,7 +137,7 @@ message WorkItem {
     Work work = 14;
 }
 
-// Request for query select
+// Request for query Restrict
 message WorkItemRequest {
     WorkItem work_item = 1;
     string work_id = 2; // used just to identify parent on request
@@ -153,13 +159,18 @@ message WorkItemsResponse {
     //bool webWorkAround = 2;
 }
 
+enum RestrictWorkItem {
+    workItemNone = 0;
+    workItemIdName = 1;
+}
+
 // Request for Work Item
 message WorkItemGetRequest {
     string id = 1;
     string work_id = 2;
     string organization_id = 3;
-    bool with_work = 4;
-    bool with_user_profile = 5;
+    RestrictWork restrict_work = 4;
+    RestrictUserProfile restrict_user_profile = 5;
     bool with_archived = 6;
     repeated string assigned_to_ids = 7;
 }
@@ -204,7 +215,7 @@ message WorkItemCheckItem {
    // string work_item_check_item_id = 6; // Just to pass parent id
 }
 
-// Request for query select
+// Request for query Restrict
 message WorkItemCheckItemRequest {
     WorkItemCheckItem work_item_check_item = 1;
     string work_item_id = 2; // used just to identify parent on request
@@ -228,7 +239,7 @@ message WorkItemCheckItemGetRequest {
 // The service definition.
 service WorkStageService {
     rpc GetWorkStages (WorkStageGetRequest) returns (WorkStagesResponse) {}
-    rpc GetWorkStage (WorkStageGetRequest) returns (WorkStage) {}
+  //  rpc GetWorkStage (WorkStageGetRequest) returns (WorkStage) {}
 
     rpc CreateWorkStage (WorkStageRequest) returns (google.protobuf.StringValue) {}
     rpc UpdateWorkStage (WorkStageRequest) returns (google.protobuf.Empty) {}
@@ -254,9 +265,9 @@ message WorkStage {
 // Request related for model domain
 message WorkStageRequest {
     WorkStage work_stage = 1;
-    string work_id = 2;
-    string auth_user_id = 3;
-    string auth_organization_id = 4;
+    //string work_id = 2;
+    string auth_user_id = 2;
+    string auth_organization_id = 3;
 }
 
 // Request message for delete related for model domain
@@ -277,8 +288,7 @@ message WorkStageGetRequest {
 
     string id = 1;
     string work_id = 2;
-    bool with_work = 3;
-    bool with_user_profile = 4;
+    RestrictWork restrict_Work = 3;
 }
 
 /// *** WORKITEMVALUE
@@ -317,11 +327,11 @@ message WorkItemValuesResponse {
     repeated WorkItemValue work_item_values = 1;
 }
 
-// Request for query select
+// Request for query Restrict
 message WorkItemValueGetRequest {
     string id = 1;
     string work_item_id = 2;
-    bool with_work_item = 3;
-    bool with_work = 4;
-    bool with_user_profile = 5;
+    RestrictWorkItem restrict_work_item = 3;
+    RestrictWork restrict_work = 4;
+    RestrictUserProfile restrict_user_profile = 5;
 }

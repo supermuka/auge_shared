@@ -5,6 +5,14 @@
 // @dart = 2.3
 // ignore_for_file: camel_case_types,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type
 
+const RestrictGroup$json = const {
+  '1': 'RestrictGroup',
+  '2': const [
+    const {'1': 'groupNone', '2': 0},
+    const {'1': 'groupIdName', '2': 1},
+  ],
+};
+
 const Group$json = const {
   '1': 'Group',
   '2': const [
@@ -44,9 +52,10 @@ const GroupGetRequest$json = const {
   '2': const [
     const {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
     const {'1': 'organization_id', '3': 2, '4': 1, '5': 9, '10': 'organizationId'},
-    const {'1': 'with_organization', '3': 3, '4': 1, '5': 8, '10': 'withOrganization'},
-    const {'1': 'only_id_and_name', '3': 4, '4': 1, '5': 8, '10': 'onlyIdAndName'},
-    const {'1': 'aligned_to_recursive', '3': 5, '4': 1, '5': 5, '10': 'alignedToRecursive'},
+    const {'1': 'restrict_group', '3': 3, '4': 1, '5': 14, '6': '.auge.protobuf.RestrictGroup', '10': 'restrictGroup'},
+    const {'1': 'restrict_organization', '3': 4, '4': 1, '5': 14, '6': '.auge.protobuf.RestrictOrganization', '10': 'restrictOrganization'},
+    const {'1': 'restrict_user', '3': 5, '4': 1, '5': 14, '6': '.auge.protobuf.RestrictUser', '10': 'restrictUser'},
+    const {'1': 'aligned_to_recursive', '3': 6, '4': 1, '5': 5, '10': 'alignedToRecursive'},
   ],
 };
 

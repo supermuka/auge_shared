@@ -12,6 +12,8 @@ import 'package:protobuf/protobuf.dart' as $pb;
 import 'user.pb.dart' as $3;
 import 'organization.pb.dart' as $0;
 
+import 'user.pbenum.dart' as $3;
+
 class UserAccess extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo('UserAccess', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
     ..aOS(1, 'id')
@@ -92,7 +94,7 @@ class UserAccessRequest extends $pb.GeneratedMessage {
     ..aOM<UserAccess>(1, 'userAccess', subBuilder: UserAccess.create)
     ..aOS(2, 'authUserId')
     ..aOS(3, 'authOrganizationId')
-    ..aOB(4, 'withUserProfile')
+    ..e<$3.RestrictUserProfile>(4, 'restrictUserProfile', $pb.PbFieldType.OE, defaultOrMaker: $3.RestrictUserProfile.userProfileNone, valueOf: $3.RestrictUserProfile.valueOf, enumValues: $3.RestrictUserProfile.values)
     ..hasRequiredFields = false
   ;
 
@@ -141,13 +143,13 @@ class UserAccessRequest extends $pb.GeneratedMessage {
   void clearAuthOrganizationId() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.bool get withUserProfile => $_getBF(3);
+  $3.RestrictUserProfile get restrictUserProfile => $_getN(3);
   @$pb.TagNumber(4)
-  set withUserProfile($core.bool v) { $_setBool(3, v); }
+  set restrictUserProfile($3.RestrictUserProfile v) { setField(4, v); }
   @$pb.TagNumber(4)
-  $core.bool hasWithUserProfile() => $_has(3);
+  $core.bool hasRestrictUserProfile() => $_has(3);
   @$pb.TagNumber(4)
-  void clearWithUserProfile() => clearField(4);
+  void clearRestrictUserProfile() => clearField(4);
 }
 
 class UserAccessDeleteRequest extends $pb.GeneratedMessage {
@@ -218,7 +220,6 @@ class UserAccessGetRequest extends $pb.GeneratedMessage {
     ..aOS(3, 'organizationId')
     ..aOS(4, 'identification')
     ..aOS(5, 'password')
-    ..aOB(6, 'withUserProfile')
     ..hasRequiredFields = false
   ;
 
@@ -281,15 +282,6 @@ class UserAccessGetRequest extends $pb.GeneratedMessage {
   $core.bool hasPassword() => $_has(4);
   @$pb.TagNumber(5)
   void clearPassword() => clearField(5);
-
-  @$pb.TagNumber(6)
-  $core.bool get withUserProfile => $_getBF(5);
-  @$pb.TagNumber(6)
-  set withUserProfile($core.bool v) { $_setBool(5, v); }
-  @$pb.TagNumber(6)
-  $core.bool hasWithUserProfile() => $_has(5);
-  @$pb.TagNumber(6)
-  void clearWithUserProfile() => clearField(6);
 }
 
 class UserAccessesResponse extends $pb.GeneratedMessage {

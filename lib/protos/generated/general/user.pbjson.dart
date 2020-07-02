@@ -5,6 +5,23 @@
 // @dart = 2.3
 // ignore_for_file: camel_case_types,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type
 
+const RestrictUser$json = const {
+  '1': 'RestrictUser',
+  '2': const [
+    const {'1': 'userNone', '2': 0},
+    const {'1': 'userIdName', '2': 1},
+  ],
+};
+
+const RestrictUserProfile$json = const {
+  '1': 'RestrictUserProfile',
+  '2': const [
+    const {'1': 'userProfileNone', '2': 0},
+    const {'1': 'userProfileImage', '2': 1},
+    const {'1': 'userProfileNotificationEmailIdiom', '2': 2},
+  ],
+};
+
 const User$json = const {
   '1': 'User',
   '2': const [
@@ -53,9 +70,8 @@ const UserGetRequest$json = const {
     const {'1': 'managed_by_organization_id', '3': 2, '4': 1, '5': 9, '10': 'managedByOrganizationId'},
     const {'1': 'managed_by_organization_id_or_accessed_by_organization_id', '3': 3, '4': 1, '5': 9, '10': 'managedByOrganizationIdOrAccessedByOrganizationId'},
     const {'1': 'accessedByOrganizationId', '3': 4, '4': 1, '5': 9, '10': 'accessedByOrganizationId'},
-    const {'1': 'only_id_and_name', '3': 5, '4': 1, '5': 8, '10': 'onlyIdAndName'},
-    const {'1': 'with_user_profile', '3': 6, '4': 1, '5': 8, '10': 'withUserProfile'},
-    const {'1': 'with_objective', '3': 7, '4': 1, '5': 8, '10': 'withObjective'},
+    const {'1': 'restrict_User', '3': 6, '4': 1, '5': 14, '6': '.auge.protobuf.RestrictUser', '10': 'restrictUser'},
+    const {'1': 'restrict_user_profile', '3': 7, '4': 1, '5': 14, '6': '.auge.protobuf.RestrictUserProfile', '10': 'restrictUserProfile'},
   ],
 };
 

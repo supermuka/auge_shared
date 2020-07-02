@@ -13,7 +13,7 @@ import "general/user.proto";
 service UserIdentityService {
 
     rpc GetUserIdentities (UserIdentityGetRequest) returns (UserIdentitiesResponse) {}
-    rpc GetUserIdentity (UserIdentityGetRequest) returns (UserIdentity) {}
+//    rpc GetUserIdentity (UserIdentityGetRequest) returns (UserIdentity) {}
 
     rpc CreateUserIdentity (UserIdentityRequest) returns (google.protobuf.StringValue) {}
     rpc UpdateUserIdentity (UserIdentityRequest) returns (google.protobuf.Empty) {}
@@ -58,7 +58,7 @@ message UserIdentityGetRequest {
     string password = 3;
     string user_id = 4;
     string managed_by_organization_id = 5;
-    bool with_user_profile = 6;
+   // RestrictUserProfile restrict_user_profile = 6;
 }
 
 message NewPasswordCodeRequest {

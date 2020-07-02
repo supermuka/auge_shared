@@ -26,7 +26,7 @@ const UserControlGetRequest$json = const {
   '1': 'UserControlGetRequest',
   '2': const [
     const {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
-    const {'1': 'with_user', '3': 2, '4': 1, '5': 8, '10': 'withUser'},
+    const {'1': 'restrict_user', '3': 2, '4': 1, '5': 14, '6': '.auge.protobuf.RestrictUser', '10': 'restrictUser'},
   ],
 };
 

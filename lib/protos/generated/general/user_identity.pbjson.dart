@@ -48,7 +48,6 @@ const UserIdentityGetRequest$json = const {
     const {'1': 'password', '3': 3, '4': 1, '5': 9, '10': 'password'},
     const {'1': 'user_id', '3': 4, '4': 1, '5': 9, '10': 'userId'},
     const {'1': 'managed_by_organization_id', '3': 5, '4': 1, '5': 9, '10': 'managedByOrganizationId'},
-    const {'1': 'with_user_profile', '3': 6, '4': 1, '5': 8, '10': 'withUserProfile'},
   ],
 };
 

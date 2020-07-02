@@ -14,7 +14,7 @@ import "general/organization.proto";
 service GroupService {
 
     rpc GetGroups (GroupGetRequest) returns (GroupsResponse) {}
-    rpc GetGroup (GroupGetRequest) returns (Group) {}
+   // rpc GetGroup (GroupGetRequest) returns (Group) {}
 
     rpc CreateGroup (GroupRequest) returns (google.protobuf.StringValue) {}
     rpc UpdateGroup (GroupRequest) returns (google.protobuf.Empty) {}
@@ -51,16 +51,21 @@ message GroupDeleteRequest {
     string auth_organization_id = 4;
 }
 
-// Request for query select
+enum RestrictGroup {
+    groupNone = 0;
+    groupIdName = 1;
+}
+// Request for query Restrict
 message GroupGetRequest {
     string id = 1;
     string organization_id = 2;
-    bool with_organization = 3;
-    bool only_id_and_name = 4;
-    int32 aligned_to_recursive = 5;
+    RestrictGroup restrict_group = 3;
+    RestrictOrganization restrict_organization = 4;
+    RestrictUser restrict_user = 5;
+    int32 aligned_to_recursive = 6;
 }
 
-// Request for query select
+// Request for query Restrict
 message GroupTypeGetRequest {
     string id = 1;
 }

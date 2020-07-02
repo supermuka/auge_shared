@@ -21,10 +21,6 @@ class GroupServiceClient extends $grpc.Client {
           '/auge.protobuf.GroupService/GetGroups',
           ($4.GroupGetRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $4.GroupsResponse.fromBuffer(value));
-  static final _$getGroup = $grpc.ClientMethod<$4.GroupGetRequest, $4.Group>(
-      '/auge.protobuf.GroupService/GetGroup',
-      ($4.GroupGetRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $4.Group.fromBuffer(value));
   static final _$createGroup =
       $grpc.ClientMethod<$4.GroupRequest, $1.StringValue>(
           '/auge.protobuf.GroupService/CreateGroup',
@@ -46,13 +42,6 @@ class GroupServiceClient extends $grpc.Client {
   $grpc.ResponseFuture<$4.GroupsResponse> getGroups($4.GroupGetRequest request,
       {$grpc.CallOptions options}) {
     final call = $createCall(_$getGroups, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
-  }
-
-  $grpc.ResponseFuture<$4.Group> getGroup($4.GroupGetRequest request,
-      {$grpc.CallOptions options}) {
-    final call = $createCall(_$getGroup, $async.Stream.fromIterable([request]),
         options: options);
     return $grpc.ResponseFuture(call);
   }
@@ -93,13 +82,6 @@ abstract class GroupServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $4.GroupGetRequest.fromBuffer(value),
         ($4.GroupsResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$4.GroupGetRequest, $4.Group>(
-        'GetGroup',
-        getGroup_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $4.GroupGetRequest.fromBuffer(value),
-        ($4.Group value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$4.GroupRequest, $1.StringValue>(
         'CreateGroup',
         createGroup_Pre,
@@ -129,11 +111,6 @@ abstract class GroupServiceBase extends $grpc.Service {
     return getGroups(call, await request);
   }
 
-  $async.Future<$4.Group> getGroup_Pre(
-      $grpc.ServiceCall call, $async.Future<$4.GroupGetRequest> request) async {
-    return getGroup(call, await request);
-  }
-
   $async.Future<$1.StringValue> createGroup_Pre(
       $grpc.ServiceCall call, $async.Future<$4.GroupRequest> request) async {
     return createGroup(call, await request);
@@ -150,8 +127,6 @@ abstract class GroupServiceBase extends $grpc.Service {
   }
 
   $async.Future<$4.GroupsResponse> getGroups(
-      $grpc.ServiceCall call, $4.GroupGetRequest request);
-  $async.Future<$4.Group> getGroup(
       $grpc.ServiceCall call, $4.GroupGetRequest request);
   $async.Future<$1.StringValue> createGroup(
       $grpc.ServiceCall call, $4.GroupRequest request);

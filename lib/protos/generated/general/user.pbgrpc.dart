@@ -21,10 +21,6 @@ class UserServiceClient extends $grpc.Client {
           '/auge.protobuf.UserService/GetUsers',
           ($3.UserGetRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $3.UsersResponse.fromBuffer(value));
-  static final _$getUser = $grpc.ClientMethod<$3.UserGetRequest, $3.User>(
-      '/auge.protobuf.UserService/GetUser',
-      ($3.UserGetRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $3.User.fromBuffer(value));
   static final _$createUser =
       $grpc.ClientMethod<$3.UserRequest, $1.StringValue>(
           '/auge.protobuf.UserService/CreateUser',
@@ -46,13 +42,6 @@ class UserServiceClient extends $grpc.Client {
   $grpc.ResponseFuture<$3.UsersResponse> getUsers($3.UserGetRequest request,
       {$grpc.CallOptions options}) {
     final call = $createCall(_$getUsers, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
-  }
-
-  $grpc.ResponseFuture<$3.User> getUser($3.UserGetRequest request,
-      {$grpc.CallOptions options}) {
-    final call = $createCall(_$getUser, $async.Stream.fromIterable([request]),
         options: options);
     return $grpc.ResponseFuture(call);
   }
@@ -93,13 +82,6 @@ abstract class UserServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $3.UserGetRequest.fromBuffer(value),
         ($3.UsersResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$3.UserGetRequest, $3.User>(
-        'GetUser',
-        getUser_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $3.UserGetRequest.fromBuffer(value),
-        ($3.User value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$3.UserRequest, $1.StringValue>(
         'CreateUser',
         createUser_Pre,
@@ -128,11 +110,6 @@ abstract class UserServiceBase extends $grpc.Service {
     return getUsers(call, await request);
   }
 
-  $async.Future<$3.User> getUser_Pre(
-      $grpc.ServiceCall call, $async.Future<$3.UserGetRequest> request) async {
-    return getUser(call, await request);
-  }
-
   $async.Future<$1.StringValue> createUser_Pre(
       $grpc.ServiceCall call, $async.Future<$3.UserRequest> request) async {
     return createUser(call, await request);
@@ -149,8 +126,6 @@ abstract class UserServiceBase extends $grpc.Service {
   }
 
   $async.Future<$3.UsersResponse> getUsers(
-      $grpc.ServiceCall call, $3.UserGetRequest request);
-  $async.Future<$3.User> getUser(
       $grpc.ServiceCall call, $3.UserGetRequest request);
   $async.Future<$1.StringValue> createUser(
       $grpc.ServiceCall call, $3.UserRequest request);

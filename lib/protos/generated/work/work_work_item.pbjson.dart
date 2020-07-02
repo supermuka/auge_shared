@@ -5,6 +5,22 @@
 // @dart = 2.3
 // ignore_for_file: camel_case_types,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type
 
+const RestrictWork$json = const {
+  '1': 'RestrictWork',
+  '2': const [
+    const {'1': 'workNone', '2': 0},
+    const {'1': 'workIdName', '2': 1},
+  ],
+};
+
+const RestrictWorkItem$json = const {
+  '1': 'RestrictWorkItem',
+  '2': const [
+    const {'1': 'workItemNone', '2': 0},
+    const {'1': 'workItemIdName', '2': 1},
+  ],
+};
+
 const Work$json = const {
   '1': 'Work',
   '2': const [
@@ -54,14 +70,15 @@ const WorkGetRequest$json = const {
     const {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
     const {'1': 'organization_id', '3': 2, '4': 1, '5': 9, '10': 'organizationId'},
     const {'1': 'objective_id', '3': 3, '4': 1, '5': 9, '10': 'objectiveId'},
-    const {'1': 'with_organization', '3': 4, '4': 1, '5': 8, '10': 'withOrganization'},
-    const {'1': 'with_work_items', '3': 5, '4': 1, '5': 8, '10': 'withWorkItems'},
-    const {'1': 'with_user_profile', '3': 6, '4': 1, '5': 8, '10': 'withUserProfile'},
-    const {'1': 'with_archived', '3': 7, '4': 1, '5': 8, '10': 'withArchived'},
-    const {'1': 'group_ids', '3': 8, '4': 3, '5': 9, '10': 'groupIds'},
-    const {'1': 'leader_user_ids', '3': 9, '4': 3, '5': 9, '10': 'leaderUserIds'},
-    const {'1': 'work_item_with_archived', '3': 10, '4': 1, '5': 8, '10': 'workItemWithArchived'},
-    const {'1': 'work_item_assigned_to_ids', '3': 11, '4': 3, '5': 9, '10': 'workItemAssignedToIds'},
+    const {'1': 'restrict_work', '3': 4, '4': 1, '5': 14, '6': '.auge.protobuf.RestrictWork', '10': 'restrictWork'},
+    const {'1': 'restrict_organization', '3': 5, '4': 1, '5': 14, '6': '.auge.protobuf.RestrictOrganization', '10': 'restrictOrganization'},
+    const {'1': 'restrict_work_item', '3': 6, '4': 1, '5': 14, '6': '.auge.protobuf.RestrictWorkItem', '10': 'restrictWorkItem'},
+    const {'1': 'restrict_user_profile', '3': 7, '4': 1, '5': 14, '6': '.auge.protobuf.RestrictUserProfile', '10': 'restrictUserProfile'},
+    const {'1': 'with_archived', '3': 8, '4': 1, '5': 8, '10': 'withArchived'},
+    const {'1': 'group_ids', '3': 9, '4': 3, '5': 9, '10': 'groupIds'},
+    const {'1': 'leader_user_ids', '3': 10, '4': 3, '5': 9, '10': 'leaderUserIds'},
+    const {'1': 'work_item_with_archived', '3': 11, '4': 1, '5': 8, '10': 'workItemWithArchived'},
+    const {'1': 'work_item_assigned_to_ids', '3': 12, '4': 3, '5': 9, '10': 'workItemAssignedToIds'},
   ],
 };
 
@@ -118,8 +135,8 @@ const WorkItemGetRequest$json = const {
     const {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
     const {'1': 'work_id', '3': 2, '4': 1, '5': 9, '10': 'workId'},
     const {'1': 'organization_id', '3': 3, '4': 1, '5': 9, '10': 'organizationId'},
-    const {'1': 'with_work', '3': 4, '4': 1, '5': 8, '10': 'withWork'},
-    const {'1': 'with_user_profile', '3': 5, '4': 1, '5': 8, '10': 'withUserProfile'},
+    const {'1': 'restrict_work', '3': 4, '4': 1, '5': 14, '6': '.auge.protobuf.RestrictWork', '10': 'restrictWork'},
+    const {'1': 'restrict_user_profile', '3': 5, '4': 1, '5': 14, '6': '.auge.protobuf.RestrictUserProfile', '10': 'restrictUserProfile'},
     const {'1': 'with_archived', '3': 6, '4': 1, '5': 8, '10': 'withArchived'},
     const {'1': 'assigned_to_ids', '3': 7, '4': 3, '5': 9, '10': 'assignedToIds'},
   ],
@@ -202,9 +219,8 @@ const WorkStageRequest$json = const {
   '1': 'WorkStageRequest',
   '2': const [
     const {'1': 'work_stage', '3': 1, '4': 1, '5': 11, '6': '.auge.protobuf.WorkStage', '10': 'workStage'},
-    const {'1': 'work_id', '3': 2, '4': 1, '5': 9, '10': 'workId'},
-    const {'1': 'auth_user_id', '3': 3, '4': 1, '5': 9, '10': 'authUserId'},
-    const {'1': 'auth_organization_id', '3': 4, '4': 1, '5': 9, '10': 'authOrganizationId'},
+    const {'1': 'auth_user_id', '3': 2, '4': 1, '5': 9, '10': 'authUserId'},
+    const {'1': 'auth_organization_id', '3': 3, '4': 1, '5': 9, '10': 'authOrganizationId'},
   ],
 };
 
@@ -230,8 +246,7 @@ const WorkStageGetRequest$json = const {
   '2': const [
     const {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
     const {'1': 'work_id', '3': 2, '4': 1, '5': 9, '10': 'workId'},
-    const {'1': 'with_work', '3': 3, '4': 1, '5': 8, '10': 'withWork'},
-    const {'1': 'with_user_profile', '3': 4, '4': 1, '5': 8, '10': 'withUserProfile'},
+    const {'1': 'restrict_Work', '3': 3, '4': 1, '5': 14, '6': '.auge.protobuf.RestrictWork', '10': 'restrictWork'},
   ],
 };
 
@@ -279,9 +294,9 @@ const WorkItemValueGetRequest$json = const {
   '2': const [
     const {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
     const {'1': 'work_item_id', '3': 2, '4': 1, '5': 9, '10': 'workItemId'},
-    const {'1': 'with_work_item', '3': 3, '4': 1, '5': 8, '10': 'withWorkItem'},
-    const {'1': 'with_work', '3': 4, '4': 1, '5': 8, '10': 'withWork'},
-    const {'1': 'with_user_profile', '3': 5, '4': 1, '5': 8, '10': 'withUserProfile'},
+    const {'1': 'restrict_work_item', '3': 3, '4': 1, '5': 14, '6': '.auge.protobuf.RestrictWorkItem', '10': 'restrictWorkItem'},
+    const {'1': 'restrict_work', '3': 4, '4': 1, '5': 14, '6': '.auge.protobuf.RestrictWork', '10': 'restrictWork'},
+    const {'1': 'restrict_user_profile', '3': 5, '4': 1, '5': 14, '6': '.auge.protobuf.RestrictUserProfile', '10': 'restrictUserProfile'},
   ],
 };
 

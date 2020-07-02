@@ -22,11 +22,6 @@ class UserIdentityServiceClient extends $grpc.Client {
           ($4.UserIdentityGetRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
               $4.UserIdentitiesResponse.fromBuffer(value));
-  static final _$getUserIdentity =
-      $grpc.ClientMethod<$4.UserIdentityGetRequest, $4.UserIdentity>(
-          '/auge.protobuf.UserIdentityService/GetUserIdentity',
-          ($4.UserIdentityGetRequest value) => value.writeToBuffer(),
-          ($core.List<$core.int> value) => $4.UserIdentity.fromBuffer(value));
   static final _$createUserIdentity =
       $grpc.ClientMethod<$4.UserIdentityRequest, $1.StringValue>(
           '/auge.protobuf.UserIdentityService/CreateUserIdentity',
@@ -63,15 +58,6 @@ class UserIdentityServiceClient extends $grpc.Client {
       {$grpc.CallOptions options}) {
     final call = $createCall(
         _$getUserIdentities, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
-  }
-
-  $grpc.ResponseFuture<$4.UserIdentity> getUserIdentity(
-      $4.UserIdentityGetRequest request,
-      {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$getUserIdentity, $async.Stream.fromIterable([request]),
         options: options);
     return $grpc.ResponseFuture(call);
   }
@@ -135,14 +121,6 @@ abstract class UserIdentityServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $4.UserIdentityGetRequest.fromBuffer(value),
         ($4.UserIdentitiesResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$4.UserIdentityGetRequest, $4.UserIdentity>(
-        'GetUserIdentity',
-        getUserIdentity_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) =>
-            $4.UserIdentityGetRequest.fromBuffer(value),
-        ($4.UserIdentity value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$4.UserIdentityRequest, $1.StringValue>(
         'CreateUserIdentity',
         createUserIdentity_Pre,
@@ -192,11 +170,6 @@ abstract class UserIdentityServiceBase extends $grpc.Service {
     return getUserIdentities(call, await request);
   }
 
-  $async.Future<$4.UserIdentity> getUserIdentity_Pre($grpc.ServiceCall call,
-      $async.Future<$4.UserIdentityGetRequest> request) async {
-    return getUserIdentity(call, await request);
-  }
-
   $async.Future<$1.StringValue> createUserIdentity_Pre($grpc.ServiceCall call,
       $async.Future<$4.UserIdentityRequest> request) async {
     return createUserIdentity(call, await request);
@@ -224,8 +197,6 @@ abstract class UserIdentityServiceBase extends $grpc.Service {
   }
 
   $async.Future<$4.UserIdentitiesResponse> getUserIdentities(
-      $grpc.ServiceCall call, $4.UserIdentityGetRequest request);
-  $async.Future<$4.UserIdentity> getUserIdentity(
       $grpc.ServiceCall call, $4.UserIdentityGetRequest request);
   $async.Future<$1.StringValue> createUserIdentity(
       $grpc.ServiceCall call, $4.UserIdentityRequest request);

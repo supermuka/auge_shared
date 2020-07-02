@@ -9,6 +9,10 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
+import 'organization.pbenum.dart';
+
+export 'organization.pbenum.dart';
+
 class Organization extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo('Organization', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
     ..aOS(1, 'id')
@@ -187,7 +191,7 @@ class OrganizationDeleteRequest extends $pb.GeneratedMessage {
 class OrganizationGetRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo('OrganizationGetRequest', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
     ..aOS(1, 'id')
-    ..aOB(2, 'onlyIdAndName')
+    ..e<RestrictOrganization>(2, 'restrictOrganization', $pb.PbFieldType.OE, defaultOrMaker: RestrictOrganization.organizationNone, valueOf: RestrictOrganization.valueOf, enumValues: RestrictOrganization.values)
     ..hasRequiredFields = false
   ;
 
@@ -216,13 +220,13 @@ class OrganizationGetRequest extends $pb.GeneratedMessage {
   void clearId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.bool get onlyIdAndName => $_getBF(1);
+  RestrictOrganization get restrictOrganization => $_getN(1);
   @$pb.TagNumber(2)
-  set onlyIdAndName($core.bool v) { $_setBool(1, v); }
+  set restrictOrganization(RestrictOrganization v) { setField(2, v); }
   @$pb.TagNumber(2)
-  $core.bool hasOnlyIdAndName() => $_has(1);
+  $core.bool hasRestrictOrganization() => $_has(1);
   @$pb.TagNumber(2)
-  void clearOnlyIdAndName() => clearField(2);
+  void clearRestrictOrganization() => clearField(2);
 }
 
 class OrganizationsResponse extends $pb.GeneratedMessage {

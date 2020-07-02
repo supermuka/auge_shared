@@ -456,7 +456,7 @@ message MessageOptions {
   // All extensions of your type must be singular messages; e.g. they cannot
   // be int32s, enums, or repeated messages.
   //
-  // Because this is an option, the above two restrictions are not enforced by
+  // Because this is an option, the above two Restrictions are not enforced by
   // the protocol compiler.
   optional bool message_set_wire_format = 1 [default=false];
 

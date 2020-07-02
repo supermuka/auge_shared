@@ -21,10 +21,6 @@ class WorkServiceClient extends $grpc.Client {
           '/auge.protobuf.WorkService/GetWorks',
           ($7.WorkGetRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $7.WorksResponse.fromBuffer(value));
-  static final _$getWork = $grpc.ClientMethod<$7.WorkGetRequest, $7.Work>(
-      '/auge.protobuf.WorkService/GetWork',
-      ($7.WorkGetRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $7.Work.fromBuffer(value));
   static final _$createWork =
       $grpc.ClientMethod<$7.WorkRequest, $1.StringValue>(
           '/auge.protobuf.WorkService/CreateWork',
@@ -46,13 +42,6 @@ class WorkServiceClient extends $grpc.Client {
   $grpc.ResponseFuture<$7.WorksResponse> getWorks($7.WorkGetRequest request,
       {$grpc.CallOptions options}) {
     final call = $createCall(_$getWorks, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
-  }
-
-  $grpc.ResponseFuture<$7.Work> getWork($7.WorkGetRequest request,
-      {$grpc.CallOptions options}) {
-    final call = $createCall(_$getWork, $async.Stream.fromIterable([request]),
         options: options);
     return $grpc.ResponseFuture(call);
   }
@@ -93,13 +82,6 @@ abstract class WorkServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $7.WorkGetRequest.fromBuffer(value),
         ($7.WorksResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$7.WorkGetRequest, $7.Work>(
-        'GetWork',
-        getWork_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $7.WorkGetRequest.fromBuffer(value),
-        ($7.Work value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$7.WorkRequest, $1.StringValue>(
         'CreateWork',
         createWork_Pre,
@@ -128,11 +110,6 @@ abstract class WorkServiceBase extends $grpc.Service {
     return getWorks(call, await request);
   }
 
-  $async.Future<$7.Work> getWork_Pre(
-      $grpc.ServiceCall call, $async.Future<$7.WorkGetRequest> request) async {
-    return getWork(call, await request);
-  }
-
   $async.Future<$1.StringValue> createWork_Pre(
       $grpc.ServiceCall call, $async.Future<$7.WorkRequest> request) async {
     return createWork(call, await request);
@@ -150,8 +127,6 @@ abstract class WorkServiceBase extends $grpc.Service {
 
   $async.Future<$7.WorksResponse> getWorks(
       $grpc.ServiceCall call, $7.WorkGetRequest request);
-  $async.Future<$7.Work> getWork(
-      $grpc.ServiceCall call, $7.WorkGetRequest request);
   $async.Future<$1.StringValue> createWork(
       $grpc.ServiceCall call, $7.WorkRequest request);
   $async.Future<$2.Empty> updateWork(
@@ -167,11 +142,6 @@ class WorkItemServiceClient extends $grpc.Client {
           ($7.WorkItemGetRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
               $7.WorkItemsResponse.fromBuffer(value));
-  static final _$getWorkItem =
-      $grpc.ClientMethod<$7.WorkItemGetRequest, $7.WorkItem>(
-          '/auge.protobuf.WorkItemService/GetWorkItem',
-          ($7.WorkItemGetRequest value) => value.writeToBuffer(),
-          ($core.List<$core.int> value) => $7.WorkItem.fromBuffer(value));
   static final _$createWorkItem =
       $grpc.ClientMethod<$7.WorkItemRequest, $1.StringValue>(
           '/auge.protobuf.WorkItemService/CreateWorkItem',
@@ -234,14 +204,6 @@ class WorkItemServiceClient extends $grpc.Client {
       {$grpc.CallOptions options}) {
     final call = $createCall(
         _$getWorkItems, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
-  }
-
-  $grpc.ResponseFuture<$7.WorkItem> getWorkItem($7.WorkItemGetRequest request,
-      {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$getWorkItem, $async.Stream.fromIterable([request]),
         options: options);
     return $grpc.ResponseFuture(call);
   }
@@ -348,14 +310,6 @@ abstract class WorkItemServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $7.WorkItemGetRequest.fromBuffer(value),
         ($7.WorkItemsResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$7.WorkItemGetRequest, $7.WorkItem>(
-        'GetWorkItem',
-        getWorkItem_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) =>
-            $7.WorkItemGetRequest.fromBuffer(value),
-        ($7.WorkItem value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$7.WorkItemRequest, $1.StringValue>(
         'CreateWorkItem',
         createWorkItem_Pre,
@@ -445,11 +399,6 @@ abstract class WorkItemServiceBase extends $grpc.Service {
     return getWorkItems(call, await request);
   }
 
-  $async.Future<$7.WorkItem> getWorkItem_Pre($grpc.ServiceCall call,
-      $async.Future<$7.WorkItemGetRequest> request) async {
-    return getWorkItem(call, await request);
-  }
-
   $async.Future<$1.StringValue> createWorkItem_Pre(
       $grpc.ServiceCall call, $async.Future<$7.WorkItemRequest> request) async {
     return createWorkItem(call, await request);
@@ -505,8 +454,6 @@ abstract class WorkItemServiceBase extends $grpc.Service {
 
   $async.Future<$7.WorkItemsResponse> getWorkItems(
       $grpc.ServiceCall call, $7.WorkItemGetRequest request);
-  $async.Future<$7.WorkItem> getWorkItem(
-      $grpc.ServiceCall call, $7.WorkItemGetRequest request);
   $async.Future<$1.StringValue> createWorkItem(
       $grpc.ServiceCall call, $7.WorkItemRequest request);
   $async.Future<$2.Empty> updateWorkItem(
@@ -536,11 +483,6 @@ class WorkStageServiceClient extends $grpc.Client {
           ($7.WorkStageGetRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
               $7.WorkStagesResponse.fromBuffer(value));
-  static final _$getWorkStage =
-      $grpc.ClientMethod<$7.WorkStageGetRequest, $7.WorkStage>(
-          '/auge.protobuf.WorkStageService/GetWorkStage',
-          ($7.WorkStageGetRequest value) => value.writeToBuffer(),
-          ($core.List<$core.int> value) => $7.WorkStage.fromBuffer(value));
   static final _$createWorkStage =
       $grpc.ClientMethod<$7.WorkStageRequest, $1.StringValue>(
           '/auge.protobuf.WorkStageService/CreateWorkStage',
@@ -566,15 +508,6 @@ class WorkStageServiceClient extends $grpc.Client {
       {$grpc.CallOptions options}) {
     final call = $createCall(
         _$getWorkStages, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
-  }
-
-  $grpc.ResponseFuture<$7.WorkStage> getWorkStage(
-      $7.WorkStageGetRequest request,
-      {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$getWorkStage, $async.Stream.fromIterable([request]),
         options: options);
     return $grpc.ResponseFuture(call);
   }
@@ -619,14 +552,6 @@ abstract class WorkStageServiceBase extends $grpc.Service {
             ($core.List<$core.int> value) =>
                 $7.WorkStageGetRequest.fromBuffer(value),
             ($7.WorkStagesResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$7.WorkStageGetRequest, $7.WorkStage>(
-        'GetWorkStage',
-        getWorkStage_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) =>
-            $7.WorkStageGetRequest.fromBuffer(value),
-        ($7.WorkStage value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$7.WorkStageRequest, $1.StringValue>(
         'CreateWorkStage',
         createWorkStage_Pre,
@@ -656,11 +581,6 @@ abstract class WorkStageServiceBase extends $grpc.Service {
     return getWorkStages(call, await request);
   }
 
-  $async.Future<$7.WorkStage> getWorkStage_Pre($grpc.ServiceCall call,
-      $async.Future<$7.WorkStageGetRequest> request) async {
-    return getWorkStage(call, await request);
-  }
-
   $async.Future<$1.StringValue> createWorkStage_Pre($grpc.ServiceCall call,
       $async.Future<$7.WorkStageRequest> request) async {
     return createWorkStage(call, await request);
@@ -677,8 +597,6 @@ abstract class WorkStageServiceBase extends $grpc.Service {
   }
 
   $async.Future<$7.WorkStagesResponse> getWorkStages(
-      $grpc.ServiceCall call, $7.WorkStageGetRequest request);
-  $async.Future<$7.WorkStage> getWorkStage(
       $grpc.ServiceCall call, $7.WorkStageGetRequest request);
   $async.Future<$1.StringValue> createWorkStage(
       $grpc.ServiceCall call, $7.WorkStageRequest request);

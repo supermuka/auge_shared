@@ -16,6 +16,12 @@ import '../general/user.pb.dart' as $3;
 import '../google/protobuf/timestamp.pb.dart' as $8;
 import '../general/unit_of_measurement.pb.dart' as $5;
 
+import 'work_work_item.pbenum.dart';
+import '../general/organization.pbenum.dart' as $0;
+import '../general/user.pbenum.dart' as $3;
+
+export 'work_work_item.pbenum.dart';
+
 class Work extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo('Work', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
     ..aOS(1, 'id')
@@ -287,14 +293,15 @@ class WorkGetRequest extends $pb.GeneratedMessage {
     ..aOS(1, 'id')
     ..aOS(2, 'organizationId')
     ..aOS(3, 'objectiveId')
-    ..aOB(4, 'withOrganization')
-    ..aOB(5, 'withWorkItems')
-    ..aOB(6, 'withUserProfile')
-    ..aOB(7, 'withArchived')
-    ..pPS(8, 'groupIds')
-    ..pPS(9, 'leaderUserIds')
-    ..aOB(10, 'workItemWithArchived')
-    ..pPS(11, 'workItemAssignedToIds')
+    ..e<RestrictWork>(4, 'restrictWork', $pb.PbFieldType.OE, defaultOrMaker: RestrictWork.workNone, valueOf: RestrictWork.valueOf, enumValues: RestrictWork.values)
+    ..e<$0.RestrictOrganization>(5, 'restrictOrganization', $pb.PbFieldType.OE, defaultOrMaker: $0.RestrictOrganization.organizationNone, valueOf: $0.RestrictOrganization.valueOf, enumValues: $0.RestrictOrganization.values)
+    ..e<RestrictWorkItem>(6, 'restrictWorkItem', $pb.PbFieldType.OE, defaultOrMaker: RestrictWorkItem.workItemNone, valueOf: RestrictWorkItem.valueOf, enumValues: RestrictWorkItem.values)
+    ..e<$3.RestrictUserProfile>(7, 'restrictUserProfile', $pb.PbFieldType.OE, defaultOrMaker: $3.RestrictUserProfile.userProfileNone, valueOf: $3.RestrictUserProfile.valueOf, enumValues: $3.RestrictUserProfile.values)
+    ..aOB(8, 'withArchived')
+    ..pPS(9, 'groupIds')
+    ..pPS(10, 'leaderUserIds')
+    ..aOB(11, 'workItemWithArchived')
+    ..pPS(12, 'workItemAssignedToIds')
     ..hasRequiredFields = false
   ;
 
@@ -341,58 +348,67 @@ class WorkGetRequest extends $pb.GeneratedMessage {
   void clearObjectiveId() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.bool get withOrganization => $_getBF(3);
+  RestrictWork get restrictWork => $_getN(3);
   @$pb.TagNumber(4)
-  set withOrganization($core.bool v) { $_setBool(3, v); }
+  set restrictWork(RestrictWork v) { setField(4, v); }
   @$pb.TagNumber(4)
-  $core.bool hasWithOrganization() => $_has(3);
+  $core.bool hasRestrictWork() => $_has(3);
   @$pb.TagNumber(4)
-  void clearWithOrganization() => clearField(4);
+  void clearRestrictWork() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.bool get withWorkItems => $_getBF(4);
+  $0.RestrictOrganization get restrictOrganization => $_getN(4);
   @$pb.TagNumber(5)
-  set withWorkItems($core.bool v) { $_setBool(4, v); }
+  set restrictOrganization($0.RestrictOrganization v) { setField(5, v); }
   @$pb.TagNumber(5)
-  $core.bool hasWithWorkItems() => $_has(4);
+  $core.bool hasRestrictOrganization() => $_has(4);
   @$pb.TagNumber(5)
-  void clearWithWorkItems() => clearField(5);
+  void clearRestrictOrganization() => clearField(5);
 
   @$pb.TagNumber(6)
-  $core.bool get withUserProfile => $_getBF(5);
+  RestrictWorkItem get restrictWorkItem => $_getN(5);
   @$pb.TagNumber(6)
-  set withUserProfile($core.bool v) { $_setBool(5, v); }
+  set restrictWorkItem(RestrictWorkItem v) { setField(6, v); }
   @$pb.TagNumber(6)
-  $core.bool hasWithUserProfile() => $_has(5);
+  $core.bool hasRestrictWorkItem() => $_has(5);
   @$pb.TagNumber(6)
-  void clearWithUserProfile() => clearField(6);
+  void clearRestrictWorkItem() => clearField(6);
 
   @$pb.TagNumber(7)
-  $core.bool get withArchived => $_getBF(6);
+  $3.RestrictUserProfile get restrictUserProfile => $_getN(6);
   @$pb.TagNumber(7)
-  set withArchived($core.bool v) { $_setBool(6, v); }
+  set restrictUserProfile($3.RestrictUserProfile v) { setField(7, v); }
   @$pb.TagNumber(7)
-  $core.bool hasWithArchived() => $_has(6);
+  $core.bool hasRestrictUserProfile() => $_has(6);
   @$pb.TagNumber(7)
-  void clearWithArchived() => clearField(7);
+  void clearRestrictUserProfile() => clearField(7);
 
   @$pb.TagNumber(8)
-  $core.List<$core.String> get groupIds => $_getList(7);
+  $core.bool get withArchived => $_getBF(7);
+  @$pb.TagNumber(8)
+  set withArchived($core.bool v) { $_setBool(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasWithArchived() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearWithArchived() => clearField(8);
 
   @$pb.TagNumber(9)
-  $core.List<$core.String> get leaderUserIds => $_getList(8);
+  $core.List<$core.String> get groupIds => $_getList(8);
 
   @$pb.TagNumber(10)
-  $core.bool get workItemWithArchived => $_getBF(9);
-  @$pb.TagNumber(10)
-  set workItemWithArchived($core.bool v) { $_setBool(9, v); }
-  @$pb.TagNumber(10)
-  $core.bool hasWorkItemWithArchived() => $_has(9);
-  @$pb.TagNumber(10)
-  void clearWorkItemWithArchived() => clearField(10);
+  $core.List<$core.String> get leaderUserIds => $_getList(9);
 
   @$pb.TagNumber(11)
-  $core.List<$core.String> get workItemAssignedToIds => $_getList(10);
+  $core.bool get workItemWithArchived => $_getBF(10);
+  @$pb.TagNumber(11)
+  set workItemWithArchived($core.bool v) { $_setBool(10, v); }
+  @$pb.TagNumber(11)
+  $core.bool hasWorkItemWithArchived() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearWorkItemWithArchived() => clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.List<$core.String> get workItemAssignedToIds => $_getList(11);
 }
 
 class WorkItem extends $pb.GeneratedMessage {
@@ -700,8 +716,8 @@ class WorkItemGetRequest extends $pb.GeneratedMessage {
     ..aOS(1, 'id')
     ..aOS(2, 'workId')
     ..aOS(3, 'organizationId')
-    ..aOB(4, 'withWork')
-    ..aOB(5, 'withUserProfile')
+    ..e<RestrictWork>(4, 'restrictWork', $pb.PbFieldType.OE, defaultOrMaker: RestrictWork.workNone, valueOf: RestrictWork.valueOf, enumValues: RestrictWork.values)
+    ..e<$3.RestrictUserProfile>(5, 'restrictUserProfile', $pb.PbFieldType.OE, defaultOrMaker: $3.RestrictUserProfile.userProfileNone, valueOf: $3.RestrictUserProfile.valueOf, enumValues: $3.RestrictUserProfile.values)
     ..aOB(6, 'withArchived')
     ..pPS(7, 'assignedToIds')
     ..hasRequiredFields = false
@@ -750,22 +766,22 @@ class WorkItemGetRequest extends $pb.GeneratedMessage {
   void clearOrganizationId() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.bool get withWork => $_getBF(3);
+  RestrictWork get restrictWork => $_getN(3);
   @$pb.TagNumber(4)
-  set withWork($core.bool v) { $_setBool(3, v); }
+  set restrictWork(RestrictWork v) { setField(4, v); }
   @$pb.TagNumber(4)
-  $core.bool hasWithWork() => $_has(3);
+  $core.bool hasRestrictWork() => $_has(3);
   @$pb.TagNumber(4)
-  void clearWithWork() => clearField(4);
+  void clearRestrictWork() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.bool get withUserProfile => $_getBF(4);
+  $3.RestrictUserProfile get restrictUserProfile => $_getN(4);
   @$pb.TagNumber(5)
-  set withUserProfile($core.bool v) { $_setBool(4, v); }
+  set restrictUserProfile($3.RestrictUserProfile v) { setField(5, v); }
   @$pb.TagNumber(5)
-  $core.bool hasWithUserProfile() => $_has(4);
+  $core.bool hasRestrictUserProfile() => $_has(4);
   @$pb.TagNumber(5)
-  void clearWithUserProfile() => clearField(5);
+  void clearRestrictUserProfile() => clearField(5);
 
   @$pb.TagNumber(6)
   $core.bool get withArchived => $_getBF(5);
@@ -1193,9 +1209,8 @@ class WorkStage extends $pb.GeneratedMessage {
 class WorkStageRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo('WorkStageRequest', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
     ..aOM<WorkStage>(1, 'workStage', subBuilder: WorkStage.create)
-    ..aOS(2, 'workId')
-    ..aOS(3, 'authUserId')
-    ..aOS(4, 'authOrganizationId')
+    ..aOS(2, 'authUserId')
+    ..aOS(3, 'authOrganizationId')
     ..hasRequiredFields = false
   ;
 
@@ -1226,31 +1241,22 @@ class WorkStageRequest extends $pb.GeneratedMessage {
   WorkStage ensureWorkStage() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.String get workId => $_getSZ(1);
+  $core.String get authUserId => $_getSZ(1);
   @$pb.TagNumber(2)
-  set workId($core.String v) { $_setString(1, v); }
+  set authUserId($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasWorkId() => $_has(1);
+  $core.bool hasAuthUserId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearWorkId() => clearField(2);
+  void clearAuthUserId() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.String get authUserId => $_getSZ(2);
+  $core.String get authOrganizationId => $_getSZ(2);
   @$pb.TagNumber(3)
-  set authUserId($core.String v) { $_setString(2, v); }
+  set authOrganizationId($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasAuthUserId() => $_has(2);
+  $core.bool hasAuthOrganizationId() => $_has(2);
   @$pb.TagNumber(3)
-  void clearAuthUserId() => clearField(3);
-
-  @$pb.TagNumber(4)
-  $core.String get authOrganizationId => $_getSZ(3);
-  @$pb.TagNumber(4)
-  set authOrganizationId($core.String v) { $_setString(3, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasAuthOrganizationId() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearAuthOrganizationId() => clearField(4);
+  void clearAuthOrganizationId() => clearField(3);
 }
 
 class WorkStageDeleteRequest extends $pb.GeneratedMessage {
@@ -1343,8 +1349,7 @@ class WorkStageGetRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo('WorkStageGetRequest', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
     ..aOS(1, 'id')
     ..aOS(2, 'workId')
-    ..aOB(3, 'withWork')
-    ..aOB(4, 'withUserProfile')
+    ..e<RestrictWork>(3, 'restrictWork', $pb.PbFieldType.OE, protoName: 'restrict_Work', defaultOrMaker: RestrictWork.workNone, valueOf: RestrictWork.valueOf, enumValues: RestrictWork.values)
     ..hasRequiredFields = false
   ;
 
@@ -1382,22 +1387,13 @@ class WorkStageGetRequest extends $pb.GeneratedMessage {
   void clearWorkId() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.bool get withWork => $_getBF(2);
+  RestrictWork get restrictWork => $_getN(2);
   @$pb.TagNumber(3)
-  set withWork($core.bool v) { $_setBool(2, v); }
+  set restrictWork(RestrictWork v) { setField(3, v); }
   @$pb.TagNumber(3)
-  $core.bool hasWithWork() => $_has(2);
+  $core.bool hasRestrictWork() => $_has(2);
   @$pb.TagNumber(3)
-  void clearWithWork() => clearField(3);
-
-  @$pb.TagNumber(4)
-  $core.bool get withUserProfile => $_getBF(3);
-  @$pb.TagNumber(4)
-  set withUserProfile($core.bool v) { $_setBool(3, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasWithUserProfile() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearWithUserProfile() => clearField(4);
+  void clearRestrictWork() => clearField(3);
 }
 
 class WorkItemValue extends $pb.GeneratedMessage {
@@ -1638,9 +1634,9 @@ class WorkItemValueGetRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo('WorkItemValueGetRequest', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
     ..aOS(1, 'id')
     ..aOS(2, 'workItemId')
-    ..aOB(3, 'withWorkItem')
-    ..aOB(4, 'withWork')
-    ..aOB(5, 'withUserProfile')
+    ..e<RestrictWorkItem>(3, 'restrictWorkItem', $pb.PbFieldType.OE, defaultOrMaker: RestrictWorkItem.workItemNone, valueOf: RestrictWorkItem.valueOf, enumValues: RestrictWorkItem.values)
+    ..e<RestrictWork>(4, 'restrictWork', $pb.PbFieldType.OE, defaultOrMaker: RestrictWork.workNone, valueOf: RestrictWork.valueOf, enumValues: RestrictWork.values)
+    ..e<$3.RestrictUserProfile>(5, 'restrictUserProfile', $pb.PbFieldType.OE, defaultOrMaker: $3.RestrictUserProfile.userProfileNone, valueOf: $3.RestrictUserProfile.valueOf, enumValues: $3.RestrictUserProfile.values)
     ..hasRequiredFields = false
   ;
 
@@ -1678,30 +1674,30 @@ class WorkItemValueGetRequest extends $pb.GeneratedMessage {
   void clearWorkItemId() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.bool get withWorkItem => $_getBF(2);
+  RestrictWorkItem get restrictWorkItem => $_getN(2);
   @$pb.TagNumber(3)
-  set withWorkItem($core.bool v) { $_setBool(2, v); }
+  set restrictWorkItem(RestrictWorkItem v) { setField(3, v); }
   @$pb.TagNumber(3)
-  $core.bool hasWithWorkItem() => $_has(2);
+  $core.bool hasRestrictWorkItem() => $_has(2);
   @$pb.TagNumber(3)
-  void clearWithWorkItem() => clearField(3);
+  void clearRestrictWorkItem() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.bool get withWork => $_getBF(3);
+  RestrictWork get restrictWork => $_getN(3);
   @$pb.TagNumber(4)
-  set withWork($core.bool v) { $_setBool(3, v); }
+  set restrictWork(RestrictWork v) { setField(4, v); }
   @$pb.TagNumber(4)
-  $core.bool hasWithWork() => $_has(3);
+  $core.bool hasRestrictWork() => $_has(3);
   @$pb.TagNumber(4)
-  void clearWithWork() => clearField(4);
+  void clearRestrictWork() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.bool get withUserProfile => $_getBF(4);
+  $3.RestrictUserProfile get restrictUserProfile => $_getN(4);
   @$pb.TagNumber(5)
-  set withUserProfile($core.bool v) { $_setBool(4, v); }
+  set restrictUserProfile($3.RestrictUserProfile v) { setField(5, v); }
   @$pb.TagNumber(5)
-  $core.bool hasWithUserProfile() => $_has(4);
+  $core.bool hasRestrictUserProfile() => $_has(4);
   @$pb.TagNumber(5)
-  void clearWithUserProfile() => clearField(5);
+  void clearRestrictUserProfile() => clearField(5);
 }
 

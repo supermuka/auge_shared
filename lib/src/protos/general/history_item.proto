@@ -31,7 +31,7 @@ message HistoryItem {
    string changed_values = 11;
 }
 
-// Request for query select
+// Request for query Restrict
 message HistoryItemGetRequest {
    string id = 1;
    string organization_id = 2;

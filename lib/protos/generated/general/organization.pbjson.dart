@@ -5,6 +5,14 @@
 // @dart = 2.3
 // ignore_for_file: camel_case_types,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type
 
+const RestrictOrganization$json = const {
+  '1': 'RestrictOrganization',
+  '2': const [
+    const {'1': 'organizationNone', '2': 0},
+    const {'1': 'organizationIdName', '2': 1},
+  ],
+};
+
 const Organization$json = const {
   '1': 'Organization',
   '2': const [
@@ -38,7 +46,7 @@ const OrganizationGetRequest$json = const {
   '1': 'OrganizationGetRequest',
   '2': const [
     const {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
-    const {'1': 'only_id_and_name', '3': 2, '4': 1, '5': 8, '10': 'onlyIdAndName'},
+    const {'1': 'restrict_organization', '3': 2, '4': 1, '5': 14, '6': '.auge.protobuf.RestrictOrganization', '10': 'restrictOrganization'},
   ],
 };
 
