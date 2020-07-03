@@ -74,11 +74,12 @@ const ObjectiveGetRequest$json = const {
     const {'1': 'aligned_to_recursive', '3': 3, '4': 1, '5': 5, '10': 'alignedToRecursive'},
     const {'1': 'tree_aligned_with_children', '3': 4, '4': 1, '5': 8, '10': 'treeAlignedWithChildren'},
     const {'1': 'restrict_objective', '3': 5, '4': 1, '5': 14, '6': '.auge.protobuf.RestrictObjective', '10': 'restrictObjective'},
-    const {'1': 'restrict_measure', '3': 6, '4': 1, '5': 14, '6': '.auge.protobuf.RestrictMeasure', '10': 'restrictMeasure'},
-    const {'1': 'restrict_user_profile', '3': 7, '4': 1, '5': 14, '6': '.auge.protobuf.RestrictUserProfile', '10': 'restrictUserProfile'},
-    const {'1': 'with_archived', '3': 8, '4': 1, '5': 8, '10': 'withArchived'},
-    const {'1': 'group_ids', '3': 9, '4': 3, '5': 9, '10': 'groupIds'},
-    const {'1': 'leader_user_ids', '3': 10, '4': 3, '5': 9, '10': 'leaderUserIds'},
+    const {'1': 'restrict_organization', '3': 6, '4': 1, '5': 14, '6': '.auge.protobuf.RestrictOrganization', '10': 'restrictOrganization'},
+    const {'1': 'restrict_measure', '3': 7, '4': 1, '5': 14, '6': '.auge.protobuf.RestrictMeasure', '10': 'restrictMeasure'},
+    const {'1': 'restrict_user_profile', '3': 8, '4': 1, '5': 14, '6': '.auge.protobuf.RestrictUserProfile', '10': 'restrictUserProfile'},
+    const {'1': 'with_archived', '3': 9, '4': 1, '5': 8, '10': 'withArchived'},
+    const {'1': 'group_ids', '3': 10, '4': 3, '5': 9, '10': 'groupIds'},
+    const {'1': 'leader_user_ids', '3': 11, '4': 3, '5': 9, '10': 'leaderUserIds'},
   ],
 };
 

@@ -23,7 +23,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static m1(label) => "${Intl.select(label, {'domainLabel': 'nome@dominio.com', 'identificationLabel': 'Identificação', 'passwordLabel': 'Senha', 'superAdminLabel': 'Super Admin', 'organizationLabel': 'Organização', 'allOrganizationsLabel': 'Todas Organizações', 'loginLabel': 'Logar', 'logoutLabel': 'Sair', 'requestCodeToNewPasswordLabel': 'Solicitar Código para Nova Senha', 'informCodeLabel': 'Inserir Código', 'defineNewPasswordLabel': 'Defina Nova Senha', 'passwordCodeLabel': 'Código', 'newPasswordLabel': 'Nova Senha', 'repeatNewPasswordLabel': 'Repedir Nova Senha', 'saveLabel': 'Salvar', 'other': 'Não Definido', })}";
 
-  static m2(className) => "${Intl.select(className, {'User': 'Usuário', 'UserProfile': 'Perfil do Usuário', 'UserAccess': 'Usuário e Acesso', 'Group': 'Grupo', 'Objective': 'Objetivo', 'Measure': 'Medida', 'MeasureProgress': 'Progresso da Medida', 'Work': 'Trabalho', 'WorkStage': 'Estágio', 'WorkItem': 'Item de Trabalho', 'other': 'Não Definido', })}";
+  static m2(className) => "${Intl.select(className, {'User': 'Usuário', 'UserProfile': 'Perfil do Usuário', 'UserAccess': 'Acesso do Usuário', 'UserIdentity': 'Identidade do Usuário', 'Group': 'Grupo', 'Objective': 'Objetivo', 'Measure': 'Medida', 'MeasureProgress': 'Progresso da Medida', 'Work': 'Trabalho', 'WorkStage': 'Estágio', 'WorkItem': 'Item de Trabalho', 'other': 'Não Definido', })}";
 
   static m3(fieldName) => "${Intl.select(fieldName, {'true': 'Sim', 'false': 'Não', 'other': 'Não Definido', })}";
 
@@ -41,7 +41,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static m10(label) => "${Intl.select(label, {'objectivesGanttLabel': 'Gantt de Objetivos', 'other': 'Não Definido', })}";
 
-  static m11(fieldName) => "${Intl.select(fieldName, {'nameField': 'Nome', 'inactiveField': 'Inativo', 'leaderField': 'Líder', 'groupTypeField': 'Tipo do Grupo', 'superGroupField': 'Super Grupo', 'membersField': 'Membros', 'other': 'Não Definido', })}";
+  static m11(fieldName) => "${Intl.select(fieldName, {'nameField': 'Nome', 'inactiveField': 'Inativo', 'leaderField': 'Líder', 'groupTypeIndexField': 'Tipo do Grupo', 'superGroupField': 'Super Grupo', 'membersField': 'Membros', 'other': 'Não Definido', })}";
 
   static m12(label) => "${Intl.select(label, {'company': 'Organização', 'businessUnit': 'Unidade de Negócio', 'department': 'Departamento', 'team': 'Time', 'other': 'Não Definido', })}";
 
@@ -117,7 +117,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static m49(label) => "${Intl.select(label, {'workLabel': 'Trabalho', 'worksLabel': 'Trabalhos', 'orderedByLabel': 'Ordenado Por', 'editWorkLabel': 'Editar Trabalho', 'addWorkLabel': 'Adicionar Trabalho', 'objectiveLabel': 'Objetivo', 'workItemsOverDueLabel': 'Itens de Trabalho Atrasados', 'worksFilterLabel': 'Filtro de Trabalhos', 'other': 'Não Definido', })}";
 
-  static m50(fieldName) => "${Intl.select(fieldName, {'nameField': 'Nome', 'stateField': 'Estado', 'other': 'Não Definido', })}";
+  static m50(fieldName) => "${Intl.select(fieldName, {'nameField': 'Nome', 'stateIndexField': 'Estado', 'other': 'Não Definido', })}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {

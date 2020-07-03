@@ -16,6 +16,7 @@ import '../general/user.pb.dart' as $3;
 import '../general/unit_of_measurement.pb.dart' as $5;
 
 import 'objective_measure.pbenum.dart';
+import '../general/organization.pbenum.dart' as $0;
 import '../general/user.pbenum.dart' as $3;
 
 export 'objective_measure.pbenum.dart';
@@ -317,11 +318,12 @@ class ObjectiveGetRequest extends $pb.GeneratedMessage {
     ..a<$core.int>(3, 'alignedToRecursive', $pb.PbFieldType.O3)
     ..aOB(4, 'treeAlignedWithChildren')
     ..e<RestrictObjective>(5, 'restrictObjective', $pb.PbFieldType.OE, defaultOrMaker: RestrictObjective.objectiveNone, valueOf: RestrictObjective.valueOf, enumValues: RestrictObjective.values)
-    ..e<RestrictMeasure>(6, 'restrictMeasure', $pb.PbFieldType.OE, defaultOrMaker: RestrictMeasure.measureNone, valueOf: RestrictMeasure.valueOf, enumValues: RestrictMeasure.values)
-    ..e<$3.RestrictUserProfile>(7, 'restrictUserProfile', $pb.PbFieldType.OE, defaultOrMaker: $3.RestrictUserProfile.userProfileNone, valueOf: $3.RestrictUserProfile.valueOf, enumValues: $3.RestrictUserProfile.values)
-    ..aOB(8, 'withArchived')
-    ..pPS(9, 'groupIds')
-    ..pPS(10, 'leaderUserIds')
+    ..e<$0.RestrictOrganization>(6, 'restrictOrganization', $pb.PbFieldType.OE, defaultOrMaker: $0.RestrictOrganization.organizationNone, valueOf: $0.RestrictOrganization.valueOf, enumValues: $0.RestrictOrganization.values)
+    ..e<RestrictMeasure>(7, 'restrictMeasure', $pb.PbFieldType.OE, defaultOrMaker: RestrictMeasure.measureNone, valueOf: RestrictMeasure.valueOf, enumValues: RestrictMeasure.values)
+    ..e<$3.RestrictUserProfile>(8, 'restrictUserProfile', $pb.PbFieldType.OE, defaultOrMaker: $3.RestrictUserProfile.userProfileNone, valueOf: $3.RestrictUserProfile.valueOf, enumValues: $3.RestrictUserProfile.values)
+    ..aOB(9, 'withArchived')
+    ..pPS(10, 'groupIds')
+    ..pPS(11, 'leaderUserIds')
     ..hasRequiredFields = false
   ;
 
@@ -386,37 +388,46 @@ class ObjectiveGetRequest extends $pb.GeneratedMessage {
   void clearRestrictObjective() => clearField(5);
 
   @$pb.TagNumber(6)
-  RestrictMeasure get restrictMeasure => $_getN(5);
+  $0.RestrictOrganization get restrictOrganization => $_getN(5);
   @$pb.TagNumber(6)
-  set restrictMeasure(RestrictMeasure v) { setField(6, v); }
+  set restrictOrganization($0.RestrictOrganization v) { setField(6, v); }
   @$pb.TagNumber(6)
-  $core.bool hasRestrictMeasure() => $_has(5);
+  $core.bool hasRestrictOrganization() => $_has(5);
   @$pb.TagNumber(6)
-  void clearRestrictMeasure() => clearField(6);
+  void clearRestrictOrganization() => clearField(6);
 
   @$pb.TagNumber(7)
-  $3.RestrictUserProfile get restrictUserProfile => $_getN(6);
+  RestrictMeasure get restrictMeasure => $_getN(6);
   @$pb.TagNumber(7)
-  set restrictUserProfile($3.RestrictUserProfile v) { setField(7, v); }
+  set restrictMeasure(RestrictMeasure v) { setField(7, v); }
   @$pb.TagNumber(7)
-  $core.bool hasRestrictUserProfile() => $_has(6);
+  $core.bool hasRestrictMeasure() => $_has(6);
   @$pb.TagNumber(7)
-  void clearRestrictUserProfile() => clearField(7);
+  void clearRestrictMeasure() => clearField(7);
 
   @$pb.TagNumber(8)
-  $core.bool get withArchived => $_getBF(7);
+  $3.RestrictUserProfile get restrictUserProfile => $_getN(7);
   @$pb.TagNumber(8)
-  set withArchived($core.bool v) { $_setBool(7, v); }
+  set restrictUserProfile($3.RestrictUserProfile v) { setField(8, v); }
   @$pb.TagNumber(8)
-  $core.bool hasWithArchived() => $_has(7);
+  $core.bool hasRestrictUserProfile() => $_has(7);
   @$pb.TagNumber(8)
-  void clearWithArchived() => clearField(8);
+  void clearRestrictUserProfile() => clearField(8);
 
   @$pb.TagNumber(9)
-  $core.List<$core.String> get groupIds => $_getList(8);
+  $core.bool get withArchived => $_getBF(8);
+  @$pb.TagNumber(9)
+  set withArchived($core.bool v) { $_setBool(8, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasWithArchived() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearWithArchived() => clearField(9);
 
   @$pb.TagNumber(10)
-  $core.List<$core.String> get leaderUserIds => $_getList(9);
+  $core.List<$core.String> get groupIds => $_getList(9);
+
+  @$pb.TagNumber(11)
+  $core.List<$core.String> get leaderUserIds => $_getList(10);
 }
 
 class ObjectivesResponse extends $pb.GeneratedMessage {

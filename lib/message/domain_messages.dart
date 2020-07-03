@@ -40,7 +40,8 @@ class ClassNameMsg {
       //User.className >>> this does not work to intl_translation, because it split the last element after the point
       'User': 'User',
       'UserProfile': 'User Profile',
-      'UserAccess': 'User and Profiles',
+      'UserAccess': 'User and Access',
+      'UserIdentity': 'User and Identity',
       'Group': 'Group',
       'Objective': 'Objective',
       'Measure': 'Measure',
@@ -96,10 +97,12 @@ class UserIdentityDomainMsg {
 
     return Intl.select(fieldName,
         {UserIdentity.identificationField: 'Identification',
-          UserIdentity.passwordField: 'Password',
-          UserIdentity.providerField: 'Provider',
-          UserIdentity.providerObjectIdField: 'Provider Object Id',
-          'other': 'Not Defined'},
+         UserIdentity.passwordField: 'Password',
+         UserIdentity.passwordHashField: 'Password Hash',
+         UserIdentity.passwordSaltField: 'Password Salt',
+         UserIdentity.providerField: 'Provider',
+         UserIdentity.providerObjectIdField: 'Provider Object Id',
+         'other': 'Not Defined'},
         name: 'UserIdentityDomainMsg_fieldLabel',
         args: [fieldName]);
   }
