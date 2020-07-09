@@ -11,11 +11,11 @@ import 'package:protobuf/protobuf.dart' as $pb;
 
 class RestrictGroup extends $pb.ProtobufEnum {
   static const RestrictGroup groupNone = RestrictGroup._(0, 'groupNone');
-  static const RestrictGroup groupIdName = RestrictGroup._(1, 'groupIdName');
+  static const RestrictGroup groupSpecification = RestrictGroup._(1, 'groupSpecification');
 
   static const $core.List<RestrictGroup> values = <RestrictGroup> [
     groupNone,
-    groupIdName,
+    groupSpecification,
   ];
 
   static final $core.Map<$core.int, RestrictGroup> _byValue = $pb.ProtobufEnum.initByValue(values);

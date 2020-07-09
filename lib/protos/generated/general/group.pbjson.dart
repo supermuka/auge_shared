@@ -9,7 +9,7 @@ const RestrictGroup$json = const {
   '1': 'RestrictGroup',
   '2': const [
     const {'1': 'groupNone', '2': 0},
-    const {'1': 'groupIdName', '2': 1},
+    const {'1': 'groupSpecification', '2': 1},
   ],
 };
 

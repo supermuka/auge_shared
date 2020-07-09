@@ -9,7 +9,7 @@ const RestrictUser$json = const {
   '1': 'RestrictUser',
   '2': const [
     const {'1': 'userNone', '2': 0},
-    const {'1': 'userIdName', '2': 1},
+    const {'1': 'userSpecification', '2': 1},
   ],
 };
 

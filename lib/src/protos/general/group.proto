@@ -53,7 +53,7 @@ message GroupDeleteRequest {
 
 enum RestrictGroup {
     groupNone = 0;
-    groupIdName = 1;
+    groupSpecification = 1;
 }
 // Request for query Restrict
 message GroupGetRequest {

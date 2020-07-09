@@ -9,7 +9,7 @@ const RestrictOrganization$json = const {
   '1': 'RestrictOrganization',
   '2': const [
     const {'1': 'organizationNone', '2': 0},
-    const {'1': 'organizationIdName', '2': 1},
+    const {'1': 'organizationSpecification', '2': 1},
   ],
 };
 

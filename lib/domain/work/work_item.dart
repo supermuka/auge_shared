@@ -137,21 +137,30 @@ class WorkItem {
 
 class WorkItemHelper {
 
-  static work_work_item_pb.WorkItem writeToProtoBuf(WorkItem workItem) {
+  static work_work_item_pb.WorkItem writeToProtoBuf(WorkItem workItem, {bool onlySpecification = false}) {
     work_work_item_pb.WorkItem workItemPb = work_work_item_pb.WorkItem();
 
     if (workItem.id != null) workItemPb.id = workItem.id;
-    if (workItem.version != null) workItemPb.version = workItem.version;
     if (workItem.name != null) workItemPb.name = workItem.name;
-    if (workItem.description != null) workItemPb.description = workItem.description;
-    ///if (completed != null) workItemPb.completed = completed;
+    if (!onlySpecification) {
+      if (workItem.version != null) workItemPb.version = workItem.version;
+      if (workItem.description != null)
+        workItemPb.description = workItem.description;
 
-    if (workItem.plannedValue != null) workItemPb.plannedValue = workItem.plannedValue;
-    if (workItem.actualValue != null) workItemPb.actualValue = workItem.actualValue;
-    if (workItem.unitOfMeasurement != null) workItemPb.unitOfMeasurement = UnitOfMeasurementHelper.writeToProtoBuf(workItem.unitOfMeasurement);
-    if (workItem.archived != null) workItemPb.archived = workItem.archived;
+      ///if (completed != null) workItemPb.completed = completed;
 
-    if (workItem.dueDate != null) workItemPb.dueDate = CommonUtils.timestampFromDateTime(workItem.dueDate); /*{
+      if (workItem.plannedValue != null)
+        workItemPb.plannedValue = workItem.plannedValue;
+      if (workItem.actualValue != null)
+        workItemPb.actualValue = workItem.actualValue;
+      if (workItem.unitOfMeasurement != null) workItemPb.unitOfMeasurement =
+          UnitOfMeasurementHelper.writeToProtoBuf(
+              workItem.unitOfMeasurement, onlySpecification: true);
+      if (workItem.archived != null) workItemPb.archived = workItem.archived;
+
+      if (workItem.dueDate != null) workItemPb.dueDate =
+          CommonUtils.timestampFromDateTime(workItem.dueDate);
+      /*{
       Timestamp t = Timestamp();
       int microsecondsSinceEpoch = this.dueDate.toUtc().microsecondsSinceEpoch;
       t.seconds = Int64(microsecondsSinceEpoch ~/ 1000000);
@@ -160,12 +169,27 @@ class WorkItemHelper {
     }
     */
 
-    if (workItem.workStage != null) workItemPb.workStage = WorkStageHelper.writeToProtoBuf(workItem.workStage);
-    if (workItem.attachments != null && workItem.attachments.isNotEmpty) workItemPb.attachments.addAll(workItem.attachments.map((m) => WorkItemAttachmentHelper.writeToProtoBuf(m)));
-    if (workItem.checkItems != null && workItem.checkItems.isNotEmpty) workItemPb.checkItems.addAll(workItem.checkItems.map((m) => m.writeToProtoBuf()));
-    if (workItem.assignedTo != null && workItem.assignedTo.isNotEmpty) workItemPb.assignedTo.addAll(workItem.assignedTo.map((m) => UserHelper.writeToProtoBuf(m)));
-    if (workItem.work != null) workItemPb.work = WorkHelper.writeToProtoBuf(workItem.work);
-
+      if (workItem.workStage != null) workItemPb.workStage =
+          WorkStageHelper.writeToProtoBuf(
+              workItem.workStage, onlySpecification: true);
+      if (workItem.attachments != null &&
+          workItem.attachments.isNotEmpty) workItemPb.attachments.addAll(
+          workItem.attachments.map((m) =>
+              WorkItemAttachmentHelper.writeToProtoBuf(
+                  m, onlySpecification: true)));
+      if (workItem.checkItems != null &&
+          workItem.checkItems.isNotEmpty) workItemPb.checkItems.addAll(
+          workItem.checkItems.map((m) =>
+              WorkItemCheckItemHelper.writeToProtoBuf(
+                  m, onlySpecification: true)));
+      if (workItem.assignedTo != null &&
+          workItem.assignedTo.isNotEmpty) workItemPb.assignedTo.addAll(
+          workItem.assignedTo.map((m) =>
+              UserHelper.writeToProtoBuf(
+                  m, onlySpecification: true)));
+      if (workItem.work != null) workItemPb.work = WorkHelper.writeToProtoBuf(
+          workItem.work, onlySpecification: true);
+    }
     return workItemPb;
   }
 
@@ -191,7 +215,7 @@ class WorkItemHelper {
       this.dueDate = DateTime.fromMicrosecondsSinceEpoch(workItemPb.dueDate.seconds.toInt() * 1000000 + workItemPb.dueDate.nanos ~/ 1000 );
     }*/
     if (workItemPb.attachments.isNotEmpty) workItem.attachments = workItemPb.attachments.map((u) => WorkItemAttachmentHelper.readFromProtoBuf(u)).toList(); // No need cache, it is a composite
-    if (workItemPb.checkItems.isNotEmpty) workItem.checkItems = workItemPb.checkItems.map((c) => WorkItemCheckItem()..readFromProtoBuf(c)).toList(); // No need cache, it is a composite
+    if (workItemPb.checkItems.isNotEmpty) workItem.checkItems = workItemPb.checkItems.map((c) => WorkItemCheckItemHelper.readFromProtoBuf(c)).toList(); // No need cache, it is a composite
     if (workItemPb.assignedTo.isNotEmpty) workItem.assignedTo = workItemPb.assignedTo.map((u) => cache.putIfAbsent('${WorkItem.assignedToField}${u.id}@${User.className}', () => UserHelper.readFromProtoBuf(u, cache))).toList().cast<User>();
     if (workItemPb.hasWork()) workItem.work = cache.putIfAbsent('${WorkItem.workField}${workItemPb.work.id}@${Work.className}', () => WorkHelper.readFromProtoBuf(workItemPb.work, cache));
     return workItem;
@@ -248,13 +272,17 @@ class WorkItemAttachment {
 
 class WorkItemAttachmentHelper {
 
-  static work_work_item_pb.WorkItemAttachment writeToProtoBuf(WorkItemAttachment workItemAttachment) {
+  static work_work_item_pb.WorkItemAttachment writeToProtoBuf(WorkItemAttachment workItemAttachment, {bool onlySpecification = false}) {
     work_work_item_pb.WorkItemAttachment workItemAttachmentPb = work_work_item_pb.WorkItemAttachment();
 
     if (workItemAttachment.id != null) workItemAttachmentPb.id = workItemAttachment.id;
     if (workItemAttachment.name != null) workItemAttachmentPb.name = workItemAttachment.name;
-    if (workItemAttachment.type != null) workItemAttachmentPb.type = workItemAttachment.type;
-    if (workItemAttachment.content != null) workItemAttachmentPb.content = workItemAttachment.content;
+    if (!onlySpecification) {
+      if (workItemAttachment.type != null)
+        workItemAttachmentPb.type = workItemAttachment.type;
+      if (workItemAttachment.content != null)
+        workItemAttachmentPb.content = workItemAttachment.content;
+    }
 
     return workItemAttachmentPb;
   }
@@ -289,7 +317,7 @@ class WorkItemCheckItem {
   // Define check item order
   static const String indexField = 'index';
   int index;
-
+/*
   work_work_item_pb.WorkItemCheckItem writeToProtoBuf() {
     work_work_item_pb.WorkItemCheckItem workItemCheckItemPb = work_work_item_pb.WorkItemCheckItem();
 
@@ -334,7 +362,36 @@ class WorkItemCheckItem {
     }
     return map;
   }
+  */
 }
+
+class WorkItemCheckItemHelper {
+
+ static work_work_item_pb.WorkItemCheckItem writeToProtoBuf(WorkItemCheckItem workItemCheckItem, {bool onlySpecification = false}) {
+    work_work_item_pb.WorkItemCheckItem workItemCheckItemPb = work_work_item_pb.WorkItemCheckItem();
+
+    if (workItemCheckItem.id != null) workItemCheckItemPb.id = workItemCheckItem.id;
+    if (workItemCheckItem.name != null) workItemCheckItemPb.name = workItemCheckItem.name;
+    if (!onlySpecification) {
+      if (workItemCheckItem.finished != null)
+        workItemCheckItemPb.finished = workItemCheckItem.finished;
+      if (workItemCheckItem.index != null)
+        workItemCheckItemPb.index = workItemCheckItem.index;
+    }
+    return workItemCheckItemPb;
+  }
+
+  static WorkItemCheckItem readFromProtoBuf(work_work_item_pb.WorkItemCheckItem workItemCheckItemPb) {
+    WorkItemCheckItem workItemCheckItem = WorkItemCheckItem();
+    if (workItemCheckItemPb.hasId()) workItemCheckItem.id = workItemCheckItemPb.id;
+    if (workItemCheckItemPb.hasName()) workItemCheckItem.name = workItemCheckItemPb.name;
+    if (workItemCheckItemPb.hasFinished()) workItemCheckItem.finished = workItemCheckItemPb.finished;
+    if (workItemCheckItemPb.hasIndex()) workItemCheckItem.index = workItemCheckItemPb.index;
+    return workItemCheckItem;
+  }
+
+}
+
 
 /// Used 'Value' work because in the future, if necessary, this class can be used to planned_value too.
 /// For while, it is used to actual_value.
@@ -418,25 +475,28 @@ class WorkItemValue {
 
 class WorkItemValueHelper {
 
-  static work_work_item_pb.WorkItemValue writeToProtoBuf(WorkItemValue workItemValue) {
+  static work_work_item_pb.WorkItemValue writeToProtoBuf(WorkItemValue workItemValue, {bool onlySpecification = false}) {
     work_work_item_pb.WorkItemValue workItemValuePb = work_work_item_pb.WorkItemValue();
 
     if (workItemValue.id != null) workItemValuePb.id = workItemValue.id;
-    if (workItemValue.version != null) workItemValuePb.version = workItemValue.version;
+    if (workItemValue.date != null) workItemValuePb.date =
+        CommonUtils.timestampFromDateTime(workItemValue.date.toUtc());
+    if (!onlySpecification) {
+      if (workItemValue.version != null) workItemValuePb.version = workItemValue.version;
 
-    if (workItemValue.date != null)  workItemValuePb.date =  CommonUtils.timestampFromDateTime(workItemValue.date.toUtc());
 
-    if (workItemValue.actualValue != null) {
-      workItemValuePb.actualValue = workItemValue.actualValue;
+      if (workItemValue.actualValue != null) {
+        workItemValuePb.actualValue = workItemValue.actualValue;
+      }
+      if (workItemValue.comment != null) {
+        workItemValuePb.comment = workItemValue.comment;
+      }
+
+      if (workItemValue.workItem != null) {
+        workItemValuePb.workItem = WorkItemHelper.writeToProtoBuf(
+            workItemValue.workItem, onlySpecification: true);
+      }
     }
-    if (workItemValue.comment != null) {
-      workItemValuePb.comment = workItemValue.comment;
-    }
-
-    if (workItemValue.workItem != null) {
-      workItemValuePb.workItem = WorkItemHelper.writeToProtoBuf(workItemValue.workItem);
-    }
-
     return workItemValuePb;
   }
 

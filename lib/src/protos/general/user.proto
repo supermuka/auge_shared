@@ -59,7 +59,7 @@ message UserProfile {
 
 enum RestrictUser {
     userNone = 0;
-    userIdName = 1;
+    userSpecification = 1;
 }
 
 enum RestrictUserProfile {

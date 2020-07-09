@@ -11,6 +11,7 @@ import 'package:auge_shared/protos/generated/general/organization_configuration.
 class OrganizationConfiguration {
   static const String className = 'OrganizationConfiguration';
 
+
   // Base fields
   static const String idField = 'id';
   String id;
@@ -75,15 +76,20 @@ class OrganizationConfiguration {
 
 class OrganizationConfigurationHelper {
 
-  static organization_configuration_pb.OrganizationConfiguration writeToProtoBuf(OrganizationConfiguration organizationConfiguration) {
+  static organization_configuration_pb.OrganizationConfiguration writeToProtoBuf(OrganizationConfiguration organizationConfiguration, {bool onlySpecification = false}) {
     organization_configuration_pb.OrganizationConfiguration organizationConfigurationPb = organization_configuration_pb.OrganizationConfiguration();
 
     if (organizationConfiguration.id != null) organizationConfigurationPb.id = organizationConfiguration.id;
-    if (organizationConfiguration.version != null) organizationConfigurationPb.version = organizationConfiguration.version;
     if (organizationConfiguration.domain != null) organizationConfigurationPb.domain = organizationConfiguration.domain;
-    if (organizationConfiguration.organization != null) organizationConfigurationPb.organization = OrganizationHelper.writeToProtoBuf(organizationConfiguration.organization);
-    //  if (this.organization != null) configurationPb.organization = this.organization.writeToProtoBuf();
 
+    if (!onlySpecification) {
+      if (organizationConfiguration.version != null) organizationConfigurationPb.version = organizationConfiguration.version;
+      if (organizationConfiguration.organization != null)
+        organizationConfigurationPb.organization =
+            OrganizationHelper.writeToProtoBuf(
+                organizationConfiguration.organization, onlySpecification: true);
+      //  if (this.organization != null) configurationPb.organization = this.organization.writeToProtoBuf();
+    }
     return organizationConfigurationPb;
   }
 

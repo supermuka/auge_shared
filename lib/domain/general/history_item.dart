@@ -46,37 +46,44 @@ class HistoryItem {
 
 class HistoryItemHelper {
 
-  static history_item_pb.HistoryItem writeToProtoBuf(HistoryItem historyItem) {
+  static history_item_pb.HistoryItem writeToProtoBuf(HistoryItem historyItem, {bool onlySpecification = false}) {
     history_item_pb.HistoryItem historyItemPb = history_item_pb.HistoryItem();
 
     if (historyItem.id != null) {
       historyItemPb.id = historyItem.id;
     }
-    if (historyItem.objectClassName != null) {
-      historyItemPb.objectClassName = historyItem.objectClassName;
-    }
-    if (historyItem.objectId != null) {
-      historyItemPb.objectId = historyItem.objectId;
-    }
-    if (historyItem.objectVersion != null) {
-      historyItemPb.objectVersion = historyItem.objectVersion;
-    }
-    if (historyItem.systemModuleIndex != null) {
-      historyItemPb.systemModuleIndex = historyItem.systemModuleIndex;
-    }
-    if (historyItem.systemFunctionIndex != null) {
-      historyItemPb.systemFunctionIndex = historyItem.systemFunctionIndex;
-    }
-
-    if (historyItem.dateTime != null) historyItemPb.dateTime = CommonUtils.timestampFromDateTime(historyItem.dateTime);
-    if (historyItem.organization != null) historyItemPb.organization = OrganizationHelper.writeToProtoBuf(historyItem.organization);
-    if (historyItem.user != null) historyItemPb.user = UserHelper.writeToProtoBuf(historyItem.user);
     if (historyItem.description != null) historyItemPb.description = historyItem.description;
 
-    if (historyItem.changedValues != null) {
+    if (!onlySpecification) {
+      if (historyItem.objectClassName != null) {
+        historyItemPb.objectClassName = historyItem.objectClassName;
+      }
+      if (historyItem.objectId != null) {
+        historyItemPb.objectId = historyItem.objectId;
+      }
+      if (historyItem.objectVersion != null) {
+        historyItemPb.objectVersion = historyItem.objectVersion;
+      }
+      if (historyItem.systemModuleIndex != null) {
+        historyItemPb.systemModuleIndex = historyItem.systemModuleIndex;
+      }
+      if (historyItem.systemFunctionIndex != null) {
+        historyItemPb.systemFunctionIndex = historyItem.systemFunctionIndex;
+      }
+      if (historyItem.dateTime != null) historyItemPb.dateTime =
+          CommonUtils.timestampFromDateTime(historyItem.dateTime);
+      if (historyItem.organization != null) historyItemPb.organization =
+          OrganizationHelper.writeToProtoBuf(
+              historyItem.organization, onlySpecification: true);
+      if (historyItem.user != null) historyItemPb.user =
+          UserHelper.writeToProtoBuf(
+              historyItem.user, onlySpecification: true);
 
-      // Convert value from dart json to protobuf string
-      historyItemPb.changedValues = json.encode(historyItem.changedValues);
+
+      if (historyItem.changedValues != null) {
+        // Convert value from dart json to protobuf string
+        historyItemPb.changedValues = json.encode(historyItem.changedValues);
+      }
     }
     return historyItemPb;
   }

@@ -11,11 +11,11 @@ import 'package:protobuf/protobuf.dart' as $pb;
 
 class RestrictOrganization extends $pb.ProtobufEnum {
   static const RestrictOrganization organizationNone = RestrictOrganization._(0, 'organizationNone');
-  static const RestrictOrganization organizationIdName = RestrictOrganization._(1, 'organizationIdName');
+  static const RestrictOrganization organizationSpecification = RestrictOrganization._(1, 'organizationSpecification');
 
   static const $core.List<RestrictOrganization> values = <RestrictOrganization> [
     organizationNone,
-    organizationIdName,
+    organizationSpecification,
   ];
 
   static final $core.Map<$core.int, RestrictOrganization> _byValue = $pb.ProtobufEnum.initByValue(values);

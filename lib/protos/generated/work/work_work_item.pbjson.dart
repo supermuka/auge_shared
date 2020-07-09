@@ -9,7 +9,7 @@ const RestrictWork$json = const {
   '1': 'RestrictWork',
   '2': const [
     const {'1': 'workNone', '2': 0},
-    const {'1': 'workIdName', '2': 1},
+    const {'1': 'workSpecification', '2': 1},
   ],
 };
 
@@ -17,7 +17,7 @@ const RestrictWorkItem$json = const {
   '1': 'RestrictWorkItem',
   '2': const [
     const {'1': 'workItemNone', '2': 0},
-    const {'1': 'workItemIdName', '2': 1},
+    const {'1': 'workItemSpecification', '2': 1},
   ],
 };
 

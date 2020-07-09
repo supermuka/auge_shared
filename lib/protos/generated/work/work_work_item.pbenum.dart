@@ -11,11 +11,11 @@ import 'package:protobuf/protobuf.dart' as $pb;
 
 class RestrictWork extends $pb.ProtobufEnum {
   static const RestrictWork workNone = RestrictWork._(0, 'workNone');
-  static const RestrictWork workIdName = RestrictWork._(1, 'workIdName');
+  static const RestrictWork workSpecification = RestrictWork._(1, 'workSpecification');
 
   static const $core.List<RestrictWork> values = <RestrictWork> [
     workNone,
-    workIdName,
+    workSpecification,
   ];
 
   static final $core.Map<$core.int, RestrictWork> _byValue = $pb.ProtobufEnum.initByValue(values);
@@ -26,11 +26,11 @@ class RestrictWork extends $pb.ProtobufEnum {
 
 class RestrictWorkItem extends $pb.ProtobufEnum {
   static const RestrictWorkItem workItemNone = RestrictWorkItem._(0, 'workItemNone');
-  static const RestrictWorkItem workItemIdName = RestrictWorkItem._(1, 'workItemIdName');
+  static const RestrictWorkItem workItemSpecification = RestrictWorkItem._(1, 'workItemSpecification');
 
   static const $core.List<RestrictWorkItem> values = <RestrictWorkItem> [
     workItemNone,
-    workItemIdName,
+    workItemSpecification,
   ];
 
   static final $core.Map<$core.int, RestrictWorkItem> _byValue = $pb.ProtobufEnum.initByValue(values);

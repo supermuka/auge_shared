@@ -11,11 +11,11 @@ import 'package:protobuf/protobuf.dart' as $pb;
 
 class RestrictUser extends $pb.ProtobufEnum {
   static const RestrictUser userNone = RestrictUser._(0, 'userNone');
-  static const RestrictUser userIdName = RestrictUser._(1, 'userIdName');
+  static const RestrictUser userSpecification = RestrictUser._(1, 'userSpecification');
 
   static const $core.List<RestrictUser> values = <RestrictUser> [
     userNone,
-    userIdName,
+    userSpecification,
   ];
 
   static final $core.Map<$core.int, RestrictUser> _byValue = $pb.ProtobufEnum.initByValue(values);

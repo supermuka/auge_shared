@@ -145,29 +145,39 @@ class Measure {
 
 class MeasureHelper {
 
-  static objective_measure_pb.Measure writeToProtoBuf(Measure measure) {
+  static objective_measure_pb.Measure writeToProtoBuf(Measure measure, {bool onlySpecification = false}) {
     objective_measure_pb.Measure measurePb = objective_measure_pb.Measure();
 
     if (measure.id != null) measurePb.id = measure.id;
-    if (measure.version != null) measurePb.version = measure.version;
     if (measure.name != null) measurePb.name = measure.name;
-    if (measure.description != null) measurePb.description = measure.description;
+    if (!onlySpecification) {
+      if (measure.version != null) measurePb.version = measure.version;
+      if (measure.description != null)
+        measurePb.description = measure.description;
 
-    if (measure.metric != null) measurePb.metric = measure.metric;
+      if (measure.metric != null) measurePb.metric = measure.metric;
 
-    if (measure.decimalsNumber != null) measurePb.decimalsNumber = measure.decimalsNumber;
-    if (measure.startValue != null) measurePb.startValue = measure.startValue;
-    if (measure.endValue != null) measurePb.endValue = measure.endValue;
-    if (measure.currentValue != null) measurePb.currentValue = measure.currentValue;
-    if (measure.unitOfMeasurement != null) measurePb.unitOfMeasurement =
-        UnitOfMeasurementHelper.writeToProtoBuf(measure.unitOfMeasurement);
+      if (measure.decimalsNumber != null)
+        measurePb.decimalsNumber = measure.decimalsNumber;
+      if (measure.startValue != null) measurePb.startValue = measure.startValue;
+      if (measure.endValue != null) measurePb.endValue = measure.endValue;
+      if (measure.currentValue != null)
+        measurePb.currentValue = measure.currentValue;
+      if (measure.unitOfMeasurement != null) measurePb.unitOfMeasurement =
+          UnitOfMeasurementHelper.writeToProtoBuf(
+              measure.unitOfMeasurement, onlySpecification: true);
 
-    if (measure.measureProgress != null && measure.measureProgress.isNotEmpty) measurePb
-        .measureProgress.addAll(
-        measure.measureProgress.map((m) => MeasureProgressHelper.writeToProtoBuf(m)));
+      if (measure.measureProgress != null &&
+          measure.measureProgress.isNotEmpty) measurePb
+          .measureProgress.addAll(
+          measure.measureProgress.map((m) =>
+              MeasureProgressHelper.writeToProtoBuf(
+                  m, onlySpecification: true)));
 
-    if (measure.objective != null) measurePb.objective = ObjectiveHelper.writeToProtoBuf(measure.objective);
-
+      if (measure.objective != null) measurePb.objective =
+          ObjectiveHelper.writeToProtoBuf(
+              measure.objective, onlySpecification: true);
+    }
     return measurePb;
   }
 
@@ -176,8 +186,8 @@ class MeasureHelper {
     Measure measure = Measure();
 
     if (measurePb.hasId()) measure.id = measurePb.id;
-    if (measurePb.hasVersion()) measure.version = measurePb.version;
     if (measurePb.hasName()) measure.name = measurePb.name;
+    if (measurePb.hasVersion()) measure.version = measurePb.version;
     if (measurePb.hasDescription()) measure.description = measurePb.description;
 
     if (measurePb.hasMetric()) measure.metric = measurePb.metric;
@@ -275,25 +285,28 @@ class MeasureProgress {
 
 class MeasureProgressHelper {
 
-  static objective_measure_pb.MeasureProgress writeToProtoBuf(MeasureProgress measureProgress) {
+  static objective_measure_pb.MeasureProgress writeToProtoBuf(MeasureProgress measureProgress, {bool onlySpecification = false}) {
     objective_measure_pb.MeasureProgress measureProgressPb = objective_measure_pb.MeasureProgress();
 
     if (measureProgress.id != null) measureProgressPb.id = measureProgress.id;
-    if (measureProgress.version != null) measureProgressPb.version = measureProgress.version;
+    if (measureProgress.date != null) measureProgressPb.date =
+        CommonUtils.timestampFromDateTime(measureProgress.date.toUtc());
+    if (!onlySpecification) {
+      if (measureProgress.version != null) measureProgressPb.version = measureProgress.version;
 
-    if (measureProgress.date != null)  measureProgressPb.date =  CommonUtils.timestampFromDateTime(measureProgress.date.toUtc());
 
-    if (measureProgress.currentValue != null) {
-      measureProgressPb.currentValue = measureProgress.currentValue;
+      if (measureProgress.currentValue != null) {
+        measureProgressPb.currentValue = measureProgress.currentValue;
+      }
+      if (measureProgress.comment != null) {
+        measureProgressPb.comment = measureProgress.comment;
+      }
+
+      if (measureProgress.measure != null) {
+        measureProgressPb.measure = MeasureHelper.writeToProtoBuf(
+            measureProgress.measure, onlySpecification: true);
+      }
     }
-    if (measureProgress.comment != null) {
-      measureProgressPb.comment = measureProgress.comment;
-    }
-
-    if (measureProgress.measure != null) {
-      measureProgressPb.measure = MeasureHelper.writeToProtoBuf(measureProgress.measure);
-    }
-
     return measureProgressPb;
   }
 

@@ -45,7 +45,7 @@ message OrganizationDeleteRequest {
 
 enum RestrictOrganization {
     organizationNone = 0;
-    organizationIdName = 1;
+    organizationSpecification = 1;
 }
 
 // Request for query Restrict

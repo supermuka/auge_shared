@@ -77,14 +77,18 @@ class UserAccess {
 
 class UserAccessHelper {
 
-  static user_access_pb.UserAccess writeToProtoBuf(UserAccess userAccess) {
+  static user_access_pb.UserAccess writeToProtoBuf(UserAccess userAccess, {bool onlySpecification = false}) {
     user_access_pb.UserAccess userAccessPb = user_access_pb.UserAccess();
 
+
     if (userAccess.id != null) userAccessPb.id = userAccess.id;
-    if (userAccess.version != null) userAccessPb.version = userAccess.version;
-    if (userAccess.user != null) userAccessPb.user = UserHelper.writeToProtoBuf(userAccess.user);
-    if (userAccess.organization != null) userAccessPb.organization = OrganizationHelper.writeToProtoBuf(userAccess.organization);
-    if (userAccess.accessRole != null) userAccessPb.accessRole = userAccess.accessRole;
+    if (userAccess.user != null) userAccessPb.user = UserHelper.writeToProtoBuf(userAccess.user, onlySpecification: true);
+    if (!onlySpecification) {
+      if (userAccess.organization != null) userAccessPb.organization =
+          OrganizationHelper.writeToProtoBuf(userAccess.organization, onlySpecification: true);
+      if (userAccess.accessRole != null)
+        userAccessPb.accessRole = userAccess.accessRole;
+    }
 
     return userAccessPb;
   }

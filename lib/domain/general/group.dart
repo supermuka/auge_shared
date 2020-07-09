@@ -47,21 +47,27 @@ class Group {
 
 class GroupHelper {
 
-  static group_pb.Group writeToProtoBuf(Group group) {
+  static group_pb.Group writeToProtoBuf(Group group, {bool onlySpecification = false}) {
     group_pb.Group groupPb = group_pb.Group();
 
-    if (group.id != null) {
-      groupPb.id = group.id;
-    }
-    if (group.version != null) groupPb.version = group.version;
+    if (group.id != null) groupPb.id = group.id;
     if (group.name != null) groupPb.name = group.name;
-    if (group.inactive != null) groupPb.inactive = group.inactive;
-    if (group.organization != null) groupPb.organization = OrganizationHelper.writeToProtoBuf(group.organization);
-    //if (group.groupType != null) groupPb.groupTypeIndex = group.groupType.index;
-    if (group.groupTypeIndex != null) groupPb.groupTypeIndex = group.groupTypeIndex;
-    if (group.superGroup != null) groupPb.superGroup = GroupHelper.writeToProtoBuf(group.superGroup);
-    if (group.leader != null) groupPb.leader = UserHelper.writeToProtoBuf(group.leader);
-    if (group.members != null && group.members.isNotEmpty) groupPb.members.addAll(group.members.map((m) => UserHelper.writeToProtoBuf(m)));
+
+    if (!onlySpecification) {
+      if (group.version != null) groupPb.version = group.version;
+      if (group.inactive != null) groupPb.inactive = group.inactive;
+      if (group.organization != null) groupPb.organization =
+          OrganizationHelper.writeToProtoBuf(group.organization, onlySpecification: true);
+      //if (group.groupType != null) groupPb.groupTypeIndex = group.groupType.index;
+      if (group.groupTypeIndex != null)
+        groupPb.groupTypeIndex = group.groupTypeIndex;
+      if (group.superGroup != null)
+        groupPb.superGroup = GroupHelper.writeToProtoBuf(group.superGroup, onlySpecification: true);
+      if (group.leader != null)
+        groupPb.leader = UserHelper.writeToProtoBuf(group.leader, onlySpecification: true);
+      if (group.members != null && group.members.isNotEmpty) groupPb.members
+          .addAll(group.members.map((m) => UserHelper.writeToProtoBuf(m, onlySpecification: true)));
+    }
 
     return groupPb;
   }

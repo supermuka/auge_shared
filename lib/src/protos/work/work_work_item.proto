@@ -70,7 +70,7 @@ message WorksResponse {
 
 enum RestrictWork {
     workNone = 0;
-    workIdName = 1;
+    workSpecification = 1;
 }
 
 // Request for query param
@@ -161,7 +161,7 @@ message WorkItemsResponse {
 
 enum RestrictWorkItem {
     workItemNone = 0;
-    workItemIdName = 1;
+    workItemSpecification = 1;
 }
 
 // Request for Work Item

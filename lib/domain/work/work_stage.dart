@@ -60,17 +60,20 @@ class WorkStage {
 
 class WorkStageHelper {
 
-  static work_work_item_pb.WorkStage writeToProtoBuf(WorkStage workStage) {
+  static work_work_item_pb.WorkStage writeToProtoBuf(WorkStage workStage, {bool onlySpecification = false}) {
     work_work_item_pb.WorkStage workStagePb = work_work_item_pb.WorkStage();
 
     if (workStage.id != null) workStagePb.id = workStage.id;
-    if (workStage.version != null) workStagePb.version = workStage.version;
     if (workStage.name != null) workStagePb.name = workStage.name;
-    if (workStage.index != null) workStagePb.index = workStage.index;
+    if (!onlySpecification) {
+      if (workStage.version != null) workStagePb.version = workStage.version;
+      if (workStage.index != null) workStagePb.index = workStage.index;
 
-    if (workStage.stateIndex != null) workStagePb.stateIndex = workStage.stateIndex;
-    if (workStage.work != null) workStagePb.work = WorkHelper.writeToProtoBuf(workStage.work);
-
+      if (workStage.stateIndex != null)
+        workStagePb.stateIndex = workStage.stateIndex;
+      if (workStage.work != null) workStagePb.work = WorkHelper.writeToProtoBuf(
+          workStage.work, onlySpecification: true);
+    }
 
     return workStagePb;
   }
