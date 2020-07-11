@@ -1,5 +1,5 @@
 {
-  "@@last_modified": "2020-06-10T11:09:06.011158",
+  "@@last_modified": "2020-07-11T10:12:55.557892",
   "@@locale": "en",
   "CommonMsg_label": "{label,select, headerTitleLabel{AUGE}headerSubtitleLabel{Objectives, Work and Performance}searchLabel{Search}filterLabel{Filter}moreLabel{more}emptyLabel{empty}selectLabel{Select}noMatchLabel{No Match}other{Not Defined}}",
   "@CommonMsg_label": {
@@ -95,7 +95,7 @@
     "type": "text",
     "placeholders": {}
   },
-  "AppLayoutMsg_label": "{label,select, organizationLabel{Organization}organizationsLabel{Organizations}adminLabel{Administrator}superAdminLabel{Super Administrator}userDetailLabel{User Detail}logoutLabel{Logout}ingightsLabel{Insights}worksLabel{Works}objectivesLabel{Objectives}objectivesMapLabel{Objectives Map}objectivesGanttLabel{Objectives Gantt}usersLabel{Users}groupsLabel{Groups}workItemsLabel{Work Items}configurationLabel{Configuration}other{Not Defined}}",
+  "AppLayoutMsg_label": "{label,select, organizationLabel{Organization}organizationsLabel{Organizations}adminLabel{Administrator}superAdminLabel{Super Administrator}userDetailLabel{User Detail}logoutLabel{Logout}ingightsLabel{Insights}worksLabel{Works}objectivesLabel{Objectives}objectivesMapLabel{Objectives Map}objectivesGanttLabel{Objectives Gantt}usersLabel{Users}groupsLabel{Groups}workItemsLabel{Work Items}workItemsGanttLabel{Work Items Gantt}configurationLabel{Configuration}other{Not Defined}}",
   "@AppLayoutMsg_label": {
     "description": "Applayout labels",
     "type": "text",
@@ -211,7 +211,7 @@
       "label": {}
     }
   },
-  "WorkItemMsg_label": "{label,select, workKanbanLabel{Work Kanban}workItemsLabel{Work Items}workItemsFilterLabel{Work items Filter}orderedByLabel{Ordered By}editWorkItemLabel{Edit Work Item}addWorkItemLabel{Add Work Item}selectAValueLabel{Select a value}workItemsOverDueLabel{Work Items Over Due}checkItemLabel{Check Item}dropFileHereLabel{Drop File Here}checkItemNameLabel{Check Item Name}plannedActualLabel{Planned and Actual}remainingValueLabel{Remaining Value}dateAndActualValueLabel{Date and Actual Value}other{Not Defined}}",
+  "WorkItemMsg_label": "{label,select, workKanbanLabel{Work Kanban}workItemsLabel{Work Items}workItemsGanttLabel{Work Items Gantt}workItemsFilterLabel{Work items Filter}orderedByLabel{Ordered By}editWorkItemLabel{Edit Work Item}addWorkItemLabel{Add Work Item}selectAValueLabel{Select a value}workItemsOverDueLabel{Work Items Over Due}checkItemLabel{Check Item}dropFileHereLabel{Drop File Here}checkItemNameLabel{Check Item Name}plannedActualLabel{Planned and Actual}remainingValueLabel{Remaining Value}dateAndActualValueLabel{Date and Actual Value}other{Not Defined}}",
   "@WorkItemMsg_label": {
     "description": "Work Item labels",
     "type": "text",
@@ -224,7 +224,7 @@
     "type": "text",
     "placeholders": {}
   },
-  "ObjectiveMsg_label": "{label,select, objectiveLabel{Objective}objectivesLabel{Objectives}objectivesFilterLabel{Objectives Filter}addObjectiveLabel{Add Objective}editObjectiveLabel{Edit Objective}progressLabel{Progress}orderedByLabel{Ordered By}ultimateObjectiveLabel{Ultimate Objective}other{Not Defined}}",
+  "ObjectiveMsg_label": "{label,select, objectiveLabel{Objective}objectivesLabel{Objectives}objectivesGanttLabel{Objectives Gantt}objectivesFilterLabel{Objectives Filter}addObjectiveLabel{Add Objective}editObjectiveLabel{Edit Objective}progressLabel{Progress}orderedByLabel{Ordered By}ultimateObjectiveLabel{Ultimate Objective}other{Not Defined}}",
   "@ObjectiveMsg_label": {
     "description": "Objective labels",
     "type": "text",
@@ -244,14 +244,6 @@
   "@MapMsg_notInformedMsg": {
     "type": "text",
     "placeholders": {}
-  },
-  "GanttMsg_label": "{label,select, objectivesGanttLabel{Objectives Gantt}other{Not Defined}}",
-  "@GanttMsg_label": {
-    "description": "Gantt labels",
-    "type": "text",
-    "placeholders": {
-      "label": {}
-    }
   },
   "MeasureMsg_label": "{label,select, measuresLabel{Measures}editMeasureLabel{Edit Measure}addMeasureLabel{Add Measure}progressLabel{Progress}startValueLabel{Start Value}currentValueLabel{Current Value}endValueLabel{End Value}other{Not Defined}}",
   "@MeasureMsg_label": {
@@ -339,7 +331,7 @@
       "label": {}
     }
   },
-  "InsightMsg_label": "{label,select, insightsLabel{Insights}groupLabel{Group}leaderLabel{Leader}objectivesOverallLabel{Objectives Overall}objectivesLabel{Objectives}objectivesDescriptionLabel{Number total of objectives}objectivesAchievedLabel{Objectives Achieved}objectivesAchievedDescriptionLabel{Objectives with average measures above 70%}objectivesRequiringAttentionDescriptionLabel{Objectives with average measures below 30%}objectivesRequiringAttentionLabel{Objectives Requiring Attention}worksLabel{Works}worksDescriptionLabel{Number total of works}worksCompletedLabel{Works Completed}worksCompletedDescriptionLabel{Works with 100% work items completed}worksRequiringAttentionLabel{Works Requiring Attention}worksRequiringAttentionDescriptionLabel{Works with over due work items}workItemsLabel{Work Items}workItemsDescriptionLabel{Number total of work items}workItemsNotStartedLabel{Work Items Not Started}workItemsNotStartedDescriptionLabel{Work items in the not started state.}workItemsInProgressLabel{workItemsInProgressLabel}workItemsInProgressDescriptionLabel{Work items in the in progress state.}workItemsCompletedLabel{Work Items Completed}workItemsCompletedDescriptionLabel{Work items in the completed state.}workItemsRequiringAttentionLabel{Work Items Requiring Attention}workItemsRequiringAttentionDescriptionLabel{Over due work items}worksMyWorkItemsLabel{My Work Items}other{Not Defined}}",
+  "InsightMsg_label": "{label,select, insightsLabel{Insights}groupLabel{Group}leaderLabel{Leader}objectivesOverallLabel{Objectives Overall}objectivesLabel{Objectives}objectivesDescriptionLabel{Number total of objectives}objectivesAchievedLabel{Objectives Achieved}objectivesAchievedDescriptionLabel{Objectives with average measures above 70%}objectivesRequiringAttentionDescriptionLabel{Objectives with average measures below 30%}objectivesRequiringAttentionLabel{Objectives Requiring Attention}worksLabel{Works}worksDescriptionLabel{Total of works}worksCompletedLabel{Works Completed}worksCompletedDescriptionLabel{Works with 100% work items completed}worksRequiringAttentionLabel{Works Requiring Attention}worksRequiringAttentionDescriptionLabel{Works with over due work items}workItemsLabel{Work Items}workItemsDescriptionLabel{Total of work items}workItemsNotStartedLabel{Work Items Not Started}workItemsNotStartedDescriptionLabel{Work items in the not started state}workItemsInProgressLabel{Work Items in Progress}workItemsInProgressDescriptionLabel{Work items in the in progress state}workItemsCompletedLabel{Work Items Completed}workItemsCompletedDescriptionLabel{Work items in the completed state}workItemsRequiringAttentionLabel{Work Items Requiring Attention}workItemsRequiringAttentionDescriptionLabel{Over due work items}worksMyWorkItemsLabel{My Work Items}other{Not Defined}}",
   "@InsightMsg_label": {
     "description": "Insight labels",
     "type": "text",

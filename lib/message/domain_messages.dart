@@ -38,6 +38,9 @@ class ClassNameMsg {
 
     return Intl.select(className, {
       //User.className >>> this does not work to intl_translation, because it split the last element after the point
+      'Organization': 'Organization',
+      'OrganizationConfiguration': 'Organization Configuration',
+      'OrganizationDirectoryService': 'Directory Service',
       'User': 'User',
       'UserProfile': 'User Profile',
       'UserAccess': 'User and Access',
@@ -46,9 +49,11 @@ class ClassNameMsg {
       'Objective': 'Objective',
       'Measure': 'Measure',
       'MeasureProgress': 'Measure Progress',
+      'UnitOfMeasurement': 'Unit of Measurement',
       'Work': 'Work',
       'WorkStage': 'Stage',
       'WorkItem': 'Work Item',
+      'WorkItemValue': 'Work Item Value',
       'other': 'Not Defined'},
       name: "ClassNameMsg_label",
       args: [className],

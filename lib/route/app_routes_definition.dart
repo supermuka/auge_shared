@@ -36,8 +36,8 @@ class AppRoutesPath {
   static const insightsRoutePath = 'insights';
   static const insightsFilterRoutePath = 'filter';
   static const usersRoutePath =  'users';
-  static const mapRoutePath = 'map';
-  static const ganttRoutePath = 'gantt';
+  static const objectivesMapRoutePath = 'objectives/map';
+  static const objectivesGanttRoutePath = 'objectives/gantt';
   static const worksRoutePath = 'works';
   static const worksFilterRoutePath = 'filter';
   static const workAddRoutePath = 'add';
@@ -47,6 +47,7 @@ class AppRoutesPath {
   static const workItemsFilterRoutePath = 'filter';
   static const workItemsKanbanViaObjectivePath = 'objectives/:${AppRoutesParam.objectiveIdParameter}/works/:${AppRoutesParam.workIdParameter}/kanban_work_items';
   static const workItemsRoutePath = 'work_items';
+  static const workItemsGanttRoutePath = 'work_items/gantt';
   static const workStagesRoutePath = ':${AppRoutesParam.workIdParameter}/stages';
   static const workStagesViaKanbanRoutePath = 'work_stages';
   static const worksByObjectiveRoutePath = 'works/:${AppRoutesParam.objectiveIdParameter}';

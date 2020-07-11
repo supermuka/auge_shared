@@ -167,6 +167,7 @@ class AppLayoutMsg {
   static const usersLabel = 'usersLabel';
   static const groupsLabel = 'groupsLabel';
   static const workItemsLabel = 'workItemsLabel';
+  static const workItemsGanttLabel = 'workItemsGanttLabel';
   static const configurationLabel = 'configurationLabel';
 
   /// Label for [AppLayout]
@@ -185,6 +186,7 @@ class AppLayoutMsg {
         usersLabel: 'Users',
         groupsLabel: 'Groups',
         workItemsLabel: 'Work Items',
+        workItemsGanttLabel: 'Work Items Gantt',
         configurationLabel: 'Configuration',
         'other': 'Not Defined'},
       name: "AppLayoutMsg_label",
@@ -397,6 +399,7 @@ class WorkMsg {
 
   static const String workLabel = 'workLabel';
   static const String worksLabel = 'worksLabel';
+
   static const String orderedByLabel = 'orderedByLabel';
   static const String editWorkLabel = 'editWorkLabel';
   static const String addWorkLabel = 'addWorkLabel';
@@ -469,6 +472,7 @@ class WorkItemMsg {
 
   static const String workKanbanLabel = 'workKanbanLabel';
   static const String workItemsLabel = 'workItemsLabel';
+  static const String workItemsGanttLabel = 'workItemsGanttLabel';
   static const String workItemsFilterLabel = 'workItemsFilterLabel';
   static const String orderedByLabel = 'orderedByLabel';
   static const String editWorkItemLabel = 'editWorkItemLabel';
@@ -486,6 +490,7 @@ class WorkItemMsg {
   static String label(String label) => Intl.select(label, {
     workKanbanLabel: 'Work Kanban',
     workItemsLabel: 'Work Items',
+    workItemsGanttLabel: 'Work Items Gantt',
     workItemsFilterLabel: 'Work items Filter',
     orderedByLabel: 'Ordered By',
     editWorkItemLabel: 'Edit Work Item',
@@ -516,6 +521,7 @@ class ObjectiveMsg {
 
   static const String objectiveLabel = 'objectiveLabel';
   static const String objectivesLabel = 'objectivesLabel';
+  static const String objectivesGanttLabel = 'objectivesGanttLabel';
   static const String objectivesFilterLabel = 'objectivesFilterLabel';
   static const String addObjectiveLabel = 'addObjectiveLabel';
   static const String editObjectiveLabel = 'editObjectiveLabel';
@@ -527,6 +533,7 @@ class ObjectiveMsg {
   static String label(String label) => Intl.select(label, {
     objectiveLabel: 'Objective',
     objectivesLabel: 'Objectives',
+    objectivesGanttLabel: 'Objectives Gantt',
     objectivesFilterLabel: 'Objectives Filter',
     addObjectiveLabel: 'Add Objective',
     editObjectiveLabel: 'Edit Objective',
@@ -560,22 +567,6 @@ class MapMsg {
   );
 
   static String notInformedMsg() => Intl.message("Not Informed!", name: "MapMsg_notInformedMsg");
-}
-
-/// Specific messages and label for [Gantt]
-class GanttMsg {
-
-  static const String objectivesGanttLabel = 'objectivesGanttLabel';
-  /// Label for work
-  static String label(String label) => Intl.select(label, {
-    objectivesGanttLabel: 'Objectives Gantt',
-        'other': 'Not Defined'},
-      name: "GanttMsg_label",
-      args: [label],
-      // locale: "en",
-      desc: "Gantt labels",
-      examples: const {"Group": "Group"}
-  );
 }
 
 /// Specific messages and label for [Measure]

@@ -9,7 +9,7 @@
       "fieldName": {}
     }
   },
-  "ClassNameMsg_label": "{className,select, User{Usuário}UserProfile{Perfil do Usuário}UserAccess{Acesso do Usuário}UserIdentity{Identidade do Usuário}Group{Grupo}Objective{Objetivo}Measure{Medida}MeasureProgress{Progresso da Medida}Work{Trabalho}WorkStage{Estágio}WorkItem{Item de Trabalho}other{Não Definido}}",
+  "ClassNameMsg_label": "{className,select, Organization{Organização}OrganizationConfiguration{Configuração da Organização}OrganizationDirectoryService{Serviço de Diretório}User{Usuário}UserProfile{Perfil do Usuário}UserAccess{Acesso do Usuário}UserIdentity{Identidade do Usuário}Group{Grupo}Objective{Objetivo}Measure{Medida}MeasureProgress{Progresso da Medida}UnitOfMeasurement{Unidade de Medida}Work{Trabalho}WorkStage{Estágio}WorkItem{Item de Trabalho}WorkItemValue{Valor do Item de Trabalho}other{Não Definido}}",
   "@ClassNameMsg_label": {
     "description": "Model class name labels",
     "type": "text",

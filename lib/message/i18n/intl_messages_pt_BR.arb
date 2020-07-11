@@ -95,7 +95,7 @@
     "type": "text",
     "placeholders": {}
   },
-  "AppLayoutMsg_label": "{label,select, organizationLabel{Organização}organizationsLabel{Organizações}adminLabel{Administrador}superAdminLabel{Super Administrador}userDetailLabel{Detalhes do Usuário}logoutLabel{Sair}ingightsLabel{Insights}worksLabel{Trabalhos}objectivesLabel{Objetivos}objectivesMapLabel{Mapa de Objetivos}objectivesGanttLabel{Gantt de Objetivos}usersLabel{Usuários}groupsLabel{Grupos}workItemsLabel{Itens de Trabalho}configurationLabel{Configuração}other{Não Definido}}",
+  "AppLayoutMsg_label": "{label,select, organizationLabel{Organização}organizationsLabel{Organizações}adminLabel{Administrador}superAdminLabel{Super Administrador}userDetailLabel{Detalhes do Usuário}logoutLabel{Sair}ingightsLabel{Insights}worksLabel{Trabalhos}objectivesLabel{Objetivos}objectivesMapLabel{Mapa de Objetivos}objectivesGanttLabel{Gantt de Objetivos}usersLabel{Usuários}groupsLabel{Grupos}workItemsLabel{Itens de Trabalho}workItemsGanttLabel{Gantt de Itens de Trabalho}configurationLabel{Configuração}other{Não Definido}}",
   "@AppLayoutMsg_label": {
     "description": "Applayout labels",
     "type": "text",
@@ -211,7 +211,7 @@
       "label": {}
     }
   },
-  "WorkItemMsg_label": "{label,select, workKanbanLabel{Trabalho Kanban}workItemsLabel{Itens de Trabalho}workItemsFilterLabel{Filtro de Items de Trabalho}orderedByLabel{Ordenado Por}editWorkItemLabel{Editar Itens de Trabalho}addWorkItemLabel{Adicionar Item de Trabalho}selectAValueLabel{Selecionar um Valor}workItemsOverDueLabel{Itens de Trabalho Atrasados}checkItemLabel{Item de Checagem}dropFileHereLabel{Soltar Arquivo Aqui}checkItemNameLabel{Nome do Item de Checagem}plannedActualLabel{Planejado e Real}remainingValueLabel{Valor Restante}dateAndActualValueLabel{Date e Valor Real}other{Não Definido}}",
+  "WorkItemMsg_label": "{label,select, workKanbanLabel{Trabalho Kanban}workItemsLabel{Itens de Trabalho}workItemsGanttLabel{Gantt de Items de Trabalho}workItemsFilterLabel{Filtro de Items de Trabalho}orderedByLabel{Ordenado Por}editWorkItemLabel{Editar Itens de Trabalho}addWorkItemLabel{Adicionar Item de Trabalho}selectAValueLabel{Selecionar um Valor}workItemsOverDueLabel{Itens de Trabalho Atrasados}checkItemLabel{Item de Checagem}dropFileHereLabel{Soltar Arquivo Aqui}checkItemNameLabel{Nome do Item de Checagem}plannedActualLabel{Planejado e Real}remainingValueLabel{Valor Restante}dateAndActualValueLabel{Date e Valor Real}other{Não Definido}}",
   "@WorkItemMsg_label": {
     "description": "Work Item labels",
     "type": "text",
@@ -224,7 +224,7 @@
     "type": "text",
     "placeholders": {}
   },
-  "ObjectiveMsg_label": "{label,select, objectiveLabel{Objetivo}objectivesLabel{Objetivos}objectivesFilterLabel{Filtro de Objetivos}addObjectiveLabel{Adicionar Objetivo}editObjectiveLabel{Editar Objetivo}progressLabel{Progresso}orderedByLabel{Ordenado Por}ultimateObjectiveLabel{Objetivo Final}other{Não Definido}}",
+  "ObjectiveMsg_label": "{label,select, objectiveLabel{Objetivo}objectivesLabel{Objetivos}objectivesGanttLabel{Gantt de Objetivos}objectivesFilterLabel{Filtro de Objetivos}addObjectiveLabel{Adicionar Objetivo}editObjectiveLabel{Editar Objetivo}progressLabel{Progresso}orderedByLabel{Ordenado Por}ultimateObjectiveLabel{Objetivo Final}other{Não Definido}}",
   "@ObjectiveMsg_label": {
     "description": "Objective labels",
     "type": "text",
