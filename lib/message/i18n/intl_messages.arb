@@ -1,7 +1,7 @@
 {
-  "@@last_modified": "2020-07-11T10:12:55.557892",
+  "@@last_modified": "2020-07-11T14:09:38.477141",
   "@@locale": "en",
-  "CommonMsg_label": "{label,select, headerTitleLabel{AUGE}headerSubtitleLabel{Objectives, Work and Performance}searchLabel{Search}filterLabel{Filter}moreLabel{more}emptyLabel{empty}selectLabel{Select}noMatchLabel{No Match}other{Not Defined}}",
+  "CommonMsg_label": "{label,select, headerTitleLabel{AUGE}headerSubtitleLabel{Objectives, Work and Performance}searchLabel{Search}filterLabel{Filter}moreLabel{more}emptyLabel{empty}selectLabel{Select}noMatchLabel{No Match}yesLabel{Yes}noLabel{No}other{Not Defined}}",
   "@CommonMsg_label": {
     "description": "Common labels",
     "type": "text",

@@ -9,33 +9,48 @@
 import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-class RestrictObjective extends $pb.ProtobufEnum {
-  static const RestrictObjective objectiveNone = RestrictObjective._(0, 'objectiveNone');
-  static const RestrictObjective objectiveIdName = RestrictObjective._(1, 'objectiveIdName');
-  static const RestrictObjective objectiveIdNameStartDateEndDate = RestrictObjective._(2, 'objectiveIdNameStartDateEndDate');
+class CustomObjective extends $pb.ProtobufEnum {
+  static const CustomObjective objectiveOnlySpecification = CustomObjective._(0, 'objectiveOnlySpecification');
+  static const CustomObjective objectiveOnlySpecificationStartDateEndDate = CustomObjective._(1, 'objectiveOnlySpecificationStartDateEndDate');
+  static const CustomObjective objectiveOnlyWithMeasure = CustomObjective._(2, 'objectiveOnlyWithMeasure');
+  static const CustomObjective objectiveTreeAlignedTo = CustomObjective._(3, 'objectiveTreeAlignedTo');
 
-  static const $core.List<RestrictObjective> values = <RestrictObjective> [
-    objectiveNone,
-    objectiveIdName,
-    objectiveIdNameStartDateEndDate,
+  static const $core.List<CustomObjective> values = <CustomObjective> [
+    objectiveOnlySpecification,
+    objectiveOnlySpecificationStartDateEndDate,
+    objectiveOnlyWithMeasure,
+    objectiveTreeAlignedTo,
   ];
 
-  static final $core.Map<$core.int, RestrictObjective> _byValue = $pb.ProtobufEnum.initByValue(values);
-  static RestrictObjective valueOf($core.int value) => _byValue[value];
+  static final $core.Map<$core.int, CustomObjective> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static CustomObjective valueOf($core.int value) => _byValue[value];
 
-  const RestrictObjective._($core.int v, $core.String n) : super(v, n);
+  const CustomObjective._($core.int v, $core.String n) : super(v, n);
 }
 
-class RestrictMeasure extends $pb.ProtobufEnum {
-  static const RestrictMeasure measureNone = RestrictMeasure._(0, 'measureNone');
+class CustomMeasure extends $pb.ProtobufEnum {
+  static const CustomMeasure measureWithoutObjective = CustomMeasure._(0, 'measureWithoutObjective');
 
-  static const $core.List<RestrictMeasure> values = <RestrictMeasure> [
-    measureNone,
+  static const $core.List<CustomMeasure> values = <CustomMeasure> [
+    measureWithoutObjective,
   ];
 
-  static final $core.Map<$core.int, RestrictMeasure> _byValue = $pb.ProtobufEnum.initByValue(values);
-  static RestrictMeasure valueOf($core.int value) => _byValue[value];
+  static final $core.Map<$core.int, CustomMeasure> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static CustomMeasure valueOf($core.int value) => _byValue[value];
 
-  const RestrictMeasure._($core.int v, $core.String n) : super(v, n);
+  const CustomMeasure._($core.int v, $core.String n) : super(v, n);
+}
+
+class CustomMeasureProgress extends $pb.ProtobufEnum {
+  static const CustomMeasureProgress measureProgressWithoutMeasure = CustomMeasureProgress._(0, 'measureProgressWithoutMeasure');
+
+  static const $core.List<CustomMeasureProgress> values = <CustomMeasureProgress> [
+    measureProgressWithoutMeasure,
+  ];
+
+  static final $core.Map<$core.int, CustomMeasureProgress> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static CustomMeasureProgress valueOf($core.int value) => _byValue[value];
+
+  const CustomMeasureProgress._($core.int v, $core.String n) : super(v, n);
 }
 

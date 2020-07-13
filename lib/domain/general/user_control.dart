@@ -50,7 +50,7 @@ class UserControlHelper {
   static user_control_pb.UserControl writeToProtoBuf(UserControl userControl, {bool onlySpecification = false}) {
     user_control_pb.UserControl userControlPb = user_control_pb.UserControl();
 
-    if (userControl.user != null) userControlPb.user = UserHelper.writeToProtoBuf(userControl.user, onlySpecification: true);
+    if (userControl.user != null) userControlPb.user = UserHelper.writeToProtoBuf(userControl.user, clearUserProfileImage: true);
 
     if (!onlySpecification) {
       if (userControl.dateTimeLastNotification != null)

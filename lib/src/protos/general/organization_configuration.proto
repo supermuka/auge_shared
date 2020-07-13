@@ -37,5 +37,4 @@ message OrganizationConfigurationRequest {
 message OrganizationConfigurationGetRequest {
     string id = 1;
     string organization_id = 2;
-    RestrictOrganization restrict_organization = 3;
 }

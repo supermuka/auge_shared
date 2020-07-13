@@ -9,18 +9,18 @@
 import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-class RestrictGroup extends $pb.ProtobufEnum {
-  static const RestrictGroup groupNone = RestrictGroup._(0, 'groupNone');
-  static const RestrictGroup groupSpecification = RestrictGroup._(1, 'groupSpecification');
+class CustomGroup extends $pb.ProtobufEnum {
+  static const CustomGroup groupOnlySpecification = CustomGroup._(0, 'groupOnlySpecification');
+  static const CustomGroup groupWithMembers = CustomGroup._(1, 'groupWithMembers');
 
-  static const $core.List<RestrictGroup> values = <RestrictGroup> [
-    groupNone,
-    groupSpecification,
+  static const $core.List<CustomGroup> values = <CustomGroup> [
+    groupOnlySpecification,
+    groupWithMembers,
   ];
 
-  static final $core.Map<$core.int, RestrictGroup> _byValue = $pb.ProtobufEnum.initByValue(values);
-  static RestrictGroup valueOf($core.int value) => _byValue[value];
+  static final $core.Map<$core.int, CustomGroup> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static CustomGroup valueOf($core.int value) => _byValue[value];
 
-  const RestrictGroup._($core.int v, $core.String n) : super(v, n);
+  const CustomGroup._($core.int v, $core.String n) : super(v, n);
 }
 

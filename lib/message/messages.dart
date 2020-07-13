@@ -17,6 +17,8 @@ class CommonMsg {
   static const String emptyLabel = 'emptyLabel';
   static const selectLabel = 'selectLabel';
   static const String noMatchLabel = 'noMatchLabel';
+  static const String yesLabel = 'yesLabel';
+  static const String noLabel = 'noLabel';
 
   static String label(String label) => Intl.select(label, {
     headerTitleLabel: 'AUGE',
@@ -27,6 +29,8 @@ class CommonMsg {
     emptyLabel: 'empty',
     selectLabel: 'Select',
     noMatchLabel: 'No Match',
+    yesLabel: 'Yes',
+    noLabel: 'No',
     'other': 'Not Defined'},
       name: "CommonMsg_label",
       args: <String>[label],

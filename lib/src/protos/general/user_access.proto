@@ -36,7 +36,6 @@ message UserAccessRequest {
     UserAccess user_access = 1;
     string auth_user_id = 2;
     string auth_organization_id = 3;
-    RestrictUserProfile restrict_user_profile = 4;
 }
 
 // Message request for delete related to domain object.
@@ -53,7 +52,6 @@ message UserAccessGetRequest {
     string organization_id = 3;
     string identification = 4;
     string password = 5;
-    //RestrictUserProfile restrict_user_profile = 6;
 }
 
 // Response list of the organization

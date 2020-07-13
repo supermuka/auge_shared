@@ -13,8 +13,6 @@ import 'organization.pb.dart' as $0;
 import 'user.pb.dart' as $3;
 
 import 'group.pbenum.dart';
-import 'organization.pbenum.dart' as $0;
-import 'user.pbenum.dart' as $3;
 
 export 'group.pbenum.dart';
 
@@ -247,10 +245,8 @@ class GroupGetRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo('GroupGetRequest', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
     ..aOS(1, 'id')
     ..aOS(2, 'organizationId')
-    ..e<RestrictGroup>(3, 'restrictGroup', $pb.PbFieldType.OE, defaultOrMaker: RestrictGroup.groupNone, valueOf: RestrictGroup.valueOf, enumValues: RestrictGroup.values)
-    ..e<$0.RestrictOrganization>(4, 'restrictOrganization', $pb.PbFieldType.OE, defaultOrMaker: $0.RestrictOrganization.organizationNone, valueOf: $0.RestrictOrganization.valueOf, enumValues: $0.RestrictOrganization.values)
-    ..e<$3.RestrictUser>(5, 'restrictUser', $pb.PbFieldType.OE, defaultOrMaker: $3.RestrictUser.userNone, valueOf: $3.RestrictUser.valueOf, enumValues: $3.RestrictUser.values)
-    ..a<$core.int>(6, 'alignedToRecursive', $pb.PbFieldType.O3)
+    ..e<CustomGroup>(3, 'customGroup', $pb.PbFieldType.OE, defaultOrMaker: CustomGroup.groupOnlySpecification, valueOf: CustomGroup.valueOf, enumValues: CustomGroup.values)
+    ..a<$core.int>(4, 'alignedToRecursive', $pb.PbFieldType.O3)
     ..hasRequiredFields = false
   ;
 
@@ -288,40 +284,22 @@ class GroupGetRequest extends $pb.GeneratedMessage {
   void clearOrganizationId() => clearField(2);
 
   @$pb.TagNumber(3)
-  RestrictGroup get restrictGroup => $_getN(2);
+  CustomGroup get customGroup => $_getN(2);
   @$pb.TagNumber(3)
-  set restrictGroup(RestrictGroup v) { setField(3, v); }
+  set customGroup(CustomGroup v) { setField(3, v); }
   @$pb.TagNumber(3)
-  $core.bool hasRestrictGroup() => $_has(2);
+  $core.bool hasCustomGroup() => $_has(2);
   @$pb.TagNumber(3)
-  void clearRestrictGroup() => clearField(3);
+  void clearCustomGroup() => clearField(3);
 
   @$pb.TagNumber(4)
-  $0.RestrictOrganization get restrictOrganization => $_getN(3);
+  $core.int get alignedToRecursive => $_getIZ(3);
   @$pb.TagNumber(4)
-  set restrictOrganization($0.RestrictOrganization v) { setField(4, v); }
+  set alignedToRecursive($core.int v) { $_setSignedInt32(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasRestrictOrganization() => $_has(3);
+  $core.bool hasAlignedToRecursive() => $_has(3);
   @$pb.TagNumber(4)
-  void clearRestrictOrganization() => clearField(4);
-
-  @$pb.TagNumber(5)
-  $3.RestrictUser get restrictUser => $_getN(4);
-  @$pb.TagNumber(5)
-  set restrictUser($3.RestrictUser v) { setField(5, v); }
-  @$pb.TagNumber(5)
-  $core.bool hasRestrictUser() => $_has(4);
-  @$pb.TagNumber(5)
-  void clearRestrictUser() => clearField(5);
-
-  @$pb.TagNumber(6)
-  $core.int get alignedToRecursive => $_getIZ(5);
-  @$pb.TagNumber(6)
-  set alignedToRecursive($core.int v) { $_setSignedInt32(5, v); }
-  @$pb.TagNumber(6)
-  $core.bool hasAlignedToRecursive() => $_has(5);
-  @$pb.TagNumber(6)
-  void clearAlignedToRecursive() => clearField(6);
+  void clearAlignedToRecursive() => clearField(4);
 }
 
 class GroupTypeGetRequest extends $pb.GeneratedMessage {

@@ -16,16 +16,13 @@ class UnitOfMeasurement {
 
 class UnitOfMeasurementHelper {
 
-  static unit_of_measurement_pbgrpc.UnitOfMeasurement writeToProtoBuf(UnitOfMeasurement unitOfMeasurement, {bool onlySpecification = false}) {
+  static unit_of_measurement_pbgrpc.UnitOfMeasurement writeToProtoBuf(UnitOfMeasurement unitOfMeasurement) {
     unit_of_measurement_pbgrpc.UnitOfMeasurement unitOfMeasurementPb = unit_of_measurement_pbgrpc.UnitOfMeasurement();
 
     if (unitOfMeasurement.id != null) unitOfMeasurementPb.id = unitOfMeasurement.id;
     if (unitOfMeasurement.name != null) unitOfMeasurementPb.name = unitOfMeasurement.name;
-
-    if (!onlySpecification) {
-      if (unitOfMeasurement.symbol != null)
-        unitOfMeasurementPb.symbol = unitOfMeasurement.symbol;
-    }
+    if (unitOfMeasurement.symbol != null)
+      unitOfMeasurementPb.symbol = unitOfMeasurement.symbol;
 
     return unitOfMeasurementPb;
   }

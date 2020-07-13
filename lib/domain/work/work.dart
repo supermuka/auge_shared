@@ -155,35 +155,35 @@ class Work  {
 
 class WorkHelper {
 
-  static work_work_item_pb.Work writeToProtoBuf(Work work, {bool onlySpecification: false}) {
+  static work_work_item_pb.Work writeToProtoBuf(Work work) {
     work_work_item_pb.Work workPb = work_work_item_pb.Work();
 
     if (work.id != null) workPb.id = work.id;
     if (work.name != null) workPb.name = work.name;
-    if (!onlySpecification) {
-      if (work.version != null) workPb.version = work.version;
-      if (work.description != null) workPb.description = work.description;
-      if (work.archived != null) workPb.archived = work.archived;
 
-      if (work.objective != null) workPb.objective =
-          ObjectiveHelper.writeToProtoBuf(
-              work.objective, onlySpecification: true);
-      if (work.group != null) workPb.group = GroupHelper.writeToProtoBuf(
-          work.group, onlySpecification: true);
-      if (work.organization != null) workPb.organization =
-          OrganizationHelper.writeToProtoBuf(
-              work.organization, onlySpecification: true);
-      if (work.leader != null) workPb.leader = UserHelper.writeToProtoBuf(
-          work.leader, onlySpecification: true);
-      if (work.workItems != null && work.workItems.isNotEmpty) workPb.workItems
-          .addAll(work.workItems.map((m) =>
-          WorkItemHelper.writeToProtoBuf(
-              m, onlySpecification: true)));
-      if (work.workStages != null && work.workStages.isNotEmpty) workPb
-          .workStages.addAll(work.workStages.map((m) =>
-          WorkStageHelper.writeToProtoBuf(
-              m, onlySpecification: true)));
-    }
+    if (work.version != null) workPb.version = work.version;
+    if (work.description != null) workPb.description = work.description;
+    if (work.archived != null) workPb.archived = work.archived;
+
+    if (work.objective != null) workPb.objective =
+        ObjectiveHelper.writeToProtoBuf(
+            work.objective);
+    if (work.group != null) workPb.group = GroupHelper.writeToProtoBuf(
+        work.group);
+    if (work.organization != null) workPb.organization =
+        OrganizationHelper.writeToProtoBuf(
+            work.organization);
+    if (work.leader != null) workPb.leader = UserHelper.writeToProtoBuf(
+        work.leader, clearUserProfileImage: true);
+    if (work.workItems != null && work.workItems.isNotEmpty) workPb.workItems
+        .addAll(work.workItems.map((m) =>
+        WorkItemHelper.writeToProtoBuf(
+            m)));
+    if (work.workStages != null && work.workStages.isNotEmpty) workPb
+        .workStages.addAll(work.workStages.map((m) =>
+        WorkStageHelper.writeToProtoBuf(
+            m)));
+
     return workPb;
   }
 

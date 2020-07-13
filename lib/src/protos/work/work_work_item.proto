@@ -68,9 +68,11 @@ message WorksResponse {
     repeated Work works = 1;
 }
 
-enum RestrictWork {
-    workNone = 0;
-    workSpecification = 1;
+enum CustomWork {
+    workOnlySpecification = 0;
+    workOnlyWithWorkItems = 1;
+    workWithWorkItems = 2;
+    workWithWorkItemsAndStages = 3;
 }
 
 // Request for query param
@@ -78,15 +80,12 @@ message WorkGetRequest {
     string id = 1;
     string organization_id = 2;
     string objective_id = 3;
-    RestrictWork restrict_work = 4;
-    RestrictOrganization restrict_organization = 5;
-    RestrictWorkItem restrict_work_item = 6;
-    RestrictUserProfile restrict_user_profile = 7;
-    bool with_archived = 8;
-    repeated string group_ids = 9;
-    repeated string leader_user_ids = 10;
-    bool work_item_with_archived = 11;
-    repeated string work_item_assigned_to_ids = 12;
+    CustomWork custom_work = 4;
+    bool with_archived = 5;
+    repeated string group_ids = 6;
+    repeated string leader_user_ids = 7;
+    bool work_item_with_archived = 8;
+    repeated string work_item_assigned_to_ids = 9;
 }
 
 // The service definition.
@@ -159,9 +158,9 @@ message WorkItemsResponse {
     //bool webWorkAround = 2;
 }
 
-enum RestrictWorkItem {
-    workItemNone = 0;
-    workItemSpecification = 1;
+enum CustomWorkItem {
+    workItemOnlySpecification = 0;
+    workItemWithoutWork = 1;
 }
 
 // Request for Work Item
@@ -169,10 +168,9 @@ message WorkItemGetRequest {
     string id = 1;
     string work_id = 2;
     string organization_id = 3;
-    RestrictWork restrict_work = 4;
-    RestrictUserProfile restrict_user_profile = 5;
-    bool with_archived = 6;
-    repeated string assigned_to_ids = 7;
+    CustomWorkItem custom_work_item = 4;
+    bool with_archived = 5;
+    repeated string assigned_to_ids = 6;
 }
 
 // Message to respective domain object.
@@ -283,12 +281,18 @@ message WorkStagesResponse {
     repeated WorkStage work_stages = 1;
 }
 
+enum CustomWorkStage {
+    workStageOnlySpecification = 0;
+    workStageWithoutWork = 1;
+}
+
 // Request for query param
 message WorkStageGetRequest {
 
     string id = 1;
     string work_id = 2;
-    RestrictWork restrict_Work = 3;
+
+    CustomWorkStage custom_work_stage = 3;
 }
 
 /// *** WORKITEMVALUE
@@ -327,11 +331,13 @@ message WorkItemValuesResponse {
     repeated WorkItemValue work_item_values = 1;
 }
 
+enum CustomWorkItemValue {
+    workItemValueWithoutWorkItem = 0;
+}
+
 // Request for query Restrict
 message WorkItemValueGetRequest {
     string id = 1;
     string work_item_id = 2;
-    RestrictWorkItem restrict_work_item = 3;
-    RestrictWork restrict_work = 4;
-    RestrictUserProfile restrict_user_profile = 5;
+    CustomWorkItemValue custom_work_item_value = 3;
 }

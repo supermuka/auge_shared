@@ -22,7 +22,6 @@ const UserAccessRequest$json = const {
     const {'1': 'user_access', '3': 1, '4': 1, '5': 11, '6': '.auge.protobuf.UserAccess', '10': 'userAccess'},
     const {'1': 'auth_user_id', '3': 2, '4': 1, '5': 9, '10': 'authUserId'},
     const {'1': 'auth_organization_id', '3': 3, '4': 1, '5': 9, '10': 'authOrganizationId'},
-    const {'1': 'restrict_user_profile', '3': 4, '4': 1, '5': 14, '6': '.auge.protobuf.RestrictUserProfile', '10': 'restrictUserProfile'},
   ],
 };
 

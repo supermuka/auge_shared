@@ -57,15 +57,10 @@ message UserProfile {
     string idiom_locale = 4;
 }
 
-enum RestrictUser {
-    userNone = 0;
-    userSpecification = 1;
-}
-
-enum RestrictUserProfile {
-    userProfileNone = 0;
-    userProfileImage = 1;
-    userProfileNotificationEmailIdiom = 2;
+enum CustomUser {
+    userOnlySpecification = 0;
+    userOnlySpecificationProfileImage = 1;
+    userOnlySpecificationProfileNotificationEmailIdiom = 2;
 }
 
 message UserGetRequest {
@@ -74,8 +69,8 @@ message UserGetRequest {
     string managed_by_organization_id_or_accessed_by_organization_id = 3;
     string accessedByOrganizationId = 4;
    // bool with_objective = 5;
-    RestrictUser restrict_User = 6;
-    RestrictUserProfile restrict_user_profile = 7;
+    CustomUser custom_user = 5;
+
 }
 
 // Response list of the organization

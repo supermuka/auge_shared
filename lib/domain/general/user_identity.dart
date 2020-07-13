@@ -96,30 +96,28 @@ class UserIdentity {
 
 class UserIdentityHelper {
 
-  static user_identity_pb.UserIdentity writeToProtoBuf(UserIdentity userIdentity, {bool onlySpecification = false}) {
+  static user_identity_pb.UserIdentity writeToProtoBuf(UserIdentity userIdentity) {
     user_identity_pb.UserIdentity userIdentityPb = user_identity_pb.UserIdentity();
 
     if (userIdentity.id != null) userIdentityPb.id = userIdentity.id;
     if (userIdentity.user != null) userIdentityPb.user =
         UserHelper.writeToProtoBuf(
-            userIdentity.user, onlySpecification: true);
-    if (!onlySpecification) {
-      if (userIdentity.version != null)
-        userIdentityPb.version = userIdentity.version;
-      if (userIdentity.identification != null)
-        userIdentityPb.identification = userIdentity.identification;
-      if (userIdentity.password != null)
-        userIdentityPb.password = userIdentity.password;
-      if (userIdentity.provider != null)
-        userIdentityPb.provider = userIdentity.provider;
-      if (userIdentity.providerObjectId != null)
-        userIdentityPb.providerObjectId = userIdentity.providerObjectId;
-      if (userIdentity.providerDn != null)
-        userIdentityPb.providerObjectId = userIdentity.providerDn;
-      if (userIdentity.user != null) userIdentityPb.user =
-          UserHelper.writeToProtoBuf(
-              userIdentity.user, onlySpecification: true);
-    }
+            userIdentity.user, clearUserProfileImage: true);
+    if (userIdentity.version != null)
+      userIdentityPb.version = userIdentity.version;
+    if (userIdentity.identification != null)
+      userIdentityPb.identification = userIdentity.identification;
+    if (userIdentity.password != null)
+      userIdentityPb.password = userIdentity.password;
+    if (userIdentity.provider != null)
+      userIdentityPb.provider = userIdentity.provider;
+    if (userIdentity.providerObjectId != null)
+      userIdentityPb.providerObjectId = userIdentity.providerObjectId;
+    if (userIdentity.providerDn != null)
+      userIdentityPb.providerObjectId = userIdentity.providerDn;
+    if (userIdentity.user != null) userIdentityPb.user =
+        UserHelper.writeToProtoBuf(
+            userIdentity.user, clearUserProfileImage: true);
 
     return userIdentityPb;
   }

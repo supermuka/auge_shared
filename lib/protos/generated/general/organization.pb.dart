@@ -191,7 +191,7 @@ class OrganizationDeleteRequest extends $pb.GeneratedMessage {
 class OrganizationGetRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo('OrganizationGetRequest', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
     ..aOS(1, 'id')
-    ..e<RestrictOrganization>(2, 'restrictOrganization', $pb.PbFieldType.OE, defaultOrMaker: RestrictOrganization.organizationNone, valueOf: RestrictOrganization.valueOf, enumValues: RestrictOrganization.values)
+    ..e<CustomOrganization>(2, 'customOrganization', $pb.PbFieldType.OE, defaultOrMaker: CustomOrganization.organizationSpecification, valueOf: CustomOrganization.valueOf, enumValues: CustomOrganization.values)
     ..hasRequiredFields = false
   ;
 
@@ -220,13 +220,13 @@ class OrganizationGetRequest extends $pb.GeneratedMessage {
   void clearId() => clearField(1);
 
   @$pb.TagNumber(2)
-  RestrictOrganization get restrictOrganization => $_getN(1);
+  CustomOrganization get customOrganization => $_getN(1);
   @$pb.TagNumber(2)
-  set restrictOrganization(RestrictOrganization v) { setField(2, v); }
+  set customOrganization(CustomOrganization v) { setField(2, v); }
   @$pb.TagNumber(2)
-  $core.bool hasRestrictOrganization() => $_has(1);
+  $core.bool hasCustomOrganization() => $_has(1);
   @$pb.TagNumber(2)
-  void clearRestrictOrganization() => clearField(2);
+  void clearCustomOrganization() => clearField(2);
 }
 
 class OrganizationsResponse extends $pb.GeneratedMessage {

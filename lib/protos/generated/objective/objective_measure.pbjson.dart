@@ -5,19 +5,27 @@
 // @dart = 2.3
 // ignore_for_file: camel_case_types,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type
 
-const RestrictObjective$json = const {
-  '1': 'RestrictObjective',
+const CustomObjective$json = const {
+  '1': 'CustomObjective',
   '2': const [
-    const {'1': 'objectiveNone', '2': 0},
-    const {'1': 'objectiveIdName', '2': 1},
-    const {'1': 'objectiveIdNameStartDateEndDate', '2': 2},
+    const {'1': 'objectiveOnlySpecification', '2': 0},
+    const {'1': 'objectiveOnlySpecificationStartDateEndDate', '2': 1},
+    const {'1': 'objectiveOnlyWithMeasure', '2': 2},
+    const {'1': 'objectiveTreeAlignedTo', '2': 3},
   ],
 };
 
-const RestrictMeasure$json = const {
-  '1': 'RestrictMeasure',
+const CustomMeasure$json = const {
+  '1': 'CustomMeasure',
   '2': const [
-    const {'1': 'measureNone', '2': 0},
+    const {'1': 'measureWithoutObjective', '2': 0},
+  ],
+};
+
+const CustomMeasureProgress$json = const {
+  '1': 'CustomMeasureProgress',
+  '2': const [
+    const {'1': 'measureProgressWithoutMeasure', '2': 0},
   ],
 };
 
@@ -72,14 +80,10 @@ const ObjectiveGetRequest$json = const {
     const {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
     const {'1': 'organization_id', '3': 2, '4': 1, '5': 9, '10': 'organizationId'},
     const {'1': 'aligned_to_recursive', '3': 3, '4': 1, '5': 5, '10': 'alignedToRecursive'},
-    const {'1': 'tree_aligned_with_children', '3': 4, '4': 1, '5': 8, '10': 'treeAlignedWithChildren'},
-    const {'1': 'restrict_objective', '3': 5, '4': 1, '5': 14, '6': '.auge.protobuf.RestrictObjective', '10': 'restrictObjective'},
-    const {'1': 'restrict_organization', '3': 6, '4': 1, '5': 14, '6': '.auge.protobuf.RestrictOrganization', '10': 'restrictOrganization'},
-    const {'1': 'restrict_measure', '3': 7, '4': 1, '5': 14, '6': '.auge.protobuf.RestrictMeasure', '10': 'restrictMeasure'},
-    const {'1': 'restrict_user_profile', '3': 8, '4': 1, '5': 14, '6': '.auge.protobuf.RestrictUserProfile', '10': 'restrictUserProfile'},
-    const {'1': 'with_archived', '3': 9, '4': 1, '5': 8, '10': 'withArchived'},
-    const {'1': 'group_ids', '3': 10, '4': 3, '5': 9, '10': 'groupIds'},
-    const {'1': 'leader_user_ids', '3': 11, '4': 3, '5': 9, '10': 'leaderUserIds'},
+    const {'1': 'custom_objective', '3': 4, '4': 1, '5': 14, '6': '.auge.protobuf.CustomObjective', '10': 'customObjective'},
+    const {'1': 'with_archived', '3': 5, '4': 1, '5': 8, '10': 'withArchived'},
+    const {'1': 'group_ids', '3': 6, '4': 3, '5': 9, '10': 'groupIds'},
+    const {'1': 'leader_user_ids', '3': 7, '4': 3, '5': 9, '10': 'leaderUserIds'},
   ],
 };
 
@@ -140,8 +144,7 @@ const MeasureGetRequest$json = const {
   '2': const [
     const {'1': 'objective_id', '3': 1, '4': 1, '5': 9, '10': 'objectiveId'},
     const {'1': 'id', '3': 2, '4': 1, '5': 9, '10': 'id'},
-    const {'1': 'restrict_objective', '3': 3, '4': 1, '5': 14, '6': '.auge.protobuf.RestrictObjective', '10': 'restrictObjective'},
-    const {'1': 'restric_user_profile', '3': 4, '4': 1, '5': 14, '6': '.auge.protobuf.RestrictUserProfile', '10': 'restricUserProfile'},
+    const {'1': 'custom_measure', '3': 3, '4': 1, '5': 14, '6': '.auge.protobuf.CustomMeasure', '10': 'customMeasure'},
   ],
 };
 
@@ -189,9 +192,7 @@ const MeasureProgressGetRequest$json = const {
   '2': const [
     const {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
     const {'1': 'measure_id', '3': 2, '4': 1, '5': 9, '10': 'measureId'},
-    const {'1': 'restrict_measure', '3': 3, '4': 1, '5': 14, '6': '.auge.protobuf.RestrictMeasure', '10': 'restrictMeasure'},
-    const {'1': 'restrict_objective', '3': 4, '4': 1, '5': 14, '6': '.auge.protobuf.RestrictObjective', '10': 'restrictObjective'},
-    const {'1': 'restrict_user_profile', '3': 5, '4': 1, '5': 14, '6': '.auge.protobuf.RestrictUserProfile', '10': 'restrictUserProfile'},
+    const {'1': 'custom_measure_progress', '3': 3, '4': 1, '5': 14, '6': '.auge.protobuf.CustomMeasureProgress', '10': 'customMeasureProgress'},
   ],
 };
 

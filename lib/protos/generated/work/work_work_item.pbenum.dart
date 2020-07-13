@@ -9,33 +9,65 @@
 import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-class RestrictWork extends $pb.ProtobufEnum {
-  static const RestrictWork workNone = RestrictWork._(0, 'workNone');
-  static const RestrictWork workSpecification = RestrictWork._(1, 'workSpecification');
+class CustomWork extends $pb.ProtobufEnum {
+  static const CustomWork workOnlySpecification = CustomWork._(0, 'workOnlySpecification');
+  static const CustomWork workOnlyWithWorkItems = CustomWork._(1, 'workOnlyWithWorkItems');
+  static const CustomWork workWithWorkItems = CustomWork._(2, 'workWithWorkItems');
+  static const CustomWork workWithWorkItemsAndStages = CustomWork._(3, 'workWithWorkItemsAndStages');
 
-  static const $core.List<RestrictWork> values = <RestrictWork> [
-    workNone,
-    workSpecification,
+  static const $core.List<CustomWork> values = <CustomWork> [
+    workOnlySpecification,
+    workOnlyWithWorkItems,
+    workWithWorkItems,
+    workWithWorkItemsAndStages,
   ];
 
-  static final $core.Map<$core.int, RestrictWork> _byValue = $pb.ProtobufEnum.initByValue(values);
-  static RestrictWork valueOf($core.int value) => _byValue[value];
+  static final $core.Map<$core.int, CustomWork> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static CustomWork valueOf($core.int value) => _byValue[value];
 
-  const RestrictWork._($core.int v, $core.String n) : super(v, n);
+  const CustomWork._($core.int v, $core.String n) : super(v, n);
 }
 
-class RestrictWorkItem extends $pb.ProtobufEnum {
-  static const RestrictWorkItem workItemNone = RestrictWorkItem._(0, 'workItemNone');
-  static const RestrictWorkItem workItemSpecification = RestrictWorkItem._(1, 'workItemSpecification');
+class CustomWorkItem extends $pb.ProtobufEnum {
+  static const CustomWorkItem workItemOnlySpecification = CustomWorkItem._(0, 'workItemOnlySpecification');
+  static const CustomWorkItem workItemWithoutWork = CustomWorkItem._(1, 'workItemWithoutWork');
 
-  static const $core.List<RestrictWorkItem> values = <RestrictWorkItem> [
-    workItemNone,
-    workItemSpecification,
+  static const $core.List<CustomWorkItem> values = <CustomWorkItem> [
+    workItemOnlySpecification,
+    workItemWithoutWork,
   ];
 
-  static final $core.Map<$core.int, RestrictWorkItem> _byValue = $pb.ProtobufEnum.initByValue(values);
-  static RestrictWorkItem valueOf($core.int value) => _byValue[value];
+  static final $core.Map<$core.int, CustomWorkItem> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static CustomWorkItem valueOf($core.int value) => _byValue[value];
 
-  const RestrictWorkItem._($core.int v, $core.String n) : super(v, n);
+  const CustomWorkItem._($core.int v, $core.String n) : super(v, n);
+}
+
+class CustomWorkStage extends $pb.ProtobufEnum {
+  static const CustomWorkStage workStageOnlySpecification = CustomWorkStage._(0, 'workStageOnlySpecification');
+  static const CustomWorkStage workStageWithoutWork = CustomWorkStage._(1, 'workStageWithoutWork');
+
+  static const $core.List<CustomWorkStage> values = <CustomWorkStage> [
+    workStageOnlySpecification,
+    workStageWithoutWork,
+  ];
+
+  static final $core.Map<$core.int, CustomWorkStage> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static CustomWorkStage valueOf($core.int value) => _byValue[value];
+
+  const CustomWorkStage._($core.int v, $core.String n) : super(v, n);
+}
+
+class CustomWorkItemValue extends $pb.ProtobufEnum {
+  static const CustomWorkItemValue workItemValueWithoutWorkItem = CustomWorkItemValue._(0, 'workItemValueWithoutWorkItem');
+
+  static const $core.List<CustomWorkItemValue> values = <CustomWorkItemValue> [
+    workItemValueWithoutWorkItem,
+  ];
+
+  static final $core.Map<$core.int, CustomWorkItemValue> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static CustomWorkItemValue valueOf($core.int value) => _byValue[value];
+
+  const CustomWorkItemValue._($core.int v, $core.String n) : super(v, n);
 }
 

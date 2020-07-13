@@ -281,8 +281,7 @@ class UserGetRequest extends $pb.GeneratedMessage {
     ..aOS(2, 'managedByOrganizationId')
     ..aOS(3, 'managedByOrganizationIdOrAccessedByOrganizationId')
     ..aOS(4, 'accessedByOrganizationId', protoName: 'accessedByOrganizationId')
-    ..e<RestrictUser>(6, 'restrictUser', $pb.PbFieldType.OE, protoName: 'restrict_User', defaultOrMaker: RestrictUser.userNone, valueOf: RestrictUser.valueOf, enumValues: RestrictUser.values)
-    ..e<RestrictUserProfile>(7, 'restrictUserProfile', $pb.PbFieldType.OE, defaultOrMaker: RestrictUserProfile.userProfileNone, valueOf: RestrictUserProfile.valueOf, enumValues: RestrictUserProfile.values)
+    ..e<CustomUser>(5, 'customUser', $pb.PbFieldType.OE, defaultOrMaker: CustomUser.userOnlySpecification, valueOf: CustomUser.valueOf, enumValues: CustomUser.values)
     ..hasRequiredFields = false
   ;
 
@@ -337,23 +336,14 @@ class UserGetRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   void clearAccessedByOrganizationId() => clearField(4);
 
-  @$pb.TagNumber(6)
-  RestrictUser get restrictUser => $_getN(4);
-  @$pb.TagNumber(6)
-  set restrictUser(RestrictUser v) { setField(6, v); }
-  @$pb.TagNumber(6)
-  $core.bool hasRestrictUser() => $_has(4);
-  @$pb.TagNumber(6)
-  void clearRestrictUser() => clearField(6);
-
-  @$pb.TagNumber(7)
-  RestrictUserProfile get restrictUserProfile => $_getN(5);
-  @$pb.TagNumber(7)
-  set restrictUserProfile(RestrictUserProfile v) { setField(7, v); }
-  @$pb.TagNumber(7)
-  $core.bool hasRestrictUserProfile() => $_has(5);
-  @$pb.TagNumber(7)
-  void clearRestrictUserProfile() => clearField(7);
+  @$pb.TagNumber(5)
+  CustomUser get customUser => $_getN(4);
+  @$pb.TagNumber(5)
+  set customUser(CustomUser v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasCustomUser() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearCustomUser() => clearField(5);
 }
 
 class UsersResponse extends $pb.GeneratedMessage {

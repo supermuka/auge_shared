@@ -155,41 +155,40 @@ class Objective {
 
 class ObjectiveHelper {
 
-  static objective_measure_pb.Objective writeToProtoBuf(Objective objective, {bool onlySpecification = false}) {
+  static objective_measure_pb.Objective writeToProtoBuf(Objective objective) {
     objective_measure_pb.Objective objectivePb = objective_measure_pb.Objective();
 
     if (objective.id != null) objectivePb.id = objective.id;
     if (objective.name != null) objectivePb.name = objective.name;
 
-    if (!onlySpecification) {
-      if (objective.version != null) objectivePb.version = objective.version;
-      if (objective.description != null)
-        objectivePb.description = objective.description;
+    if (objective.version != null) objectivePb.version = objective.version;
+    if (objective.description != null)
+      objectivePb.description = objective.description;
 
-      if (objective.startDate != null) objectivePb.startDate =
-          CommonUtils.timestampFromDateTime(objective.startDate);
-      if (objective.endDate != null) objectivePb.endDate =
-          CommonUtils.timestampFromDateTime(objective.endDate);
+    if (objective.startDate != null) objectivePb.startDate =
+        CommonUtils.timestampFromDateTime(objective.startDate);
+    if (objective.endDate != null) objectivePb.endDate =
+        CommonUtils.timestampFromDateTime(objective.endDate);
 
-      if (objective.archived != null) objectivePb.archived = objective.archived;
-      if (objective.organization != null) objectivePb.organization =
-          OrganizationHelper.writeToProtoBuf(objective.organization, onlySpecification: true);
-      if (objective.group != null)
-        objectivePb.group = GroupHelper.writeToProtoBuf(objective.group, onlySpecification: true);
-      if (objective.leader != null) objectivePb.leader =
-          UserHelper.writeToProtoBuf(
-              objective.leader); //this.leader.writeToProtoBuf();
-      if (objective.alignedTo != null) objectivePb.alignedTo =
-          ObjectiveHelper.writeToProtoBuf(objective.alignedTo, onlySpecification: true);
+    if (objective.archived != null) objectivePb.archived = objective.archived;
+    if (objective.organization != null) objectivePb.organization =
+        OrganizationHelper.writeToProtoBuf(objective.organization);
+    if (objective.group != null)
+      objectivePb.group = GroupHelper.writeToProtoBuf(objective.group);
+    if (objective.leader != null) objectivePb.leader =
+        UserHelper.writeToProtoBuf(
+            objective.leader, clearUserProfileImage: true); //this.leader.writeToProtoBuf();
+    if (objective.alignedTo != null) objectivePb.alignedTo =
+        ObjectiveHelper.writeToProtoBuf(objective.alignedTo);
 
-      if (objective.alignedWithChildren != null &&
-          objective.alignedWithChildren.isNotEmpty) objectivePb
-          .alignedWithChildren.addAll(objective.alignedWithChildren.map((a) =>
-          ObjectiveHelper.writeToProtoBuf(a, onlySpecification: true)));
-      if (objective.measures != null &&
-          objective.measures.isNotEmpty) objectivePb.measures.addAll(
-          objective.measures.map((m) => MeasureHelper.writeToProtoBuf(m, onlySpecification: true)));
-    }
+    if (objective.alignedWithChildren != null &&
+        objective.alignedWithChildren.isNotEmpty) objectivePb
+        .alignedWithChildren.addAll(objective.alignedWithChildren.map((a) =>
+        ObjectiveHelper.writeToProtoBuf(a)));
+    if (objective.measures != null &&
+        objective.measures.isNotEmpty) objectivePb.measures.addAll(
+        objective.measures.map((m) => MeasureHelper.writeToProtoBuf(m)));
+
     return objectivePb;
   }
 

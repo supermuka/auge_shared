@@ -43,15 +43,14 @@ message OrganizationDeleteRequest {
     string auth_organization_id = 4;
 }
 
-enum RestrictOrganization {
-    organizationNone = 0;
-    organizationSpecification = 1;
+enum CustomOrganization {
+    organizationSpecification = 0;
 }
 
 // Request for query Restrict
 message OrganizationGetRequest {
     string id = 1;
-    RestrictOrganization restrict_organization = 2;
+    CustomOrganization custom_organization = 2;
 }
 
 // Response list of the organization

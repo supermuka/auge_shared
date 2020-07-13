@@ -9,35 +9,20 @@
 import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-class RestrictUser extends $pb.ProtobufEnum {
-  static const RestrictUser userNone = RestrictUser._(0, 'userNone');
-  static const RestrictUser userSpecification = RestrictUser._(1, 'userSpecification');
+class CustomUser extends $pb.ProtobufEnum {
+  static const CustomUser userOnlySpecification = CustomUser._(0, 'userOnlySpecification');
+  static const CustomUser userOnlySpecificationProfileImage = CustomUser._(1, 'userOnlySpecificationProfileImage');
+  static const CustomUser userOnlySpecificationProfileNotificationEmailIdiom = CustomUser._(2, 'userOnlySpecificationProfileNotificationEmailIdiom');
 
-  static const $core.List<RestrictUser> values = <RestrictUser> [
-    userNone,
-    userSpecification,
+  static const $core.List<CustomUser> values = <CustomUser> [
+    userOnlySpecification,
+    userOnlySpecificationProfileImage,
+    userOnlySpecificationProfileNotificationEmailIdiom,
   ];
 
-  static final $core.Map<$core.int, RestrictUser> _byValue = $pb.ProtobufEnum.initByValue(values);
-  static RestrictUser valueOf($core.int value) => _byValue[value];
+  static final $core.Map<$core.int, CustomUser> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static CustomUser valueOf($core.int value) => _byValue[value];
 
-  const RestrictUser._($core.int v, $core.String n) : super(v, n);
-}
-
-class RestrictUserProfile extends $pb.ProtobufEnum {
-  static const RestrictUserProfile userProfileNone = RestrictUserProfile._(0, 'userProfileNone');
-  static const RestrictUserProfile userProfileImage = RestrictUserProfile._(1, 'userProfileImage');
-  static const RestrictUserProfile userProfileNotificationEmailIdiom = RestrictUserProfile._(2, 'userProfileNotificationEmailIdiom');
-
-  static const $core.List<RestrictUserProfile> values = <RestrictUserProfile> [
-    userProfileNone,
-    userProfileImage,
-    userProfileNotificationEmailIdiom,
-  ];
-
-  static final $core.Map<$core.int, RestrictUserProfile> _byValue = $pb.ProtobufEnum.initByValue(values);
-  static RestrictUserProfile valueOf($core.int value) => _byValue[value];
-
-  const RestrictUserProfile._($core.int v, $core.String n) : super(v, n);
+  const CustomUser._($core.int v, $core.String n) : super(v, n);
 }
 

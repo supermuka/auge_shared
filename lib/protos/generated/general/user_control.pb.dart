@@ -12,8 +12,6 @@ import 'package:protobuf/protobuf.dart' as $pb;
 import 'user.pb.dart' as $3;
 import '../google/protobuf/timestamp.pb.dart' as $5;
 
-import 'user.pbenum.dart' as $3;
-
 class UserControl extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo('UserControl', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
     ..aOM<$3.User>(1, 'user', subBuilder: $3.User.create)
@@ -115,7 +113,6 @@ class UserControlRequest extends $pb.GeneratedMessage {
 class UserControlGetRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo('UserControlGetRequest', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
     ..aOS(1, 'userId')
-    ..e<$3.RestrictUser>(2, 'restrictUser', $pb.PbFieldType.OE, defaultOrMaker: $3.RestrictUser.userNone, valueOf: $3.RestrictUser.valueOf, enumValues: $3.RestrictUser.values)
     ..hasRequiredFields = false
   ;
 
@@ -142,15 +139,6 @@ class UserControlGetRequest extends $pb.GeneratedMessage {
   $core.bool hasUserId() => $_has(0);
   @$pb.TagNumber(1)
   void clearUserId() => clearField(1);
-
-  @$pb.TagNumber(2)
-  $3.RestrictUser get restrictUser => $_getN(1);
-  @$pb.TagNumber(2)
-  set restrictUser($3.RestrictUser v) { setField(2, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasRestrictUser() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearRestrictUser() => clearField(2);
 }
 
 class UserControlDeleteRequest extends $pb.GeneratedMessage {

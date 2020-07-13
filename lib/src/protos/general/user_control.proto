@@ -36,7 +36,6 @@ message UserControlRequest {
 
 message UserControlGetRequest {
     string user_id = 1;
-    RestrictUser restrict_user = 2;
 }
 
 // Message request for delete related to domain object.

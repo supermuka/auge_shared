@@ -43,22 +43,20 @@ class User {
 
 class UserHelper {
 
-  static user_pb.User writeToProtoBuf(User user, {bool onlySpecification = false}) {
+  static user_pb.User writeToProtoBuf(User user, {bool clearUserProfileImage = false}) {
     user_pb.User userPb = user_pb.User();
 
     if (user.id != null) userPb.id = user.id;
     if (user.name != null) userPb.name = user.name;
 
-    if (!onlySpecification) {
-      if (user.version != null) userPb.version = user.version;
-      if (user.inactive != null) userPb.inactive = user.inactive;
-      if (user.managedByOrganization != null) userPb.managedByOrganization =
-          OrganizationHelper.writeToProtoBuf(user.managedByOrganization, onlySpecification: true);
+    if (user.version != null) userPb.version = user.version;
+    if (user.inactive != null) userPb.inactive = user.inactive;
+    if (user.managedByOrganization != null) userPb.managedByOrganization =
+        OrganizationHelper.writeToProtoBuf(user.managedByOrganization);
 
-      // Is composition, deletage onlySpecification.
-      if (user.userProfile != null) userPb.userProfile =
-          UserProfileHelper.writeToProtoBuf(user.userProfile, onlySpecification: onlySpecification);
-    }
+    // Is composition, deletage onlySpecification.
+    if (user.userProfile != null) userPb.userProfile =
+        UserProfileHelper.writeToProtoBuf(user.userProfile, clearUserProfileImage: clearUserProfileImage);
 
     return userPb;
   }
@@ -159,17 +157,17 @@ class UserProfile {
 
 class UserProfileHelper {
 
-  static user_pb.UserProfile writeToProtoBuf(UserProfile userProfile, {bool onlySpecification = false}) {
+  static user_pb.UserProfile writeToProtoBuf(UserProfile userProfile,
+      {bool clearUserProfileImage = false}) {
     user_pb.UserProfile userProfilePb = user_pb.UserProfile();
 
-    if (!onlySpecification) {
-      if (userProfile.eMail != null) userProfilePb.eMail = userProfile.eMail;
-      if (userProfile.eMailNotification != null)
-        userProfilePb.eMailNotification = userProfile.eMailNotification;
-      if (userProfile.image != null) userProfilePb.image = userProfile.image;
-      if (userProfile.idiomLocale != null)
-        userProfilePb.idiomLocale = userProfile.idiomLocale;
-    }
+    if (userProfile.eMail != null) userProfilePb.eMail = userProfile.eMail;
+    if (userProfile.eMailNotification != null)
+      userProfilePb.eMailNotification = userProfile.eMailNotification;
+    if (userProfile.image != null && !clearUserProfileImage) userProfilePb.image = userProfile.image;
+    if (userProfile.idiomLocale != null)
+      userProfilePb.idiomLocale = userProfile.idiomLocale;
+
     // if (lastHistoryReading != null) userProfilePb.dateTimeReadingHistory = CommonUtils.timestampFromDateTime(dateTimeReadingHistory);
 
     return userProfilePb;

@@ -51,18 +51,16 @@ message GroupDeleteRequest {
     string auth_organization_id = 4;
 }
 
-enum RestrictGroup {
-    groupNone = 0;
-    groupSpecification = 1;
+enum CustomGroup {
+    groupOnlySpecification = 0;
+    groupWithMembers = 1;
 }
 // Request for query Restrict
 message GroupGetRequest {
     string id = 1;
     string organization_id = 2;
-    RestrictGroup restrict_group = 3;
-    RestrictOrganization restrict_organization = 4;
-    RestrictUser restrict_user = 5;
-    int32 aligned_to_recursive = 6;
+    CustomGroup custom_group = 3;
+    int32 aligned_to_recursive = 4;
 }
 
 // Request for query Restrict

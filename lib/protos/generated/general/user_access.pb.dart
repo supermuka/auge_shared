@@ -12,8 +12,6 @@ import 'package:protobuf/protobuf.dart' as $pb;
 import 'user.pb.dart' as $3;
 import 'organization.pb.dart' as $0;
 
-import 'user.pbenum.dart' as $3;
-
 class UserAccess extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo('UserAccess', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
     ..aOS(1, 'id')
@@ -94,7 +92,6 @@ class UserAccessRequest extends $pb.GeneratedMessage {
     ..aOM<UserAccess>(1, 'userAccess', subBuilder: UserAccess.create)
     ..aOS(2, 'authUserId')
     ..aOS(3, 'authOrganizationId')
-    ..e<$3.RestrictUserProfile>(4, 'restrictUserProfile', $pb.PbFieldType.OE, defaultOrMaker: $3.RestrictUserProfile.userProfileNone, valueOf: $3.RestrictUserProfile.valueOf, enumValues: $3.RestrictUserProfile.values)
     ..hasRequiredFields = false
   ;
 
@@ -141,15 +138,6 @@ class UserAccessRequest extends $pb.GeneratedMessage {
   $core.bool hasAuthOrganizationId() => $_has(2);
   @$pb.TagNumber(3)
   void clearAuthOrganizationId() => clearField(3);
-
-  @$pb.TagNumber(4)
-  $3.RestrictUserProfile get restrictUserProfile => $_getN(3);
-  @$pb.TagNumber(4)
-  set restrictUserProfile($3.RestrictUserProfile v) { setField(4, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasRestrictUserProfile() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearRestrictUserProfile() => clearField(4);
 }
 
 class UserAccessDeleteRequest extends $pb.GeneratedMessage {

@@ -9,18 +9,16 @@
 import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-class RestrictOrganization extends $pb.ProtobufEnum {
-  static const RestrictOrganization organizationNone = RestrictOrganization._(0, 'organizationNone');
-  static const RestrictOrganization organizationSpecification = RestrictOrganization._(1, 'organizationSpecification');
+class CustomOrganization extends $pb.ProtobufEnum {
+  static const CustomOrganization organizationSpecification = CustomOrganization._(0, 'organizationSpecification');
 
-  static const $core.List<RestrictOrganization> values = <RestrictOrganization> [
-    organizationNone,
+  static const $core.List<CustomOrganization> values = <CustomOrganization> [
     organizationSpecification,
   ];
 
-  static final $core.Map<$core.int, RestrictOrganization> _byValue = $pb.ProtobufEnum.initByValue(values);
-  static RestrictOrganization valueOf($core.int value) => _byValue[value];
+  static final $core.Map<$core.int, CustomOrganization> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static CustomOrganization valueOf($core.int value) => _byValue[value];
 
-  const RestrictOrganization._($core.int v, $core.String n) : super(v, n);
+  const CustomOrganization._($core.int v, $core.String n) : super(v, n);
 }
 

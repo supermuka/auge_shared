@@ -46,7 +46,7 @@ class HistoryItem {
 
 class HistoryItemHelper {
 
-  static history_item_pb.HistoryItem writeToProtoBuf(HistoryItem historyItem, {bool onlySpecification = false}) {
+  static history_item_pb.HistoryItem writeToProtoBuf(HistoryItem historyItem) {
     history_item_pb.HistoryItem historyItemPb = history_item_pb.HistoryItem();
 
     if (historyItem.id != null) {
@@ -54,37 +54,33 @@ class HistoryItemHelper {
     }
     if (historyItem.description != null) historyItemPb.description = historyItem.description;
 
-    if (!onlySpecification) {
-      if (historyItem.objectClassName != null) {
-        historyItemPb.objectClassName = historyItem.objectClassName;
-      }
-      if (historyItem.objectId != null) {
-        historyItemPb.objectId = historyItem.objectId;
-      }
-      if (historyItem.objectVersion != null) {
-        historyItemPb.objectVersion = historyItem.objectVersion;
-      }
-      if (historyItem.systemModuleIndex != null) {
-        historyItemPb.systemModuleIndex = historyItem.systemModuleIndex;
-      }
-      if (historyItem.systemFunctionIndex != null) {
-        historyItemPb.systemFunctionIndex = historyItem.systemFunctionIndex;
-      }
-      if (historyItem.dateTime != null) historyItemPb.dateTime =
-          CommonUtils.timestampFromDateTime(historyItem.dateTime);
-      if (historyItem.organization != null) historyItemPb.organization =
-          OrganizationHelper.writeToProtoBuf(
-              historyItem.organization, onlySpecification: true);
-      if (historyItem.user != null) historyItemPb.user =
-          UserHelper.writeToProtoBuf(
-              historyItem.user, onlySpecification: true);
-
-
-      if (historyItem.changedValues != null) {
-        // Convert value from dart json to protobuf string
-        historyItemPb.changedValues = json.encode(historyItem.changedValues);
-      }
+    if (historyItem.objectClassName != null) {
+      historyItemPb.objectClassName = historyItem.objectClassName;
     }
+    if (historyItem.objectId != null) {
+      historyItemPb.objectId = historyItem.objectId;
+    }
+    if (historyItem.objectVersion != null) {
+      historyItemPb.objectVersion = historyItem.objectVersion;
+    }
+    if (historyItem.systemModuleIndex != null) {
+      historyItemPb.systemModuleIndex = historyItem.systemModuleIndex;
+    }
+    if (historyItem.systemFunctionIndex != null) {
+      historyItemPb.systemFunctionIndex = historyItem.systemFunctionIndex;
+    }
+    if (historyItem.dateTime != null) historyItemPb.dateTime =
+        CommonUtils.timestampFromDateTime(historyItem.dateTime);
+    if (historyItem.organization != null) historyItemPb.organization =
+        OrganizationHelper.writeToProtoBuf(historyItem.organization);
+    if (historyItem.user != null) historyItemPb.user =
+        UserHelper.writeToProtoBuf(historyItem.user, clearUserProfileImage: true);
+
+    if (historyItem.changedValues != null) {
+      // Convert value from dart json to protobuf string
+      historyItemPb.changedValues = json.encode(historyItem.changedValues);
+    }
+
     return historyItemPb;
   }
 

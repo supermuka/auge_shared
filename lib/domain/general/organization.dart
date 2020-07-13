@@ -28,17 +28,15 @@ class Organization {
 
 class OrganizationHelper {
 
-  static organization_pb.Organization writeToProtoBuf(Organization organization, {bool onlySpecification = false}) {
+  static organization_pb.Organization writeToProtoBuf(Organization organization) {
     organization_pb.Organization organizatoinPb = organization_pb.Organization();
 
     if (organization.id != null) organizatoinPb.id = organization.id;
     if (organization.name != null) organizatoinPb.name = organization.name;
 
-    if (!onlySpecification) {
-      if (organization.version != null)
-        organizatoinPb.version = organization.version;
-      if (organization.code != null) organizatoinPb.code = organization.code;
-    }
+    if (organization.version != null)
+      organizatoinPb.version = organization.version;
+    if (organization.code != null) organizatoinPb.code = organization.code;
 
     return organizatoinPb;
   }

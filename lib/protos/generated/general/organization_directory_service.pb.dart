@@ -12,8 +12,6 @@ import 'package:protobuf/protobuf.dart' as $pb;
 import '../google/protobuf/timestamp.pb.dart' as $4;
 import 'organization.pb.dart' as $0;
 
-import 'organization.pbenum.dart' as $0;
-
 class OrganizationDirectoryService extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo('OrganizationDirectoryService', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
     ..aOS(1, 'id')
@@ -397,7 +395,6 @@ class OrganizationDirectoryServiceGetRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo('OrganizationDirectoryServiceGetRequest', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
     ..aOS(1, 'id')
     ..aOS(2, 'organizationId')
-    ..e<$0.RestrictOrganization>(3, 'restrictOrganization', $pb.PbFieldType.OE, defaultOrMaker: $0.RestrictOrganization.organizationNone, valueOf: $0.RestrictOrganization.valueOf, enumValues: $0.RestrictOrganization.values)
     ..hasRequiredFields = false
   ;
 
@@ -433,14 +430,5 @@ class OrganizationDirectoryServiceGetRequest extends $pb.GeneratedMessage {
   $core.bool hasOrganizationId() => $_has(1);
   @$pb.TagNumber(2)
   void clearOrganizationId() => clearField(2);
-
-  @$pb.TagNumber(3)
-  $0.RestrictOrganization get restrictOrganization => $_getN(2);
-  @$pb.TagNumber(3)
-  set restrictOrganization($0.RestrictOrganization v) { setField(3, v); }
-  @$pb.TagNumber(3)
-  $core.bool hasRestrictOrganization() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearRestrictOrganization() => clearField(3);
 }
 
