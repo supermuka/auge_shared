@@ -68,14 +68,13 @@ message Objectives {
   repeated Objective objectives = 1;
 }
 
-
 enum CustomObjective {
   objectiveOnlySpecification = 0;
   objectiveOnlySpecificationStartDateEndDate = 1;
   objectiveOnlyWithMeasure = 2;
-  objectiveTreeAlignedTo = 3;
+  objectiveWithMeasure = 3;
+  objectiveWithMeasureAndTree = 4;
 }
-
 
 // Used to query Restrict params
 message ObjectiveGetRequest {

@@ -11,7 +11,8 @@ const CustomObjective$json = const {
     const {'1': 'objectiveOnlySpecification', '2': 0},
     const {'1': 'objectiveOnlySpecificationStartDateEndDate', '2': 1},
     const {'1': 'objectiveOnlyWithMeasure', '2': 2},
-    const {'1': 'objectiveTreeAlignedTo', '2': 3},
+    const {'1': 'objectiveWithMeasure', '2': 3},
+    const {'1': 'objectiveWithMeasureAndTree', '2': 4},
   ],
 };
 

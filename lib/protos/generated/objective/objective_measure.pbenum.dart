@@ -13,13 +13,15 @@ class CustomObjective extends $pb.ProtobufEnum {
   static const CustomObjective objectiveOnlySpecification = CustomObjective._(0, 'objectiveOnlySpecification');
   static const CustomObjective objectiveOnlySpecificationStartDateEndDate = CustomObjective._(1, 'objectiveOnlySpecificationStartDateEndDate');
   static const CustomObjective objectiveOnlyWithMeasure = CustomObjective._(2, 'objectiveOnlyWithMeasure');
-  static const CustomObjective objectiveTreeAlignedTo = CustomObjective._(3, 'objectiveTreeAlignedTo');
+  static const CustomObjective objectiveWithMeasure = CustomObjective._(3, 'objectiveWithMeasure');
+  static const CustomObjective objectiveWithMeasureAndTree = CustomObjective._(4, 'objectiveWithMeasureAndTree');
 
   static const $core.List<CustomObjective> values = <CustomObjective> [
     objectiveOnlySpecification,
     objectiveOnlySpecificationStartDateEndDate,
     objectiveOnlyWithMeasure,
-    objectiveTreeAlignedTo,
+    objectiveWithMeasure,
+    objectiveWithMeasureAndTree,
   ];
 
   static final $core.Map<$core.int, CustomObjective> _byValue = $pb.ProtobufEnum.initByValue(values);
