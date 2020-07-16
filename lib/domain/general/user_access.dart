@@ -82,7 +82,8 @@ class UserAccessHelper {
 
 
     if (userAccess.id != null) userAccessPb.id = userAccess.id;
-    if (userAccess.user != null) userAccessPb.user = UserHelper.writeToProtoBuf(userAccess.user, clearUserProfileImage: true);
+    if (userAccess.version != null) userAccessPb.version = userAccess.version;
+    if (userAccess.user != null) userAccessPb.user = UserHelper.writeToProtoBuf(userAccess.user);
     if (userAccess.organization != null) userAccessPb.organization =
         OrganizationHelper.writeToProtoBuf(userAccess.organization);
     if (userAccess.accessRole != null)

@@ -141,8 +141,8 @@ class WorkItemHelper {
     work_work_item_pb.WorkItem workItemPb = work_work_item_pb.WorkItem();
 
     if (workItem.id != null) workItemPb.id = workItem.id;
-    if (workItem.name != null) workItemPb.name = workItem.name;
     if (workItem.version != null) workItemPb.version = workItem.version;
+    if (workItem.name != null) workItemPb.name = workItem.name;
     if (workItem.description != null)
       workItemPb.description = workItem.description;
 
@@ -185,7 +185,7 @@ class WorkItemHelper {
         workItem.assignedTo.isNotEmpty) workItemPb.assignedTo.addAll(
         workItem.assignedTo.map((m) =>
             UserHelper.writeToProtoBuf(
-                m, clearUserProfileImage: true)));
+                m)));
     if (workItem.work != null) workItemPb.work = WorkHelper.writeToProtoBuf(
         workItem.work);
 
@@ -476,10 +476,9 @@ class WorkItemValueHelper {
     work_work_item_pb.WorkItemValue workItemValuePb = work_work_item_pb.WorkItemValue();
 
     if (workItemValue.id != null) workItemValuePb.id = workItemValue.id;
+    if (workItemValue.version != null) workItemValuePb.version = workItemValue.version;
     if (workItemValue.date != null) workItemValuePb.date =
         CommonUtils.timestampFromDateTime(workItemValue.date.toUtc());
-
-    if (workItemValue.version != null) workItemValuePb.version = workItemValue.version;
 
     if (workItemValue.actualValue != null) {
       workItemValuePb.actualValue = workItemValue.actualValue;

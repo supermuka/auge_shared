@@ -51,9 +51,8 @@ class GroupHelper {
     group_pb.Group groupPb = group_pb.Group();
 
     if (group.id != null) groupPb.id = group.id;
-    if (group.name != null) groupPb.name = group.name;
-
     if (group.version != null) groupPb.version = group.version;
+    if (group.name != null) groupPb.name = group.name;
     if (group.inactive != null) groupPb.inactive = group.inactive;
     if (group.organization != null) groupPb.organization =
         OrganizationHelper.writeToProtoBuf(group.organization);
@@ -63,9 +62,9 @@ class GroupHelper {
     if (group.superGroup != null)
       groupPb.superGroup = GroupHelper.writeToProtoBuf(group.superGroup);
     if (group.leader != null)
-      groupPb.leader = UserHelper.writeToProtoBuf(group.leader, clearUserProfileImage: true);
+      groupPb.leader = UserHelper.writeToProtoBuf(group.leader);
     if (group.members != null && group.members.isNotEmpty) groupPb.members
-        .addAll(group.members.map((m) => UserHelper.writeToProtoBuf(m, clearUserProfileImage: true)));
+        .addAll(group.members.map((m) => UserHelper.writeToProtoBuf(m)));
 
 
     return groupPb;

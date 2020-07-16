@@ -32,10 +32,9 @@ class OrganizationHelper {
     organization_pb.Organization organizatoinPb = organization_pb.Organization();
 
     if (organization.id != null) organizatoinPb.id = organization.id;
-    if (organization.name != null) organizatoinPb.name = organization.name;
-
     if (organization.version != null)
       organizatoinPb.version = organization.version;
+    if (organization.name != null) organizatoinPb.name = organization.name;
     if (organization.code != null) organizatoinPb.code = organization.code;
 
     return organizatoinPb;

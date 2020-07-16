@@ -159,9 +159,8 @@ class WorkHelper {
     work_work_item_pb.Work workPb = work_work_item_pb.Work();
 
     if (work.id != null) workPb.id = work.id;
-    if (work.name != null) workPb.name = work.name;
-
     if (work.version != null) workPb.version = work.version;
+    if (work.name != null) workPb.name = work.name;
     if (work.description != null) workPb.description = work.description;
     if (work.archived != null) workPb.archived = work.archived;
 
@@ -174,7 +173,7 @@ class WorkHelper {
         OrganizationHelper.writeToProtoBuf(
             work.organization);
     if (work.leader != null) workPb.leader = UserHelper.writeToProtoBuf(
-        work.leader, clearUserProfileImage: true);
+        work.leader);
     if (work.workItems != null && work.workItems.isNotEmpty) workPb.workItems
         .addAll(work.workItems.map((m) =>
         WorkItemHelper.writeToProtoBuf(

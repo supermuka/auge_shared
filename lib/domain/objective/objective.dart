@@ -159,9 +159,8 @@ class ObjectiveHelper {
     objective_measure_pb.Objective objectivePb = objective_measure_pb.Objective();
 
     if (objective.id != null) objectivePb.id = objective.id;
-    if (objective.name != null) objectivePb.name = objective.name;
-
     if (objective.version != null) objectivePb.version = objective.version;
+    if (objective.name != null) objectivePb.name = objective.name;
     if (objective.description != null)
       objectivePb.description = objective.description;
 
@@ -177,7 +176,7 @@ class ObjectiveHelper {
       objectivePb.group = GroupHelper.writeToProtoBuf(objective.group);
     if (objective.leader != null) objectivePb.leader =
         UserHelper.writeToProtoBuf(
-            objective.leader, clearUserProfileImage: true); //this.leader.writeToProtoBuf();
+            objective.leader); //this.leader.writeToProtoBuf();
     if (objective.alignedTo != null) objectivePb.alignedTo =
         ObjectiveHelper.writeToProtoBuf(objective.alignedTo);
 

@@ -246,7 +246,7 @@ class GroupGetRequest extends $pb.GeneratedMessage {
     ..aOS(1, 'id')
     ..aOS(2, 'organizationId')
     ..e<CustomGroup>(3, 'customGroup', $pb.PbFieldType.OE, defaultOrMaker: CustomGroup.groupOnlySpecification, valueOf: CustomGroup.valueOf, enumValues: CustomGroup.values)
-    ..a<$core.int>(4, 'alignedToRecursive', $pb.PbFieldType.O3)
+    ..a<$core.int>(4, 'superGroupRecursive', $pb.PbFieldType.O3)
     ..hasRequiredFields = false
   ;
 
@@ -293,13 +293,13 @@ class GroupGetRequest extends $pb.GeneratedMessage {
   void clearCustomGroup() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.int get alignedToRecursive => $_getIZ(3);
+  $core.int get superGroupRecursive => $_getIZ(3);
   @$pb.TagNumber(4)
-  set alignedToRecursive($core.int v) { $_setSignedInt32(3, v); }
+  set superGroupRecursive($core.int v) { $_setSignedInt32(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasAlignedToRecursive() => $_has(3);
+  $core.bool hasSuperGroupRecursive() => $_has(3);
   @$pb.TagNumber(4)
-  void clearAlignedToRecursive() => clearField(4);
+  void clearSuperGroupRecursive() => clearField(4);
 }
 
 class GroupTypeGetRequest extends $pb.GeneratedMessage {

@@ -51,7 +51,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static m15(label) => "${Intl.select(label, {'objectivesMapLabel': 'Mapa de Objetivos', 'other': 'Não Definido', })}";
 
-  static m16(fieldName) => "${Intl.select(fieldName, {'nameField': 'Nome', 'descriptionField': 'Descrição', 'endValueField': 'Valor Final', 'startValueField': 'Valor Inicial', 'currentValueField': 'Valor Corrente', 'decimalsNumberField': 'Decimais', 'measureUnitField': 'Unidade', 'metricField': 'Métrica', 'other': 'Não Definido', })}";
+  static m16(fieldName) => "${Intl.select(fieldName, {'nameField': 'Nome', 'descriptionField': 'Descrição', 'endValueField': 'Valor Final', 'startValueField': 'Valor Inicial', 'currentValueField': 'Valor Corrente', 'decimalsNumberField': 'Decimais', 'unitOfMeasurementField': 'Unidade', 'metricField': 'Métrica', 'other': 'Não Definido', })}";
 
   static m17(startDateFormated, endDateFormated) => "Data do progresso da medida deveria estar entre a data inicial do objetivo ${startDateFormated} e data final do objetivo ${endDateFormated}.";
 

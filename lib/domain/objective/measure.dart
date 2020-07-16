@@ -149,9 +149,8 @@ class MeasureHelper {
     objective_measure_pb.Measure measurePb = objective_measure_pb.Measure();
 
     if (measure.id != null) measurePb.id = measure.id;
-    if (measure.name != null) measurePb.name = measure.name;
-
     if (measure.version != null) measurePb.version = measure.version;
+    if (measure.name != null) measurePb.name = measure.name;
     if (measure.description != null)
       measurePb.description = measure.description;
 
@@ -186,8 +185,8 @@ class MeasureHelper {
     Measure measure = Measure();
 
     if (measurePb.hasId()) measure.id = measurePb.id;
-    if (measurePb.hasName()) measure.name = measurePb.name;
     if (measurePb.hasVersion()) measure.version = measurePb.version;
+    if (measurePb.hasName()) measure.name = measurePb.name;
     if (measurePb.hasDescription()) measure.description = measurePb.description;
 
     if (measurePb.hasMetric()) measure.metric = measurePb.metric;

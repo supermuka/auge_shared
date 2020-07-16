@@ -66,7 +66,7 @@
       "fieldName": {}
     }
   },
-  "MeasureDomainMsg_fieldLabel": "{fieldName,select, nameField{Nome}descriptionField{Descrição}endValueField{Valor Final}startValueField{Valor Inicial}currentValueField{Valor Corrente}decimalsNumberField{Decimais}measureUnitField{Unidade}metricField{Métrica}other{Não Definido}}",
+  "MeasureDomainMsg_fieldLabel": "{fieldName,select, nameField{Nome}descriptionField{Descrição}endValueField{Valor Final}startValueField{Valor Inicial}currentValueField{Valor Corrente}decimalsNumberField{Decimais}unitOfMeasurementField{Unidade}metricField{Métrica}other{Não Definido}}",
   "@MeasureDomainMsg_fieldLabel": {
     "type": "text",
     "placeholders": {

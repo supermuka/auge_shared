@@ -100,11 +100,11 @@ class UserIdentityHelper {
     user_identity_pb.UserIdentity userIdentityPb = user_identity_pb.UserIdentity();
 
     if (userIdentity.id != null) userIdentityPb.id = userIdentity.id;
-    if (userIdentity.user != null) userIdentityPb.user =
-        UserHelper.writeToProtoBuf(
-            userIdentity.user, clearUserProfileImage: true);
     if (userIdentity.version != null)
       userIdentityPb.version = userIdentity.version;
+    if (userIdentity.user != null) userIdentityPb.user =
+        UserHelper.writeToProtoBuf(
+            userIdentity.user);
     if (userIdentity.identification != null)
       userIdentityPb.identification = userIdentity.identification;
     if (userIdentity.password != null)
@@ -117,7 +117,7 @@ class UserIdentityHelper {
       userIdentityPb.providerObjectId = userIdentity.providerDn;
     if (userIdentity.user != null) userIdentityPb.user =
         UserHelper.writeToProtoBuf(
-            userIdentity.user, clearUserProfileImage: true);
+            userIdentity.user);
 
     return userIdentityPb;
   }

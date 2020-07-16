@@ -60,7 +60,7 @@ message GroupGetRequest {
     string id = 1;
     string organization_id = 2;
     CustomGroup custom_group = 3;
-    int32 aligned_to_recursive = 4;
+    int32 super_group_recursive = 4;
 }
 
 // Request for query Restrict

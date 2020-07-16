@@ -74,7 +74,7 @@ class HistoryItemHelper {
     if (historyItem.organization != null) historyItemPb.organization =
         OrganizationHelper.writeToProtoBuf(historyItem.organization);
     if (historyItem.user != null) historyItemPb.user =
-        UserHelper.writeToProtoBuf(historyItem.user, clearUserProfileImage: true);
+        UserHelper.writeToProtoBuf(historyItem.user);
 
     if (historyItem.changedValues != null) {
       // Convert value from dart json to protobuf string
@@ -106,17 +106,35 @@ class HistoryItemHelper {
   }
 
   static const previousKey = 'p', currentKey = 'c';
+  
+  static Map<dynamic, dynamic> changedValuesMap(Map<dynamic, dynamic> previous, Map<dynamic, dynamic> current, {bool onlyDiff = true, bool removeUserProfileImageField = false}) {
 
-  static Map<dynamic, dynamic> changedValuesMap(Map<dynamic, dynamic> previous, Map<dynamic, dynamic> current, {bool onlyDiff = true}) {
+    void removeField(dynamic k, dynamic v) {
+      if (removeUserProfileImageField) {
+        if (v is Map) {
+          if (k == User.userProfileField) {
+            v.remove(UserProfile.imageField);
+          }
+        } else if (v is List) {
+          v.forEach((i) {
+            i.forEach((kk, vv) {
+              removeField(kk, vv);
+            });
+          });
+        }
+      }
+    }
 
     Map<dynamic, dynamic> _processPrevious(Map<dynamic, dynamic> previous) {
       //   Map<String, dynamic> mP = Map.from(map);
       Map<dynamic, dynamic> mP = {};
-
       previous.forEach((k, v) {
+        removeField(k, v);
         if (v is Map) {
           mP[k] = _processPrevious(v);
         } else {
+
+          /// Include list of the field, list is not processed because it is the value of the field.
           mP.putIfAbsent(k, () => {});
           mP[k][previousKey] = v;
         }
@@ -127,9 +145,11 @@ class HistoryItemHelper {
     Map<dynamic, dynamic> _processCurrent(Map<dynamic, dynamic> current) {
       Map<dynamic, dynamic> mC = {};
       current.forEach((k, v) {
-        if (v is Map) {
+        removeField(k, v);
+       if (v is Map) {
           mC[k] = _processCurrent(v);
         } else {
+         /// Include list of the field, list is not processed because it is the value of the field.
           mC.putIfAbsent(k, () => {});
           mC[k][currentKey] = v;
         }
@@ -196,8 +216,8 @@ class HistoryItemHelper {
     }
   }
 
-  static String changedValuesJson(Map<dynamic, dynamic> previous, Map<dynamic, dynamic> current, {bool onlyDiff = true}) {
-    return json.encode(changedValuesMap(previous, current, onlyDiff: onlyDiff), toEncodable: changedValuesEncode);
+  static String changedValuesJson(Map<dynamic, dynamic> previous, Map<dynamic, dynamic> current, {bool onlyDiff = true, bool removeUserProfileImageField = false}) {
+    return json.encode(changedValuesMap(previous, current, onlyDiff: onlyDiff, removeUserProfileImageField: removeUserProfileImageField), toEncodable: changedValuesEncode);
   }
 
   static dynamic changedValuesEncode(dynamic item) {

@@ -277,17 +277,12 @@ class ConfigurationMsg {
       examples: const {"Name": "Name"}
   );
 
-  static const String baseLevel = 'baseLevel';
-  static const String oneLevel = 'oneLevel';
-  static const String subLevel = 'subLevel';
-  static const String subordinateSubtree = 'subordinateSubtree';
-
   /// Label for ldap search scope level configuration
   static String searchScopeLabel(String label) => Intl.select(label, {
-    baseLevel: 'Base Level',
-    oneLevel: 'One Level',
-    subLevel: 'Sub Level',
-    subordinateSubtree: 'Subordinate Subtree',
+    ListSearchScope.baseLevel: 'Base Level',
+    ListSearchScope.oneLevel: 'One Level',
+    ListSearchScope.subLevel: 'Sub Level',
+    ListSearchScope.subordinateSubtree: 'Subordinate Subtree',
      'other': 'Not Defined'},
     name: "ConfigurationMsg_searchScopeLabel",
     args: [label],

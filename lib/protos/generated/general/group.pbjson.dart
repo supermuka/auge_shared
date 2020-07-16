@@ -53,7 +53,7 @@ const GroupGetRequest$json = const {
     const {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
     const {'1': 'organization_id', '3': 2, '4': 1, '5': 9, '10': 'organizationId'},
     const {'1': 'custom_group', '3': 3, '4': 1, '5': 14, '6': '.auge.protobuf.CustomGroup', '10': 'customGroup'},
-    const {'1': 'aligned_to_recursive', '3': 4, '4': 1, '5': 5, '10': 'alignedToRecursive'},
+    const {'1': 'super_group_recursive', '3': 4, '4': 1, '5': 5, '10': 'superGroupRecursive'},
   ],
 };
 

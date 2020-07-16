@@ -38,6 +38,8 @@ enum DirectoryServiceEvent {
   userAccessDelete,
 }
 
+enum ListSearchScope {baseLevel, oneLevel, subLevel, subordinateSubtree} // 'BASE_LEVEL', 'ONE_LEVEL', 'SUB_LEVEL', 'SUBORDINATE_SUBTREE'
+
 /// Domain model class to represent a directory services
 class OrganizationDirectoryService {
   static const String className = 'OrganizationDirectoryService';
@@ -344,4 +346,5 @@ class OrganizationDirectoryServiceHelper {
 
     return organizationDirectoryService;
   }
+
 }

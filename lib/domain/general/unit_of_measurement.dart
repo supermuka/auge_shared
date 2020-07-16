@@ -8,10 +8,10 @@ class UnitOfMeasurement {
 
   static const idField = 'id';
   String id;
-  static const symbolField = 'symbol';
-  String symbol;
   static const nameField = 'name';
   String name;
+  static const symbolField = 'symbol';
+  String symbol;
 }
 
 class UnitOfMeasurementHelper {
@@ -31,8 +31,8 @@ class UnitOfMeasurementHelper {
     UnitOfMeasurement unitOfMeasurement = UnitOfMeasurement();
 
     if (unitOfMeasurementPb.hasId()) unitOfMeasurement.id = unitOfMeasurementPb.id;
-    if (unitOfMeasurementPb.hasSymbol()) unitOfMeasurement.symbol = unitOfMeasurementPb.symbol;
     if (unitOfMeasurementPb.hasName()) unitOfMeasurement.name = unitOfMeasurementPb.name;
+    if (unitOfMeasurementPb.hasSymbol()) unitOfMeasurement.symbol = unitOfMeasurementPb.symbol;
 
     return unitOfMeasurement;
   }

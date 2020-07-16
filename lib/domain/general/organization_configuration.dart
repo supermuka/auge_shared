@@ -80,8 +80,8 @@ class OrganizationConfigurationHelper {
     organization_configuration_pb.OrganizationConfiguration organizationConfigurationPb = organization_configuration_pb.OrganizationConfiguration();
 
     if (organizationConfiguration.id != null) organizationConfigurationPb.id = organizationConfiguration.id;
-    if (organizationConfiguration.domain != null) organizationConfigurationPb.domain = organizationConfiguration.domain;
     if (organizationConfiguration.version != null) organizationConfigurationPb.version = organizationConfiguration.version;
+    if (organizationConfiguration.domain != null) organizationConfigurationPb.domain = organizationConfiguration.domain;
     if (organizationConfiguration.organization != null)
       organizationConfigurationPb.organization =
           OrganizationHelper.writeToProtoBuf(
