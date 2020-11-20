@@ -3,7 +3,7 @@
 //  source: general/user.proto
 //
 // @dart = 2.3
-// ignore_for_file: camel_case_types,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type
+// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
 
 import 'dart:async' as $async;
 
@@ -36,38 +36,29 @@ class UserServiceClient extends $grpc.Client {
           ($3.UserDeleteRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $2.Empty.fromBuffer(value));
 
-  UserServiceClient($grpc.ClientChannel channel, {$grpc.CallOptions options})
-      : super(channel, options: options);
+  UserServiceClient($grpc.ClientChannel channel,
+      {$grpc.CallOptions options,
+      $core.Iterable<$grpc.ClientInterceptor> interceptors})
+      : super(channel, options: options, interceptors: interceptors);
 
   $grpc.ResponseFuture<$3.UsersResponse> getUsers($3.UserGetRequest request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(_$getUsers, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+    return $createUnaryCall(_$getUsers, request, options: options);
   }
 
   $grpc.ResponseFuture<$1.StringValue> createUser($3.UserRequest request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$createUser, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+    return $createUnaryCall(_$createUser, request, options: options);
   }
 
   $grpc.ResponseFuture<$2.Empty> updateUser($3.UserRequest request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$updateUser, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+    return $createUnaryCall(_$updateUser, request, options: options);
   }
 
   $grpc.ResponseFuture<$2.Empty> deleteUser($3.UserDeleteRequest request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$deleteUser, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+    return $createUnaryCall(_$deleteUser, request, options: options);
   }
 }
 

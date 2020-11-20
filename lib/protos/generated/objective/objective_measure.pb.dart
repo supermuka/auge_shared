@@ -3,7 +3,7 @@
 //  source: objective/objective_measure.proto
 //
 // @dart = 2.3
-// ignore_for_file: camel_case_types,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type
+// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
 
 import 'dart:core' as $core;
 
@@ -20,20 +20,20 @@ import 'objective_measure.pbenum.dart';
 export 'objective_measure.pbenum.dart';
 
 class Objective extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('Objective', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
-    ..aOS(1, 'id')
-    ..a<$core.int>(2, 'version', $pb.PbFieldType.O3)
-    ..aOS(3, 'name')
-    ..aOS(4, 'description')
-    ..aOM<$7.Timestamp>(5, 'startDate', subBuilder: $7.Timestamp.create)
-    ..aOM<$7.Timestamp>(6, 'endDate', subBuilder: $7.Timestamp.create)
-    ..aOM<$0.Organization>(7, 'organization', subBuilder: $0.Organization.create)
-    ..aOM<$4.Group>(8, 'group', subBuilder: $4.Group.create)
-    ..aOM<Objective>(9, 'alignedTo', subBuilder: Objective.create)
-    ..aOM<$3.User>(10, 'leader', subBuilder: $3.User.create)
-    ..aOB(11, 'archived')
-    ..pc<Objective>(12, 'alignedWithChildren', $pb.PbFieldType.PM, subBuilder: Objective.create)
-    ..pc<Measure>(13, 'measures', $pb.PbFieldType.PM, subBuilder: Measure.create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Objective', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auge.protobuf'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
+    ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'version', $pb.PbFieldType.O3)
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
+    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'description')
+    ..aOM<$7.Timestamp>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'startDate', subBuilder: $7.Timestamp.create)
+    ..aOM<$7.Timestamp>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'endDate', subBuilder: $7.Timestamp.create)
+    ..aOM<$0.Organization>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'organization', subBuilder: $0.Organization.create)
+    ..aOM<$4.Group>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'group', subBuilder: $4.Group.create)
+    ..aOM<Objective>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'alignedTo', subBuilder: Objective.create)
+    ..aOM<$3.User>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'leader', subBuilder: $3.User.create)
+    ..aOB(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'archived')
+    ..pc<Objective>(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'alignedWithChildren', $pb.PbFieldType.PM, subBuilder: Objective.create)
+    ..pc<Measure>(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'measures', $pb.PbFieldType.PM, subBuilder: Measure.create)
     ..hasRequiredFields = false
   ;
 
@@ -41,8 +41,16 @@ class Objective extends $pb.GeneratedMessage {
   factory Objective() => create();
   factory Objective.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Objective.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   Objective clone() => Objective()..mergeFromMessage(this);
-  Objective copyWith(void Function(Objective) updates) => super.copyWith((message) => updates(message as Objective));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  Objective copyWith(void Function(Objective) updates) => super.copyWith((message) => updates(message as Objective)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static Objective create() => Objective._();
@@ -171,10 +179,10 @@ class Objective extends $pb.GeneratedMessage {
 }
 
 class ObjectiveRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('ObjectiveRequest', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
-    ..aOM<Objective>(1, 'objective', subBuilder: Objective.create)
-    ..aOS(2, 'authUserId')
-    ..aOS(3, 'authOrganizationId')
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ObjectiveRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auge.protobuf'), createEmptyInstance: create)
+    ..aOM<Objective>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'objective', subBuilder: Objective.create)
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authUserId')
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authOrganizationId')
     ..hasRequiredFields = false
   ;
 
@@ -182,8 +190,16 @@ class ObjectiveRequest extends $pb.GeneratedMessage {
   factory ObjectiveRequest() => create();
   factory ObjectiveRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ObjectiveRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   ObjectiveRequest clone() => ObjectiveRequest()..mergeFromMessage(this);
-  ObjectiveRequest copyWith(void Function(ObjectiveRequest) updates) => super.copyWith((message) => updates(message as ObjectiveRequest));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ObjectiveRequest copyWith(void Function(ObjectiveRequest) updates) => super.copyWith((message) => updates(message as ObjectiveRequest)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static ObjectiveRequest create() => ObjectiveRequest._();
@@ -224,11 +240,11 @@ class ObjectiveRequest extends $pb.GeneratedMessage {
 }
 
 class ObjectiveDeleteRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('ObjectiveDeleteRequest', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
-    ..aOS(1, 'objectiveId')
-    ..a<$core.int>(2, 'objectiveVersion', $pb.PbFieldType.O3)
-    ..aOS(3, 'authUserId')
-    ..aOS(4, 'authOrganizationId')
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ObjectiveDeleteRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auge.protobuf'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'objectiveId')
+    ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'objectiveVersion', $pb.PbFieldType.O3)
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authUserId')
+    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authOrganizationId')
     ..hasRequiredFields = false
   ;
 
@@ -236,8 +252,16 @@ class ObjectiveDeleteRequest extends $pb.GeneratedMessage {
   factory ObjectiveDeleteRequest() => create();
   factory ObjectiveDeleteRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ObjectiveDeleteRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   ObjectiveDeleteRequest clone() => ObjectiveDeleteRequest()..mergeFromMessage(this);
-  ObjectiveDeleteRequest copyWith(void Function(ObjectiveDeleteRequest) updates) => super.copyWith((message) => updates(message as ObjectiveDeleteRequest));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ObjectiveDeleteRequest copyWith(void Function(ObjectiveDeleteRequest) updates) => super.copyWith((message) => updates(message as ObjectiveDeleteRequest)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static ObjectiveDeleteRequest create() => ObjectiveDeleteRequest._();
@@ -285,8 +309,8 @@ class ObjectiveDeleteRequest extends $pb.GeneratedMessage {
 }
 
 class Objectives extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('Objectives', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
-    ..pc<Objective>(1, 'objectives', $pb.PbFieldType.PM, subBuilder: Objective.create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Objectives', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auge.protobuf'), createEmptyInstance: create)
+    ..pc<Objective>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'objectives', $pb.PbFieldType.PM, subBuilder: Objective.create)
     ..hasRequiredFields = false
   ;
 
@@ -294,8 +318,16 @@ class Objectives extends $pb.GeneratedMessage {
   factory Objectives() => create();
   factory Objectives.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Objectives.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   Objectives clone() => Objectives()..mergeFromMessage(this);
-  Objectives copyWith(void Function(Objectives) updates) => super.copyWith((message) => updates(message as Objectives));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  Objectives copyWith(void Function(Objectives) updates) => super.copyWith((message) => updates(message as Objectives)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static Objectives create() => Objectives._();
@@ -310,14 +342,15 @@ class Objectives extends $pb.GeneratedMessage {
 }
 
 class ObjectiveGetRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('ObjectiveGetRequest', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
-    ..aOS(1, 'id')
-    ..aOS(2, 'organizationId')
-    ..a<$core.int>(3, 'alignedToRecursive', $pb.PbFieldType.O3)
-    ..e<CustomObjective>(4, 'customObjective', $pb.PbFieldType.OE, defaultOrMaker: CustomObjective.objectiveOnlySpecification, valueOf: CustomObjective.valueOf, enumValues: CustomObjective.values)
-    ..aOB(5, 'withArchived')
-    ..pPS(6, 'groupIds')
-    ..pPS(7, 'leaderUserIds')
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ObjectiveGetRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auge.protobuf'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'organizationId')
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'measureId')
+    ..a<$core.int>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'alignedToRecursive', $pb.PbFieldType.O3)
+    ..e<CustomObjective>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'customObjective', $pb.PbFieldType.OE, defaultOrMaker: CustomObjective.objectiveOnlySpecification, valueOf: CustomObjective.valueOf, enumValues: CustomObjective.values)
+    ..aOB(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'withArchived')
+    ..pPS(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'groupIds')
+    ..pPS(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'leaderUserIds')
     ..hasRequiredFields = false
   ;
 
@@ -325,8 +358,16 @@ class ObjectiveGetRequest extends $pb.GeneratedMessage {
   factory ObjectiveGetRequest() => create();
   factory ObjectiveGetRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ObjectiveGetRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   ObjectiveGetRequest clone() => ObjectiveGetRequest()..mergeFromMessage(this);
-  ObjectiveGetRequest copyWith(void Function(ObjectiveGetRequest) updates) => super.copyWith((message) => updates(message as ObjectiveGetRequest));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ObjectiveGetRequest copyWith(void Function(ObjectiveGetRequest) updates) => super.copyWith((message) => updates(message as ObjectiveGetRequest)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static ObjectiveGetRequest create() => ObjectiveGetRequest._();
@@ -355,42 +396,51 @@ class ObjectiveGetRequest extends $pb.GeneratedMessage {
   void clearOrganizationId() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.int get alignedToRecursive => $_getIZ(2);
+  $core.String get measureId => $_getSZ(2);
   @$pb.TagNumber(3)
-  set alignedToRecursive($core.int v) { $_setSignedInt32(2, v); }
+  set measureId($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasAlignedToRecursive() => $_has(2);
+  $core.bool hasMeasureId() => $_has(2);
   @$pb.TagNumber(3)
-  void clearAlignedToRecursive() => clearField(3);
+  void clearMeasureId() => clearField(3);
 
   @$pb.TagNumber(4)
-  CustomObjective get customObjective => $_getN(3);
+  $core.int get alignedToRecursive => $_getIZ(3);
   @$pb.TagNumber(4)
-  set customObjective(CustomObjective v) { setField(4, v); }
+  set alignedToRecursive($core.int v) { $_setSignedInt32(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasCustomObjective() => $_has(3);
+  $core.bool hasAlignedToRecursive() => $_has(3);
   @$pb.TagNumber(4)
-  void clearCustomObjective() => clearField(4);
+  void clearAlignedToRecursive() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.bool get withArchived => $_getBF(4);
+  CustomObjective get customObjective => $_getN(4);
   @$pb.TagNumber(5)
-  set withArchived($core.bool v) { $_setBool(4, v); }
+  set customObjective(CustomObjective v) { setField(5, v); }
   @$pb.TagNumber(5)
-  $core.bool hasWithArchived() => $_has(4);
+  $core.bool hasCustomObjective() => $_has(4);
   @$pb.TagNumber(5)
-  void clearWithArchived() => clearField(5);
+  void clearCustomObjective() => clearField(5);
 
   @$pb.TagNumber(6)
-  $core.List<$core.String> get groupIds => $_getList(5);
+  $core.bool get withArchived => $_getBF(5);
+  @$pb.TagNumber(6)
+  set withArchived($core.bool v) { $_setBool(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasWithArchived() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearWithArchived() => clearField(6);
 
   @$pb.TagNumber(7)
-  $core.List<$core.String> get leaderUserIds => $_getList(6);
+  $core.List<$core.String> get groupIds => $_getList(6);
+
+  @$pb.TagNumber(8)
+  $core.List<$core.String> get leaderUserIds => $_getList(7);
 }
 
 class ObjectivesResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('ObjectivesResponse', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
-    ..pc<Objective>(1, 'objectives', $pb.PbFieldType.PM, subBuilder: Objective.create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ObjectivesResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auge.protobuf'), createEmptyInstance: create)
+    ..pc<Objective>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'objectives', $pb.PbFieldType.PM, subBuilder: Objective.create)
     ..hasRequiredFields = false
   ;
 
@@ -398,8 +448,16 @@ class ObjectivesResponse extends $pb.GeneratedMessage {
   factory ObjectivesResponse() => create();
   factory ObjectivesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ObjectivesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   ObjectivesResponse clone() => ObjectivesResponse()..mergeFromMessage(this);
-  ObjectivesResponse copyWith(void Function(ObjectivesResponse) updates) => super.copyWith((message) => updates(message as ObjectivesResponse));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ObjectivesResponse copyWith(void Function(ObjectivesResponse) updates) => super.copyWith((message) => updates(message as ObjectivesResponse)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static ObjectivesResponse create() => ObjectivesResponse._();
@@ -414,19 +472,19 @@ class ObjectivesResponse extends $pb.GeneratedMessage {
 }
 
 class Measure extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('Measure', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
-    ..aOS(1, 'id')
-    ..a<$core.int>(2, 'version', $pb.PbFieldType.O3)
-    ..aOS(3, 'name')
-    ..aOS(4, 'description')
-    ..aOS(5, 'metric')
-    ..a<$core.int>(6, 'decimalsNumber', $pb.PbFieldType.O3)
-    ..a<$core.double>(7, 'startValue', $pb.PbFieldType.OD)
-    ..a<$core.double>(8, 'endValue', $pb.PbFieldType.OD)
-    ..aOM<$5.UnitOfMeasurement>(9, 'unitOfMeasurement', subBuilder: $5.UnitOfMeasurement.create)
-    ..a<$core.double>(10, 'currentValue', $pb.PbFieldType.OD)
-    ..pc<MeasureProgress>(11, 'measureProgress', $pb.PbFieldType.PM, subBuilder: MeasureProgress.create)
-    ..aOM<Objective>(12, 'objective', subBuilder: Objective.create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Measure', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auge.protobuf'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
+    ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'version', $pb.PbFieldType.O3)
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
+    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'description')
+    ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'metric')
+    ..a<$core.int>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'decimalsNumber', $pb.PbFieldType.O3)
+    ..a<$core.double>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'startValue', $pb.PbFieldType.OD)
+    ..a<$core.double>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'endValue', $pb.PbFieldType.OD)
+    ..aOM<$5.UnitOfMeasurement>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'unitOfMeasurement', subBuilder: $5.UnitOfMeasurement.create)
+    ..a<$core.double>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'currentValue', $pb.PbFieldType.OD)
+    ..pc<MeasureProgress>(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'measureProgress', $pb.PbFieldType.PM, subBuilder: MeasureProgress.create)
+    ..aOM<Objective>(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'objective', subBuilder: Objective.create)
     ..hasRequiredFields = false
   ;
 
@@ -434,8 +492,16 @@ class Measure extends $pb.GeneratedMessage {
   factory Measure() => create();
   factory Measure.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Measure.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   Measure clone() => Measure()..mergeFromMessage(this);
-  Measure copyWith(void Function(Measure) updates) => super.copyWith((message) => updates(message as Measure));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  Measure copyWith(void Function(Measure) updates) => super.copyWith((message) => updates(message as Measure)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static Measure create() => Measure._();
@@ -553,11 +619,10 @@ class Measure extends $pb.GeneratedMessage {
 }
 
 class MeasureRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('MeasureRequest', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
-    ..aOM<Measure>(1, 'measure', subBuilder: Measure.create)
-    ..aOS(2, 'objectiveId')
-    ..aOS(3, 'authUserId')
-    ..aOS(4, 'authOrganizationId')
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'MeasureRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auge.protobuf'), createEmptyInstance: create)
+    ..aOM<Measure>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'measure', subBuilder: Measure.create)
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authUserId')
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authOrganizationId')
     ..hasRequiredFields = false
   ;
 
@@ -565,8 +630,16 @@ class MeasureRequest extends $pb.GeneratedMessage {
   factory MeasureRequest() => create();
   factory MeasureRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory MeasureRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   MeasureRequest clone() => MeasureRequest()..mergeFromMessage(this);
-  MeasureRequest copyWith(void Function(MeasureRequest) updates) => super.copyWith((message) => updates(message as MeasureRequest));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  MeasureRequest copyWith(void Function(MeasureRequest) updates) => super.copyWith((message) => updates(message as MeasureRequest)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static MeasureRequest create() => MeasureRequest._();
@@ -588,39 +661,30 @@ class MeasureRequest extends $pb.GeneratedMessage {
   Measure ensureMeasure() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.String get objectiveId => $_getSZ(1);
+  $core.String get authUserId => $_getSZ(1);
   @$pb.TagNumber(2)
-  set objectiveId($core.String v) { $_setString(1, v); }
+  set authUserId($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasObjectiveId() => $_has(1);
+  $core.bool hasAuthUserId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearObjectiveId() => clearField(2);
+  void clearAuthUserId() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.String get authUserId => $_getSZ(2);
+  $core.String get authOrganizationId => $_getSZ(2);
   @$pb.TagNumber(3)
-  set authUserId($core.String v) { $_setString(2, v); }
+  set authOrganizationId($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasAuthUserId() => $_has(2);
+  $core.bool hasAuthOrganizationId() => $_has(2);
   @$pb.TagNumber(3)
-  void clearAuthUserId() => clearField(3);
-
-  @$pb.TagNumber(4)
-  $core.String get authOrganizationId => $_getSZ(3);
-  @$pb.TagNumber(4)
-  set authOrganizationId($core.String v) { $_setString(3, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasAuthOrganizationId() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearAuthOrganizationId() => clearField(4);
+  void clearAuthOrganizationId() => clearField(3);
 }
 
 class MeasureDeleteRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('MeasureDeleteRequest', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
-    ..aOS(1, 'measureId')
-    ..a<$core.int>(2, 'measureVersion', $pb.PbFieldType.O3)
-    ..aOS(3, 'authUserId')
-    ..aOS(4, 'authOrganizationId')
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'MeasureDeleteRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auge.protobuf'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'measureId')
+    ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'measureVersion', $pb.PbFieldType.O3)
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authUserId')
+    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authOrganizationId')
     ..hasRequiredFields = false
   ;
 
@@ -628,8 +692,16 @@ class MeasureDeleteRequest extends $pb.GeneratedMessage {
   factory MeasureDeleteRequest() => create();
   factory MeasureDeleteRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory MeasureDeleteRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   MeasureDeleteRequest clone() => MeasureDeleteRequest()..mergeFromMessage(this);
-  MeasureDeleteRequest copyWith(void Function(MeasureDeleteRequest) updates) => super.copyWith((message) => updates(message as MeasureDeleteRequest));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  MeasureDeleteRequest copyWith(void Function(MeasureDeleteRequest) updates) => super.copyWith((message) => updates(message as MeasureDeleteRequest)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static MeasureDeleteRequest create() => MeasureDeleteRequest._();
@@ -677,8 +749,8 @@ class MeasureDeleteRequest extends $pb.GeneratedMessage {
 }
 
 class MeasuresResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('MeasuresResponse', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
-    ..pc<Measure>(1, 'measures', $pb.PbFieldType.PM, subBuilder: Measure.create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'MeasuresResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auge.protobuf'), createEmptyInstance: create)
+    ..pc<Measure>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'measures', $pb.PbFieldType.PM, subBuilder: Measure.create)
     ..hasRequiredFields = false
   ;
 
@@ -686,8 +758,16 @@ class MeasuresResponse extends $pb.GeneratedMessage {
   factory MeasuresResponse() => create();
   factory MeasuresResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory MeasuresResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   MeasuresResponse clone() => MeasuresResponse()..mergeFromMessage(this);
-  MeasuresResponse copyWith(void Function(MeasuresResponse) updates) => super.copyWith((message) => updates(message as MeasuresResponse));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  MeasuresResponse copyWith(void Function(MeasuresResponse) updates) => super.copyWith((message) => updates(message as MeasuresResponse)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static MeasuresResponse create() => MeasuresResponse._();
@@ -702,10 +782,10 @@ class MeasuresResponse extends $pb.GeneratedMessage {
 }
 
 class MeasureGetRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('MeasureGetRequest', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
-    ..aOS(1, 'objectiveId')
-    ..aOS(2, 'id')
-    ..e<CustomMeasure>(3, 'customMeasure', $pb.PbFieldType.OE, defaultOrMaker: CustomMeasure.measureWithoutObjective, valueOf: CustomMeasure.valueOf, enumValues: CustomMeasure.values)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'MeasureGetRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auge.protobuf'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'objectiveId')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
+    ..e<CustomMeasure>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'customMeasure', $pb.PbFieldType.OE, defaultOrMaker: CustomMeasure.measureOnlySpecification, valueOf: CustomMeasure.valueOf, enumValues: CustomMeasure.values)
     ..hasRequiredFields = false
   ;
 
@@ -713,8 +793,16 @@ class MeasureGetRequest extends $pb.GeneratedMessage {
   factory MeasureGetRequest() => create();
   factory MeasureGetRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory MeasureGetRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   MeasureGetRequest clone() => MeasureGetRequest()..mergeFromMessage(this);
-  MeasureGetRequest copyWith(void Function(MeasureGetRequest) updates) => super.copyWith((message) => updates(message as MeasureGetRequest));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  MeasureGetRequest copyWith(void Function(MeasureGetRequest) updates) => super.copyWith((message) => updates(message as MeasureGetRequest)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static MeasureGetRequest create() => MeasureGetRequest._();
@@ -753,13 +841,13 @@ class MeasureGetRequest extends $pb.GeneratedMessage {
 }
 
 class MeasureProgress extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('MeasureProgress', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
-    ..aOS(1, 'id')
-    ..a<$core.int>(2, 'version', $pb.PbFieldType.O3)
-    ..aOM<$7.Timestamp>(3, 'date', subBuilder: $7.Timestamp.create)
-    ..a<$core.double>(4, 'currentValue', $pb.PbFieldType.OD)
-    ..aOS(5, 'comment')
-    ..aOM<Measure>(6, 'measure', subBuilder: Measure.create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'MeasureProgress', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auge.protobuf'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
+    ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'version', $pb.PbFieldType.O3)
+    ..aOM<$7.Timestamp>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'date', subBuilder: $7.Timestamp.create)
+    ..a<$core.double>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'currentValue', $pb.PbFieldType.OD)
+    ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'comment')
+    ..aOM<Measure>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'measure', subBuilder: Measure.create)
     ..hasRequiredFields = false
   ;
 
@@ -767,8 +855,16 @@ class MeasureProgress extends $pb.GeneratedMessage {
   factory MeasureProgress() => create();
   factory MeasureProgress.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory MeasureProgress.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   MeasureProgress clone() => MeasureProgress()..mergeFromMessage(this);
-  MeasureProgress copyWith(void Function(MeasureProgress) updates) => super.copyWith((message) => updates(message as MeasureProgress));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  MeasureProgress copyWith(void Function(MeasureProgress) updates) => super.copyWith((message) => updates(message as MeasureProgress)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static MeasureProgress create() => MeasureProgress._();
@@ -838,11 +934,10 @@ class MeasureProgress extends $pb.GeneratedMessage {
 }
 
 class MeasureProgressRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('MeasureProgressRequest', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
-    ..aOM<MeasureProgress>(1, 'measureProgress', subBuilder: MeasureProgress.create)
-    ..aOS(2, 'measureId')
-    ..aOS(3, 'authUserId')
-    ..aOS(4, 'authOrganizationId')
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'MeasureProgressRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auge.protobuf'), createEmptyInstance: create)
+    ..aOM<MeasureProgress>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'measureProgress', subBuilder: MeasureProgress.create)
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authUserId')
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authOrganizationId')
     ..hasRequiredFields = false
   ;
 
@@ -850,8 +945,16 @@ class MeasureProgressRequest extends $pb.GeneratedMessage {
   factory MeasureProgressRequest() => create();
   factory MeasureProgressRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory MeasureProgressRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   MeasureProgressRequest clone() => MeasureProgressRequest()..mergeFromMessage(this);
-  MeasureProgressRequest copyWith(void Function(MeasureProgressRequest) updates) => super.copyWith((message) => updates(message as MeasureProgressRequest));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  MeasureProgressRequest copyWith(void Function(MeasureProgressRequest) updates) => super.copyWith((message) => updates(message as MeasureProgressRequest)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static MeasureProgressRequest create() => MeasureProgressRequest._();
@@ -873,39 +976,30 @@ class MeasureProgressRequest extends $pb.GeneratedMessage {
   MeasureProgress ensureMeasureProgress() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.String get measureId => $_getSZ(1);
+  $core.String get authUserId => $_getSZ(1);
   @$pb.TagNumber(2)
-  set measureId($core.String v) { $_setString(1, v); }
+  set authUserId($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasMeasureId() => $_has(1);
+  $core.bool hasAuthUserId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearMeasureId() => clearField(2);
+  void clearAuthUserId() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.String get authUserId => $_getSZ(2);
+  $core.String get authOrganizationId => $_getSZ(2);
   @$pb.TagNumber(3)
-  set authUserId($core.String v) { $_setString(2, v); }
+  set authOrganizationId($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasAuthUserId() => $_has(2);
+  $core.bool hasAuthOrganizationId() => $_has(2);
   @$pb.TagNumber(3)
-  void clearAuthUserId() => clearField(3);
-
-  @$pb.TagNumber(4)
-  $core.String get authOrganizationId => $_getSZ(3);
-  @$pb.TagNumber(4)
-  set authOrganizationId($core.String v) { $_setString(3, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasAuthOrganizationId() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearAuthOrganizationId() => clearField(4);
+  void clearAuthOrganizationId() => clearField(3);
 }
 
 class MeasureProgressDeleteRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('MeasureProgressDeleteRequest', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
-    ..aOS(1, 'measureProgressId')
-    ..a<$core.int>(2, 'measureProgressVersion', $pb.PbFieldType.O3)
-    ..aOS(3, 'authUserId')
-    ..aOS(4, 'authOrganizationId')
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'MeasureProgressDeleteRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auge.protobuf'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'measureProgressId')
+    ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'measureProgressVersion', $pb.PbFieldType.O3)
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authUserId')
+    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authOrganizationId')
     ..hasRequiredFields = false
   ;
 
@@ -913,8 +1007,16 @@ class MeasureProgressDeleteRequest extends $pb.GeneratedMessage {
   factory MeasureProgressDeleteRequest() => create();
   factory MeasureProgressDeleteRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory MeasureProgressDeleteRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   MeasureProgressDeleteRequest clone() => MeasureProgressDeleteRequest()..mergeFromMessage(this);
-  MeasureProgressDeleteRequest copyWith(void Function(MeasureProgressDeleteRequest) updates) => super.copyWith((message) => updates(message as MeasureProgressDeleteRequest));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  MeasureProgressDeleteRequest copyWith(void Function(MeasureProgressDeleteRequest) updates) => super.copyWith((message) => updates(message as MeasureProgressDeleteRequest)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static MeasureProgressDeleteRequest create() => MeasureProgressDeleteRequest._();
@@ -962,8 +1064,8 @@ class MeasureProgressDeleteRequest extends $pb.GeneratedMessage {
 }
 
 class MeasureProgressesResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('MeasureProgressesResponse', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
-    ..pc<MeasureProgress>(1, 'measureProgresses', $pb.PbFieldType.PM, subBuilder: MeasureProgress.create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'MeasureProgressesResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auge.protobuf'), createEmptyInstance: create)
+    ..pc<MeasureProgress>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'measureProgresses', $pb.PbFieldType.PM, subBuilder: MeasureProgress.create)
     ..hasRequiredFields = false
   ;
 
@@ -971,8 +1073,16 @@ class MeasureProgressesResponse extends $pb.GeneratedMessage {
   factory MeasureProgressesResponse() => create();
   factory MeasureProgressesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory MeasureProgressesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   MeasureProgressesResponse clone() => MeasureProgressesResponse()..mergeFromMessage(this);
-  MeasureProgressesResponse copyWith(void Function(MeasureProgressesResponse) updates) => super.copyWith((message) => updates(message as MeasureProgressesResponse));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  MeasureProgressesResponse copyWith(void Function(MeasureProgressesResponse) updates) => super.copyWith((message) => updates(message as MeasureProgressesResponse)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static MeasureProgressesResponse create() => MeasureProgressesResponse._();
@@ -987,10 +1097,10 @@ class MeasureProgressesResponse extends $pb.GeneratedMessage {
 }
 
 class MeasureProgressGetRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('MeasureProgressGetRequest', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
-    ..aOS(1, 'id')
-    ..aOS(2, 'measureId')
-    ..e<CustomMeasureProgress>(3, 'customMeasureProgress', $pb.PbFieldType.OE, defaultOrMaker: CustomMeasureProgress.measureProgressWithoutMeasure, valueOf: CustomMeasureProgress.valueOf, enumValues: CustomMeasureProgress.values)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'MeasureProgressGetRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auge.protobuf'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'measureId')
+    ..e<CustomMeasureProgress>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'customMeasureProgress', $pb.PbFieldType.OE, defaultOrMaker: CustomMeasureProgress.measureProgressWithoutMeasure, valueOf: CustomMeasureProgress.valueOf, enumValues: CustomMeasureProgress.values)
     ..hasRequiredFields = false
   ;
 
@@ -998,8 +1108,16 @@ class MeasureProgressGetRequest extends $pb.GeneratedMessage {
   factory MeasureProgressGetRequest() => create();
   factory MeasureProgressGetRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory MeasureProgressGetRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   MeasureProgressGetRequest clone() => MeasureProgressGetRequest()..mergeFromMessage(this);
-  MeasureProgressGetRequest copyWith(void Function(MeasureProgressGetRequest) updates) => super.copyWith((message) => updates(message as MeasureProgressGetRequest));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  MeasureProgressGetRequest copyWith(void Function(MeasureProgressGetRequest) updates) => super.copyWith((message) => updates(message as MeasureProgressGetRequest)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static MeasureProgressGetRequest create() => MeasureProgressGetRequest._();

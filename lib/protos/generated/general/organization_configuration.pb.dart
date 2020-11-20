@@ -3,7 +3,7 @@
 //  source: general/organization_configuration.proto
 //
 // @dart = 2.3
-// ignore_for_file: camel_case_types,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type
+// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
 
 import 'dart:core' as $core;
 
@@ -12,11 +12,11 @@ import 'package:protobuf/protobuf.dart' as $pb;
 import 'organization.pb.dart' as $0;
 
 class OrganizationConfiguration extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('OrganizationConfiguration', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
-    ..aOS(1, 'id')
-    ..a<$core.int>(2, 'version', $pb.PbFieldType.O3)
-    ..aOS(3, 'domain')
-    ..aOM<$0.Organization>(4, 'organization', subBuilder: $0.Organization.create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'OrganizationConfiguration', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auge.protobuf'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
+    ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'version', $pb.PbFieldType.O3)
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'domain')
+    ..aOM<$0.Organization>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'organization', subBuilder: $0.Organization.create)
     ..hasRequiredFields = false
   ;
 
@@ -24,8 +24,16 @@ class OrganizationConfiguration extends $pb.GeneratedMessage {
   factory OrganizationConfiguration() => create();
   factory OrganizationConfiguration.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory OrganizationConfiguration.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   OrganizationConfiguration clone() => OrganizationConfiguration()..mergeFromMessage(this);
-  OrganizationConfiguration copyWith(void Function(OrganizationConfiguration) updates) => super.copyWith((message) => updates(message as OrganizationConfiguration));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  OrganizationConfiguration copyWith(void Function(OrganizationConfiguration) updates) => super.copyWith((message) => updates(message as OrganizationConfiguration)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static OrganizationConfiguration create() => OrganizationConfiguration._();
@@ -75,10 +83,10 @@ class OrganizationConfiguration extends $pb.GeneratedMessage {
 }
 
 class OrganizationConfigurationRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('OrganizationConfigurationRequest', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
-    ..aOM<OrganizationConfiguration>(1, 'organizationConfiguration', protoName: 'organizationConfiguration', subBuilder: OrganizationConfiguration.create)
-    ..aOS(2, 'authUserId')
-    ..aOS(3, 'authOrganizationId')
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'OrganizationConfigurationRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auge.protobuf'), createEmptyInstance: create)
+    ..aOM<OrganizationConfiguration>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'organizationConfiguration', protoName: 'organizationConfiguration', subBuilder: OrganizationConfiguration.create)
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authUserId')
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authOrganizationId')
     ..hasRequiredFields = false
   ;
 
@@ -86,8 +94,16 @@ class OrganizationConfigurationRequest extends $pb.GeneratedMessage {
   factory OrganizationConfigurationRequest() => create();
   factory OrganizationConfigurationRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory OrganizationConfigurationRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   OrganizationConfigurationRequest clone() => OrganizationConfigurationRequest()..mergeFromMessage(this);
-  OrganizationConfigurationRequest copyWith(void Function(OrganizationConfigurationRequest) updates) => super.copyWith((message) => updates(message as OrganizationConfigurationRequest));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  OrganizationConfigurationRequest copyWith(void Function(OrganizationConfigurationRequest) updates) => super.copyWith((message) => updates(message as OrganizationConfigurationRequest)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static OrganizationConfigurationRequest create() => OrganizationConfigurationRequest._();
@@ -128,9 +144,9 @@ class OrganizationConfigurationRequest extends $pb.GeneratedMessage {
 }
 
 class OrganizationConfigurationGetRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('OrganizationConfigurationGetRequest', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
-    ..aOS(1, 'id')
-    ..aOS(2, 'organizationId')
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'OrganizationConfigurationGetRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auge.protobuf'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'organizationId')
     ..hasRequiredFields = false
   ;
 
@@ -138,8 +154,16 @@ class OrganizationConfigurationGetRequest extends $pb.GeneratedMessage {
   factory OrganizationConfigurationGetRequest() => create();
   factory OrganizationConfigurationGetRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory OrganizationConfigurationGetRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   OrganizationConfigurationGetRequest clone() => OrganizationConfigurationGetRequest()..mergeFromMessage(this);
-  OrganizationConfigurationGetRequest copyWith(void Function(OrganizationConfigurationGetRequest) updates) => super.copyWith((message) => updates(message as OrganizationConfigurationGetRequest));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  OrganizationConfigurationGetRequest copyWith(void Function(OrganizationConfigurationGetRequest) updates) => super.copyWith((message) => updates(message as OrganizationConfigurationGetRequest)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static OrganizationConfigurationGetRequest create() => OrganizationConfigurationGetRequest._();

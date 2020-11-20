@@ -3,7 +3,7 @@
 //  source: general/organization_directory_service.proto
 //
 // @dart = 2.3
-// ignore_for_file: camel_case_types,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type
+// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
 
 import 'dart:async' as $async;
 
@@ -46,53 +46,44 @@ class OrganizationDirectoryServiceServiceClient extends $grpc.Client {
       ($core.List<$core.int> value) => $1.Int32Value.fromBuffer(value));
 
   OrganizationDirectoryServiceServiceClient($grpc.ClientChannel channel,
-      {$grpc.CallOptions options})
-      : super(channel, options: options);
+      {$grpc.CallOptions options,
+      $core.Iterable<$grpc.ClientInterceptor> interceptors})
+      : super(channel, options: options, interceptors: interceptors);
 
   $grpc.ResponseFuture<$3.OrganizationDirectoryService>
       getOrganizationDirectoryService(
           $3.OrganizationDirectoryServiceGetRequest request,
           {$grpc.CallOptions options}) {
-    final call = $createCall(_$getOrganizationDirectoryService,
-        $async.Stream.fromIterable([request]),
+    return $createUnaryCall(_$getOrganizationDirectoryService, request,
         options: options);
-    return $grpc.ResponseFuture(call);
   }
 
   $grpc.ResponseFuture<$1.StringValue> createOrganizationDirectoryService(
       $3.OrganizationDirectoryServiceRequest request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(_$createOrganizationDirectoryService,
-        $async.Stream.fromIterable([request]),
+    return $createUnaryCall(_$createOrganizationDirectoryService, request,
         options: options);
-    return $grpc.ResponseFuture(call);
   }
 
   $grpc.ResponseFuture<$2.Empty> updateOrganizationDirectoryService(
       $3.OrganizationDirectoryServiceRequest request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(_$updateOrganizationDirectoryService,
-        $async.Stream.fromIterable([request]),
+    return $createUnaryCall(_$updateOrganizationDirectoryService, request,
         options: options);
-    return $grpc.ResponseFuture(call);
   }
 
   $grpc.ResponseFuture<$1.Int32Value> testOrganizationDirectoryService(
       $3.OrganizationDirectoryServiceRequest request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(_$testOrganizationDirectoryService,
-        $async.Stream.fromIterable([request]),
+    return $createUnaryCall(_$testOrganizationDirectoryService, request,
         options: options);
-    return $grpc.ResponseFuture(call);
   }
 
   $grpc.ResponseFuture<$1.Int32Value> syncOrganizationDirectoryService(
       $3.OrganizationDirectoryServiceRequest request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(_$syncOrganizationDirectoryService,
-        $async.Stream.fromIterable([request]),
+    return $createUnaryCall(_$syncOrganizationDirectoryService, request,
         options: options);
-    return $grpc.ResponseFuture(call);
   }
 }
 

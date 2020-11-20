@@ -134,10 +134,12 @@ class GeneralAuthorizationPolicy extends AuthorizationPolicy {
 
     // Role: standard
     // Object:  user_profile
+    /*
     authorizations.add(Authorization()
       ..authorizationRole = SystemRole.standard
       ..authorizationModule = SystemModule.user_profile
       ..authorizationFunctionConstraints = {SystemFunction.read: null, SystemFunction.update: null}
     );
+     */
   }
 }

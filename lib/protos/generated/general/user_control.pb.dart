@@ -3,7 +3,7 @@
 //  source: general/user_control.proto
 //
 // @dart = 2.3
-// ignore_for_file: camel_case_types,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type
+// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
 
 import 'dart:core' as $core;
 
@@ -13,9 +13,9 @@ import 'user.pb.dart' as $3;
 import '../google/protobuf/timestamp.pb.dart' as $5;
 
 class UserControl extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('UserControl', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
-    ..aOM<$3.User>(1, 'user', subBuilder: $3.User.create)
-    ..aOM<$5.Timestamp>(2, 'dateTimeLastNotification', subBuilder: $5.Timestamp.create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UserControl', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auge.protobuf'), createEmptyInstance: create)
+    ..aOM<$3.User>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'user', subBuilder: $3.User.create)
+    ..aOM<$5.Timestamp>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'dateTimeLastNotification', subBuilder: $5.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -23,8 +23,16 @@ class UserControl extends $pb.GeneratedMessage {
   factory UserControl() => create();
   factory UserControl.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory UserControl.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   UserControl clone() => UserControl()..mergeFromMessage(this);
-  UserControl copyWith(void Function(UserControl) updates) => super.copyWith((message) => updates(message as UserControl));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UserControl copyWith(void Function(UserControl) updates) => super.copyWith((message) => updates(message as UserControl)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static UserControl create() => UserControl._();
@@ -58,10 +66,10 @@ class UserControl extends $pb.GeneratedMessage {
 }
 
 class UserControlRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('UserControlRequest', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
-    ..aOM<UserControl>(1, 'userControl', subBuilder: UserControl.create)
-    ..aOS(2, 'authUserId')
-    ..aOS(3, 'authOrganizationId')
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UserControlRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auge.protobuf'), createEmptyInstance: create)
+    ..aOM<UserControl>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userControl', subBuilder: UserControl.create)
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authUserId')
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authOrganizationId')
     ..hasRequiredFields = false
   ;
 
@@ -69,8 +77,16 @@ class UserControlRequest extends $pb.GeneratedMessage {
   factory UserControlRequest() => create();
   factory UserControlRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory UserControlRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   UserControlRequest clone() => UserControlRequest()..mergeFromMessage(this);
-  UserControlRequest copyWith(void Function(UserControlRequest) updates) => super.copyWith((message) => updates(message as UserControlRequest));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UserControlRequest copyWith(void Function(UserControlRequest) updates) => super.copyWith((message) => updates(message as UserControlRequest)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static UserControlRequest create() => UserControlRequest._();
@@ -111,8 +127,8 @@ class UserControlRequest extends $pb.GeneratedMessage {
 }
 
 class UserControlGetRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('UserControlGetRequest', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
-    ..aOS(1, 'userId')
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UserControlGetRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auge.protobuf'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userId')
     ..hasRequiredFields = false
   ;
 
@@ -120,8 +136,16 @@ class UserControlGetRequest extends $pb.GeneratedMessage {
   factory UserControlGetRequest() => create();
   factory UserControlGetRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory UserControlGetRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   UserControlGetRequest clone() => UserControlGetRequest()..mergeFromMessage(this);
-  UserControlGetRequest copyWith(void Function(UserControlGetRequest) updates) => super.copyWith((message) => updates(message as UserControlGetRequest));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UserControlGetRequest copyWith(void Function(UserControlGetRequest) updates) => super.copyWith((message) => updates(message as UserControlGetRequest)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static UserControlGetRequest create() => UserControlGetRequest._();
@@ -142,10 +166,10 @@ class UserControlGetRequest extends $pb.GeneratedMessage {
 }
 
 class UserControlDeleteRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('UserControlDeleteRequest', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
-    ..aOS(1, 'userId')
-    ..aOS(3, 'authUserId')
-    ..aOS(4, 'authOrganizationId')
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UserControlDeleteRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auge.protobuf'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userId')
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authUserId')
+    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authOrganizationId')
     ..hasRequiredFields = false
   ;
 
@@ -153,8 +177,16 @@ class UserControlDeleteRequest extends $pb.GeneratedMessage {
   factory UserControlDeleteRequest() => create();
   factory UserControlDeleteRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory UserControlDeleteRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   UserControlDeleteRequest clone() => UserControlDeleteRequest()..mergeFromMessage(this);
-  UserControlDeleteRequest copyWith(void Function(UserControlDeleteRequest) updates) => super.copyWith((message) => updates(message as UserControlDeleteRequest));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UserControlDeleteRequest copyWith(void Function(UserControlDeleteRequest) updates) => super.copyWith((message) => updates(message as UserControlDeleteRequest)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static UserControlDeleteRequest create() => UserControlDeleteRequest._();

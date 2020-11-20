@@ -3,7 +3,7 @@
 //  source: general/history_item.proto
 //
 // @dart = 2.3
-// ignore_for_file: camel_case_types,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type
+// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
 
 import 'dart:async' as $async;
 
@@ -28,25 +28,20 @@ class HistoryItemServiceClient extends $grpc.Client {
           ($core.List<$core.int> value) => $1.Int32Value.fromBuffer(value));
 
   HistoryItemServiceClient($grpc.ClientChannel channel,
-      {$grpc.CallOptions options})
-      : super(channel, options: options);
+      {$grpc.CallOptions options,
+      $core.Iterable<$grpc.ClientInterceptor> interceptors})
+      : super(channel, options: options, interceptors: interceptors);
 
   $grpc.ResponseFuture<$4.HistoryResponse> getHistory(
       $4.HistoryItemGetRequest request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$getHistory, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+    return $createUnaryCall(_$getHistory, request, options: options);
   }
 
   $grpc.ResponseFuture<$1.Int32Value> getHistoryCount(
       $4.HistoryCountGetRequest request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$getHistoryCount, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+    return $createUnaryCall(_$getHistoryCount, request, options: options);
   }
 }
 

@@ -3,7 +3,7 @@
 //  source: work/work_work_item.proto
 //
 // @dart = 2.3
-// ignore_for_file: camel_case_types,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type
+// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
 
 import 'dart:core' as $core;
 
@@ -21,18 +21,18 @@ import 'work_work_item.pbenum.dart';
 export 'work_work_item.pbenum.dart';
 
 class Work extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('Work', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
-    ..aOS(1, 'id')
-    ..a<$core.int>(2, 'version', $pb.PbFieldType.O3)
-    ..aOS(3, 'name')
-    ..aOS(4, 'description')
-    ..aOB(5, 'archived')
-    ..pc<WorkStage>(6, 'workStages', $pb.PbFieldType.PM, subBuilder: WorkStage.create)
-    ..pc<WorkItem>(7, 'workItems', $pb.PbFieldType.PM, subBuilder: WorkItem.create)
-    ..aOM<$6.Objective>(8, 'objective', subBuilder: $6.Objective.create)
-    ..aOM<$0.Organization>(9, 'organization', subBuilder: $0.Organization.create)
-    ..aOM<$4.Group>(10, 'group', subBuilder: $4.Group.create)
-    ..aOM<$3.User>(11, 'leader', subBuilder: $3.User.create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Work', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auge.protobuf'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
+    ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'version', $pb.PbFieldType.O3)
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
+    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'description')
+    ..aOB(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'archived')
+    ..pc<WorkStage>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'workStages', $pb.PbFieldType.PM, subBuilder: WorkStage.create)
+    ..pc<WorkItem>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'workItems', $pb.PbFieldType.PM, subBuilder: WorkItem.create)
+    ..aOM<$6.Objective>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'objective', subBuilder: $6.Objective.create)
+    ..aOM<$0.Organization>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'organization', subBuilder: $0.Organization.create)
+    ..aOM<$4.Group>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'group', subBuilder: $4.Group.create)
+    ..aOM<$3.User>(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'leader', subBuilder: $3.User.create)
     ..hasRequiredFields = false
   ;
 
@@ -40,8 +40,16 @@ class Work extends $pb.GeneratedMessage {
   factory Work() => create();
   factory Work.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Work.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   Work clone() => Work()..mergeFromMessage(this);
-  Work copyWith(void Function(Work) updates) => super.copyWith((message) => updates(message as Work));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  Work copyWith(void Function(Work) updates) => super.copyWith((message) => updates(message as Work)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static Work create() => Work._();
@@ -148,10 +156,10 @@ class Work extends $pb.GeneratedMessage {
 }
 
 class WorkRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('WorkRequest', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
-    ..aOM<Work>(1, 'work', subBuilder: Work.create)
-    ..aOS(2, 'authUserId')
-    ..aOS(3, 'authOrganizationId')
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'WorkRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auge.protobuf'), createEmptyInstance: create)
+    ..aOM<Work>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'work', subBuilder: Work.create)
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authUserId')
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authOrganizationId')
     ..hasRequiredFields = false
   ;
 
@@ -159,8 +167,16 @@ class WorkRequest extends $pb.GeneratedMessage {
   factory WorkRequest() => create();
   factory WorkRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory WorkRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   WorkRequest clone() => WorkRequest()..mergeFromMessage(this);
-  WorkRequest copyWith(void Function(WorkRequest) updates) => super.copyWith((message) => updates(message as WorkRequest));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  WorkRequest copyWith(void Function(WorkRequest) updates) => super.copyWith((message) => updates(message as WorkRequest)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static WorkRequest create() => WorkRequest._();
@@ -201,11 +217,11 @@ class WorkRequest extends $pb.GeneratedMessage {
 }
 
 class WorkDeleteRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('WorkDeleteRequest', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
-    ..aOS(1, 'workId')
-    ..a<$core.int>(2, 'workVersion', $pb.PbFieldType.O3)
-    ..aOS(3, 'authUserId')
-    ..aOS(4, 'authOrganizationId')
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'WorkDeleteRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auge.protobuf'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'workId')
+    ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'workVersion', $pb.PbFieldType.O3)
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authUserId')
+    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authOrganizationId')
     ..hasRequiredFields = false
   ;
 
@@ -213,8 +229,16 @@ class WorkDeleteRequest extends $pb.GeneratedMessage {
   factory WorkDeleteRequest() => create();
   factory WorkDeleteRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory WorkDeleteRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   WorkDeleteRequest clone() => WorkDeleteRequest()..mergeFromMessage(this);
-  WorkDeleteRequest copyWith(void Function(WorkDeleteRequest) updates) => super.copyWith((message) => updates(message as WorkDeleteRequest));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  WorkDeleteRequest copyWith(void Function(WorkDeleteRequest) updates) => super.copyWith((message) => updates(message as WorkDeleteRequest)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static WorkDeleteRequest create() => WorkDeleteRequest._();
@@ -262,8 +286,8 @@ class WorkDeleteRequest extends $pb.GeneratedMessage {
 }
 
 class WorksResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('WorksResponse', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
-    ..pc<Work>(1, 'works', $pb.PbFieldType.PM, subBuilder: Work.create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'WorksResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auge.protobuf'), createEmptyInstance: create)
+    ..pc<Work>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'works', $pb.PbFieldType.PM, subBuilder: Work.create)
     ..hasRequiredFields = false
   ;
 
@@ -271,8 +295,16 @@ class WorksResponse extends $pb.GeneratedMessage {
   factory WorksResponse() => create();
   factory WorksResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory WorksResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   WorksResponse clone() => WorksResponse()..mergeFromMessage(this);
-  WorksResponse copyWith(void Function(WorksResponse) updates) => super.copyWith((message) => updates(message as WorksResponse));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  WorksResponse copyWith(void Function(WorksResponse) updates) => super.copyWith((message) => updates(message as WorksResponse)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static WorksResponse create() => WorksResponse._();
@@ -287,16 +319,17 @@ class WorksResponse extends $pb.GeneratedMessage {
 }
 
 class WorkGetRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('WorkGetRequest', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
-    ..aOS(1, 'id')
-    ..aOS(2, 'organizationId')
-    ..aOS(3, 'objectiveId')
-    ..e<CustomWork>(4, 'customWork', $pb.PbFieldType.OE, defaultOrMaker: CustomWork.workOnlySpecification, valueOf: CustomWork.valueOf, enumValues: CustomWork.values)
-    ..aOB(5, 'withArchived')
-    ..pPS(6, 'groupIds')
-    ..pPS(7, 'leaderUserIds')
-    ..aOB(8, 'workItemWithArchived')
-    ..pPS(9, 'workItemAssignedToIds')
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'WorkGetRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auge.protobuf'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'organizationId')
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'workItemId')
+    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'objectiveId')
+    ..e<CustomWork>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'customWork', $pb.PbFieldType.OE, defaultOrMaker: CustomWork.workOnlySpecification, valueOf: CustomWork.valueOf, enumValues: CustomWork.values)
+    ..aOB(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'withArchived')
+    ..pPS(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'groupIds')
+    ..pPS(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'leaderUserIds')
+    ..aOB(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'workItemWithArchived')
+    ..pPS(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'workItemAssignedToIds')
     ..hasRequiredFields = false
   ;
 
@@ -304,8 +337,16 @@ class WorkGetRequest extends $pb.GeneratedMessage {
   factory WorkGetRequest() => create();
   factory WorkGetRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory WorkGetRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   WorkGetRequest clone() => WorkGetRequest()..mergeFromMessage(this);
-  WorkGetRequest copyWith(void Function(WorkGetRequest) updates) => super.copyWith((message) => updates(message as WorkGetRequest));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  WorkGetRequest copyWith(void Function(WorkGetRequest) updates) => super.copyWith((message) => updates(message as WorkGetRequest)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static WorkGetRequest create() => WorkGetRequest._();
@@ -334,67 +375,76 @@ class WorkGetRequest extends $pb.GeneratedMessage {
   void clearOrganizationId() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.String get objectiveId => $_getSZ(2);
+  $core.String get workItemId => $_getSZ(2);
   @$pb.TagNumber(3)
-  set objectiveId($core.String v) { $_setString(2, v); }
+  set workItemId($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasObjectiveId() => $_has(2);
+  $core.bool hasWorkItemId() => $_has(2);
   @$pb.TagNumber(3)
-  void clearObjectiveId() => clearField(3);
+  void clearWorkItemId() => clearField(3);
 
   @$pb.TagNumber(4)
-  CustomWork get customWork => $_getN(3);
+  $core.String get objectiveId => $_getSZ(3);
   @$pb.TagNumber(4)
-  set customWork(CustomWork v) { setField(4, v); }
+  set objectiveId($core.String v) { $_setString(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasCustomWork() => $_has(3);
+  $core.bool hasObjectiveId() => $_has(3);
   @$pb.TagNumber(4)
-  void clearCustomWork() => clearField(4);
+  void clearObjectiveId() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.bool get withArchived => $_getBF(4);
+  CustomWork get customWork => $_getN(4);
   @$pb.TagNumber(5)
-  set withArchived($core.bool v) { $_setBool(4, v); }
+  set customWork(CustomWork v) { setField(5, v); }
   @$pb.TagNumber(5)
-  $core.bool hasWithArchived() => $_has(4);
+  $core.bool hasCustomWork() => $_has(4);
   @$pb.TagNumber(5)
-  void clearWithArchived() => clearField(5);
+  void clearCustomWork() => clearField(5);
 
   @$pb.TagNumber(6)
-  $core.List<$core.String> get groupIds => $_getList(5);
+  $core.bool get withArchived => $_getBF(5);
+  @$pb.TagNumber(6)
+  set withArchived($core.bool v) { $_setBool(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasWithArchived() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearWithArchived() => clearField(6);
 
   @$pb.TagNumber(7)
-  $core.List<$core.String> get leaderUserIds => $_getList(6);
+  $core.List<$core.String> get groupIds => $_getList(6);
 
   @$pb.TagNumber(8)
-  $core.bool get workItemWithArchived => $_getBF(7);
-  @$pb.TagNumber(8)
-  set workItemWithArchived($core.bool v) { $_setBool(7, v); }
-  @$pb.TagNumber(8)
-  $core.bool hasWorkItemWithArchived() => $_has(7);
-  @$pb.TagNumber(8)
-  void clearWorkItemWithArchived() => clearField(8);
+  $core.List<$core.String> get leaderUserIds => $_getList(7);
 
   @$pb.TagNumber(9)
-  $core.List<$core.String> get workItemAssignedToIds => $_getList(8);
+  $core.bool get workItemWithArchived => $_getBF(8);
+  @$pb.TagNumber(9)
+  set workItemWithArchived($core.bool v) { $_setBool(8, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasWorkItemWithArchived() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearWorkItemWithArchived() => clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.List<$core.String> get workItemAssignedToIds => $_getList(9);
 }
 
 class WorkItem extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('WorkItem', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
-    ..aOS(1, 'id')
-    ..a<$core.int>(2, 'version', $pb.PbFieldType.O3)
-    ..aOS(3, 'name')
-    ..aOS(4, 'description')
-    ..aOM<$8.Timestamp>(5, 'dueDate', subBuilder: $8.Timestamp.create)
-    ..a<$core.double>(6, 'plannedValue', $pb.PbFieldType.OD)
-    ..a<$core.double>(7, 'actualValue', $pb.PbFieldType.OD)
-    ..aOM<$5.UnitOfMeasurement>(8, 'unitOfMeasurement', subBuilder: $5.UnitOfMeasurement.create)
-    ..aOB(9, 'archived')
-    ..aOM<WorkStage>(10, 'workStage', subBuilder: WorkStage.create)
-    ..pc<$3.User>(11, 'assignedTo', $pb.PbFieldType.PM, subBuilder: $3.User.create)
-    ..pc<WorkItemCheckItem>(12, 'checkItems', $pb.PbFieldType.PM, subBuilder: WorkItemCheckItem.create)
-    ..pc<WorkItemAttachment>(13, 'attachments', $pb.PbFieldType.PM, subBuilder: WorkItemAttachment.create)
-    ..aOM<Work>(14, 'work', subBuilder: Work.create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'WorkItem', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auge.protobuf'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
+    ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'version', $pb.PbFieldType.O3)
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
+    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'description')
+    ..aOM<$8.Timestamp>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'dueDate', subBuilder: $8.Timestamp.create)
+    ..a<$core.double>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'plannedValue', $pb.PbFieldType.OD)
+    ..a<$core.double>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'actualValue', $pb.PbFieldType.OD)
+    ..aOM<$5.UnitOfMeasurement>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'unitOfMeasurement', subBuilder: $5.UnitOfMeasurement.create)
+    ..aOB(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'archived')
+    ..aOM<WorkStage>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'workStage', subBuilder: WorkStage.create)
+    ..pc<$3.User>(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'assignedTo', $pb.PbFieldType.PM, subBuilder: $3.User.create)
+    ..pc<WorkItemCheckItem>(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'checkItems', $pb.PbFieldType.PM, subBuilder: WorkItemCheckItem.create)
+    ..pc<WorkItemAttachment>(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'attachments', $pb.PbFieldType.PM, subBuilder: WorkItemAttachment.create)
+    ..aOM<Work>(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'work', subBuilder: Work.create)
     ..hasRequiredFields = false
   ;
 
@@ -402,8 +452,16 @@ class WorkItem extends $pb.GeneratedMessage {
   factory WorkItem() => create();
   factory WorkItem.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory WorkItem.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   WorkItem clone() => WorkItem()..mergeFromMessage(this);
-  WorkItem copyWith(void Function(WorkItem) updates) => super.copyWith((message) => updates(message as WorkItem));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  WorkItem copyWith(void Function(WorkItem) updates) => super.copyWith((message) => updates(message as WorkItem)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static WorkItem create() => WorkItem._();
@@ -531,11 +589,10 @@ class WorkItem extends $pb.GeneratedMessage {
 }
 
 class WorkItemRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('WorkItemRequest', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
-    ..aOM<WorkItem>(1, 'workItem', subBuilder: WorkItem.create)
-    ..aOS(2, 'workId')
-    ..aOS(3, 'authUserId')
-    ..aOS(4, 'authOrganizationId')
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'WorkItemRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auge.protobuf'), createEmptyInstance: create)
+    ..aOM<WorkItem>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'workItem', subBuilder: WorkItem.create)
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authUserId')
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authOrganizationId')
     ..hasRequiredFields = false
   ;
 
@@ -543,8 +600,16 @@ class WorkItemRequest extends $pb.GeneratedMessage {
   factory WorkItemRequest() => create();
   factory WorkItemRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory WorkItemRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   WorkItemRequest clone() => WorkItemRequest()..mergeFromMessage(this);
-  WorkItemRequest copyWith(void Function(WorkItemRequest) updates) => super.copyWith((message) => updates(message as WorkItemRequest));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  WorkItemRequest copyWith(void Function(WorkItemRequest) updates) => super.copyWith((message) => updates(message as WorkItemRequest)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static WorkItemRequest create() => WorkItemRequest._();
@@ -566,39 +631,30 @@ class WorkItemRequest extends $pb.GeneratedMessage {
   WorkItem ensureWorkItem() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.String get workId => $_getSZ(1);
+  $core.String get authUserId => $_getSZ(1);
   @$pb.TagNumber(2)
-  set workId($core.String v) { $_setString(1, v); }
+  set authUserId($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasWorkId() => $_has(1);
+  $core.bool hasAuthUserId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearWorkId() => clearField(2);
+  void clearAuthUserId() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.String get authUserId => $_getSZ(2);
+  $core.String get authOrganizationId => $_getSZ(2);
   @$pb.TagNumber(3)
-  set authUserId($core.String v) { $_setString(2, v); }
+  set authOrganizationId($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasAuthUserId() => $_has(2);
+  $core.bool hasAuthOrganizationId() => $_has(2);
   @$pb.TagNumber(3)
-  void clearAuthUserId() => clearField(3);
-
-  @$pb.TagNumber(4)
-  $core.String get authOrganizationId => $_getSZ(3);
-  @$pb.TagNumber(4)
-  set authOrganizationId($core.String v) { $_setString(3, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasAuthOrganizationId() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearAuthOrganizationId() => clearField(4);
+  void clearAuthOrganizationId() => clearField(3);
 }
 
 class WorkItemDeleteRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('WorkItemDeleteRequest', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
-    ..aOS(1, 'workItemId')
-    ..a<$core.int>(2, 'workItemVersion', $pb.PbFieldType.O3)
-    ..aOS(3, 'authUserId')
-    ..aOS(4, 'authOrganizationId')
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'WorkItemDeleteRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auge.protobuf'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'workItemId')
+    ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'workItemVersion', $pb.PbFieldType.O3)
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authUserId')
+    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authOrganizationId')
     ..hasRequiredFields = false
   ;
 
@@ -606,8 +662,16 @@ class WorkItemDeleteRequest extends $pb.GeneratedMessage {
   factory WorkItemDeleteRequest() => create();
   factory WorkItemDeleteRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory WorkItemDeleteRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   WorkItemDeleteRequest clone() => WorkItemDeleteRequest()..mergeFromMessage(this);
-  WorkItemDeleteRequest copyWith(void Function(WorkItemDeleteRequest) updates) => super.copyWith((message) => updates(message as WorkItemDeleteRequest));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  WorkItemDeleteRequest copyWith(void Function(WorkItemDeleteRequest) updates) => super.copyWith((message) => updates(message as WorkItemDeleteRequest)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static WorkItemDeleteRequest create() => WorkItemDeleteRequest._();
@@ -655,8 +719,8 @@ class WorkItemDeleteRequest extends $pb.GeneratedMessage {
 }
 
 class WorkItemsResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('WorkItemsResponse', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
-    ..pc<WorkItem>(1, 'workItems', $pb.PbFieldType.PM, protoName: 'workItems', subBuilder: WorkItem.create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'WorkItemsResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auge.protobuf'), createEmptyInstance: create)
+    ..pc<WorkItem>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'workItems', $pb.PbFieldType.PM, protoName: 'workItems', subBuilder: WorkItem.create)
     ..hasRequiredFields = false
   ;
 
@@ -664,8 +728,16 @@ class WorkItemsResponse extends $pb.GeneratedMessage {
   factory WorkItemsResponse() => create();
   factory WorkItemsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory WorkItemsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   WorkItemsResponse clone() => WorkItemsResponse()..mergeFromMessage(this);
-  WorkItemsResponse copyWith(void Function(WorkItemsResponse) updates) => super.copyWith((message) => updates(message as WorkItemsResponse));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  WorkItemsResponse copyWith(void Function(WorkItemsResponse) updates) => super.copyWith((message) => updates(message as WorkItemsResponse)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static WorkItemsResponse create() => WorkItemsResponse._();
@@ -680,13 +752,13 @@ class WorkItemsResponse extends $pb.GeneratedMessage {
 }
 
 class WorkItemGetRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('WorkItemGetRequest', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
-    ..aOS(1, 'id')
-    ..aOS(2, 'workId')
-    ..aOS(3, 'organizationId')
-    ..e<CustomWorkItem>(4, 'customWorkItem', $pb.PbFieldType.OE, defaultOrMaker: CustomWorkItem.workItemOnlySpecification, valueOf: CustomWorkItem.valueOf, enumValues: CustomWorkItem.values)
-    ..aOB(5, 'withArchived')
-    ..pPS(6, 'assignedToIds')
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'WorkItemGetRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auge.protobuf'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'workId')
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'organizationId')
+    ..e<CustomWorkItem>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'customWorkItem', $pb.PbFieldType.OE, defaultOrMaker: CustomWorkItem.workItemOnlySpecification, valueOf: CustomWorkItem.valueOf, enumValues: CustomWorkItem.values)
+    ..aOB(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'withArchived')
+    ..pPS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'assignedToIds')
     ..hasRequiredFields = false
   ;
 
@@ -694,8 +766,16 @@ class WorkItemGetRequest extends $pb.GeneratedMessage {
   factory WorkItemGetRequest() => create();
   factory WorkItemGetRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory WorkItemGetRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   WorkItemGetRequest clone() => WorkItemGetRequest()..mergeFromMessage(this);
-  WorkItemGetRequest copyWith(void Function(WorkItemGetRequest) updates) => super.copyWith((message) => updates(message as WorkItemGetRequest));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  WorkItemGetRequest copyWith(void Function(WorkItemGetRequest) updates) => super.copyWith((message) => updates(message as WorkItemGetRequest)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static WorkItemGetRequest create() => WorkItemGetRequest._();
@@ -755,11 +835,11 @@ class WorkItemGetRequest extends $pb.GeneratedMessage {
 }
 
 class WorkItemAttachment extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('WorkItemAttachment', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
-    ..aOS(1, 'id')
-    ..aOS(2, 'name')
-    ..aOS(3, 'type')
-    ..aOS(4, 'content')
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'WorkItemAttachment', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auge.protobuf'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'type')
+    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'content')
     ..hasRequiredFields = false
   ;
 
@@ -767,8 +847,16 @@ class WorkItemAttachment extends $pb.GeneratedMessage {
   factory WorkItemAttachment() => create();
   factory WorkItemAttachment.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory WorkItemAttachment.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   WorkItemAttachment clone() => WorkItemAttachment()..mergeFromMessage(this);
-  WorkItemAttachment copyWith(void Function(WorkItemAttachment) updates) => super.copyWith((message) => updates(message as WorkItemAttachment));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  WorkItemAttachment copyWith(void Function(WorkItemAttachment) updates) => super.copyWith((message) => updates(message as WorkItemAttachment)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static WorkItemAttachment create() => WorkItemAttachment._();
@@ -816,8 +904,8 @@ class WorkItemAttachment extends $pb.GeneratedMessage {
 }
 
 class WorkItemAttachmentsResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('WorkItemAttachmentsResponse', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
-    ..pc<WorkItemAttachment>(1, 'workItemAttachments', $pb.PbFieldType.PM, subBuilder: WorkItemAttachment.create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'WorkItemAttachmentsResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auge.protobuf'), createEmptyInstance: create)
+    ..pc<WorkItemAttachment>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'workItemAttachments', $pb.PbFieldType.PM, subBuilder: WorkItemAttachment.create)
     ..hasRequiredFields = false
   ;
 
@@ -825,8 +913,16 @@ class WorkItemAttachmentsResponse extends $pb.GeneratedMessage {
   factory WorkItemAttachmentsResponse() => create();
   factory WorkItemAttachmentsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory WorkItemAttachmentsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   WorkItemAttachmentsResponse clone() => WorkItemAttachmentsResponse()..mergeFromMessage(this);
-  WorkItemAttachmentsResponse copyWith(void Function(WorkItemAttachmentsResponse) updates) => super.copyWith((message) => updates(message as WorkItemAttachmentsResponse));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  WorkItemAttachmentsResponse copyWith(void Function(WorkItemAttachmentsResponse) updates) => super.copyWith((message) => updates(message as WorkItemAttachmentsResponse)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static WorkItemAttachmentsResponse create() => WorkItemAttachmentsResponse._();
@@ -841,10 +937,10 @@ class WorkItemAttachmentsResponse extends $pb.GeneratedMessage {
 }
 
 class WorkItemAttachmentGetRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('WorkItemAttachmentGetRequest', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
-    ..aOS(1, 'id')
-    ..aOS(2, 'workItemId')
-    ..aOB(3, 'withContent')
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'WorkItemAttachmentGetRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auge.protobuf'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'workItemId')
+    ..aOB(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'withContent')
     ..hasRequiredFields = false
   ;
 
@@ -852,8 +948,16 @@ class WorkItemAttachmentGetRequest extends $pb.GeneratedMessage {
   factory WorkItemAttachmentGetRequest() => create();
   factory WorkItemAttachmentGetRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory WorkItemAttachmentGetRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   WorkItemAttachmentGetRequest clone() => WorkItemAttachmentGetRequest()..mergeFromMessage(this);
-  WorkItemAttachmentGetRequest copyWith(void Function(WorkItemAttachmentGetRequest) updates) => super.copyWith((message) => updates(message as WorkItemAttachmentGetRequest));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  WorkItemAttachmentGetRequest copyWith(void Function(WorkItemAttachmentGetRequest) updates) => super.copyWith((message) => updates(message as WorkItemAttachmentGetRequest)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static WorkItemAttachmentGetRequest create() => WorkItemAttachmentGetRequest._();
@@ -892,11 +996,11 @@ class WorkItemAttachmentGetRequest extends $pb.GeneratedMessage {
 }
 
 class WorkItemCheckItem extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('WorkItemCheckItem', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
-    ..aOS(1, 'id')
-    ..aOS(2, 'name')
-    ..aOB(3, 'finished')
-    ..a<$core.int>(4, 'index', $pb.PbFieldType.O3)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'WorkItemCheckItem', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auge.protobuf'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
+    ..aOB(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'finished')
+    ..a<$core.int>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'index', $pb.PbFieldType.O3)
     ..hasRequiredFields = false
   ;
 
@@ -904,8 +1008,16 @@ class WorkItemCheckItem extends $pb.GeneratedMessage {
   factory WorkItemCheckItem() => create();
   factory WorkItemCheckItem.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory WorkItemCheckItem.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   WorkItemCheckItem clone() => WorkItemCheckItem()..mergeFromMessage(this);
-  WorkItemCheckItem copyWith(void Function(WorkItemCheckItem) updates) => super.copyWith((message) => updates(message as WorkItemCheckItem));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  WorkItemCheckItem copyWith(void Function(WorkItemCheckItem) updates) => super.copyWith((message) => updates(message as WorkItemCheckItem)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static WorkItemCheckItem create() => WorkItemCheckItem._();
@@ -953,11 +1065,10 @@ class WorkItemCheckItem extends $pb.GeneratedMessage {
 }
 
 class WorkItemCheckItemRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('WorkItemCheckItemRequest', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
-    ..aOM<WorkItemCheckItem>(1, 'workItemCheckItem', subBuilder: WorkItemCheckItem.create)
-    ..aOS(2, 'workItemId')
-    ..aOS(3, 'authUserId')
-    ..aOS(4, 'authOrganizationId')
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'WorkItemCheckItemRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auge.protobuf'), createEmptyInstance: create)
+    ..aOM<WorkItemCheckItem>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'workItemCheckItem', subBuilder: WorkItemCheckItem.create)
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authUserId')
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authOrganizationId')
     ..hasRequiredFields = false
   ;
 
@@ -965,8 +1076,16 @@ class WorkItemCheckItemRequest extends $pb.GeneratedMessage {
   factory WorkItemCheckItemRequest() => create();
   factory WorkItemCheckItemRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory WorkItemCheckItemRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   WorkItemCheckItemRequest clone() => WorkItemCheckItemRequest()..mergeFromMessage(this);
-  WorkItemCheckItemRequest copyWith(void Function(WorkItemCheckItemRequest) updates) => super.copyWith((message) => updates(message as WorkItemCheckItemRequest));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  WorkItemCheckItemRequest copyWith(void Function(WorkItemCheckItemRequest) updates) => super.copyWith((message) => updates(message as WorkItemCheckItemRequest)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static WorkItemCheckItemRequest create() => WorkItemCheckItemRequest._();
@@ -988,36 +1107,27 @@ class WorkItemCheckItemRequest extends $pb.GeneratedMessage {
   WorkItemCheckItem ensureWorkItemCheckItem() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.String get workItemId => $_getSZ(1);
+  $core.String get authUserId => $_getSZ(1);
   @$pb.TagNumber(2)
-  set workItemId($core.String v) { $_setString(1, v); }
+  set authUserId($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasWorkItemId() => $_has(1);
+  $core.bool hasAuthUserId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearWorkItemId() => clearField(2);
+  void clearAuthUserId() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.String get authUserId => $_getSZ(2);
+  $core.String get authOrganizationId => $_getSZ(2);
   @$pb.TagNumber(3)
-  set authUserId($core.String v) { $_setString(2, v); }
+  set authOrganizationId($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasAuthUserId() => $_has(2);
+  $core.bool hasAuthOrganizationId() => $_has(2);
   @$pb.TagNumber(3)
-  void clearAuthUserId() => clearField(3);
-
-  @$pb.TagNumber(4)
-  $core.String get authOrganizationId => $_getSZ(3);
-  @$pb.TagNumber(4)
-  set authOrganizationId($core.String v) { $_setString(3, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasAuthOrganizationId() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearAuthOrganizationId() => clearField(4);
+  void clearAuthOrganizationId() => clearField(3);
 }
 
 class WorkItemCheckItemsResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('WorkItemCheckItemsResponse', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
-    ..pc<WorkItemCheckItem>(1, 'workItemCheckItems', $pb.PbFieldType.PM, subBuilder: WorkItemCheckItem.create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'WorkItemCheckItemsResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auge.protobuf'), createEmptyInstance: create)
+    ..pc<WorkItemCheckItem>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'workItemCheckItems', $pb.PbFieldType.PM, subBuilder: WorkItemCheckItem.create)
     ..hasRequiredFields = false
   ;
 
@@ -1025,8 +1135,16 @@ class WorkItemCheckItemsResponse extends $pb.GeneratedMessage {
   factory WorkItemCheckItemsResponse() => create();
   factory WorkItemCheckItemsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory WorkItemCheckItemsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   WorkItemCheckItemsResponse clone() => WorkItemCheckItemsResponse()..mergeFromMessage(this);
-  WorkItemCheckItemsResponse copyWith(void Function(WorkItemCheckItemsResponse) updates) => super.copyWith((message) => updates(message as WorkItemCheckItemsResponse));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  WorkItemCheckItemsResponse copyWith(void Function(WorkItemCheckItemsResponse) updates) => super.copyWith((message) => updates(message as WorkItemCheckItemsResponse)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static WorkItemCheckItemsResponse create() => WorkItemCheckItemsResponse._();
@@ -1041,9 +1159,9 @@ class WorkItemCheckItemsResponse extends $pb.GeneratedMessage {
 }
 
 class WorkItemCheckItemGetRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('WorkItemCheckItemGetRequest', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
-    ..aOS(1, 'id')
-    ..aOS(2, 'workItemId')
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'WorkItemCheckItemGetRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auge.protobuf'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'workItemId')
     ..hasRequiredFields = false
   ;
 
@@ -1051,8 +1169,16 @@ class WorkItemCheckItemGetRequest extends $pb.GeneratedMessage {
   factory WorkItemCheckItemGetRequest() => create();
   factory WorkItemCheckItemGetRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory WorkItemCheckItemGetRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   WorkItemCheckItemGetRequest clone() => WorkItemCheckItemGetRequest()..mergeFromMessage(this);
-  WorkItemCheckItemGetRequest copyWith(void Function(WorkItemCheckItemGetRequest) updates) => super.copyWith((message) => updates(message as WorkItemCheckItemGetRequest));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  WorkItemCheckItemGetRequest copyWith(void Function(WorkItemCheckItemGetRequest) updates) => super.copyWith((message) => updates(message as WorkItemCheckItemGetRequest)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static WorkItemCheckItemGetRequest create() => WorkItemCheckItemGetRequest._();
@@ -1082,13 +1208,13 @@ class WorkItemCheckItemGetRequest extends $pb.GeneratedMessage {
 }
 
 class WorkStage extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('WorkStage', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
-    ..aOS(1, 'id')
-    ..a<$core.int>(2, 'version', $pb.PbFieldType.O3)
-    ..aOS(3, 'name')
-    ..a<$core.int>(4, 'stateIndex', $pb.PbFieldType.O3)
-    ..a<$core.int>(5, 'index', $pb.PbFieldType.O3)
-    ..aOM<Work>(6, 'work', subBuilder: Work.create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'WorkStage', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auge.protobuf'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
+    ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'version', $pb.PbFieldType.O3)
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
+    ..a<$core.int>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'stateIndex', $pb.PbFieldType.O3)
+    ..a<$core.int>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'index', $pb.PbFieldType.O3)
+    ..aOM<Work>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'work', subBuilder: Work.create)
     ..hasRequiredFields = false
   ;
 
@@ -1096,8 +1222,16 @@ class WorkStage extends $pb.GeneratedMessage {
   factory WorkStage() => create();
   factory WorkStage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory WorkStage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   WorkStage clone() => WorkStage()..mergeFromMessage(this);
-  WorkStage copyWith(void Function(WorkStage) updates) => super.copyWith((message) => updates(message as WorkStage));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  WorkStage copyWith(void Function(WorkStage) updates) => super.copyWith((message) => updates(message as WorkStage)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static WorkStage create() => WorkStage._();
@@ -1165,10 +1299,10 @@ class WorkStage extends $pb.GeneratedMessage {
 }
 
 class WorkStageRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('WorkStageRequest', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
-    ..aOM<WorkStage>(1, 'workStage', subBuilder: WorkStage.create)
-    ..aOS(2, 'authUserId')
-    ..aOS(3, 'authOrganizationId')
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'WorkStageRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auge.protobuf'), createEmptyInstance: create)
+    ..aOM<WorkStage>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'workStage', subBuilder: WorkStage.create)
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authUserId')
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authOrganizationId')
     ..hasRequiredFields = false
   ;
 
@@ -1176,8 +1310,16 @@ class WorkStageRequest extends $pb.GeneratedMessage {
   factory WorkStageRequest() => create();
   factory WorkStageRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory WorkStageRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   WorkStageRequest clone() => WorkStageRequest()..mergeFromMessage(this);
-  WorkStageRequest copyWith(void Function(WorkStageRequest) updates) => super.copyWith((message) => updates(message as WorkStageRequest));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  WorkStageRequest copyWith(void Function(WorkStageRequest) updates) => super.copyWith((message) => updates(message as WorkStageRequest)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static WorkStageRequest create() => WorkStageRequest._();
@@ -1218,11 +1360,11 @@ class WorkStageRequest extends $pb.GeneratedMessage {
 }
 
 class WorkStageDeleteRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('WorkStageDeleteRequest', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
-    ..aOS(1, 'workStageId')
-    ..a<$core.int>(2, 'workStageVersion', $pb.PbFieldType.O3)
-    ..aOS(3, 'authUserId')
-    ..aOS(4, 'authOrganizationId')
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'WorkStageDeleteRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auge.protobuf'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'workStageId')
+    ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'workStageVersion', $pb.PbFieldType.O3)
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authUserId')
+    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authOrganizationId')
     ..hasRequiredFields = false
   ;
 
@@ -1230,8 +1372,16 @@ class WorkStageDeleteRequest extends $pb.GeneratedMessage {
   factory WorkStageDeleteRequest() => create();
   factory WorkStageDeleteRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory WorkStageDeleteRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   WorkStageDeleteRequest clone() => WorkStageDeleteRequest()..mergeFromMessage(this);
-  WorkStageDeleteRequest copyWith(void Function(WorkStageDeleteRequest) updates) => super.copyWith((message) => updates(message as WorkStageDeleteRequest));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  WorkStageDeleteRequest copyWith(void Function(WorkStageDeleteRequest) updates) => super.copyWith((message) => updates(message as WorkStageDeleteRequest)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static WorkStageDeleteRequest create() => WorkStageDeleteRequest._();
@@ -1279,8 +1429,8 @@ class WorkStageDeleteRequest extends $pb.GeneratedMessage {
 }
 
 class WorkStagesResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('WorkStagesResponse', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
-    ..pc<WorkStage>(1, 'workStages', $pb.PbFieldType.PM, subBuilder: WorkStage.create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'WorkStagesResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auge.protobuf'), createEmptyInstance: create)
+    ..pc<WorkStage>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'workStages', $pb.PbFieldType.PM, subBuilder: WorkStage.create)
     ..hasRequiredFields = false
   ;
 
@@ -1288,8 +1438,16 @@ class WorkStagesResponse extends $pb.GeneratedMessage {
   factory WorkStagesResponse() => create();
   factory WorkStagesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory WorkStagesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   WorkStagesResponse clone() => WorkStagesResponse()..mergeFromMessage(this);
-  WorkStagesResponse copyWith(void Function(WorkStagesResponse) updates) => super.copyWith((message) => updates(message as WorkStagesResponse));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  WorkStagesResponse copyWith(void Function(WorkStagesResponse) updates) => super.copyWith((message) => updates(message as WorkStagesResponse)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static WorkStagesResponse create() => WorkStagesResponse._();
@@ -1304,10 +1462,10 @@ class WorkStagesResponse extends $pb.GeneratedMessage {
 }
 
 class WorkStageGetRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('WorkStageGetRequest', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
-    ..aOS(1, 'id')
-    ..aOS(2, 'workId')
-    ..e<CustomWorkStage>(3, 'customWorkStage', $pb.PbFieldType.OE, defaultOrMaker: CustomWorkStage.workStageOnlySpecification, valueOf: CustomWorkStage.valueOf, enumValues: CustomWorkStage.values)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'WorkStageGetRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auge.protobuf'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'workId')
+    ..e<CustomWorkStage>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'customWorkStage', $pb.PbFieldType.OE, defaultOrMaker: CustomWorkStage.workStageOnlySpecification, valueOf: CustomWorkStage.valueOf, enumValues: CustomWorkStage.values)
     ..hasRequiredFields = false
   ;
 
@@ -1315,8 +1473,16 @@ class WorkStageGetRequest extends $pb.GeneratedMessage {
   factory WorkStageGetRequest() => create();
   factory WorkStageGetRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory WorkStageGetRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   WorkStageGetRequest clone() => WorkStageGetRequest()..mergeFromMessage(this);
-  WorkStageGetRequest copyWith(void Function(WorkStageGetRequest) updates) => super.copyWith((message) => updates(message as WorkStageGetRequest));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  WorkStageGetRequest copyWith(void Function(WorkStageGetRequest) updates) => super.copyWith((message) => updates(message as WorkStageGetRequest)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static WorkStageGetRequest create() => WorkStageGetRequest._();
@@ -1355,13 +1521,13 @@ class WorkStageGetRequest extends $pb.GeneratedMessage {
 }
 
 class WorkItemValue extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('WorkItemValue', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
-    ..aOS(1, 'id')
-    ..a<$core.int>(2, 'version', $pb.PbFieldType.O3)
-    ..aOM<$8.Timestamp>(3, 'date', subBuilder: $8.Timestamp.create)
-    ..a<$core.double>(4, 'actualValue', $pb.PbFieldType.OD)
-    ..aOS(5, 'comment')
-    ..aOM<WorkItem>(6, 'workItem', subBuilder: WorkItem.create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'WorkItemValue', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auge.protobuf'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
+    ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'version', $pb.PbFieldType.O3)
+    ..aOM<$8.Timestamp>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'date', subBuilder: $8.Timestamp.create)
+    ..a<$core.double>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'actualValue', $pb.PbFieldType.OD)
+    ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'comment')
+    ..aOM<WorkItem>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'workItem', subBuilder: WorkItem.create)
     ..hasRequiredFields = false
   ;
 
@@ -1369,8 +1535,16 @@ class WorkItemValue extends $pb.GeneratedMessage {
   factory WorkItemValue() => create();
   factory WorkItemValue.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory WorkItemValue.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   WorkItemValue clone() => WorkItemValue()..mergeFromMessage(this);
-  WorkItemValue copyWith(void Function(WorkItemValue) updates) => super.copyWith((message) => updates(message as WorkItemValue));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  WorkItemValue copyWith(void Function(WorkItemValue) updates) => super.copyWith((message) => updates(message as WorkItemValue)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static WorkItemValue create() => WorkItemValue._();
@@ -1440,11 +1614,10 @@ class WorkItemValue extends $pb.GeneratedMessage {
 }
 
 class WorkItemValueRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('WorkItemValueRequest', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
-    ..aOM<WorkItemValue>(1, 'workItemValue', subBuilder: WorkItemValue.create)
-    ..aOS(2, 'workItemId')
-    ..aOS(3, 'authUserId')
-    ..aOS(4, 'authOrganizationId')
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'WorkItemValueRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auge.protobuf'), createEmptyInstance: create)
+    ..aOM<WorkItemValue>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'workItemValue', subBuilder: WorkItemValue.create)
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authUserId')
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authOrganizationId')
     ..hasRequiredFields = false
   ;
 
@@ -1452,8 +1625,16 @@ class WorkItemValueRequest extends $pb.GeneratedMessage {
   factory WorkItemValueRequest() => create();
   factory WorkItemValueRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory WorkItemValueRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   WorkItemValueRequest clone() => WorkItemValueRequest()..mergeFromMessage(this);
-  WorkItemValueRequest copyWith(void Function(WorkItemValueRequest) updates) => super.copyWith((message) => updates(message as WorkItemValueRequest));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  WorkItemValueRequest copyWith(void Function(WorkItemValueRequest) updates) => super.copyWith((message) => updates(message as WorkItemValueRequest)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static WorkItemValueRequest create() => WorkItemValueRequest._();
@@ -1475,39 +1656,30 @@ class WorkItemValueRequest extends $pb.GeneratedMessage {
   WorkItemValue ensureWorkItemValue() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.String get workItemId => $_getSZ(1);
+  $core.String get authUserId => $_getSZ(1);
   @$pb.TagNumber(2)
-  set workItemId($core.String v) { $_setString(1, v); }
+  set authUserId($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasWorkItemId() => $_has(1);
+  $core.bool hasAuthUserId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearWorkItemId() => clearField(2);
+  void clearAuthUserId() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.String get authUserId => $_getSZ(2);
+  $core.String get authOrganizationId => $_getSZ(2);
   @$pb.TagNumber(3)
-  set authUserId($core.String v) { $_setString(2, v); }
+  set authOrganizationId($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasAuthUserId() => $_has(2);
+  $core.bool hasAuthOrganizationId() => $_has(2);
   @$pb.TagNumber(3)
-  void clearAuthUserId() => clearField(3);
-
-  @$pb.TagNumber(4)
-  $core.String get authOrganizationId => $_getSZ(3);
-  @$pb.TagNumber(4)
-  set authOrganizationId($core.String v) { $_setString(3, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasAuthOrganizationId() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearAuthOrganizationId() => clearField(4);
+  void clearAuthOrganizationId() => clearField(3);
 }
 
 class WorkItemValueDeleteRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('WorkItemValueDeleteRequest', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
-    ..aOS(1, 'workItemValueId')
-    ..a<$core.int>(2, 'workItemValueVersion', $pb.PbFieldType.O3)
-    ..aOS(3, 'authUserId')
-    ..aOS(4, 'authOrganizationId')
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'WorkItemValueDeleteRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auge.protobuf'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'workItemValueId')
+    ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'workItemValueVersion', $pb.PbFieldType.O3)
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authUserId')
+    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authOrganizationId')
     ..hasRequiredFields = false
   ;
 
@@ -1515,8 +1687,16 @@ class WorkItemValueDeleteRequest extends $pb.GeneratedMessage {
   factory WorkItemValueDeleteRequest() => create();
   factory WorkItemValueDeleteRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory WorkItemValueDeleteRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   WorkItemValueDeleteRequest clone() => WorkItemValueDeleteRequest()..mergeFromMessage(this);
-  WorkItemValueDeleteRequest copyWith(void Function(WorkItemValueDeleteRequest) updates) => super.copyWith((message) => updates(message as WorkItemValueDeleteRequest));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  WorkItemValueDeleteRequest copyWith(void Function(WorkItemValueDeleteRequest) updates) => super.copyWith((message) => updates(message as WorkItemValueDeleteRequest)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static WorkItemValueDeleteRequest create() => WorkItemValueDeleteRequest._();
@@ -1564,8 +1744,8 @@ class WorkItemValueDeleteRequest extends $pb.GeneratedMessage {
 }
 
 class WorkItemValuesResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('WorkItemValuesResponse', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
-    ..pc<WorkItemValue>(1, 'workItemValues', $pb.PbFieldType.PM, subBuilder: WorkItemValue.create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'WorkItemValuesResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auge.protobuf'), createEmptyInstance: create)
+    ..pc<WorkItemValue>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'workItemValues', $pb.PbFieldType.PM, subBuilder: WorkItemValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -1573,8 +1753,16 @@ class WorkItemValuesResponse extends $pb.GeneratedMessage {
   factory WorkItemValuesResponse() => create();
   factory WorkItemValuesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory WorkItemValuesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   WorkItemValuesResponse clone() => WorkItemValuesResponse()..mergeFromMessage(this);
-  WorkItemValuesResponse copyWith(void Function(WorkItemValuesResponse) updates) => super.copyWith((message) => updates(message as WorkItemValuesResponse));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  WorkItemValuesResponse copyWith(void Function(WorkItemValuesResponse) updates) => super.copyWith((message) => updates(message as WorkItemValuesResponse)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static WorkItemValuesResponse create() => WorkItemValuesResponse._();
@@ -1589,10 +1777,10 @@ class WorkItemValuesResponse extends $pb.GeneratedMessage {
 }
 
 class WorkItemValueGetRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('WorkItemValueGetRequest', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
-    ..aOS(1, 'id')
-    ..aOS(2, 'workItemId')
-    ..e<CustomWorkItemValue>(3, 'customWorkItemValue', $pb.PbFieldType.OE, defaultOrMaker: CustomWorkItemValue.workItemValueWithoutWorkItem, valueOf: CustomWorkItemValue.valueOf, enumValues: CustomWorkItemValue.values)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'WorkItemValueGetRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auge.protobuf'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'workItemId')
+    ..e<CustomWorkItemValue>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'customWorkItemValue', $pb.PbFieldType.OE, defaultOrMaker: CustomWorkItemValue.workItemValueWithoutWorkItem, valueOf: CustomWorkItemValue.valueOf, enumValues: CustomWorkItemValue.values)
     ..hasRequiredFields = false
   ;
 
@@ -1600,8 +1788,16 @@ class WorkItemValueGetRequest extends $pb.GeneratedMessage {
   factory WorkItemValueGetRequest() => create();
   factory WorkItemValueGetRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory WorkItemValueGetRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   WorkItemValueGetRequest clone() => WorkItemValueGetRequest()..mergeFromMessage(this);
-  WorkItemValueGetRequest copyWith(void Function(WorkItemValueGetRequest) updates) => super.copyWith((message) => updates(message as WorkItemValueGetRequest));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  WorkItemValueGetRequest copyWith(void Function(WorkItemValueGetRequest) updates) => super.copyWith((message) => updates(message as WorkItemValueGetRequest)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static WorkItemValueGetRequest create() => WorkItemValueGetRequest._();

@@ -304,6 +304,20 @@ class WorkItemDomainMsg {
   }
 }
 
+/// Specific messages and label for [WorkItem] class field
+class WorkItemCheckItemDomainMsg {
+  static String fieldLabel(String fieldName) {
+    fieldName = '${fieldName}${fieldSuffix}';
+
+    return Intl.select(fieldName,
+        {WorkItemCheckItem.nameField: 'Name',
+          WorkItemCheckItem.finishedField: 'Finished',
+          'other': 'Not Defined'},
+        name: 'WorkItemCheckItemDomainMsg_fieldLabel',
+        args: [fieldName]);
+  }
+}
+
 /// Specific messages and label for [OrganizationConfiguration] class field
 class OrganizationConfigurationDomainMsg {
   static String fieldLabel(String fieldName) {

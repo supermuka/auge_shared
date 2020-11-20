@@ -3,7 +3,7 @@
 //  source: general/unit_of_measurement.proto
 //
 // @dart = 2.3
-// ignore_for_file: camel_case_types,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type
+// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
 
 import 'dart:async' as $async;
 
@@ -23,16 +23,14 @@ class UnitOfMeasurementServiceClient extends $grpc.Client {
               $1.UnitsOfMeasurementResponse.fromBuffer(value));
 
   UnitOfMeasurementServiceClient($grpc.ClientChannel channel,
-      {$grpc.CallOptions options})
-      : super(channel, options: options);
+      {$grpc.CallOptions options,
+      $core.Iterable<$grpc.ClientInterceptor> interceptors})
+      : super(channel, options: options, interceptors: interceptors);
 
   $grpc.ResponseFuture<$1.UnitsOfMeasurementResponse> getUnitsOfMeasurement(
       $0.Empty request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$getUnitsOfMeasurement, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+    return $createUnaryCall(_$getUnitsOfMeasurement, request, options: options);
   }
 }
 

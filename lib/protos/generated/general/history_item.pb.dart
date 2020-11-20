@@ -3,7 +3,7 @@
 //  source: general/history_item.proto
 //
 // @dart = 2.3
-// ignore_for_file: camel_case_types,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type
+// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
 
 import 'dart:core' as $core;
 
@@ -14,18 +14,18 @@ import 'user.pb.dart' as $3;
 import 'organization.pb.dart' as $0;
 
 class HistoryItem extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('HistoryItem', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
-    ..aOS(1, 'id')
-    ..aOS(2, 'objectClassName')
-    ..aOS(3, 'objectId')
-    ..a<$core.int>(4, 'objectVersion', $pb.PbFieldType.O3)
-    ..a<$core.int>(5, 'systemModuleIndex', $pb.PbFieldType.O3)
-    ..a<$core.int>(6, 'systemFunctionIndex', $pb.PbFieldType.O3)
-    ..aOM<$5.Timestamp>(7, 'dateTime', subBuilder: $5.Timestamp.create)
-    ..aOM<$3.User>(8, 'user', subBuilder: $3.User.create)
-    ..aOM<$0.Organization>(9, 'organization', subBuilder: $0.Organization.create)
-    ..aOS(10, 'description')
-    ..aOS(11, 'changedValues')
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'HistoryItem', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auge.protobuf'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'objectClassName')
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'objectId')
+    ..a<$core.int>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'objectVersion', $pb.PbFieldType.O3)
+    ..a<$core.int>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'systemModuleIndex', $pb.PbFieldType.O3)
+    ..a<$core.int>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'systemFunctionIndex', $pb.PbFieldType.O3)
+    ..aOM<$5.Timestamp>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'dateTime', subBuilder: $5.Timestamp.create)
+    ..aOM<$3.User>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'user', subBuilder: $3.User.create)
+    ..aOM<$0.Organization>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'organization', subBuilder: $0.Organization.create)
+    ..aOS(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'description')
+    ..aOS(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'changedValues')
     ..hasRequiredFields = false
   ;
 
@@ -33,8 +33,16 @@ class HistoryItem extends $pb.GeneratedMessage {
   factory HistoryItem() => create();
   factory HistoryItem.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory HistoryItem.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   HistoryItem clone() => HistoryItem()..mergeFromMessage(this);
-  HistoryItem copyWith(void Function(HistoryItem) updates) => super.copyWith((message) => updates(message as HistoryItem));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  HistoryItem copyWith(void Function(HistoryItem) updates) => super.copyWith((message) => updates(message as HistoryItem)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static HistoryItem create() => HistoryItem._();
@@ -151,12 +159,12 @@ class HistoryItem extends $pb.GeneratedMessage {
 }
 
 class HistoryItemGetRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('HistoryItemGetRequest', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
-    ..aOS(1, 'id')
-    ..aOS(2, 'organizationId')
-    ..a<$core.int>(3, 'systemModuleIndex', $pb.PbFieldType.O3)
-    ..aOM<$5.Timestamp>(4, 'fromDateTime', subBuilder: $5.Timestamp.create)
-    ..a<$core.int>(5, 'rowsLimit', $pb.PbFieldType.O3)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'HistoryItemGetRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auge.protobuf'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'organizationId')
+    ..a<$core.int>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'systemModuleIndex', $pb.PbFieldType.O3)
+    ..aOM<$5.Timestamp>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'fromDateTime', subBuilder: $5.Timestamp.create)
+    ..a<$core.int>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'rowsLimit', $pb.PbFieldType.O3)
     ..hasRequiredFields = false
   ;
 
@@ -164,8 +172,16 @@ class HistoryItemGetRequest extends $pb.GeneratedMessage {
   factory HistoryItemGetRequest() => create();
   factory HistoryItemGetRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory HistoryItemGetRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   HistoryItemGetRequest clone() => HistoryItemGetRequest()..mergeFromMessage(this);
-  HistoryItemGetRequest copyWith(void Function(HistoryItemGetRequest) updates) => super.copyWith((message) => updates(message as HistoryItemGetRequest));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  HistoryItemGetRequest copyWith(void Function(HistoryItemGetRequest) updates) => super.copyWith((message) => updates(message as HistoryItemGetRequest)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static HistoryItemGetRequest create() => HistoryItemGetRequest._();
@@ -224,8 +240,8 @@ class HistoryItemGetRequest extends $pb.GeneratedMessage {
 }
 
 class HistoryResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('HistoryResponse', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
-    ..pc<HistoryItem>(1, 'history', $pb.PbFieldType.PM, subBuilder: HistoryItem.create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'HistoryResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auge.protobuf'), createEmptyInstance: create)
+    ..pc<HistoryItem>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'history', $pb.PbFieldType.PM, subBuilder: HistoryItem.create)
     ..hasRequiredFields = false
   ;
 
@@ -233,8 +249,16 @@ class HistoryResponse extends $pb.GeneratedMessage {
   factory HistoryResponse() => create();
   factory HistoryResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory HistoryResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   HistoryResponse clone() => HistoryResponse()..mergeFromMessage(this);
-  HistoryResponse copyWith(void Function(HistoryResponse) updates) => super.copyWith((message) => updates(message as HistoryResponse));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  HistoryResponse copyWith(void Function(HistoryResponse) updates) => super.copyWith((message) => updates(message as HistoryResponse)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static HistoryResponse create() => HistoryResponse._();
@@ -249,9 +273,9 @@ class HistoryResponse extends $pb.GeneratedMessage {
 }
 
 class HistoryCountGetRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('HistoryCountGetRequest', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
-    ..aOS(1, 'authUserId')
-    ..aOS(2, 'authOrganizationId')
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'HistoryCountGetRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auge.protobuf'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authUserId')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authOrganizationId')
     ..hasRequiredFields = false
   ;
 
@@ -259,8 +283,16 @@ class HistoryCountGetRequest extends $pb.GeneratedMessage {
   factory HistoryCountGetRequest() => create();
   factory HistoryCountGetRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory HistoryCountGetRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   HistoryCountGetRequest clone() => HistoryCountGetRequest()..mergeFromMessage(this);
-  HistoryCountGetRequest copyWith(void Function(HistoryCountGetRequest) updates) => super.copyWith((message) => updates(message as HistoryCountGetRequest));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  HistoryCountGetRequest copyWith(void Function(HistoryCountGetRequest) updates) => super.copyWith((message) => updates(message as HistoryCountGetRequest)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static HistoryCountGetRequest create() => HistoryCountGetRequest._();

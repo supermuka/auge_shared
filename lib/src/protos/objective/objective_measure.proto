@@ -70,21 +70,23 @@ message Objectives {
 
 enum CustomObjective {
   objectiveOnlySpecification = 0;
-  objectiveOnlySpecificationStartDateEndDate = 1;
-  objectiveOnlyWithMeasure = 2;
-  objectiveWithMeasure = 3;
-  objectiveWithMeasureAndTree = 4;
+  objectiveOnlySpecificationAndLeaderUserNotificationEmailIdiom = 1;
+  objectiveOnlySpecificationStartDateEndDate = 2;
+  objectiveOnlyWithMeasure = 3;
+  objectiveWithMeasure = 4;
+  objectiveWithMeasureAndTree = 5;
 }
 
 // Used to query Restrict params
 message ObjectiveGetRequest {
   string id = 1;
   string organization_id = 2;
-  int32 aligned_to_recursive = 3;
-  CustomObjective custom_objective = 4;
-  bool with_archived = 5;
-  repeated string group_ids = 6;
-  repeated string leader_user_ids = 7;
+  string measure_id = 3;
+  int32 aligned_to_recursive = 4;
+  CustomObjective custom_objective = 5;
+  bool with_archived = 6;
+  repeated string group_ids = 7;
+  repeated string leader_user_ids = 8;
 }
 
 // Response list of the objectives
@@ -138,9 +140,9 @@ message Measure {
 // Message to request param related to domain object.
 message MeasureRequest {
   Measure measure = 1;
-  string objective_id = 2; // used just to identify parent on request
-  string auth_user_id = 3;
-  string auth_organization_id = 4;
+ // string objective_id = 2; // used just to identify parent on request
+  string auth_user_id = 2;
+  string auth_organization_id = 3;
 }
 
 // Message request for delete related to domain object.
@@ -157,7 +159,8 @@ message MeasuresResponse {
 }
 
 enum CustomMeasure {
-  measureWithoutObjective = 0; // parent
+  measureOnlySpecification = 0;
+  measureWithoutObjective = 1; // parent
 }
 
 // Request for query Restrict
@@ -186,9 +189,9 @@ message MeasureProgress {
 // Message to request param related to domain object.
 message MeasureProgressRequest {
   MeasureProgress measure_progress = 1;
-  string measure_id = 2; // used just to identify parent on request
-  string auth_user_id = 3;
-  string auth_organization_id = 4;
+ // string measure_id = 2; // used just to identify parent on request
+  string auth_user_id = 2;
+  string auth_organization_id = 3;
 }
 
 // Message request for delete to related domain model .

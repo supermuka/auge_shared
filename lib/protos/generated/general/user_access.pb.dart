@@ -3,7 +3,7 @@
 //  source: general/user_access.proto
 //
 // @dart = 2.3
-// ignore_for_file: camel_case_types,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type
+// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
 
 import 'dart:core' as $core;
 
@@ -13,12 +13,12 @@ import 'user.pb.dart' as $3;
 import 'organization.pb.dart' as $0;
 
 class UserAccess extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('UserAccess', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
-    ..aOS(1, 'id')
-    ..a<$core.int>(2, 'version', $pb.PbFieldType.O3)
-    ..aOM<$3.User>(3, 'user', subBuilder: $3.User.create)
-    ..aOM<$0.Organization>(4, 'organization', subBuilder: $0.Organization.create)
-    ..a<$core.int>(5, 'accessRole', $pb.PbFieldType.O3)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UserAccess', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auge.protobuf'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
+    ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'version', $pb.PbFieldType.O3)
+    ..aOM<$3.User>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'user', subBuilder: $3.User.create)
+    ..aOM<$0.Organization>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'organization', subBuilder: $0.Organization.create)
+    ..a<$core.int>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'accessRole', $pb.PbFieldType.O3)
     ..hasRequiredFields = false
   ;
 
@@ -26,8 +26,16 @@ class UserAccess extends $pb.GeneratedMessage {
   factory UserAccess() => create();
   factory UserAccess.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory UserAccess.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   UserAccess clone() => UserAccess()..mergeFromMessage(this);
-  UserAccess copyWith(void Function(UserAccess) updates) => super.copyWith((message) => updates(message as UserAccess));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UserAccess copyWith(void Function(UserAccess) updates) => super.copyWith((message) => updates(message as UserAccess)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static UserAccess create() => UserAccess._();
@@ -88,10 +96,10 @@ class UserAccess extends $pb.GeneratedMessage {
 }
 
 class UserAccessRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('UserAccessRequest', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
-    ..aOM<UserAccess>(1, 'userAccess', subBuilder: UserAccess.create)
-    ..aOS(2, 'authUserId')
-    ..aOS(3, 'authOrganizationId')
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UserAccessRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auge.protobuf'), createEmptyInstance: create)
+    ..aOM<UserAccess>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userAccess', subBuilder: UserAccess.create)
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authUserId')
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authOrganizationId')
     ..hasRequiredFields = false
   ;
 
@@ -99,8 +107,16 @@ class UserAccessRequest extends $pb.GeneratedMessage {
   factory UserAccessRequest() => create();
   factory UserAccessRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory UserAccessRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   UserAccessRequest clone() => UserAccessRequest()..mergeFromMessage(this);
-  UserAccessRequest copyWith(void Function(UserAccessRequest) updates) => super.copyWith((message) => updates(message as UserAccessRequest));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UserAccessRequest copyWith(void Function(UserAccessRequest) updates) => super.copyWith((message) => updates(message as UserAccessRequest)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static UserAccessRequest create() => UserAccessRequest._();
@@ -141,11 +157,11 @@ class UserAccessRequest extends $pb.GeneratedMessage {
 }
 
 class UserAccessDeleteRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('UserAccessDeleteRequest', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
-    ..aOS(1, 'userAccessId')
-    ..a<$core.int>(2, 'userAccessVersion', $pb.PbFieldType.O3)
-    ..aOS(3, 'authUserId')
-    ..aOS(4, 'authOrganizationId')
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UserAccessDeleteRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auge.protobuf'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userAccessId')
+    ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userAccessVersion', $pb.PbFieldType.O3)
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authUserId')
+    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authOrganizationId')
     ..hasRequiredFields = false
   ;
 
@@ -153,8 +169,16 @@ class UserAccessDeleteRequest extends $pb.GeneratedMessage {
   factory UserAccessDeleteRequest() => create();
   factory UserAccessDeleteRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory UserAccessDeleteRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   UserAccessDeleteRequest clone() => UserAccessDeleteRequest()..mergeFromMessage(this);
-  UserAccessDeleteRequest copyWith(void Function(UserAccessDeleteRequest) updates) => super.copyWith((message) => updates(message as UserAccessDeleteRequest));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UserAccessDeleteRequest copyWith(void Function(UserAccessDeleteRequest) updates) => super.copyWith((message) => updates(message as UserAccessDeleteRequest)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static UserAccessDeleteRequest create() => UserAccessDeleteRequest._();
@@ -202,12 +226,12 @@ class UserAccessDeleteRequest extends $pb.GeneratedMessage {
 }
 
 class UserAccessGetRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('UserAccessGetRequest', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
-    ..aOS(1, 'id')
-    ..aOS(2, 'userId')
-    ..aOS(3, 'organizationId')
-    ..aOS(4, 'identification')
-    ..aOS(5, 'password')
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UserAccessGetRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auge.protobuf'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userId')
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'organizationId')
+    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'identification')
+    ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'password')
     ..hasRequiredFields = false
   ;
 
@@ -215,8 +239,16 @@ class UserAccessGetRequest extends $pb.GeneratedMessage {
   factory UserAccessGetRequest() => create();
   factory UserAccessGetRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory UserAccessGetRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   UserAccessGetRequest clone() => UserAccessGetRequest()..mergeFromMessage(this);
-  UserAccessGetRequest copyWith(void Function(UserAccessGetRequest) updates) => super.copyWith((message) => updates(message as UserAccessGetRequest));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UserAccessGetRequest copyWith(void Function(UserAccessGetRequest) updates) => super.copyWith((message) => updates(message as UserAccessGetRequest)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static UserAccessGetRequest create() => UserAccessGetRequest._();
@@ -273,8 +305,8 @@ class UserAccessGetRequest extends $pb.GeneratedMessage {
 }
 
 class UserAccessesResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('UserAccessesResponse', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
-    ..pc<UserAccess>(1, 'userAccesses', $pb.PbFieldType.PM, subBuilder: UserAccess.create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UserAccessesResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auge.protobuf'), createEmptyInstance: create)
+    ..pc<UserAccess>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userAccesses', $pb.PbFieldType.PM, subBuilder: UserAccess.create)
     ..hasRequiredFields = false
   ;
 
@@ -282,8 +314,16 @@ class UserAccessesResponse extends $pb.GeneratedMessage {
   factory UserAccessesResponse() => create();
   factory UserAccessesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory UserAccessesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   UserAccessesResponse clone() => UserAccessesResponse()..mergeFromMessage(this);
-  UserAccessesResponse copyWith(void Function(UserAccessesResponse) updates) => super.copyWith((message) => updates(message as UserAccessesResponse));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UserAccessesResponse copyWith(void Function(UserAccessesResponse) updates) => super.copyWith((message) => updates(message as UserAccessesResponse)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static UserAccessesResponse create() => UserAccessesResponse._();

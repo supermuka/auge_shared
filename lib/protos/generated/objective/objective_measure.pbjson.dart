@@ -3,23 +3,25 @@
 //  source: objective/objective_measure.proto
 //
 // @dart = 2.3
-// ignore_for_file: camel_case_types,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type
+// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
 
 const CustomObjective$json = const {
   '1': 'CustomObjective',
   '2': const [
     const {'1': 'objectiveOnlySpecification', '2': 0},
-    const {'1': 'objectiveOnlySpecificationStartDateEndDate', '2': 1},
-    const {'1': 'objectiveOnlyWithMeasure', '2': 2},
-    const {'1': 'objectiveWithMeasure', '2': 3},
-    const {'1': 'objectiveWithMeasureAndTree', '2': 4},
+    const {'1': 'objectiveOnlySpecificationAndLeaderUserNotificationEmailIdiom', '2': 1},
+    const {'1': 'objectiveOnlySpecificationStartDateEndDate', '2': 2},
+    const {'1': 'objectiveOnlyWithMeasure', '2': 3},
+    const {'1': 'objectiveWithMeasure', '2': 4},
+    const {'1': 'objectiveWithMeasureAndTree', '2': 5},
   ],
 };
 
 const CustomMeasure$json = const {
   '1': 'CustomMeasure',
   '2': const [
-    const {'1': 'measureWithoutObjective', '2': 0},
+    const {'1': 'measureOnlySpecification', '2': 0},
+    const {'1': 'measureWithoutObjective', '2': 1},
   ],
 };
 
@@ -80,11 +82,12 @@ const ObjectiveGetRequest$json = const {
   '2': const [
     const {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
     const {'1': 'organization_id', '3': 2, '4': 1, '5': 9, '10': 'organizationId'},
-    const {'1': 'aligned_to_recursive', '3': 3, '4': 1, '5': 5, '10': 'alignedToRecursive'},
-    const {'1': 'custom_objective', '3': 4, '4': 1, '5': 14, '6': '.auge.protobuf.CustomObjective', '10': 'customObjective'},
-    const {'1': 'with_archived', '3': 5, '4': 1, '5': 8, '10': 'withArchived'},
-    const {'1': 'group_ids', '3': 6, '4': 3, '5': 9, '10': 'groupIds'},
-    const {'1': 'leader_user_ids', '3': 7, '4': 3, '5': 9, '10': 'leaderUserIds'},
+    const {'1': 'measure_id', '3': 3, '4': 1, '5': 9, '10': 'measureId'},
+    const {'1': 'aligned_to_recursive', '3': 4, '4': 1, '5': 5, '10': 'alignedToRecursive'},
+    const {'1': 'custom_objective', '3': 5, '4': 1, '5': 14, '6': '.auge.protobuf.CustomObjective', '10': 'customObjective'},
+    const {'1': 'with_archived', '3': 6, '4': 1, '5': 8, '10': 'withArchived'},
+    const {'1': 'group_ids', '3': 7, '4': 3, '5': 9, '10': 'groupIds'},
+    const {'1': 'leader_user_ids', '3': 8, '4': 3, '5': 9, '10': 'leaderUserIds'},
   ],
 };
 
@@ -117,9 +120,8 @@ const MeasureRequest$json = const {
   '1': 'MeasureRequest',
   '2': const [
     const {'1': 'measure', '3': 1, '4': 1, '5': 11, '6': '.auge.protobuf.Measure', '10': 'measure'},
-    const {'1': 'objective_id', '3': 2, '4': 1, '5': 9, '10': 'objectiveId'},
-    const {'1': 'auth_user_id', '3': 3, '4': 1, '5': 9, '10': 'authUserId'},
-    const {'1': 'auth_organization_id', '3': 4, '4': 1, '5': 9, '10': 'authOrganizationId'},
+    const {'1': 'auth_user_id', '3': 2, '4': 1, '5': 9, '10': 'authUserId'},
+    const {'1': 'auth_organization_id', '3': 3, '4': 1, '5': 9, '10': 'authOrganizationId'},
   ],
 };
 
@@ -165,9 +167,8 @@ const MeasureProgressRequest$json = const {
   '1': 'MeasureProgressRequest',
   '2': const [
     const {'1': 'measure_progress', '3': 1, '4': 1, '5': 11, '6': '.auge.protobuf.MeasureProgress', '10': 'measureProgress'},
-    const {'1': 'measure_id', '3': 2, '4': 1, '5': 9, '10': 'measureId'},
-    const {'1': 'auth_user_id', '3': 3, '4': 1, '5': 9, '10': 'authUserId'},
-    const {'1': 'auth_organization_id', '3': 4, '4': 1, '5': 9, '10': 'authOrganizationId'},
+    const {'1': 'auth_user_id', '3': 2, '4': 1, '5': 9, '10': 'authUserId'},
+    const {'1': 'auth_organization_id', '3': 3, '4': 1, '5': 9, '10': 'authOrganizationId'},
   ],
 };
 

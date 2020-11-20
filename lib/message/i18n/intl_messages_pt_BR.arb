@@ -211,7 +211,7 @@
       "label": {}
     }
   },
-  "WorkItemMsg_label": "{label,select, workKanbanLabel{Trabalho Kanban}workItemsLabel{Itens de Trabalho}workItemsGanttLabel{Gantt de Items de Trabalho}workItemsFilterLabel{Filtro de Items de Trabalho}orderedByLabel{Ordenado Por}editWorkItemLabel{Editar Itens de Trabalho}addWorkItemLabel{Adicionar Item de Trabalho}selectAValueLabel{Selecionar um Valor}workItemsOverDueLabel{Itens de Trabalho Atrasados}checkItemLabel{Item de Checagem}dropFileHereLabel{Soltar Arquivo Aqui}checkItemNameLabel{Nome do Item de Checagem}plannedActualLabel{Planejado e Real}remainingValueLabel{Valor Restante}dateAndActualValueLabel{Date e Valor Real}other{Não Definido}}",
+  "WorkItemMsg_label": "{label,select, workKanbanLabel{Trabalho Kanban}workItemsLabel{Itens de Trabalho}workItemsGanttLabel{Gantt de Itens de Trabalho}workItemsFilterLabel{Filtro de Items de Trabalho}orderedByLabel{Ordenado Por}editWorkItemLabel{Editar Itens de Trabalho}addWorkItemLabel{Adicionar Item de Trabalho}selectAValueLabel{Selecionar um Valor}workItemsOverDueLabel{Itens de Trabalho Atrasados}checkItemLabel{Item de Checagem}dropFileHereLabel{Soltar Arquivo Aqui}checkItemNameLabel{Nome do Item de Checagem}plannedActualLabel{Planejado e Real}remainingValueLabel{Valor Restante}dateAndActualValueLabel{Data e Valor Real}other{Não Definido}}",
   "@WorkItemMsg_label": {
     "description": "Work Item labels",
     "type": "text",
@@ -279,7 +279,7 @@
     "type": "text",
     "placeholders": {}
   },
-  "UnitOfMeasurementMsg_unitNameLabel": "{label,select, dayLabel{Dia}hourLabel{Hora}percentLabel{Percentual}moneyLabel{Mês}indexLabel{Índice}unitaryLabel{Unitário}other{Não Definido}}",
+  "UnitOfMeasurementMsg_unitNameLabel": "{label,select, percentLabel{Percentual}moneyLabel{Monetário}indexLabel{Índice}unitaryLabel{Unitário}monthLabel{Mês}dayLabel{Dia}hourLabel{Hora}other{Não Definido}}",
   "@UnitOfMeasurementMsg_unitNameLabel": {
     "description": "Unit of Measurement labels",
     "type": "text",
@@ -347,7 +347,7 @@
       "label": {}
     }
   },
-  "SystemModuleMsg_label": "{moduleName,select, groups{Grupos}users{Usuários}user_profile{Perfil Usuário}objectives{Objetivos}organization{Organização}works{Trabalhos}other{Não Definido}}",
+  "SystemModuleMsg_label": "{moduleName,select, groups{Grupos}users{Usuários}objectives{Objetivos}organization{Organização}works{Trabalhos}other{Não Definido}}",
   "@SystemModuleMsg_label": {
     "description": "System Module labels",
     "type": "text",

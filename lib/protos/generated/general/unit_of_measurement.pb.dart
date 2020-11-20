@@ -3,17 +3,17 @@
 //  source: general/unit_of_measurement.proto
 //
 // @dart = 2.3
-// ignore_for_file: camel_case_types,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type
+// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
 
 import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
 class UnitOfMeasurement extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('UnitOfMeasurement', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
-    ..aOS(1, 'id')
-    ..aOS(2, 'symbol')
-    ..aOS(3, 'name')
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UnitOfMeasurement', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auge.protobuf'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'symbol')
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
     ..hasRequiredFields = false
   ;
 
@@ -21,8 +21,16 @@ class UnitOfMeasurement extends $pb.GeneratedMessage {
   factory UnitOfMeasurement() => create();
   factory UnitOfMeasurement.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory UnitOfMeasurement.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   UnitOfMeasurement clone() => UnitOfMeasurement()..mergeFromMessage(this);
-  UnitOfMeasurement copyWith(void Function(UnitOfMeasurement) updates) => super.copyWith((message) => updates(message as UnitOfMeasurement));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UnitOfMeasurement copyWith(void Function(UnitOfMeasurement) updates) => super.copyWith((message) => updates(message as UnitOfMeasurement)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static UnitOfMeasurement create() => UnitOfMeasurement._();
@@ -61,8 +69,8 @@ class UnitOfMeasurement extends $pb.GeneratedMessage {
 }
 
 class UnitsOfMeasurementResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('UnitsOfMeasurementResponse', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
-    ..pc<UnitOfMeasurement>(1, 'unitsOfMeasurement', $pb.PbFieldType.PM, protoName: 'unitsOfMeasurement', subBuilder: UnitOfMeasurement.create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UnitsOfMeasurementResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auge.protobuf'), createEmptyInstance: create)
+    ..pc<UnitOfMeasurement>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'unitsOfMeasurement', $pb.PbFieldType.PM, protoName: 'unitsOfMeasurement', subBuilder: UnitOfMeasurement.create)
     ..hasRequiredFields = false
   ;
 
@@ -70,8 +78,16 @@ class UnitsOfMeasurementResponse extends $pb.GeneratedMessage {
   factory UnitsOfMeasurementResponse() => create();
   factory UnitsOfMeasurementResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory UnitsOfMeasurementResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   UnitsOfMeasurementResponse clone() => UnitsOfMeasurementResponse()..mergeFromMessage(this);
-  UnitsOfMeasurementResponse copyWith(void Function(UnitsOfMeasurementResponse) updates) => super.copyWith((message) => updates(message as UnitsOfMeasurementResponse));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UnitsOfMeasurementResponse copyWith(void Function(UnitsOfMeasurementResponse) updates) => super.copyWith((message) => updates(message as UnitsOfMeasurementResponse)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static UnitsOfMeasurementResponse create() => UnitsOfMeasurementResponse._();

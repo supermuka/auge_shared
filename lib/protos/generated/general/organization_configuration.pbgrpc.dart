@@ -3,7 +3,7 @@
 //  source: general/organization_configuration.proto
 //
 // @dart = 2.3
-// ignore_for_file: camel_case_types,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type
+// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
 
 import 'dart:async' as $async;
 
@@ -34,35 +34,30 @@ class OrganizationConfigurationServiceClient extends $grpc.Client {
       ($core.List<$core.int> value) => $2.Empty.fromBuffer(value));
 
   OrganizationConfigurationServiceClient($grpc.ClientChannel channel,
-      {$grpc.CallOptions options})
-      : super(channel, options: options);
+      {$grpc.CallOptions options,
+      $core.Iterable<$grpc.ClientInterceptor> interceptors})
+      : super(channel, options: options, interceptors: interceptors);
 
   $grpc.ResponseFuture<$3.OrganizationConfiguration>
       getOrganizationConfiguration(
           $3.OrganizationConfigurationGetRequest request,
           {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$getOrganizationConfiguration, $async.Stream.fromIterable([request]),
+    return $createUnaryCall(_$getOrganizationConfiguration, request,
         options: options);
-    return $grpc.ResponseFuture(call);
   }
 
   $grpc.ResponseFuture<$1.StringValue> createOrganizationConfiguration(
       $3.OrganizationConfigurationRequest request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(_$createOrganizationConfiguration,
-        $async.Stream.fromIterable([request]),
+    return $createUnaryCall(_$createOrganizationConfiguration, request,
         options: options);
-    return $grpc.ResponseFuture(call);
   }
 
   $grpc.ResponseFuture<$2.Empty> updateOrganizationConfiguration(
       $3.OrganizationConfigurationRequest request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(_$updateOrganizationConfiguration,
-        $async.Stream.fromIterable([request]),
+    return $createUnaryCall(_$updateOrganizationConfiguration, request,
         options: options);
-    return $grpc.ResponseFuture(call);
   }
 }
 

@@ -13,6 +13,7 @@ class CommonMsg {
   static const String searchLabel = 'searchLabel';
  // static const String noCorrespondenceLabel = 'noCorrespondenceLabel';
   static const String filterLabel = 'filterLabel';
+  static const String exportLabel = 'exportLabel';
   static const String moreLabel = 'moreLabel';
   static const String emptyLabel = 'emptyLabel';
   static const selectLabel = 'selectLabel';
@@ -25,6 +26,7 @@ class CommonMsg {
     headerSubtitleLabel: 'Objectives, Work and Performance',
     searchLabel: 'Search',
     filterLabel: 'Filter',
+    exportLabel: 'Export',
     moreLabel: 'more',
     emptyLabel: 'empty',
     selectLabel: 'Select',
@@ -50,6 +52,7 @@ class CommonMsg {
   static const String loginButtonLabel = 'loginButtonLabel';
   static const String logoutButtonLabel = 'logoutButtonLabel';
   static const String selectPhotoButtonLabel = 'selectPhotoButtonLabel';
+  static const String exportButtonLabel = 'exportButtonLabel';
 
   /// Label for edit button
   static String buttonLabel(String label) => Intl.select(label, {
@@ -64,6 +67,7 @@ class CommonMsg {
         loginButtonLabel: 'Login',
         logoutButtonLabel: 'Logout',
         selectPhotoButtonLabel: 'Select Photo',
+        exportButtonLabel: 'Export',
         'other': 'Not Defined'},
       name: "CommonMsg_buttonLabel",
       args: [label],
@@ -405,7 +409,6 @@ class WorkMsg {
   static const String objectiveLabel = 'objectiveLabel';
   static const String workItemsOverDueLabel = 'workItemsOverDueLabel';
 
-
   static const String worksFilterLabel = 'worksFilterLabel';
 
   /// Label for work
@@ -547,6 +550,9 @@ class ObjectiveMsg {
     desc: "Objective labels",
     examples: const {"Name": "Name"}
   );
+
+ // static String measuresNeedToBeDeletedMsg() => Intl.message("Measures need to be deleted before deleting the Objective.", name: "ObjectiveMsg_measuresNeedToBeDeleted");
+
 }
 
 /// Specific messages and label for [Map]
@@ -594,14 +600,15 @@ class MeasureMsg {
       // locale: "en",
       desc: "Measure labels"
   );
-
-  static const String dayLabel = 'dayLabel';
-  static const String hourLabel = 'hourLabel';
+  /*
   static const String percentLabel = 'percentLabel';
   static const String moneyLabel = 'moneyLabel';
   static const String indexLabel = 'indexLabel';
   static const String unitaryLabel = 'unitaryLabel';
-
+  static const String monthLabel = 'monthLabel';
+  static const String dayLabel = 'dayLabel';
+  static const String hourLabel = 'hourLabel';
+*/
   /// Label for Unit of Measurement
 /*
   static String UnitOfMeasurementLabel(String label) => Intl.select(label, {
@@ -630,21 +637,23 @@ class MeasureMsg {
 /// Specific messages and label for [UnitOfMeasurement]
 class UnitOfMeasurementMsg {
 
-  static const String dayLabel = 'dayLabel';
-  static const String hourLabel = 'hourLabel';
   static const String percentLabel = 'percentLabel';
   static const String moneyLabel = 'moneyLabel';
   static const String indexLabel = 'indexLabel';
   static const String unitaryLabel = 'unitaryLabel';
+  static const String monthLabel = 'monthLabel';
+  static const String dayLabel = 'dayLabel';
+  static const String hourLabel = 'hourLabel';
 
   /// Label for Unit of Measurement
   static String unitNameLabel(String label) => Intl.select(label, {
-    dayLabel: 'Day',
-    hourLabel: 'Hour',
     percentLabel: 'Percent',
     moneyLabel: 'Money',
     indexLabel: 'Index',
     unitaryLabel: 'Unitary',
+    monthLabel: 'Month',
+    dayLabel: 'Day',
+    hourLabel: 'Hour',
     'other': 'Not Defined'},
       name: "UnitOfMeasurementMsg_unitNameLabel",
       args: [label],
@@ -820,7 +829,7 @@ class SystemModuleMsg {
   static String label(String moduleName) => Intl.select(moduleName, {
     SystemModule.groups: 'Groups',
     SystemModule.users: 'Users',
-    SystemModule.user_profile: 'User Profile',
+    //SystemModule.user_profile: 'User Profile',
     SystemModule.objectives: 'Objectives',
     SystemModule.organization: 'Organization',
     SystemModule.works: 'Works',

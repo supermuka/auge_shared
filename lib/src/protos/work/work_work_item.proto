@@ -70,22 +70,24 @@ message WorksResponse {
 
 enum CustomWork {
     workOnlySpecification = 0;
-    workOnlyWithWorkItems = 1;
-    workWithWorkItems = 2;
-    workWithWorkItemsAndStages = 3;
+    workOnlySpecificationAndLeaderUserNotificationEmailIdiom = 1;
+    workOnlyWithWorkItems = 2;
+    workWithWorkItems = 3;
+    workWithWorkItemsAndStages = 4;
 }
 
 // Request for query param
 message WorkGetRequest {
     string id = 1;
     string organization_id = 2;
-    string objective_id = 3;
-    CustomWork custom_work = 4;
-    bool with_archived = 5;
-    repeated string group_ids = 6;
-    repeated string leader_user_ids = 7;
-    bool work_item_with_archived = 8;
-    repeated string work_item_assigned_to_ids = 9;
+    string work_item_id = 3;
+    string objective_id = 4;
+    CustomWork custom_work = 5;
+    bool with_archived = 6;
+    repeated string group_ids = 7;
+    repeated string leader_user_ids = 8;
+    bool work_item_with_archived = 9;
+    repeated string work_item_assigned_to_ids = 10;
 }
 
 // The service definition.
@@ -103,11 +105,12 @@ service WorkItemService {
     rpc GetWorkItemCheckItems (WorkItemCheckItemGetRequest) returns (WorkItemCheckItemsResponse) {}
 
     rpc GetWorkItemValues (WorkItemValueGetRequest) returns (WorkItemValuesResponse) {}
-    rpc GetWorkItemValue (WorkItemValueGetRequest) returns (WorkItemValue) {}
+   // rpc GetWorkItemValue (WorkItemValueGetRequest) returns (WorkItemValue) {}
 
     rpc CreateWorkItemValue (WorkItemValueRequest) returns (google.protobuf.StringValue) {}
     rpc UpdateWorkItemValue (WorkItemValueRequest) returns (google.protobuf.Empty) {}
     rpc DeleteWorkItemValue (WorkItemValueDeleteRequest) returns (google.protobuf.Empty) {}
+   // rpc DeleteWorkItemValue (WorkItemValueRequest) returns (google.protobuf.Empty) {}
 
 }
 
@@ -139,9 +142,9 @@ message WorkItem {
 // Request for query Restrict
 message WorkItemRequest {
     WorkItem work_item = 1;
-    string work_id = 2; // used just to identify parent on request
-    string auth_user_id = 3;
-    string auth_organization_id = 4;
+  //  string work_id = 2; // used just to identify parent on request
+    string auth_user_id = 2;
+    string auth_organization_id = 3;
 }
 
 // Request message for delete related to domain model
@@ -216,9 +219,9 @@ message WorkItemCheckItem {
 // Request for query Restrict
 message WorkItemCheckItemRequest {
     WorkItemCheckItem work_item_check_item = 1;
-    string work_item_id = 2; // used just to identify parent on request
-    string auth_user_id = 3;
-    string auth_organization_id = 4;
+   // string work_item_id = 2; // used just to identify parent on request
+    string auth_user_id = 2;
+    string auth_organization_id = 3;
 }
 
 // Response list of the WorkItemCheckItems
@@ -313,9 +316,9 @@ message WorkItemValue {
 // Message to request param related to domain object.
 message WorkItemValueRequest {
     WorkItemValue work_item_value = 1;
-    string work_item_id = 2; // used just to identify parent on request
-    string auth_user_id = 3;
-    string auth_organization_id = 4;
+  //  string work_item_id = 2; // used just to identify parent on request
+    string auth_user_id = 2;
+    string auth_organization_id = 3;
 }
 
 // Message request for delete to related domain model .

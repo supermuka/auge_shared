@@ -3,7 +3,7 @@
 //  source: work/work_work_item.proto
 //
 // @dart = 2.3
-// ignore_for_file: camel_case_types,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type
+// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
 
 import 'dart:async' as $async;
 
@@ -36,38 +36,29 @@ class WorkServiceClient extends $grpc.Client {
           ($7.WorkDeleteRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $2.Empty.fromBuffer(value));
 
-  WorkServiceClient($grpc.ClientChannel channel, {$grpc.CallOptions options})
-      : super(channel, options: options);
+  WorkServiceClient($grpc.ClientChannel channel,
+      {$grpc.CallOptions options,
+      $core.Iterable<$grpc.ClientInterceptor> interceptors})
+      : super(channel, options: options, interceptors: interceptors);
 
   $grpc.ResponseFuture<$7.WorksResponse> getWorks($7.WorkGetRequest request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(_$getWorks, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+    return $createUnaryCall(_$getWorks, request, options: options);
   }
 
   $grpc.ResponseFuture<$1.StringValue> createWork($7.WorkRequest request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$createWork, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+    return $createUnaryCall(_$createWork, request, options: options);
   }
 
   $grpc.ResponseFuture<$2.Empty> updateWork($7.WorkRequest request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$updateWork, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+    return $createUnaryCall(_$updateWork, request, options: options);
   }
 
   $grpc.ResponseFuture<$2.Empty> deleteWork($7.WorkDeleteRequest request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$deleteWork, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+    return $createUnaryCall(_$deleteWork, request, options: options);
   }
 }
 
@@ -174,11 +165,6 @@ class WorkItemServiceClient extends $grpc.Client {
           ($7.WorkItemValueGetRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
               $7.WorkItemValuesResponse.fromBuffer(value));
-  static final _$getWorkItemValue =
-      $grpc.ClientMethod<$7.WorkItemValueGetRequest, $7.WorkItemValue>(
-          '/auge.protobuf.WorkItemService/GetWorkItemValue',
-          ($7.WorkItemValueGetRequest value) => value.writeToBuffer(),
-          ($core.List<$core.int> value) => $7.WorkItemValue.fromBuffer(value));
   static final _$createWorkItemValue =
       $grpc.ClientMethod<$7.WorkItemValueRequest, $1.StringValue>(
           '/auge.protobuf.WorkItemService/CreateWorkItemValue',
@@ -196,105 +182,67 @@ class WorkItemServiceClient extends $grpc.Client {
           ($core.List<$core.int> value) => $2.Empty.fromBuffer(value));
 
   WorkItemServiceClient($grpc.ClientChannel channel,
-      {$grpc.CallOptions options})
-      : super(channel, options: options);
+      {$grpc.CallOptions options,
+      $core.Iterable<$grpc.ClientInterceptor> interceptors})
+      : super(channel, options: options, interceptors: interceptors);
 
   $grpc.ResponseFuture<$7.WorkItemsResponse> getWorkItems(
       $7.WorkItemGetRequest request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$getWorkItems, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+    return $createUnaryCall(_$getWorkItems, request, options: options);
   }
 
   $grpc.ResponseFuture<$1.StringValue> createWorkItem(
       $7.WorkItemRequest request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$createWorkItem, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+    return $createUnaryCall(_$createWorkItem, request, options: options);
   }
 
   $grpc.ResponseFuture<$2.Empty> updateWorkItem($7.WorkItemRequest request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$updateWorkItem, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+    return $createUnaryCall(_$updateWorkItem, request, options: options);
   }
 
   $grpc.ResponseFuture<$2.Empty> deleteWorkItem(
       $7.WorkItemDeleteRequest request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$deleteWorkItem, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+    return $createUnaryCall(_$deleteWorkItem, request, options: options);
   }
 
   $grpc.ResponseFuture<$7.WorkItemAttachment> getWorkItemAttachment(
       $7.WorkItemAttachmentGetRequest request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$getWorkItemAttachment, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+    return $createUnaryCall(_$getWorkItemAttachment, request, options: options);
   }
 
   $grpc.ResponseFuture<$7.WorkItemCheckItemsResponse> getWorkItemCheckItems(
       $7.WorkItemCheckItemGetRequest request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$getWorkItemCheckItems, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+    return $createUnaryCall(_$getWorkItemCheckItems, request, options: options);
   }
 
   $grpc.ResponseFuture<$7.WorkItemValuesResponse> getWorkItemValues(
       $7.WorkItemValueGetRequest request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$getWorkItemValues, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
-  }
-
-  $grpc.ResponseFuture<$7.WorkItemValue> getWorkItemValue(
-      $7.WorkItemValueGetRequest request,
-      {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$getWorkItemValue, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+    return $createUnaryCall(_$getWorkItemValues, request, options: options);
   }
 
   $grpc.ResponseFuture<$1.StringValue> createWorkItemValue(
       $7.WorkItemValueRequest request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$createWorkItemValue, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+    return $createUnaryCall(_$createWorkItemValue, request, options: options);
   }
 
   $grpc.ResponseFuture<$2.Empty> updateWorkItemValue(
       $7.WorkItemValueRequest request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$updateWorkItemValue, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+    return $createUnaryCall(_$updateWorkItemValue, request, options: options);
   }
 
   $grpc.ResponseFuture<$2.Empty> deleteWorkItemValue(
       $7.WorkItemValueDeleteRequest request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$deleteWorkItemValue, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+    return $createUnaryCall(_$deleteWorkItemValue, request, options: options);
   }
 }
 
@@ -359,15 +307,6 @@ abstract class WorkItemServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $7.WorkItemValueGetRequest.fromBuffer(value),
         ($7.WorkItemValuesResponse value) => value.writeToBuffer()));
-    $addMethod(
-        $grpc.ServiceMethod<$7.WorkItemValueGetRequest, $7.WorkItemValue>(
-            'GetWorkItemValue',
-            getWorkItemValue_Pre,
-            false,
-            false,
-            ($core.List<$core.int> value) =>
-                $7.WorkItemValueGetRequest.fromBuffer(value),
-            ($7.WorkItemValue value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$7.WorkItemValueRequest, $1.StringValue>(
         'CreateWorkItemValue',
         createWorkItemValue_Pre,
@@ -432,11 +371,6 @@ abstract class WorkItemServiceBase extends $grpc.Service {
     return getWorkItemValues(call, await request);
   }
 
-  $async.Future<$7.WorkItemValue> getWorkItemValue_Pre($grpc.ServiceCall call,
-      $async.Future<$7.WorkItemValueGetRequest> request) async {
-    return getWorkItemValue(call, await request);
-  }
-
   $async.Future<$1.StringValue> createWorkItemValue_Pre($grpc.ServiceCall call,
       $async.Future<$7.WorkItemValueRequest> request) async {
     return createWorkItemValue(call, await request);
@@ -465,8 +399,6 @@ abstract class WorkItemServiceBase extends $grpc.Service {
   $async.Future<$7.WorkItemCheckItemsResponse> getWorkItemCheckItems(
       $grpc.ServiceCall call, $7.WorkItemCheckItemGetRequest request);
   $async.Future<$7.WorkItemValuesResponse> getWorkItemValues(
-      $grpc.ServiceCall call, $7.WorkItemValueGetRequest request);
-  $async.Future<$7.WorkItemValue> getWorkItemValue(
       $grpc.ServiceCall call, $7.WorkItemValueGetRequest request);
   $async.Future<$1.StringValue> createWorkItemValue(
       $grpc.ServiceCall call, $7.WorkItemValueRequest request);
@@ -500,42 +432,31 @@ class WorkStageServiceClient extends $grpc.Client {
           ($core.List<$core.int> value) => $2.Empty.fromBuffer(value));
 
   WorkStageServiceClient($grpc.ClientChannel channel,
-      {$grpc.CallOptions options})
-      : super(channel, options: options);
+      {$grpc.CallOptions options,
+      $core.Iterable<$grpc.ClientInterceptor> interceptors})
+      : super(channel, options: options, interceptors: interceptors);
 
   $grpc.ResponseFuture<$7.WorkStagesResponse> getWorkStages(
       $7.WorkStageGetRequest request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$getWorkStages, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+    return $createUnaryCall(_$getWorkStages, request, options: options);
   }
 
   $grpc.ResponseFuture<$1.StringValue> createWorkStage(
       $7.WorkStageRequest request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$createWorkStage, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+    return $createUnaryCall(_$createWorkStage, request, options: options);
   }
 
   $grpc.ResponseFuture<$2.Empty> updateWorkStage($7.WorkStageRequest request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$updateWorkStage, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+    return $createUnaryCall(_$updateWorkStage, request, options: options);
   }
 
   $grpc.ResponseFuture<$2.Empty> deleteWorkStage(
       $7.WorkStageDeleteRequest request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$deleteWorkStage, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+    return $createUnaryCall(_$deleteWorkStage, request, options: options);
   }
 }
 

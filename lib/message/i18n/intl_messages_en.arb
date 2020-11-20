@@ -271,7 +271,7 @@
     "type": "text",
     "placeholders": {}
   },
-  "UnitOfMeasurementMsg_unitNameLabel": "{label,select, dayLabel{Day}hourLabel{Hour}percentLabel{Percent}moneyLabel{Money}indexLabel{Index}unitaryLabel{Unitary}other{Not Defined}}",
+  "UnitOfMeasurementMsg_unitNameLabel": "{label,select, percentLabel{Percent}moneyLabel{Money}indexLabel{Index}unitaryLabel{Unitary}monthLabel{Month}dayLabel{Day}hourLabel{Hour}other{Not Defined}}",
   "@UnitOfMeasurementMsg_unitNameLabel": {
     "description": "Unit of Measurement labels",
     "type": "text",
@@ -339,7 +339,7 @@
       "label": {}
     }
   },
-  "SystemModuleMsg_label": "{moduleName,select, groups{Groups}users{Users}user_profile{User Profile}objectives{Objectives}organization{Organization}works{Works}other{Not Defined}}",
+  "SystemModuleMsg_label": "{moduleName,select, groups{Groups}users{Users}objectives{Objectives}organization{Organization}works{Works}other{Not Defined}}",
   "@SystemModuleMsg_label": {
     "description": "System Module labels",
     "type": "text",

@@ -81,13 +81,13 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static m30(functionName) => "${Intl.select(functionName, {'create': 'Created', 'update': 'Updated', 'delete': 'Deleted', 'read': 'Read', 'other': 'Not Defined', })}";
 
-  static m31(moduleName) => "${Intl.select(moduleName, {'groups': 'Groups', 'users': 'Users', 'user_profile': 'User Profile', 'objectives': 'Objectives', 'organization': 'Organization', 'works': 'Works', 'other': 'Not Defined', })}";
+  static m31(moduleName) => "${Intl.select(moduleName, {'groups': 'Groups', 'users': 'Users', 'objectives': 'Objectives', 'organization': 'Organization', 'works': 'Works', 'other': 'Not Defined', })}";
 
   static m32(fieldName) => "${Intl.select(fieldName, {'timelineLabel': 'Timeline', 'dayAgoLabel': 'day ago', 'daysAgoLabel': 'days ago', 'hourAgoLabel': 'hour ago', 'hoursAgoLabel': 'hours ago', 'minuteAgoLabel': 'minute ago', 'minutesAgoLabel': 'minutes ago', 'secondAgoLabel': 'second ago', 'secondsAgoLabel': 'seconds ago', 'valueLabel': 'value', 'changedFromLabel': 'changed from', 'wasLabel': 'was', 'allLabel': 'All', 'selectModuleLabel': 'Select module', 'noNewRecordsLabel': 'No New Records', 'newRecordsLabel': 'New Records', 'loadMoreLabel': 'Load More', 'other': 'Not Defined', })}";
 
   static m33(fieldName) => "${Intl.select(fieldName, {'nameField': 'Name', 'symbolField': 'Symbol', 'other': 'Not Defined', })}";
 
-  static m34(label) => "${Intl.select(label, {'dayLabel': 'Day', 'hourLabel': 'Hour', 'percentLabel': 'Percent', 'moneyLabel': 'Money', 'indexLabel': 'Index', 'unitaryLabel': 'Unitary', 'other': 'Not Defined', })}";
+  static m34(label) => "${Intl.select(label, {'percentLabel': 'Percent', 'moneyLabel': 'Money', 'indexLabel': 'Index', 'unitaryLabel': 'Unitary', 'monthLabel': 'Month', 'dayLabel': 'Day', 'hourLabel': 'Hour', 'other': 'Not Defined', })}";
 
   static m35(fieldName) => "${Intl.select(fieldName, {'organizationField': 'Organization', 'accessRoleField': 'Access Role', 'other': 'Not Defined', })}";
 
@@ -107,17 +107,19 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static m43(fieldName) => "${Intl.select(fieldName, {'nameField': 'Name', 'descriptionField': 'Description', 'groupField': 'Group', 'leaderField': 'Leader', 'workStagesField': 'Stages', 'objectiveField': 'Objective', 'archivedField': 'Archived', 'other': 'Not Defined', })}";
 
-  static m44(fieldName) => "${Intl.select(fieldName, {'nameField': 'Name', 'descriptionField': 'Description', 'dueDateField': 'Due Date', 'plannedValueField': 'Planned', 'actualValueField': 'Actual', 'unitOfMeasurementField': 'Unit of Measurement', 'workStageField': 'Stage', 'assignedToField': 'Assigned To', 'attachmentsField': 'Attachments', 'checkItemsField': 'Check Items', 'archivedField': 'Archived', 'workField': 'Work', 'other': 'Not Defined', })}";
+  static m44(fieldName) => "${Intl.select(fieldName, {'nameField': 'Name', 'finishedField': 'Finished', 'other': 'Not Defined', })}";
 
-  static m45(label) => "${Intl.select(label, {'workKanbanLabel': 'Work Kanban', 'workItemsLabel': 'Work Items', 'workItemsGanttLabel': 'Work Items Gantt', 'workItemsFilterLabel': 'Work items Filter', 'orderedByLabel': 'Ordered By', 'editWorkItemLabel': 'Edit Work Item', 'addWorkItemLabel': 'Add Work Item', 'selectAValueLabel': 'Select a value', 'workItemsOverDueLabel': 'Work Items Over Due', 'checkItemLabel': 'Check Item', 'dropFileHereLabel': 'Drop File Here', 'checkItemNameLabel': 'Check Item Name', 'plannedActualLabel': 'Planned and Actual', 'remainingValueLabel': 'Remaining Value', 'dateAndActualValueLabel': 'Date and Actual Value', 'other': 'Not Defined', })}";
+  static m45(fieldName) => "${Intl.select(fieldName, {'nameField': 'Name', 'descriptionField': 'Description', 'dueDateField': 'Due Date', 'plannedValueField': 'Planned', 'actualValueField': 'Actual', 'unitOfMeasurementField': 'Unit of Measurement', 'workStageField': 'Stage', 'assignedToField': 'Assigned To', 'attachmentsField': 'Attachments', 'checkItemsField': 'Check Items', 'archivedField': 'Archived', 'workField': 'Work', 'other': 'Not Defined', })}";
 
-  static m46(fieldName) => "${Intl.select(fieldName, {'dateField': 'Date', 'actualValueField': 'Actual Value', 'commentField': 'Comment', 'other': 'Not Defined', })}";
+  static m46(label) => "${Intl.select(label, {'workKanbanLabel': 'Work Kanban', 'workItemsLabel': 'Work Items', 'workItemsGanttLabel': 'Work Items Gantt', 'workItemsFilterLabel': 'Work items Filter', 'orderedByLabel': 'Ordered By', 'editWorkItemLabel': 'Edit Work Item', 'addWorkItemLabel': 'Add Work Item', 'selectAValueLabel': 'Select a value', 'workItemsOverDueLabel': 'Work Items Over Due', 'checkItemLabel': 'Check Item', 'dropFileHereLabel': 'Drop File Here', 'checkItemNameLabel': 'Check Item Name', 'plannedActualLabel': 'Planned and Actual', 'remainingValueLabel': 'Remaining Value', 'dateAndActualValueLabel': 'Date and Actual Value', 'other': 'Not Defined', })}";
 
-  static m47(label) => "${Intl.select(label, {'workItemValuesLabel': 'Values', 'other': 'Not Defined', })}";
+  static m47(fieldName) => "${Intl.select(fieldName, {'dateField': 'Date', 'actualValueField': 'Actual Value', 'commentField': 'Comment', 'other': 'Not Defined', })}";
 
-  static m48(label) => "${Intl.select(label, {'workLabel': 'Work', 'worksLabel': 'Works', 'orderedByLabel': 'Ordered By', 'editWorkLabel': 'Edit Work', 'addWorkLabel': 'Add Work', 'objectiveLabel': 'Objective', 'workItemsOverDueLabel': 'Work Items Over Due', 'worksFilterLabel': 'Works Filter', 'other': 'Not Defined', })}";
+  static m48(label) => "${Intl.select(label, {'workItemValuesLabel': 'Values', 'other': 'Not Defined', })}";
 
-  static m49(fieldName) => "${Intl.select(fieldName, {'nameField': 'Name', 'stateIndexField': 'State', 'other': 'Not Defined', })}";
+  static m49(label) => "${Intl.select(label, {'workLabel': 'Work', 'worksLabel': 'Works', 'orderedByLabel': 'Ordered By', 'editWorkLabel': 'Edit Work', 'addWorkLabel': 'Add Work', 'objectiveLabel': 'Objective', 'workItemsOverDueLabel': 'Work Items Over Due', 'worksFilterLabel': 'Works Filter', 'other': 'Not Defined', })}";
+
+  static m50(fieldName) => "${Intl.select(fieldName, {'nameField': 'Name', 'stateIndexField': 'State', 'other': 'Not Defined', })}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
@@ -192,14 +194,15 @@ class MessageLookup extends MessageLookupByLibrary {
     "UserProfileDomainMsg_fieldLabel" : m41,
     "UserProfileValueMsg_label" : m42,
     "WorkDomainMsg_fieldLabel" : m43,
-    "WorkItemDomainMsg_fieldLabel" : m44,
-    "WorkItemMsg_label" : m45,
+    "WorkItemCheckItemDomainMsg_fieldLabel" : m44,
+    "WorkItemDomainMsg_fieldLabel" : m45,
+    "WorkItemMsg_label" : m46,
     "WorkItemMsg_valuePercentIntervalMsg" : MessageLookupByLibrary.simpleMessage("The percentual value should be between 0 and 100"),
-    "WorkItemValueDomainMsg_fieldLabel" : m46,
+    "WorkItemValueDomainMsg_fieldLabel" : m47,
     "WorkItemValueMsg_actualValueExistsAtDate" : MessageLookupByLibrary.simpleMessage("Actual value already exists at date informed."),
-    "WorkItemValueMsg_label" : m47,
+    "WorkItemValueMsg_label" : m48,
     "WorkItemValueMsg_valueErrorMsg" : MessageLookupByLibrary.simpleMessage("Actual value must be less or equal than planned value."),
-    "WorkMsg_label" : m48,
-    "WorkStageDomainMsg_fieldLabel" : m49
+    "WorkMsg_label" : m49,
+    "WorkStageDomainMsg_fieldLabel" : m50
   };
 }

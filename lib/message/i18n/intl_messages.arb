@@ -1,7 +1,6 @@
 {
-  "@@last_modified": "2020-07-11T14:09:38.477141",
-  "@@locale": "en",
-  "CommonMsg_label": "{label,select, headerTitleLabel{AUGE}headerSubtitleLabel{Objectives, Work and Performance}searchLabel{Search}filterLabel{Filter}moreLabel{more}emptyLabel{empty}selectLabel{Select}noMatchLabel{No Match}yesLabel{Yes}noLabel{No}other{Not Defined}}",
+  "@@last_modified": "2020-11-11T14:25:48.854155",
+  "CommonMsg_label": "{label,select, headerTitleLabel{AUGE}headerSubtitleLabel{Objectives, Work and Performance}searchLabel{Search}filterLabel{Filter}exportLabel{Export}moreLabel{more}emptyLabel{empty}selectLabel{Select}noMatchLabel{No Match}yesLabel{Yes}noLabel{No}other{Not Defined}}",
   "@CommonMsg_label": {
     "description": "Common labels",
     "type": "text",
@@ -9,7 +8,7 @@
       "label": {}
     }
   },
-  "CommonMsg_buttonLabel": "{label,select, applyButtonLabel{Apply}editButtonLabel{Edit}deleteButtonLabel{Delete}saveButtonLabel{Save}cancelButtonLabel{Cancel}closeButtonLabel{Close}uploadButtonLabel{Upload}clearButtonLabel{Clear}loginButtonLabel{Login}logoutButtonLabel{Logout}selectPhotoButtonLabel{Select Photo}other{Not Defined}}",
+  "CommonMsg_buttonLabel": "{label,select, applyButtonLabel{Apply}editButtonLabel{Edit}deleteButtonLabel{Delete}saveButtonLabel{Save}cancelButtonLabel{Cancel}closeButtonLabel{Close}uploadButtonLabel{Upload}clearButtonLabel{Clear}loginButtonLabel{Login}logoutButtonLabel{Logout}selectPhotoButtonLabel{Select Photo}exportButtonLabel{Export}other{Not Defined}}",
   "@CommonMsg_buttonLabel": {
     "description": "Label for buttons",
     "type": "text",
@@ -271,7 +270,7 @@
     "type": "text",
     "placeholders": {}
   },
-  "UnitOfMeasurementMsg_unitNameLabel": "{label,select, dayLabel{Day}hourLabel{Hour}percentLabel{Percent}moneyLabel{Money}indexLabel{Index}unitaryLabel{Unitary}other{Not Defined}}",
+  "UnitOfMeasurementMsg_unitNameLabel": "{label,select, percentLabel{Percent}moneyLabel{Money}indexLabel{Index}unitaryLabel{Unitary}monthLabel{Month}dayLabel{Day}hourLabel{Hour}other{Not Defined}}",
   "@UnitOfMeasurementMsg_unitNameLabel": {
     "description": "Unit of Measurement labels",
     "type": "text",
@@ -339,7 +338,7 @@
       "label": {}
     }
   },
-  "SystemModuleMsg_label": "{moduleName,select, groups{Groups}users{Users}user_profile{User Profile}objectives{Objectives}organization{Organization}works{Works}other{Not Defined}}",
+  "SystemModuleMsg_label": "{moduleName,select, groups{Groups}users{Users}objectives{Objectives}organization{Organization}works{Works}other{Not Defined}}",
   "@SystemModuleMsg_label": {
     "description": "System Module labels",
     "type": "text",

@@ -3,7 +3,7 @@
 //  source: general/organization_directory_service.proto
 //
 // @dart = 2.3
-// ignore_for_file: camel_case_types,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type
+// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
 
 import 'dart:core' as $core;
 
@@ -13,32 +13,32 @@ import '../google/protobuf/timestamp.pb.dart' as $4;
 import 'organization.pb.dart' as $0;
 
 class OrganizationDirectoryService extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('OrganizationDirectoryService', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
-    ..aOS(1, 'id')
-    ..a<$core.int>(2, 'version', $pb.PbFieldType.O3)
-    ..aOB(3, 'directoryServiceEnabled')
-    ..aOS(4, 'hostAddress')
-    ..a<$core.int>(5, 'port', $pb.PbFieldType.O3)
-    ..aOB(6, 'sslTls')
-    ..aOS(7, 'syncBindDn')
-    ..aOS(8, 'syncBindPassword')
-    ..a<$core.int>(9, 'syncInterval', $pb.PbFieldType.O3)
-    ..aOM<$4.Timestamp>(10, 'syncLastDateTime', subBuilder: $4.Timestamp.create)
-    ..aOS(11, 'syncLastResult')
-    ..aOS(12, 'groupSearchDN', protoName: 'group_search_DN')
-    ..a<$core.int>(13, 'groupSearchScope', $pb.PbFieldType.O3)
-    ..aOS(14, 'groupSearchFilter')
-    ..aOS(15, 'groupMemberUserAttribute')
-    ..aOS(16, 'userSearchDN', protoName: 'user_search_DN')
-    ..a<$core.int>(17, 'userSearchScope', $pb.PbFieldType.O3)
-    ..aOS(18, 'userSearchFilter')
-    ..aOS(19, 'userProviderObjectIdAttribute')
-    ..aOS(20, 'userIdentificationAttribute')
-    ..aOS(21, 'userEmailAttribute')
-    ..aOS(22, 'userFirstNameAttribute')
-    ..aOS(23, 'userLastNameAttribute')
-    ..aOS(24, 'userAttributeForGroupRelationship')
-    ..aOM<$0.Organization>(25, 'organization', subBuilder: $0.Organization.create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'OrganizationDirectoryService', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auge.protobuf'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
+    ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'version', $pb.PbFieldType.O3)
+    ..aOB(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'directoryServiceEnabled')
+    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'hostAddress')
+    ..a<$core.int>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'port', $pb.PbFieldType.O3)
+    ..aOB(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sslTls')
+    ..aOS(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'syncBindDn')
+    ..aOS(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'syncBindPassword')
+    ..a<$core.int>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'syncInterval', $pb.PbFieldType.O3)
+    ..aOM<$4.Timestamp>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'syncLastDateTime', subBuilder: $4.Timestamp.create)
+    ..aOS(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'syncLastResult')
+    ..aOS(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'groupSearchDN', protoName: 'group_search_DN')
+    ..a<$core.int>(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'groupSearchScope', $pb.PbFieldType.O3)
+    ..aOS(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'groupSearchFilter')
+    ..aOS(15, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'groupMemberUserAttribute')
+    ..aOS(16, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userSearchDN', protoName: 'user_search_DN')
+    ..a<$core.int>(17, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userSearchScope', $pb.PbFieldType.O3)
+    ..aOS(18, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userSearchFilter')
+    ..aOS(19, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userProviderObjectIdAttribute')
+    ..aOS(20, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userIdentificationAttribute')
+    ..aOS(21, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userEmailAttribute')
+    ..aOS(22, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userFirstNameAttribute')
+    ..aOS(23, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userLastNameAttribute')
+    ..aOS(24, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userAttributeForGroupRelationship')
+    ..aOM<$0.Organization>(25, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'organization', subBuilder: $0.Organization.create)
     ..hasRequiredFields = false
   ;
 
@@ -46,8 +46,16 @@ class OrganizationDirectoryService extends $pb.GeneratedMessage {
   factory OrganizationDirectoryService() => create();
   factory OrganizationDirectoryService.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory OrganizationDirectoryService.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   OrganizationDirectoryService clone() => OrganizationDirectoryService()..mergeFromMessage(this);
-  OrganizationDirectoryService copyWith(void Function(OrganizationDirectoryService) updates) => super.copyWith((message) => updates(message as OrganizationDirectoryService));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  OrganizationDirectoryService copyWith(void Function(OrganizationDirectoryService) updates) => super.copyWith((message) => updates(message as OrganizationDirectoryService)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static OrganizationDirectoryService create() => OrganizationDirectoryService._();
@@ -288,10 +296,10 @@ class OrganizationDirectoryService extends $pb.GeneratedMessage {
 }
 
 class OrganizationDirectoryServiceRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('OrganizationDirectoryServiceRequest', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
-    ..aOM<OrganizationDirectoryService>(1, 'organizationDirectoryService', protoName: 'organizationDirectoryService', subBuilder: OrganizationDirectoryService.create)
-    ..aOS(2, 'authUserId')
-    ..aOS(3, 'authOrganizationId')
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'OrganizationDirectoryServiceRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auge.protobuf'), createEmptyInstance: create)
+    ..aOM<OrganizationDirectoryService>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'organizationDirectoryService', protoName: 'organizationDirectoryService', subBuilder: OrganizationDirectoryService.create)
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authUserId')
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authOrganizationId')
     ..hasRequiredFields = false
   ;
 
@@ -299,8 +307,16 @@ class OrganizationDirectoryServiceRequest extends $pb.GeneratedMessage {
   factory OrganizationDirectoryServiceRequest() => create();
   factory OrganizationDirectoryServiceRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory OrganizationDirectoryServiceRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   OrganizationDirectoryServiceRequest clone() => OrganizationDirectoryServiceRequest()..mergeFromMessage(this);
-  OrganizationDirectoryServiceRequest copyWith(void Function(OrganizationDirectoryServiceRequest) updates) => super.copyWith((message) => updates(message as OrganizationDirectoryServiceRequest));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  OrganizationDirectoryServiceRequest copyWith(void Function(OrganizationDirectoryServiceRequest) updates) => super.copyWith((message) => updates(message as OrganizationDirectoryServiceRequest)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static OrganizationDirectoryServiceRequest create() => OrganizationDirectoryServiceRequest._();
@@ -341,10 +357,10 @@ class OrganizationDirectoryServiceRequest extends $pb.GeneratedMessage {
 }
 
 class OrganizationDirectoryServiceAuthRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('OrganizationDirectoryServiceAuthRequest', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
-    ..aOS(1, 'organizationId')
-    ..aOS(2, 'identification')
-    ..aOS(3, 'password')
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'OrganizationDirectoryServiceAuthRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auge.protobuf'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'organizationId')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'identification')
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'password')
     ..hasRequiredFields = false
   ;
 
@@ -352,8 +368,16 @@ class OrganizationDirectoryServiceAuthRequest extends $pb.GeneratedMessage {
   factory OrganizationDirectoryServiceAuthRequest() => create();
   factory OrganizationDirectoryServiceAuthRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory OrganizationDirectoryServiceAuthRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   OrganizationDirectoryServiceAuthRequest clone() => OrganizationDirectoryServiceAuthRequest()..mergeFromMessage(this);
-  OrganizationDirectoryServiceAuthRequest copyWith(void Function(OrganizationDirectoryServiceAuthRequest) updates) => super.copyWith((message) => updates(message as OrganizationDirectoryServiceAuthRequest));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  OrganizationDirectoryServiceAuthRequest copyWith(void Function(OrganizationDirectoryServiceAuthRequest) updates) => super.copyWith((message) => updates(message as OrganizationDirectoryServiceAuthRequest)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static OrganizationDirectoryServiceAuthRequest create() => OrganizationDirectoryServiceAuthRequest._();
@@ -392,9 +416,9 @@ class OrganizationDirectoryServiceAuthRequest extends $pb.GeneratedMessage {
 }
 
 class OrganizationDirectoryServiceGetRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('OrganizationDirectoryServiceGetRequest', package: const $pb.PackageName('auge.protobuf'), createEmptyInstance: create)
-    ..aOS(1, 'id')
-    ..aOS(2, 'organizationId')
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'OrganizationDirectoryServiceGetRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auge.protobuf'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'organizationId')
     ..hasRequiredFields = false
   ;
 
@@ -402,8 +426,16 @@ class OrganizationDirectoryServiceGetRequest extends $pb.GeneratedMessage {
   factory OrganizationDirectoryServiceGetRequest() => create();
   factory OrganizationDirectoryServiceGetRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory OrganizationDirectoryServiceGetRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   OrganizationDirectoryServiceGetRequest clone() => OrganizationDirectoryServiceGetRequest()..mergeFromMessage(this);
-  OrganizationDirectoryServiceGetRequest copyWith(void Function(OrganizationDirectoryServiceGetRequest) updates) => super.copyWith((message) => updates(message as OrganizationDirectoryServiceGetRequest));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  OrganizationDirectoryServiceGetRequest copyWith(void Function(OrganizationDirectoryServiceGetRequest) updates) => super.copyWith((message) => updates(message as OrganizationDirectoryServiceGetRequest)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static OrganizationDirectoryServiceGetRequest create() => OrganizationDirectoryServiceGetRequest._();

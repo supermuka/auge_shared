@@ -1,5 +1,5 @@
 {
-  "@@last_modified": "2020-07-11T10:06:18.745454",
+  "@@last_modified": "2020-07-16T16:04:04.629848",
   "@@locale": "en",
   "CommonFieldAndValuesMsg_labelAndValue": "{fieldName,select, true{Yes}false{No}other{Not Defined}}",
   "@CommonFieldAndValuesMsg_labelAndValue": {
@@ -110,6 +110,13 @@
   },
   "WorkItemDomainMsg_fieldLabel": "{fieldName,select, nameField{Name}descriptionField{Description}dueDateField{Due Date}plannedValueField{Planned}actualValueField{Actual}unitOfMeasurementField{Unit of Measurement}workStageField{Stage}assignedToField{Assigned To}attachmentsField{Attachments}checkItemsField{Check Items}archivedField{Archived}workField{Work}other{Not Defined}}",
   "@WorkItemDomainMsg_fieldLabel": {
+    "type": "text",
+    "placeholders": {
+      "fieldName": {}
+    }
+  },
+  "WorkItemCheckItemDomainMsg_fieldLabel": "{fieldName,select, nameField{Name}finishedField{Finished}other{Not Defined}}",
+  "@WorkItemCheckItemDomainMsg_fieldLabel": {
     "type": "text",
     "placeholders": {
       "fieldName": {}

@@ -3,7 +3,7 @@
 //  source: general/user_control.proto
 //
 // @dart = 2.3
-// ignore_for_file: camel_case_types,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type
+// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
 
 import 'dart:async' as $async;
 
@@ -32,34 +32,27 @@ class UserControlServiceClient extends $grpc.Client {
           ($core.List<$core.int> value) => $2.Empty.fromBuffer(value));
 
   UserControlServiceClient($grpc.ClientChannel channel,
-      {$grpc.CallOptions options})
-      : super(channel, options: options);
+      {$grpc.CallOptions options,
+      $core.Iterable<$grpc.ClientInterceptor> interceptors})
+      : super(channel, options: options, interceptors: interceptors);
 
   $grpc.ResponseFuture<$4.UserControl> getUserControl(
       $4.UserControlGetRequest request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$getUserControl, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+    return $createUnaryCall(_$getUserControl, request, options: options);
   }
 
   $grpc.ResponseFuture<$2.Empty> createOrUpdateUserControl(
       $4.UserControlRequest request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$createOrUpdateUserControl, $async.Stream.fromIterable([request]),
+    return $createUnaryCall(_$createOrUpdateUserControl, request,
         options: options);
-    return $grpc.ResponseFuture(call);
   }
 
   $grpc.ResponseFuture<$2.Empty> deleteUserControl(
       $4.UserControlDeleteRequest request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$deleteUserControl, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+    return $createUnaryCall(_$deleteUserControl, request, options: options);
   }
 }
 

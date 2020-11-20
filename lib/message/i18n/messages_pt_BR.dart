@@ -81,11 +81,11 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static m30(functionName) => "${Intl.select(functionName, {'create': 'Created', 'update': 'Updated', 'delete': 'Deleted', 'read': 'Read', 'other': 'Not Defined', })}";
 
-  static m31(moduleName) => "${Intl.select(moduleName, {'groups': 'Grupos', 'users': 'Usuários', 'user_profile': 'Perfil Usuário', 'objectives': 'Objetivos', 'organization': 'Organização', 'works': 'Trabalhos', 'other': 'Não Definido', })}";
+  static m31(moduleName) => "${Intl.select(moduleName, {'groups': 'Grupos', 'users': 'Usuários', 'objectives': 'Objetivos', 'organization': 'Organização', 'works': 'Trabalhos', 'other': 'Não Definido', })}";
 
   static m32(fieldName) => "${Intl.select(fieldName, {'timelineLabel': 'Linha do tempo', 'dayAgoLabel': 'dia atrás', 'daysAgoLabel': 'dias atrás', 'hourAgoLabel': 'hora atrás', 'hoursAgoLabel': 'horas atrás', 'minuteAgoLabel': 'minuto atrás', 'minutesAgoLabel': 'minutos atrás', 'secondAgoLabel': 'segundo atrás', 'secondsAgoLabel': 'segundos atrás', 'valueLabel': 'valor', 'theLabel': 'o', 'changedFromLabel': 'alterado de', 'wasLabel': 'era', 'allLabel': 'Todos', 'selectModuleLabel': 'Selecione o módulo', 'noNewRecordsLabel': 'Não há novos registros', 'newRecordsLabel': 'Novos Registros', 'loadMoreLabel': 'Carregar Mais', 'other': 'Não Definido', })}";
 
-  static m34(label) => "${Intl.select(label, {'dayLabel': 'Dia', 'hourLabel': 'Hora', 'percentLabel': 'Percentual', 'moneyLabel': 'Mês', 'indexLabel': 'Índice', 'unitaryLabel': 'Unitário', 'other': 'Não Definido', })}";
+  static m34(label) => "${Intl.select(label, {'percentLabel': 'Percentual', 'moneyLabel': 'Monetário', 'indexLabel': 'Índice', 'unitaryLabel': 'Unitário', 'monthLabel': 'Mês', 'dayLabel': 'Dia', 'hourLabel': 'Hora', 'other': 'Não Definido', })}";
 
   static m35(fieldName) => "${Intl.select(fieldName, {'organizationField': 'Organização', 'accessRoleField': 'Papel de Acesso', 'other': 'Não Definido', })}";
 
@@ -105,17 +105,19 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static m43(fieldName) => "${Intl.select(fieldName, {'nameField': 'Nome', 'descriptionField': 'Descrição', 'groupField': 'Grupo', 'leaderField': 'Líder', 'workStagesField': 'Estágios', 'objectiveField': 'Objetivo', 'archivedField': 'Arquivado', 'other': 'Não Definido', })}";
 
-  static m44(fieldName) => "${Intl.select(fieldName, {'nameField': 'Nome', 'descriptionField': 'Descrição', 'dueDateField': 'Data Limite', 'plannedValueField': 'Planejado', 'actualValueField': 'Real', 'workStageField': 'Estágio', 'assignedToField': 'Atribuído para', 'attachmentsField': 'Anexos', 'checkItemsField': 'Itens de Checagem', 'archivedField': 'Archived', 'other': 'Não Definido', })}";
+  static m44(fieldName) => "${Intl.select(fieldName, {'nameField': 'Nome', 'finishedField': 'Finalizado', 'other': 'Não Definido', })}";
 
-  static m45(label) => "${Intl.select(label, {'workKanbanLabel': 'Trabalho Kanban', 'workItemsLabel': 'Itens de Trabalho', 'workItemsGanttLabel': 'Gantt de Items de Trabalho', 'workItemsFilterLabel': 'Filtro de Items de Trabalho', 'orderedByLabel': 'Ordenado Por', 'editWorkItemLabel': 'Editar Itens de Trabalho', 'addWorkItemLabel': 'Adicionar Item de Trabalho', 'selectAValueLabel': 'Selecionar um Valor', 'workItemsOverDueLabel': 'Itens de Trabalho Atrasados', 'checkItemLabel': 'Item de Checagem', 'dropFileHereLabel': 'Soltar Arquivo Aqui', 'checkItemNameLabel': 'Nome do Item de Checagem', 'plannedActualLabel': 'Planejado e Real', 'remainingValueLabel': 'Valor Restante', 'dateAndActualValueLabel': 'Date e Valor Real', 'other': 'Não Definido', })}";
+  static m45(fieldName) => "${Intl.select(fieldName, {'nameField': 'Nome', 'descriptionField': 'Descrição', 'dueDateField': 'Data Limite', 'plannedValueField': 'Planejado', 'actualValueField': 'Real', 'unitOfMeasurementField': 'Unidade de Medida', 'workStageField': 'Estágio', 'assignedToField': 'Atribuído para', 'attachmentsField': 'Anexos', 'checkItemsField': 'Itens de Checagem', 'archivedField': 'Archived', 'workField': 'Trabalho', 'other': 'Não Definido', })}";
 
-  static m46(fieldName) => "${Intl.select(fieldName, {'dateField': 'Data', 'actualValueField': 'Valor Real', 'commentField': 'Comentário', 'other': 'Não Definido', })}";
+  static m46(label) => "${Intl.select(label, {'workKanbanLabel': 'Trabalho Kanban', 'workItemsLabel': 'Itens de Trabalho', 'workItemsGanttLabel': 'Gantt de Itens de Trabalho', 'workItemsFilterLabel': 'Filtro de Items de Trabalho', 'orderedByLabel': 'Ordenado Por', 'editWorkItemLabel': 'Editar Itens de Trabalho', 'addWorkItemLabel': 'Adicionar Item de Trabalho', 'selectAValueLabel': 'Selecionar um Valor', 'workItemsOverDueLabel': 'Itens de Trabalho Atrasados', 'checkItemLabel': 'Item de Checagem', 'dropFileHereLabel': 'Soltar Arquivo Aqui', 'checkItemNameLabel': 'Nome do Item de Checagem', 'plannedActualLabel': 'Planejado e Real', 'remainingValueLabel': 'Valor Restante', 'dateAndActualValueLabel': 'Data e Valor Real', 'other': 'Não Definido', })}";
 
-  static m47(label) => "${Intl.select(label, {'workItemValuesLabel': 'Valores', 'other': 'Não Definido', })}";
+  static m47(fieldName) => "${Intl.select(fieldName, {'dateField': 'Data', 'actualValueField': 'Valor Real', 'commentField': 'Comentário', 'other': 'Não Definido', })}";
 
-  static m48(label) => "${Intl.select(label, {'workLabel': 'Trabalho', 'worksLabel': 'Trabalhos', 'orderedByLabel': 'Ordenado Por', 'editWorkLabel': 'Editar Trabalho', 'addWorkLabel': 'Adicionar Trabalho', 'objectiveLabel': 'Objetivo', 'workItemsOverDueLabel': 'Itens de Trabalho Atrasados', 'worksFilterLabel': 'Filtro de Trabalhos', 'other': 'Não Definido', })}";
+  static m48(label) => "${Intl.select(label, {'workItemValuesLabel': 'Valores', 'other': 'Não Definido', })}";
 
-  static m49(fieldName) => "${Intl.select(fieldName, {'nameField': 'Nome', 'stateIndexField': 'Estado', 'other': 'Não Definido', })}";
+  static m49(label) => "${Intl.select(label, {'workLabel': 'Trabalho', 'worksLabel': 'Trabalhos', 'orderedByLabel': 'Ordenado Por', 'editWorkLabel': 'Editar Trabalho', 'addWorkLabel': 'Adicionar Trabalho', 'objectiveLabel': 'Objetivo', 'workItemsOverDueLabel': 'Itens de Trabalho Atrasados', 'worksFilterLabel': 'Filtro de Trabalhos', 'other': 'Não Definido', })}";
+
+  static m50(fieldName) => "${Intl.select(fieldName, {'nameField': 'Nome', 'stateIndexField': 'Estado', 'other': 'Não Definido', })}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
@@ -189,14 +191,15 @@ class MessageLookup extends MessageLookupByLibrary {
     "UserProfileDomainMsg_fieldLabel" : m41,
     "UserProfileValueMsg_label" : m42,
     "WorkDomainMsg_fieldLabel" : m43,
-    "WorkItemDomainMsg_fieldLabel" : m44,
-    "WorkItemMsg_label" : m45,
+    "WorkItemCheckItemDomainMsg_fieldLabel" : m44,
+    "WorkItemDomainMsg_fieldLabel" : m45,
+    "WorkItemMsg_label" : m46,
     "WorkItemMsg_valuePercentIntervalMsg" : MessageLookupByLibrary.simpleMessage("O valor percentual deverá estar entre 0 e 100"),
-    "WorkItemValueDomainMsg_fieldLabel" : m46,
+    "WorkItemValueDomainMsg_fieldLabel" : m47,
     "WorkItemValueMsg_actualValueExistsAtDate" : MessageLookupByLibrary.simpleMessage("Valor real já existe na data informada."),
-    "WorkItemValueMsg_label" : m47,
+    "WorkItemValueMsg_label" : m48,
     "WorkItemValueMsg_valueErrorMsg" : MessageLookupByLibrary.simpleMessage("O valor real deve ser menor ou igual ao valor planejado."),
-    "WorkMsg_label" : m48,
-    "WorkStageDomainMsg_fieldLabel" : m49
+    "WorkMsg_label" : m49,
+    "WorkStageDomainMsg_fieldLabel" : m50
   };
 }
