@@ -12,12 +12,12 @@ dependencies:
   #html: ^0.14.0+3
   intl: ^0.16.1
   fixnum: ^0.10.11
-  protobuf: ^1.0.1
-  grpc: ^2.3.0
+  protobuf: ^1.1.0
+  grpc: ^2.8.0
 
 dev_dependencies:
-  intl_translation: ^0.17.10
-  test: ^1.15.4
+  intl_translation: ^0.17.10+1
+  test: ^1.15.7
 
 executables:
   protoc-gen-dart: protoc_plugin

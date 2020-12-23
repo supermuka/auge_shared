@@ -53,17 +53,23 @@ class WorkItem {
   static const String archivedField = 'archived';
   bool archived;
 
+
+  DateTime _dateNow;
   WorkItem() {
     initializeDateFormatting(Intl.defaultLocale);
     assignedTo = <User>[];
     checkItems = <WorkItemCheckItem>[];
     attachments = <WorkItemAttachment>[];
+
+    DateTime now = DateTime.now().toUtc();
+    _dateNow = DateTime.utc(now.year, now.month, now.day);
   }
 
   bool get isOverdue {
     if (dueDate != null) {
-      DateFormat formater = DateFormat('yMd');
-      return ( formater.format(dueDate).compareTo(formater.format(DateTime.now())) < 0 );
+      // DateFormat formater = DateFormat('yMd');
+      return ( dueDate.compareTo(_dateNow) < 0);
+     // return ( formater.format(dueDate).compareTo(formater.format(DateTime.now())) < 0 );
     } else {
       return false;
     }
@@ -156,6 +162,7 @@ class WorkItemHelper {
         UnitOfMeasurementHelper.writeToProtoBuf(
             workItem.unitOfMeasurement);
     if (workItem.archived != null) workItemPb.archived = workItem.archived;
+
 
     if (workItem.dueDate != null) workItemPb.dueDate =
         CommonUtils.timestampFromDateTime(workItem.dueDate);
